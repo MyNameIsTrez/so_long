@@ -33,7 +33,8 @@ HEADERS :=\
 	include/so_long.h
 
 SOURCES :=\
-	src/so_long.c
+	src/0_main.c\
+	src/1_read_map.c
 
 BONUS_SOURCES :=
 

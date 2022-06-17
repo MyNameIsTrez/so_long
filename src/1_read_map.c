@@ -1,47 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   1_read_map.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/17 16:14:13 by sbos          ########   odam.nl         */
+/*   Created: 2022/06/17 16:08:36 by sbos          #+#    #+#                 */
+/*   Updated: 2022/06/17 16:16:01 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "so_long.h"
 
-# include "MLX42/MLX42.h"
-
-# include "libft.h"
-# include "ft_printf.h"
-
-# define WIDTH 256
-# define HEIGHT 256
-
-enum e_tiles
+void	sl_read_map(t_map *map)
 {
-	EMPTY_SPACE,
-	WALL,
-	COLLECTIBLE,
-	MAP_EXIT,
-	PLAYER_STARTING_POSITION,
-};
-
-typedef struct s_map
-{
-	int	a;
-}	t_map;
-
-typedef struct s_data
-{
-	mlx_t		*mlx;
-	t_map		map;
-	mlx_image_t	**images;
-}	t_data;
-
-void	sl_read_map(t_map *map);
-
-#endif
+	(void)map;
+}

@@ -2,8 +2,8 @@
 	"version": "0.2.0",
 	"configurations": [{
 		"name": "so_long",
-		"type": "cppdbg", // Can't use lldb since it doesn't support expression based breakpoints.
-		// "type": "lldb", // Can't use lldb since it doesn't support expression based breakpoints.
+		// "type": "cppdbg", // Prints to the debug console instead of the terminal.
+		"type": "lldb", // Doesn't support expression-based breakpoints.
 		"request": "launch",
 		"program": "${workspaceFolder}/so_long",
 		"args": [],
@@ -12,7 +12,7 @@
 		// "reverseDebugging": true,
 		// "environment": [],
 		// "externalConsole": false,
-		"MIMode": "lldb",
+		// "MIMode": "lldb",
 		"preLaunchTask": "Build so_long",
 		"internalConsoleOptions": "neverOpen"
 	}]
