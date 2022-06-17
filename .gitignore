@@ -13,5 +13,14 @@
 # Allow containing own .gitignore
 !.gitignore
 
+# Allow maps
+!maps/*
+
+# Allow map tests
+!map_tests/*
+
+# Allow PDF with instructions
+!so_long.pdf
+
 # Debug settings
 !*.json
