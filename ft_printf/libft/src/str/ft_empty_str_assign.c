@@ -1,43 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   ft_empty_str_assign.c                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/17 14:46:01 by sbos          ########   odam.nl         */
+/*   Created: 2022/03/04 14:09:25 by sbos          #+#    #+#                 */
+/*   Updated: 2022/04/05 15:12:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+////////////////////////////////////////////////////////////////////////////////
 
-# include "MLX42/MLX42.h"
+#include "libft.h"
 
-# include "libft.h"
-# include "ft_printf.h"
+////////////////////////////////////////////////////////////////////////////////
 
-# define WIDTH 256
-# define HEIGHT 256
-
-enum e_tiles
+t_success	ft_empty_str_assign(char **dst)
 {
-	EMPTY_SPACE,
-	WALL,
-	COLLECTIBLE,
-};
+	return (ft_str_assign(dst, ft_empty_str()));
+}
 
-typedef struct s_map
-{
-	int	a;
-}	t_map;
-
-typedef struct s_data
-{
-	mlx_t		*mlx;
-	t_map		map;
-	mlx_image_t	**images;
-}	t_data;
-
-#endif
+////////////////////////////////////////////////////////////////////////////////

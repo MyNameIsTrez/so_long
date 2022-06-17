@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   whitespace.h                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/17 14:46:01 by sbos          ########   odam.nl         */
+/*   Created: 2022/03/22 16:15:39 by sbos          #+#    #+#                 */
+/*   Updated: 2022/03/22 16:16:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+////////////////////////////////////////////////////////////////////////////////
 
-# include "MLX42/MLX42.h"
+#ifndef WHITESPACE_H
+# define WHITESPACE_H
 
-# include "libft.h"
-# include "ft_printf.h"
+////////////////////////////////////////////////////////////////////////////////
 
-# define WIDTH 256
-# define HEIGHT 256
+# define WHITESPACE " \t\n\v\f\r"
 
-enum e_tiles
-{
-	EMPTY_SPACE,
-	WALL,
-	COLLECTIBLE,
-};
-
-typedef struct s_map
-{
-	int	a;
-}	t_map;
-
-typedef struct s_data
-{
-	mlx_t		*mlx;
-	t_map		map;
-	mlx_image_t	**images;
-}	t_data;
+////////////////////////////////////////////////////////////////////////////////
 
 #endif
+
+////////////////////////////////////////////////////////////////////////////////

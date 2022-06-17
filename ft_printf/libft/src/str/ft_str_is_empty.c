@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   ft_str_is_empty.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/17 14:46:01 by sbos          ########   odam.nl         */
+/*   Created: 2022/03/04 14:28:56 by sbos          #+#    #+#                 */
+/*   Updated: 2022/03/29 14:51:22 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+////////////////////////////////////////////////////////////////////////////////
 
-# include "MLX42/MLX42.h"
+#include "libft.h"
 
-# include "libft.h"
-# include "ft_printf.h"
+////////////////////////////////////////////////////////////////////////////////
 
-# define WIDTH 256
-# define HEIGHT 256
-
-enum e_tiles
+/**
+ * @brief Returns whether @p str is empty.
+ *
+ * @param str
+ * @return
+ */
+bool	ft_str_is_empty(const char *str)
 {
-	EMPTY_SPACE,
-	WALL,
-	COLLECTIBLE,
-};
+	return (ft_str_eq(str, ""));
+}
 
-typedef struct s_map
-{
-	int	a;
-}	t_map;
-
-typedef struct s_data
-{
-	mlx_t		*mlx;
-	t_map		map;
-	mlx_image_t	**images;
-}	t_data;
-
-#endif
+////////////////////////////////////////////////////////////////////////////////
