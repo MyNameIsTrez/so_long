@@ -6,11 +6,15 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/17 16:15:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/17 18:00:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+////////////////////////////////////////////////////////////////////////////////
+
 #include "so_long.h"
+
+////////////////////////////////////////////////////////////////////////////////
 
 void	loop(void *param)
 {
@@ -28,11 +32,13 @@ void	loop(void *param)
 		data->images[0]->instances[0].x += 5;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 int32_t	main(void)
 {
 	t_data	data;
 
-	sl_read_map(&data.map);
+	// ft_get_grid_from_file(data.map);
 	data.mlx = mlx_init(WIDTH, HEIGHT, "so_long", true);
 	if (!data.mlx)
 		return (EXIT_FAILURE);
@@ -45,3 +51,5 @@ int32_t	main(void)
 	mlx_terminate(data.mlx);
 	return (EXIT_SUCCESS);
 }
+
+////////////////////////////////////////////////////////////////////////////////
