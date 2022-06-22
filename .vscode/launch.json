@@ -6,7 +6,9 @@
 		"type": "lldb", // Doesn't support expression-based breakpoints.
 		"request": "launch",
 		"program": "${workspaceFolder}/so_long",
-		"args": [],
+		"args": [
+			"maps/example_1.ber"
+		],
 		// "stopAtEntry": false,
 		"cwd": "${workspaceFolder}",
 		// "reverseDebugging": true,

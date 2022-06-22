@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/17 18:00:53 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/22 12:43:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,20 @@ enum e_tiles
 	PLAYER_STARTING_POSITION,
 };
 
+# define MAP_CHARACTERS	"01CEP"
+
 ////////////////////////////////////////////////////////////////////////////////
 
 typedef struct s_data
 {
 	mlx_t		*mlx;
-	// t_grid		map;
+	t_grid		grid;
 	mlx_image_t	**images;
 }	t_data;
+
+////////////////////////////////////////////////////////////////////////////////
+
+t_success	parse_argv(int argc, char **argv, t_grid *grid);
 
 ////////////////////////////////////////////////////////////////////////////////
 

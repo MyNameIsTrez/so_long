@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/17 18:00:44 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/22 12:44:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	loop(void *param)
+STATIC void	loop(void *param)
 {
 	const t_data	*data = param;
 
@@ -34,11 +34,12 @@ void	loop(void *param)
 
 ////////////////////////////////////////////////////////////////////////////////
 
-int32_t	main(void)
+int32_t	main(int argc, char **argv)
 {
 	t_data	data;
 
-	// ft_get_grid_from_file(data.map);
+	if (parse_argv(argc, argv, &data.grid) != SUCCESS)
+		return (EXIT_FAILURE);
 	data.mlx = mlx_init(WIDTH, HEIGHT, "so_long", true);
 	if (!data.mlx)
 		return (EXIT_FAILURE);

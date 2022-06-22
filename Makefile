@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/06/17 18:06:08 by sbos          ########   odam.nl          #
+#    Updated: 2022/06/22 12:45:35 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,8 @@ HEADERS :=\
 	include/so_long.h
 
 SOURCES :=\
-	src/0_main.c
+	src/0_main.c\
+	src/1_parse_argv.c
 
 BONUS_SOURCES :=
 
