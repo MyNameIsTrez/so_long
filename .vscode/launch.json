@@ -7,7 +7,8 @@
 		"request": "launch",
 		"program": "${workspaceFolder}/so_long",
 		"args": [
-			"maps/example_1.ber"
+			"maps/example_1.ber",
+			"asdi"
 		],
 		// "stopAtEntry": false,
 		"cwd": "${workspaceFolder}",

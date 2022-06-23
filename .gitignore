@@ -19,6 +19,9 @@
 # Allow map tests
 !map_tests/*
 
+# Allow textures and their other info
+!textures/**
+
 # Allow PDF with instructions
 !so_long.pdf
 

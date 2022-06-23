@@ -1,0 +1,13 @@
+Bitsy dungeon tiles
+by enui
+http://enui.itch.io
+
+Created: 12-12-2020
+
+License: (Creative Commons Zero, CC0)
+http://creativecommons.org/publicdomain/zero/1.0/
+This content is free to use in personal, educational and commercial projects.
+
+Updates
+------
+16-12-2020: Fixed a mistake in BitsyDungeonTilesstatic__by_enui.png, updated to version 1.1
