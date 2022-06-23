@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/23 15:36:25 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/23 16:00:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,6 @@
 #include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
-
-STATIC void	parse_scale(int argc, char **argv, t_data *data)
-{
-	// TODO: Add min and max scale checks?
-	// TODO: Check if ft_atoi_safe is robust enough
-	if (argc == 3 && ft_atoi_safe(argv[2], &data->scale) != SUCCESS)
-		data->scale = DEFAULT_SCALE;
-	else
-		data->scale = DEFAULT_SCALE;
-}
 
 STATIC bool	grid_has_invalid_character(t_grid *grid)
 {
@@ -70,7 +60,6 @@ t_success	sl_parse_argv(int argc, char **argv, t_data *data)
 		return (ft_get_error());
 	if (grid_has_invalid_character(&data->grid))
 		return (ERROR_FILE_HAS_INVALID_CHAR);
-	parse_scale(argc, argv, data);
 	return (SUCCESS);
 }
 

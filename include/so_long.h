@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/23 15:36:34 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/23 16:01:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define WIDTH 256
-# define HEIGHT 256
-
-# define DEFAULT_SCALE 4
+# define WIDTH 400
+# define HEIGHT 400
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -48,7 +46,6 @@ typedef struct s_data
 {
 	mlx_t		*mlx;
 	t_grid		grid;
-	int			scale;
 	mlx_image_t	**images;
 }	t_data;
 
