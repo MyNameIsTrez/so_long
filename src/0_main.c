@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/23 16:04:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/23 17:01:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,6 @@ int32_t	main(int argc, char **argv)
 	data.mlx = mlx_init(WIDTH, HEIGHT, "so_long", true);
 	if (!data.mlx)
 		return (EXIT_FAILURE);
-	data.images = malloc(1 * sizeof(mlx_image_t));
-	mlx_texture_t	*tex;
-	tex = mlx_load_png("textures/BitsyDungeonTiles/tiles_static_400x400.png");
-	uint32_t	xy[] = {0, 0};
-	uint32_t	wh[] = {80 * 5, 80 * 5};
-	data.images[0] = mlx_texture_area_to_image(data.mlx, tex, xy, wh);
 	mlx_image_to_window(data.mlx, data.images[0], 0, 0);
 	mlx_loop_hook(data.mlx, &loop, &data);
 	mlx_loop(data.mlx);
