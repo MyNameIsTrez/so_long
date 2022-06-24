@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/24 17:35:01 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/24 17:41:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ STATIC void	load_tile_images(uint32_t frame_count, uint32_t texture_row,
 
 STATIC t_success	malloc_images(t_data *data)
 {
-	data->images = malloc(data->image_count);
+	data->images = malloc(sizeof(mlx_image_t *) * data->image_count);
 	if (data->images == NULL)
 		return (ft_set_error(ERROR_MALLOC));
 	return (SUCCESS);
