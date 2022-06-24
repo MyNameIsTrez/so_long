@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/06/22 12:45:35 by sbos          ########   odam.nl          #
+#    Updated: 2022/06/24 16:07:07 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,9 @@ HEADERS :=\
 
 SOURCES :=\
 	src/0_main.c\
-	src/1_parse_argv.c
+	src/1_parse_argv.c\
+	src/2_get_texture.c\
+	src/3_load_images.c
 
 BONUS_SOURCES :=
 

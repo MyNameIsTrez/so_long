@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/23 18:10:14 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/24 16:07:29 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+# define TEXTUREPACK "BitsyDungeonTiles/"
+# define PIXELS_PER_TILE_UNSCALED 8
 # define DEFAULT_SCALE 2
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define PIXELS_PER_TILE_UNSCALED 8
-
-////////////////////////////////////////////////////////////////////////////////
-
-# define TEXTURE_FILENAME_SUFFIX "_pixels_per_tile.png"
-# define STATIC_TEXTURE_DIR_PATH "textures/BitsyDungeonTiles/static/"
-# define ANIMATED_TEXTURE_DIR_PATH "textures/BitsyDungeonTiles/animated/"
+# define TEXTUREPACKS_PATH "texturepacks/"
+# define TEXTURES_DIR "textures/"
+# define TEXTURE_SCALES_DIR "texture_scales/"
+# define TEXTURE_FILENAME_PREFIX "scale_"
+# define TEXTURE_FILENAME_EXTENSION ".png"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -57,29 +57,37 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-enum e_tile_textures
+enum e_images
 {
 	EMPTY_SPACE,
 	WALL,
 	COLLECTIBLE,
 	MAP_EXIT,
-	TILE_ENUM_COUNT
+	PLAYER,
+	IMAGE_COUNT
 };
 
-# define MAP_CHARACTERS	"01CEP"
+# define MAP_IMAGE_CHARACTERS	"01CEP"
 
 ////////////////////////////////////////////////////////////////////////////////
 
 typedef struct s_data
 {
-	mlx_t		*mlx;
-	t_grid		grid;
-	mlx_image_t	*tile_images[TILE_ENUM_COUNT];
+	mlx_t			*mlx;
+	t_grid			grid;
+	uint32_t		pixels_per_tile;
+	uint32_t		width;
+	uint32_t		height;
+	char			*texture_filename;
+	mlx_texture_t	*texture;
+	mlx_image_t		*images[IMAGE_COUNT];
 }	t_data;
 
 ////////////////////////////////////////////////////////////////////////////////
 
 t_success	sl_parse_argv(int argc, char **argv, t_data *data);
+t_success	sl_get_texture(t_data *data);
+t_success	sl_load_images(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
