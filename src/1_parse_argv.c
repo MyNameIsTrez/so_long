@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/24 16:06:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/24 16:18:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ STATIC t_success	calculate_pixels_per_tile(int scale, t_data *data)
 
 	if (scale < 1 || scale > 4)
 		return (ft_set_error(ERROR_INVALID_SCALE));
-	data->pixels_per_tile = valid_pixels_per_tile[scale];
+	data->scale = valid_pixels_per_tile[scale];
+	data->pixels_per_tile = data->scale * PIXELS_PER_TILE_UNSCALED;
 	return (SUCCESS);
 }
 

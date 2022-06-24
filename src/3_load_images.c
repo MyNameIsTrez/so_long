@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/24 16:09:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/24 16:13:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ STATIC void	load_image(uint32_t column, uint32_t row, t_data *data)
 
 	data->images[image_index] = mlx_texture_area_to_image(data->mlx,
 			data->texture,
-			(uint32_t[2]){column, row},
+			(uint32_t[2]){column * data->pixels_per_tile,
+			row * data->pixels_per_tile},
 			(uint32_t[2]){data->pixels_per_tile, data->pixels_per_tile});
 	image_index++;
 }
