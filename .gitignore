@@ -4,26 +4,33 @@
 # Allow folders
 !*/
 
-# Allow .c and .h files
-!*.[ch]
 
-# Allow Makefiles
-!Makefile
+# TODO: REMOVE BEFORE EVAL!
 
 # Allow containing own .gitignore
 !.gitignore
 
-# Allow maps
-!maps/*
-
 # Allow map tests
 !map_tests/*
-
-# Allow textures and their other info
-!textures/**
 
 # Allow PDF with instructions
 !so_long.pdf
 
 # Debug settings
 !*.json
+
+
+
+# Allow .c and .h files
+!*.[ch]
+
+# Allow Makefiles
+!Makefile
+
+# Allow maps
+!maps/*
+
+# Allow textures and their other info
+!textures/**
+
+**/.DS_Store
