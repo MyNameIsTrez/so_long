@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/24 16:06:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/24 17:28:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int32_t	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	data.mlx = mlx_init((int32_t)data.width, (int32_t)data.height, "so_long",
 			true);
-	if (sl_get_texture(&data) != SUCCESS)
+	if (sl_load_texture(&data) != SUCCESS)
 		return (EXIT_FAILURE);
 	if (sl_load_images(&data) != SUCCESS)
 		return (EXIT_FAILURE);

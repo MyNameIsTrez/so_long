@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/24 16:17:19 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/24 17:17:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,35 +39,25 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 // STATIC
-# define EMPTY_SPACE_TEXTURE_COLUMN 0
+# define EMPTY_SPACE_TEXTURE_FRAME_COUNT 1
 # define EMPTY_SPACE_TEXTURE_ROW 0
 
-# define WALL_TEXTURE_COLUMN 0
-# define WALL_TEXTURE_ROW 0
+# define WALL_TEXTURE_FRAME_COUNT 1
+# define WALL_TEXTURE_ROW 1
 
-# define COLLECTIBLE_TEXTURE_COLUMN 0
-# define COLLECTIBLE_TEXTURE_ROW 0
+# define COLLECTIBLE_TEXTURE_FRAME_COUNT 1
+# define COLLECTIBLE_TEXTURE_ROW 43
 
-# define MAP_EXIT_TEXTURE_COLUMN 0
-# define MAP_EXIT_TEXTURE_ROW 0
+# define MAP_EXIT_TEXTURE_FRAME_COUNT 1
+# define MAP_EXIT_TEXTURE_ROW 18
 
 // ANIMATED
-# define PLAYER_TEXTURE_COLUMN 0
-# define PLAYER_TEXTURE_ROW 0
+# define PLAYER_TEXTURE_FRAME_COUNT 1
+# define PLAYER_TEXTURE_ROW 25
 
 ////////////////////////////////////////////////////////////////////////////////
 
-enum e_images
-{
-	EMPTY_SPACE,
-	WALL,
-	COLLECTIBLE,
-	MAP_EXIT,
-	PLAYER,
-	IMAGE_COUNT
-};
-
-# define MAP_IMAGE_CHARACTERS	"01CEP"
+# define MAP_CHARACTERS	"01CEP"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -81,13 +71,14 @@ typedef struct s_data
 	uint32_t		height;
 	char			*texture_filename;
 	mlx_texture_t	*texture;
-	mlx_image_t		*images[IMAGE_COUNT];
+	uint32_t		image_count;
+	mlx_image_t		**images;
 }	t_data;
 
 ////////////////////////////////////////////////////////////////////////////////
 
 t_success	sl_parse_argv(int argc, char **argv, t_data *data);
-t_success	sl_get_texture(t_data *data);
+t_success	sl_load_texture(t_data *data);
 t_success	sl_load_images(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////

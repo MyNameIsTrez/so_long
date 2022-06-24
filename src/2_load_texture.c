@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:54:58 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/24 16:18:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/24 16:54:12 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ STATIC t_success	get_texture_filename(t_data *data)
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_success	sl_get_texture(t_data *data)
+t_success	sl_load_texture(t_data *data)
 {
 	char			*tex_filepath;
 

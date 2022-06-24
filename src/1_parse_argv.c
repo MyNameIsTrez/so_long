@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/24 16:18:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/24 17:17:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ STATIC bool	grid_has_invalid_character(t_grid *grid)
 		while (x < grid->width)
 		{
 			chr = grid->cells[y][x];
-			if (!ft_chr_in_str(chr, MAP_IMAGE_CHARACTERS))
+			if (!ft_chr_in_str(chr, MAP_CHARACTERS))
 				return (true);
 			x++;
 		}
