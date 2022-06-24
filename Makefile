@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/06/24 16:53:54 by sbos          ########   odam.nl          #
+#    Updated: 2022/06/24 19:35:06 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,8 @@ SOURCES :=\
 	src/0_main.c\
 	src/1_parse_argv.c\
 	src/2_load_texture.c\
-	src/3_load_images.c
+	src/3_instantiate_tile_types.c\
+	src/4_instantiate_tile_grid.c
 
 BONUS_SOURCES :=
 
