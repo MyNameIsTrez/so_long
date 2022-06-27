@@ -31,6 +31,7 @@
 !maps/*
 
 # Allow textures and their other info
-!textures/**
+!texturepacks/**/*.png
+!texturepacks/**/*.txt
 
 **/.DS_Store
