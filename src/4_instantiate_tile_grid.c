@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/27 14:03:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/27 14:30:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,22 @@ STATIC t_success	instantiate_tile(uint32_t column_index, uint32_t row_index,
 	uint32_t const		frame_count = tile_type->frame_count;
 	int32_t				frame_instance_index;
 
-	tile = data->tile_grid.cells[row_index][column_index];
-	if (malloc_tile(tile_type, &tile) != SUCCESS)
+	if (malloc_tile(tile_type, &data->tile_grid.cells[row_index][column_index]) != SUCCESS)
 		return (ft_get_error());
+	tile = data->tile_grid.cells[row_index][column_index];
 	frame_index = 0;
 	while (frame_index < frame_count)
 	{
-		frame_instance_index = mlx_image_to_window(data->mlx, get_image(tile_type, frame_index), // TODO: Should this function ever be checked for an error?
-			(int32_t)(data->pixels_per_tile * column_index),
-			(int32_t)(data->pixels_per_tile * row_index));
+		frame_instance_index = mlx_image_to_window(data->mlx,
+				get_image(tile_type, frame_index),
+				(int32_t)(data->pixels_per_tile * column_index),
+				(int32_t)(data->pixels_per_tile * row_index));
 		if (frame_instance_index == -1)
 		{
 			// TODO: Delete previous images in ERROR_MLX42 cases?
 			return (ft_set_error(ERROR_MLX42));
 		}
+		// tile_type->frames[frame_index]->instances[frame_instance_index].enabled = false;
 		tile->frame_instances_indices[frame_index] = frame_instance_index;
 		frame_index++;
 	}
@@ -72,7 +74,7 @@ STATIC t_success	instantiate_tile(uint32_t column_index, uint32_t row_index,
 
 STATIC t_success	malloc_tile_grid_cells(t_data *data)
 {
-	t_tile***	cells;
+	t_tile		***cells;
 	uint32_t	row_index;
 
 	cells = malloc(sizeof(t_tile **) * data->char_grid.height);
