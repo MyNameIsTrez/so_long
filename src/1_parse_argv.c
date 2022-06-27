@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/24 20:22:07 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/27 12:39:12 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ STATIC int	get_scale(int argc, char **argv)
 
 STATIC bool	grid_has_invalid_character(t_grid *char_grid)
 {
-	size_t			y;
-	size_t			x;
-	unsigned char	chr;
+	size_t	y;
+	size_t	x;
+	char	chr;
 
 	y = 0;
 	while (y < char_grid->height)

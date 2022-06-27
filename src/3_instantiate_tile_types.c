@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/24 20:31:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/27 13:00:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ STATIC t_success	check_tile_type_errors(t_data *data)
 }
 
 STATIC void	add_tile_type(uint32_t frame_count, uint32_t texture_row,
-			unsigned char grid_character, t_data *data)
+			char grid_character, t_data *data)
 {
-	t_tile_type*const	tile_type = &data->tile_types[grid_character];
+	t_tile_type*const	tile_type = &data->tile_types[(unsigned char)grid_character];
 	uint32_t			frame_index;
 
 	tile_type->frame_count = frame_count;

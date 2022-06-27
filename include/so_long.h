@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/24 20:31:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/27 13:52:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,12 @@ typedef struct s_tile
 {
 	t_tile_type	*tile_type;
 	uint32_t	frame_index;
+	int32_t		*frame_instances_indices;
 }	t_tile;
 
 typedef struct s_tile_grid
 {
-	t_tile	**cells;
+	t_tile	***cells;
 }	t_tile_grid;
 
 typedef struct s_data
