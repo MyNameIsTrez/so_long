@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/27 13:52:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/27 16:49:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@
 # define EMPTY_SPACE_CHARACTER '0'
 
 # define WALL_TEXTURE_FRAME_COUNT 1
-# define WALL_TEXTURE_ROW 1
+# define WALL_TEXTURE_ROW 3
 # define WALL_CHARACTER '1'
 
 # define COLLECTIBLE_TEXTURE_FRAME_COUNT 1
