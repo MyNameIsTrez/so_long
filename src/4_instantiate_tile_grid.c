@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/27 17:38:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/28 12:24:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ STATIC t_success	instantiate_tile(uint32_t column_index, uint32_t row_index,
 			// TODO: Delete previous images in ERROR_MLX42 cases?
 			return (ft_set_error(ERROR_MLX42));
 		}
-		// tile_type->frames[frame_index]->instances[frame_instance_index].enabled = false;
+		tile_type->frames[frame_index]->instances[frame_instance_index].enabled = false;
 		tile->frame_instances_indices[frame_index] = frame_instance_index;
 		frame_index++;
 	}
