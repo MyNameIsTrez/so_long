@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/24 19:36:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/28 16:05:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ int32_t	main(int argc, char **argv)
 	if (sl_instantiate_tile_types(&data) != SUCCESS)
 		return (EXIT_FAILURE);
 	if (sl_instantiate_tile_grid(&data) != SUCCESS)
+		return (EXIT_FAILURE);
+	if (sl_instantiate_entities(&data) != SUCCESS)
 		return (EXIT_FAILURE);
 	mlx_loop_hook(data.mlx, &loop, &data);
 	mlx_loop(data.mlx);

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/27 16:49:59 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/28 16:28:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// TODO: Make sure that *only* the bonus has the enemy character and such here.
 # define MAP_CHARACTERS	"01CEP"
+
+# define ENTITY_CHARACTERS	"CP"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -74,13 +77,20 @@ typedef struct s_tile
 {
 	t_tile_type	*tile_type;
 	uint32_t	frame_index;
-	int32_t		*frame_instances_indices;
+	uint32_t	*frame_instances_indices;
 }	t_tile;
 
 typedef struct s_tile_grid
 {
 	t_tile	***cells;
 }	t_tile_grid;
+
+typedef struct s_entity
+{
+	uint32_t	column_index;
+	uint32_t	row_index;
+	t_tile		tile;
+}	t_entity;
 
 typedef struct s_data
 {
@@ -93,16 +103,30 @@ typedef struct s_data
 	char			*texture_filename;
 	mlx_texture_t	*texture;
 	uint32_t		tile_type_count;
-	t_tile_type		tile_types[256];
+	t_tile_type		tile_types[1 << (sizeof(char) * 8)];
 	t_tile_grid		tile_grid;
+	t_list			*entities;
 }	t_data;
 
 ////////////////////////////////////////////////////////////////////////////////
+// Util prototypes
 
-t_success	sl_parse_argv(int argc, char **argv, t_data *data);
-t_success	sl_load_texture(t_data *data);
-t_success	sl_instantiate_tile_types(t_data *data);
-t_success	sl_instantiate_tile_grid(t_data *data);
+t_success		sl_initialize_instance_for_frames(t_tile *tile,
+					uint32_t column_index, uint32_t row_index, t_data *data);
+t_success		sl_fill_tile_data(t_tile_type *tile_type, t_tile *tile);
+mlx_instance_t	*sl_get_instance(t_tile *tile, uint32_t frame_index);
+mlx_image_t		*sl_get_frame(t_tile_type *tile_type,
+					uint32_t frame_instance_index);
+unsigned char	sl_get_grid_character(uint32_t column_index, uint32_t row_index,
+					t_data *data);
+
+////////////////////////////////////////////////////////////////////////////////
+
+t_success		sl_parse_argv(int argc, char **argv, t_data *data);
+t_success		sl_load_texture(t_data *data);
+t_success		sl_instantiate_tile_types(t_data *data);
+t_success		sl_instantiate_tile_grid(t_data *data);
+t_success		sl_instantiate_entities(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
