@@ -18,5 +18,24 @@
 		// "MIMode": "lldb",
 		"preLaunchTask": "Build so_long",
 		"internalConsoleOptions": "neverOpen"
+	},
+	{
+		"name": "so_long testing",
+		// "type": "cppdbg", // Prints to the debug console instead of the terminal.
+		"type": "lldb", // Doesn't support expression-based breakpoints.
+		"request": "launch",
+		"program": "${workspaceFolder}/so_long",
+		"args": [
+			"map_tests/two_players.ber",
+			"asdi"
+		],
+		// "stopAtEntry": false,
+		"cwd": "${workspaceFolder}",
+		// "reverseDebugging": true,
+		// "environment": [],
+		// "externalConsole": false,
+		// "MIMode": "lldb",
+		"preLaunchTask": "Build so_long",
+		"internalConsoleOptions": "neverOpen"
 	}]
 }

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/28 16:07:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/28 16:32:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,14 @@ t_success	sl_instantiate_tile_grid(t_data *data)
 		column_index = 0;
 		while (column_index < data->char_grid.width)
 		{
-			instantiate_tile(column_index, row_index, data);
+			if (!is_entity(column_index, row_index, data))
+			{
+				if (instantiate_tile(column_index, row_index, data) != SUCCESS)
+				{
+					// TODO: Free previous stuff.
+					return (ft_get_error());
+				}
+			}
 			column_index++;
 		}
 		row_index++;

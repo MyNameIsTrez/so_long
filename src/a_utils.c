@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/28 16:26:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/28 16:46:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 #include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
+
+bool	is_entity(uint32_t column_index, uint32_t row_index, t_data *data)
+{
+	const unsigned char	grid_character = sl_get_grid_character(column_index,
+			row_index, data);
+
+	return (ft_chr_in_str(grid_character, ENTITY_CHARACTERS));
+}
 
 t_success	sl_initialize_instance_for_frames(t_tile *tile,
 			uint32_t column_index, uint32_t row_index, t_data *data)
@@ -44,6 +52,15 @@ t_success	sl_initialize_instance_for_frames(t_tile *tile,
 		frame_index++;
 	}
 	return (SUCCESS);
+}
+
+void	sl_shift_tile_pos(t_tile *tile, int32_t x, int32_t y)
+{
+	mlx_instance_t	*instance;
+
+	instance = sl_get_instance(tile, tile->frame_index);
+	instance->x += x;
+	instance->y += y;
 }
 
 void	sl_set_tile_pos(t_tile *tile, int32_t x, int32_t y)

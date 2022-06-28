@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/28 16:28:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/28 17:26:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define TEXTUREPACK "BitsyDungeonTiles/"
 # define PIXELS_PER_TILE_UNSCALED 8
 # define DEFAULT_SCALE 3
+# define MAX_PLAYER_COUNT 2
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -67,8 +68,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+# define PLAYER_1_UP_KEY MLX_KEY_W
+# define PLAYER_1_DOWN_KEY MLX_KEY_S
+# define PLAYER_1_LEFT_KEY MLX_KEY_A
+# define PLAYER_1_RIGHT_KEY MLX_KEY_D
+
+# define PLAYER_2_UP_KEY MLX_KEY_UP
+# define PLAYER_2_DOWN_KEY MLX_KEY_DOWN
+# define PLAYER_2_LEFT_KEY MLX_KEY_LEFT
+# define PLAYER_2_RIGHT_KEY MLX_KEY_RIGHT
+
+////////////////////////////////////////////////////////////////////////////////
+
 typedef struct s_tile_type
 {
+	unsigned char	character;
 	uint32_t		frame_count;
 	mlx_image_t		**frames;
 }	t_tile_type;
@@ -92,6 +106,20 @@ typedef struct s_entity
 	t_tile		tile;
 }	t_entity;
 
+typedef struct s_controls
+{
+	keys_t		up_key;
+	keys_t		down_key;
+	keys_t		left_key;
+	keys_t		right_key;
+}	t_controls;
+
+typedef struct s_player
+{
+	t_entity	*entity;
+	t_controls	controls;
+}	t_player;
+
 typedef struct s_data
 {
 	mlx_t			*mlx;
@@ -106,13 +134,19 @@ typedef struct s_data
 	t_tile_type		tile_types[1 << (sizeof(char) * 8)];
 	t_tile_grid		tile_grid;
 	t_list			*entities;
+	uint32_t		player_count;
+	t_player		players[MAX_PLAYER_COUNT];
 }	t_data;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Util prototypes
 
+bool			is_entity(uint32_t column_index, uint32_t row_index,
+					t_data *data);
 t_success		sl_initialize_instance_for_frames(t_tile *tile,
 					uint32_t column_index, uint32_t row_index, t_data *data);
+void			sl_shift_tile_pos(t_tile *tile, int32_t x, int32_t y);
+void			sl_set_tile_pos(t_tile *tile, int32_t x, int32_t y);
 t_success		sl_fill_tile_data(t_tile_type *tile_type, t_tile *tile);
 mlx_instance_t	*sl_get_instance(t_tile *tile, uint32_t frame_index);
 mlx_image_t		*sl_get_frame(t_tile_type *tile_type,
@@ -127,6 +161,7 @@ t_success		sl_load_texture(t_data *data);
 t_success		sl_instantiate_tile_types(t_data *data);
 t_success		sl_instantiate_tile_grid(t_data *data);
 t_success		sl_instantiate_entities(t_data *data);
+t_success		sl_instantiate_players(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
