@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 16:48:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/28 17:26:53 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 12:52:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ STATIC t_controls	get_players_controls(uint32_t player_index)
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_success	sl_instantiate_players(t_data *data)
+t_status	sl_instantiate_players(t_data *data)
 {
 	uint32_t	player_index;
 	t_player	*players;
@@ -56,7 +56,7 @@ t_success	sl_instantiate_players(t_data *data)
 		entities = entities->next;
 	}
 	data->player_count = player_index;
-	return (SUCCESS);
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/29 12:21:01 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 12:52:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ bool	is_entity(uint32_t column_index, uint32_t row_index, t_data *data)
 	return (ft_chr_in_str(grid_character, ENTITY_CHARACTERS));
 }
 
-t_success	sl_initialize_instance_for_frames(t_tile *tile,
+t_status	sl_initialize_instance_for_frames(t_tile *tile,
 			uint32_t column_index, uint32_t row_index, t_data *data)
 {
 	t_tile_type	*tile_type;
@@ -53,7 +53,7 @@ t_success	sl_initialize_instance_for_frames(t_tile *tile,
 			sl_get_instance(tile, frame_index)->enabled = false;
 		frame_index++;
 	}
-	return (SUCCESS);
+	return (OK);
 }
 
 void	sl_shift_tile_pos(t_tile *tile, int32_t x, int32_t y)
@@ -74,14 +74,14 @@ void	sl_set_tile_pos(t_tile *tile, int32_t x, int32_t y)
 	instance->y = y;
 }
 
-t_success	sl_fill_tile_data(t_tile_type *tile_type, t_tile *tile)
+t_status	sl_fill_tile_data(t_tile_type *tile_type, t_tile *tile)
 {
 	tile->tile_type = tile_type;
 	tile->frame_index = 0;
 	tile->frame_instances_indices = malloc(sizeof(uint32_t) * tile_type->frame_count);
 	if (tile->frame_instances_indices == NULL)
 		return (ft_set_error(ERROR_MALLOC));
-	return (SUCCESS);
+	return (OK);
 }
 
 mlx_instance_t	*sl_get_instance(t_tile *tile, uint32_t frame_index)
@@ -103,7 +103,7 @@ unsigned char	sl_get_grid_character(uint32_t column_index, uint32_t row_index,
 	return ((unsigned char)data->char_grid.cells[row_index][column_index]);
 }
 
-t_success	sl_char_grid_iterate(t_char_grid_iterate_callback callback,
+t_status	sl_char_grid_iterate(t_char_grid_iterate_callback callback,
 			t_data *data)
 {
 	uint32_t	column_index;
@@ -115,13 +115,13 @@ t_success	sl_char_grid_iterate(t_char_grid_iterate_callback callback,
 		column_index = 0;
 		while (column_index < data->char_grid.width)
 		{
-			if (callback(column_index, row_index, data) != SUCCESS)
+			if (callback(column_index, row_index, data) != OK)
 				return (ft_get_error());
 			column_index++;
 		}
 		row_index++;
 	}
-	return (SUCCESS);
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

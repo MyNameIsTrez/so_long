@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 13:33:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/28 16:32:41 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 12:52:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ STATIC void	free_entity(void *_entity)
 	}
 }
 
-STATIC t_success	instantiate_entity(uint32_t column_index,
+STATIC t_status	instantiate_entity(uint32_t column_index,
 			uint32_t row_index, t_data *data)
 {
 	const unsigned char	grid_character = sl_get_grid_character(column_index,
@@ -46,19 +46,19 @@ STATIC t_success	instantiate_entity(uint32_t column_index,
 		return (ft_set_error(ERROR_MALLOC));
 	entity->column_index = column_index;
 	entity->row_index = row_index;
-	if (sl_fill_tile_data(tile_type, &entity->tile) != SUCCESS)
+	if (sl_fill_tile_data(tile_type, &entity->tile) != OK)
 		return (ft_get_error());
 	if (sl_initialize_instance_for_frames(&entity->tile, entity->column_index,
-			entity->row_index, data) != SUCCESS)
+			entity->row_index, data) != OK)
 		return (ft_get_error());
 	if (ft_lst_new_front(&data->entities, entity) == NULL)
 		return (ft_set_error(ERROR_MALLOC));
-	return (SUCCESS);
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_success	sl_instantiate_entities(t_data *data)
+t_status	sl_instantiate_entities(t_data *data)
 {
 	uint32_t	column_index;
 	uint32_t	row_index;
@@ -72,7 +72,7 @@ t_success	sl_instantiate_entities(t_data *data)
 			if (is_entity(column_index, row_index, data))
 			{
 				if (instantiate_entity(column_index, row_index,
-						data) != SUCCESS)
+						data) != OK)
 				{
 					ft_lstclear(&data->entities, free_entity);
 					return (ft_get_error());
@@ -82,7 +82,7 @@ t_success	sl_instantiate_entities(t_data *data)
 		}
 		row_index++;
 	}
-	return (SUCCESS);
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

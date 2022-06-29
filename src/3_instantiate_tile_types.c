@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/28 17:20:57 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 12:52:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ STATIC void	free_all_tile_types(t_data *data)
 	}
 }
 
-STATIC t_success	check_tile_type_errors(t_data *data)
+STATIC t_status	check_tile_type_errors(t_data *data)
 {
 	uint32_t	tile_type_index;
 	t_tile_type	*tile_type;
@@ -63,7 +63,7 @@ STATIC t_success	check_tile_type_errors(t_data *data)
 		}
 		tile_type_index++;
 	}
-	return (SUCCESS);
+	return (OK);
 }
 
 STATIC void	add_tile_type(uint32_t frame_count, uint32_t texture_row,
@@ -96,7 +96,7 @@ STATIC void	calculate_tile_type_count(t_data *data)
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_success	sl_instantiate_tile_types(t_data *data)
+t_status	sl_instantiate_tile_types(t_data *data)
 {
 	calculate_tile_type_count(data);
 	add_tile_type(EMPTY_SPACE_TEXTURE_FRAME_COUNT, EMPTY_SPACE_TEXTURE_ROW,

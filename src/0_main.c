@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/28 17:40:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 12:52:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,21 +67,21 @@ int32_t	main(int argc, char **argv)
 	static t_data	data;
 
 	atexit(check_leaks);
-	if (sl_parse_argv(argc, argv, &data) != SUCCESS)
+	if (sl_parse_argv(argc, argv, &data) != OK)
 		return (EXIT_FAILURE);
 	data.mlx = mlx_init((int32_t)data.window_width, (int32_t)data.window_height, "so_long",
 			true);
 	if (!data.mlx)
 		return (EXIT_FAILURE);
-	if (sl_load_texture(&data) != SUCCESS)
+	if (sl_load_texture(&data) != OK)
 		return (EXIT_FAILURE);
-	if (sl_instantiate_tile_types(&data) != SUCCESS)
+	if (sl_instantiate_tile_types(&data) != OK)
 		return (EXIT_FAILURE);
-	if (sl_instantiate_tile_grid(&data) != SUCCESS)
+	if (sl_instantiate_tile_grid(&data) != OK)
 		return (EXIT_FAILURE);
-	if (sl_instantiate_entities(&data) != SUCCESS)
+	if (sl_instantiate_entities(&data) != OK)
 		return (EXIT_FAILURE);
-	if (sl_instantiate_players(&data) != SUCCESS)
+	if (sl_instantiate_players(&data) != OK)
 		return (EXIT_FAILURE);
 	mlx_loop_hook(data.mlx, &loop, &data);
 	mlx_loop(data.mlx);

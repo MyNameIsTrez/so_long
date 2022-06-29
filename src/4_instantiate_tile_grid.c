@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/28 16:32:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 12:52:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_success	malloc_tile(t_tile_type *tile_type, t_tile **tile)
+STATIC t_status	malloc_tile(t_tile_type *tile_type, t_tile **tile)
 {
 	*tile = malloc(sizeof(t_tile));
 	if (*tile == NULL)
@@ -29,22 +29,22 @@ STATIC t_tile_type	*get_tile_type(uint32_t column_index, uint32_t row_index, t_d
 	return (&data->tile_types[(unsigned char)sl_get_grid_character(column_index, row_index, data)]);
 }
 
-STATIC t_success	instantiate_tile(uint32_t column_index, uint32_t row_index,
+STATIC t_status	instantiate_tile(uint32_t column_index, uint32_t row_index,
 			t_data *data)
 {
 	t_tile_type*const	tile_type = get_tile_type(column_index, row_index, data);
 	t_tile				*tile;
 
-	if (malloc_tile(tile_type, &data->tile_grid.cells[row_index][column_index]) != SUCCESS)
+	if (malloc_tile(tile_type, &data->tile_grid.cells[row_index][column_index]) != OK)
 		return (ft_get_error());
 	tile = data->tile_grid.cells[row_index][column_index];
 	if (sl_initialize_instance_for_frames(tile, column_index, row_index,
-			data) != SUCCESS)
+			data) != OK)
 		return (ft_get_error());
-	return (SUCCESS);
+	return (OK);
 }
 
-STATIC t_success	malloc_tile_grid_cells(t_data *data)
+STATIC t_status	malloc_tile_grid_cells(t_data *data)
 {
 	t_tile		***cells;
 	uint32_t	row_index;
@@ -65,17 +65,17 @@ STATIC t_success	malloc_tile_grid_cells(t_data *data)
 		}
 		row_index++;
 	}
-	return (SUCCESS);
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_success	sl_instantiate_tile_grid(t_data *data)
+t_status	sl_instantiate_tile_grid(t_data *data)
 {
 	uint32_t	column_index;
 	uint32_t	row_index;
 
-	if (malloc_tile_grid_cells(data) != SUCCESS)
+	if (malloc_tile_grid_cells(data) != OK)
 		return (ft_get_error());
 	row_index = 0;
 	while (row_index < data->char_grid.height)
@@ -85,7 +85,7 @@ t_success	sl_instantiate_tile_grid(t_data *data)
 		{
 			if (!is_entity(column_index, row_index, data))
 			{
-				if (instantiate_tile(column_index, row_index, data) != SUCCESS)
+				if (instantiate_tile(column_index, row_index, data) != OK)
 				{
 					// TODO: Free previous stuff.
 					return (ft_get_error());
@@ -95,7 +95,7 @@ t_success	sl_instantiate_tile_grid(t_data *data)
 		}
 		row_index++;
 	}
-	return (SUCCESS);
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:54:58 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/27 12:59:30 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 12:52:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_success	get_texture_filename_stem(char *str_pixels_per_tile,
+STATIC t_status	get_texture_filename_stem(char *str_pixels_per_tile,
 			char **filename_stem)
 {
 	*filename_stem = ft_strjoin(TEXTURE_FILENAME_PREFIX, str_pixels_per_tile);
 	free(str_pixels_per_tile);
 	if (*filename_stem == NULL)
 		return (ft_set_error(ERROR_MALLOC));
-	return (SUCCESS);
+	return (OK);
 }
 
-STATIC t_success	get_texture_filename(t_data *data)
+STATIC t_status	get_texture_filename(t_data *data)
 {
 	char	*str_pixels_per_tile;
 	char	*filename_stem;
@@ -35,32 +35,32 @@ STATIC t_success	get_texture_filename(t_data *data)
 	if (str_pixels_per_tile == NULL)
 		return (ft_set_error(ERROR_MALLOC));
 	if (get_texture_filename_stem(str_pixels_per_tile,
-			&filename_stem) != SUCCESS)
+			&filename_stem) != OK)
 		return (ft_get_error());
 	data->texture_filename = ft_strjoin(filename_stem, TEXTURE_FILENAME_EXTENSION);
 	free(filename_stem);
 	if (data->texture_filename == NULL)
 		return (ft_set_error(ERROR_MALLOC));
-	return (SUCCESS);
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_success	sl_load_texture(t_data *data)
+t_status	sl_load_texture(t_data *data)
 {
 	char			*tex_filepath;
 
-	if (get_texture_filename(data) != SUCCESS)
+	if (get_texture_filename(data) != OK)
 		return (ft_get_error());
 	if (ft_str_assign(&tex_filepath, ft_strjoin(
 				TEXTUREPACKS_PATH TEXTUREPACK TEXTURE_SCALES_DIR,
-				data->texture_filename)) != SUCCESS)
+				data->texture_filename)) != OK)
 		return (ft_set_error(ERROR_MALLOC));
 	data->texture = mlx_load_png(tex_filepath);
 	free(tex_filepath);
 	if (data->texture == NULL)
 		return (ft_set_error(ERROR_MLX42));
-	return (SUCCESS);
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
