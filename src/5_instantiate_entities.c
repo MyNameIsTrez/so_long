@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 13:33:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/29 12:52:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 15:19:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,32 +56,26 @@ STATIC t_status	instantiate_entity(uint32_t column_index,
 	return (OK);
 }
 
+STATIC t_status	instantiate_entity_callback(uint32_t column_index,
+			uint32_t row_index, t_data *data)
+{
+	if (is_entity(column_index, row_index, data))
+	{
+		if (instantiate_entity(column_index, row_index, data) != OK)
+		{
+			ft_lstclear(&data->entities, free_entity);
+			return (ft_get_error());
+		}
+	}
+	return (OK);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 t_status	sl_instantiate_entities(t_data *data)
 {
-	uint32_t	column_index;
-	uint32_t	row_index;
-
-	row_index = 0;
-	while (row_index < data->char_grid.height)
-	{
-		column_index = 0;
-		while (column_index < data->char_grid.width)
-		{
-			if (is_entity(column_index, row_index, data))
-			{
-				if (instantiate_entity(column_index, row_index,
-						data) != OK)
-				{
-					ft_lstclear(&data->entities, free_entity);
-					return (ft_get_error());
-				}
-			}
-			column_index++;
-		}
-		row_index++;
-	}
+	if (sl_char_grid_iterate(instantiate_entity_callback, data) != OK)
+		return (ft_get_error());
 	return (OK);
 }
 

@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/06/29 12:10:25 by sbos          ########   odam.nl          #
+#    Updated: 2022/06/29 13:32:04 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,8 @@ SOURCES :=\
 	src/4_instantiate_tile_grid.c\
 	src/5_instantiate_entities.c\
 	src/6_instantiate_players.c\
-	src/a_utils.c
+	src/a_utils.c\
+	src/iterators/0_iterators.c
 
 BONUS_SOURCES :=
 

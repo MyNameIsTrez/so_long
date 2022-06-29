@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/29 12:52:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 13:12:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,33 +68,28 @@ STATIC t_status	malloc_tile_grid_cells(t_data *data)
 	return (OK);
 }
 
+STATIC t_status	instantiate_tile_callback(uint32_t column_index,
+			uint32_t row_index, t_data *data)
+{
+	if (!is_entity(column_index, row_index, data))
+	{
+		if (instantiate_tile(column_index, row_index, data) != OK)
+		{
+			// TODO: Free previous stuff.
+			return (ft_get_error());
+		}
+	}
+	return (OK);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 t_status	sl_instantiate_tile_grid(t_data *data)
 {
-	uint32_t	column_index;
-	uint32_t	row_index;
-
 	if (malloc_tile_grid_cells(data) != OK)
 		return (ft_get_error());
-	row_index = 0;
-	while (row_index < data->char_grid.height)
-	{
-		column_index = 0;
-		while (column_index < data->char_grid.width)
-		{
-			if (!is_entity(column_index, row_index, data))
-			{
-				if (instantiate_tile(column_index, row_index, data) != OK)
-				{
-					// TODO: Free previous stuff.
-					return (ft_get_error());
-				}
-			}
-			column_index++;
-		}
-		row_index++;
-	}
+	if (sl_char_grid_iterate(instantiate_tile_callback, data) != OK)
+		return (ft_get_error());
 	return (OK);
 }
 
