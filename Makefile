@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/06/28 16:49:28 by sbos          ########   odam.nl          #
+#    Updated: 2022/06/29 12:10:25 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,9 +45,6 @@ FT_PRINTF := -L$(FT_PRINTF_PATH) -lftprintf
 LIBS := $(GLFW) $(MLX42) $(LIBFT) $(FT_PRINTF)
 
 ################################################################################
-
-HEADERS :=\
-	include/so_long.h
 
 SOURCES :=\
 	src/0_main.c\
@@ -92,7 +89,7 @@ endif
 
 ################################################################################
 
-INCLUDES := $(sort $(addprefix -I, $(dir $(HEADERS)) $(MLX42_PATH)/include $(LIBFT_PATH) $(FT_PRINTF_PATH)/src))
+INCLUDES := $(sort $(addprefix -I, $(MLX42_PATH)/include $(LIBFT_PATH) $(FT_PRINTF_PATH)/src))
 
 ################################################################################
 

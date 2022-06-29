@@ -6,13 +6,15 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/28 16:46:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/29 12:21:01 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "so_long.h"
+
+#include "a_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -99,6 +101,27 @@ unsigned char	sl_get_grid_character(uint32_t column_index, uint32_t row_index,
 			t_data *data)
 {
 	return ((unsigned char)data->char_grid.cells[row_index][column_index]);
+}
+
+t_success	sl_char_grid_iterate(t_char_grid_iterate_callback callback,
+			t_data *data)
+{
+	uint32_t	column_index;
+	uint32_t	row_index;
+
+	row_index = 0;
+	while (row_index < data->char_grid.height)
+	{
+		column_index = 0;
+		while (column_index < data->char_grid.width)
+		{
+			if (callback(column_index, row_index, data) != SUCCESS)
+				return (ft_get_error());
+			column_index++;
+		}
+		row_index++;
+	}
+	return (SUCCESS);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
