@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/29 13:28:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/30 15:04:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/30 16:20:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef t_status	(*t_iterator_callback_char_grid_width)();
-
 
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef t_status	(*t_iterator_callback_char_grid_height)();
+typedef t_status	(*t_iterator_callback_char_grid_height)(uint32_t row_index, t_data *data);
 
-t_status	sl_iterate_char_grid_height(
-				t_iterator_callback_char_grid_height callback);
+t_status	sl_iterate_char_grid_height(t_iterator_callback_char_grid_height callback, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

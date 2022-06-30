@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/30 15:02:34 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/30 15:03:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/30 16:00:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_loop_status	sl_loop_width(uint32_t *column_index_res, t_data *data,
-			bool reset)
+t_loop_status	sl_loop_char_grid_width(uint32_t *column_index_res,
+			t_data *data, bool reset)
 {
 	static uint32_t	column_index = 0;
 
@@ -35,7 +35,7 @@ t_loop_status	sl_loop_width(uint32_t *column_index_res, t_data *data,
 	return (FINISHED);
 }
 
-t_loop_status	sl_loop_height(uint32_t *row_index_res, t_data *data,
+t_loop_status	sl_loop_char_grid_height(uint32_t *row_index_res, t_data *data,
 			bool reset)
 {
 	static uint32_t	row_index = 0;
@@ -62,8 +62,8 @@ t_loop_status	sl_loop_char_grid(uint32_t *column_index_res,
 
 	if (reset)
 	{
-		sl_loop_height(NULL, NULL, true);
-		sl_loop_width(NULL, NULL, true);
+		sl_loop_char_grid_height(NULL, NULL, true);
+		sl_loop_char_grid_width(NULL, NULL, true);
 		column_index = 0;
 		row_index = 0;
 		return (RESET);
@@ -74,12 +74,12 @@ t_loop_status	sl_loop_char_grid(uint32_t *column_index_res,
 		while (true)
 		{
 			*column_index_res = column_index;
-			if (sl_loop_width(&column_index, data, false) != 1)
+			if (sl_loop_char_grid_width(&column_index, data, false) != 1)
 				break ;
 			return (LOOPED);
 		}
-		sl_loop_width(NULL, NULL, true);
-		if (sl_loop_height(&row_index, data, false) != 1)
+		sl_loop_char_grid_width(NULL, NULL, true);
+		if (sl_loop_char_grid_height(&row_index, data, false) != 1)
 			break ;
 	}
 	return (FINISHED);

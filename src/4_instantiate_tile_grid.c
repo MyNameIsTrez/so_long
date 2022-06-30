@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/30 14:41:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/30 15:42:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,27 +44,31 @@ STATIC t_status	instantiate_tile(uint32_t column_index, uint32_t row_index,
 	return (OK);
 }
 
+STATIC t_status	callback_malloc_rows(uint32_t row_index, t_data *data)
+{
+	t_tile		***cells;
+
+	cells = data->tile_grid.cells;
+	cells[row_index] = malloc(sizeof(t_tile *) * data->char_grid.width);
+	if (cells[row_index] == NULL)
+	{
+		// TODO: Free previously allocated rows.
+		ft_free(&data->tile_grid.cells);
+		return (ft_set_error(ERROR_MALLOC));
+	}
+	return (OK);
+}
+
 STATIC t_status	malloc_tile_grid_cells(t_data *data)
 {
 	t_tile		***cells;
-	uint32_t	row_index;
 
 	cells = malloc(sizeof(t_tile **) * data->char_grid.height);
 	if (cells == NULL)
 		return (ft_set_error(ERROR_MALLOC));
 	data->tile_grid.cells = cells;
-	row_index = 0;
-	while (row_index < data->char_grid.height)
-	{
-		cells[row_index] = malloc(sizeof(t_tile *) * data->char_grid.width);
-		if (cells[row_index] == NULL)
-		{
-			// TODO: Free previously allocated rows.
-			ft_free(&data->tile_grid.cells);
-			return (ft_set_error(ERROR_MALLOC));
-		}
-		row_index++;
-	}
+	if (sl_iterate_char_grid_height(callback_malloc_rows, data) != OK)
+		return (ft_get_error());
 	return (OK);
 }
 
