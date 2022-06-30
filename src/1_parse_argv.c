@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/29 13:04:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/30 14:41:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ STATIC int	get_scale(int argc, char **argv)
 	return (scale);
 }
 
-STATIC t_status	grid_has_invalid_character_callback(uint32_t column_index,
+STATIC t_status	callback_grid_has_invalid_character(uint32_t column_index,
 			uint32_t row_index, t_data *data)
 {
 	char const	chr = data->char_grid.cells[row_index][column_index];
@@ -81,7 +81,7 @@ t_status	sl_parse_argv(int argc, char **argv, t_data *data)
 	map_filename = argv[1];
 	if (ft_read_grid_from_file(&data->char_grid, map_filename) != OK)
 		return (ft_get_error());
-	if (sl_char_grid_iterate(grid_has_invalid_character_callback, data) != OK)
+	if (sl_iterate_char_grid(callback_grid_has_invalid_character, data) != OK)
 		return (ft_get_error());
 	if (calculate_pixels_per_tile(get_scale(argc, argv), data) != OK)
 		return (ft_get_error());

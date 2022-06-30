@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/29 13:12:11 by sbos          ########   odam.nl         */
+/*   Updated: 2022/06/30 14:41:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ STATIC t_status	malloc_tile_grid_cells(t_data *data)
 	return (OK);
 }
 
-STATIC t_status	instantiate_tile_callback(uint32_t column_index,
+STATIC t_status	callback_instantiate_tile(uint32_t column_index,
 			uint32_t row_index, t_data *data)
 {
 	if (!is_entity(column_index, row_index, data))
@@ -88,7 +88,7 @@ t_status	sl_instantiate_tile_grid(t_data *data)
 {
 	if (malloc_tile_grid_cells(data) != OK)
 		return (ft_get_error());
-	if (sl_char_grid_iterate(instantiate_tile_callback, data) != OK)
+	if (sl_iterate_char_grid(callback_instantiate_tile, data) != OK)
 		return (ft_get_error());
 	return (OK);
 }
