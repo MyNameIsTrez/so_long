@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/06/30 17:59:22 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/01 17:09:07 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,15 +30,15 @@ GLFW_FRAMEWORKS :=\
 
 GLFW := -lglfw3 $(GLFW_FRAMEWORKS)
 
-MLX42_PATH := ./MLX42
+MLX42_PATH := ./submodules/MLX42
 MLX42_LIB_PATH := $(MLX42_PATH)/libmlx42.a
 MLX42 := -L$(MLX42_PATH) -lmlx42
 
-LIBFT_PATH := ./libft
+LIBFT_PATH := ./submodules/libft
 LIBFT_LIB_PATH := $(LIBFT_PATH)/libft.a
 LIBFT := -L$(LIBFT_PATH) -lft
 
-FT_PRINTF_PATH := ./ft_printf
+FT_PRINTF_PATH := ./submodules/ft_printf
 FT_PRINTF_LIB_PATH := $(FT_PRINTF_PATH)/libftprintf.a
 FT_PRINTF := -L$(FT_PRINTF_PATH) -lftprintf
 

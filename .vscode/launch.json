@@ -26,7 +26,8 @@
 		"request": "launch",
 		"program": "${workspaceFolder}/so_long",
 		"args": [
-			"map_tests/two_players.ber",
+			// "map_tests/two_players.ber",
+			"maps/example_1.ber",
 			"asdi"
 		],
 		// "stopAtEntry": false,
