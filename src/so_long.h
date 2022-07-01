@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 17:43:31 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 17:45:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,8 @@ typedef struct s_texture
 {
 	char			*filename;
 	mlx_texture_t	*data;
+	uint32_t		scale;
+	uint32_t		pixels_per_tile;
 }	t_texture;
 
 typedef struct s_tile_type
@@ -139,8 +141,6 @@ typedef struct s_data
 {
 	mlx_t		*mlx;
 	t_grid		char_grid;
-	uint32_t	scale;
-	uint32_t	pixels_per_tile;
 	uint32_t	window_width;
 	uint32_t	window_height;
 	t_texture	texture;

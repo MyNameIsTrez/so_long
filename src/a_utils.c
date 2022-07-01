@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 17:32:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 17:46:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ STATIC t_status	callback_initialize_frame_instance(
 
 	frame_instance_index = mlx_image_to_window(data->mlx,
 			sl_get_frame(tile_type, frame_index),
-			(int32_t)(data->pixels_per_tile * callback_args->column_index),
-			(int32_t)(data->pixels_per_tile * callback_args->row_index));
+			(int32_t)(data->texture.pixels_per_tile * callback_args->column_index),
+			(int32_t)(data->texture.pixels_per_tile * callback_args->row_index));
 	if (frame_instance_index < 0)
 	{
 		// TODO: Delete previous images in ERROR_MLX42 cases?

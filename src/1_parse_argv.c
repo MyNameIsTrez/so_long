@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/30 14:41:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 17:46:29 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 STATIC void	calculate_width_and_height(t_data *data)
 {
-	data->window_width = (uint32_t)data->char_grid.width * data->pixels_per_tile;
-	data->window_height = (uint32_t)data->char_grid.height * data->pixels_per_tile;
+	data->window_width = (uint32_t)data->char_grid.width * data->texture.pixels_per_tile;
+	data->window_height = (uint32_t)data->char_grid.height * data->texture.pixels_per_tile;
 }
 
 STATIC t_status	calculate_pixels_per_tile(int scale, t_data *data)
@@ -33,8 +33,8 @@ STATIC t_status	calculate_pixels_per_tile(int scale, t_data *data)
 
 	if (scale < 1 || scale > 4)
 		return (ft_set_error(ERROR_INVALID_SCALE));
-	data->scale = valid_pixels_per_tile[scale];
-	data->pixels_per_tile = data->scale * PIXELS_PER_TILE_UNSCALED;
+	data->texture.scale = valid_pixels_per_tile[scale];
+	data->texture.pixels_per_tile = data->texture.scale * PIXELS_PER_TILE_UNSCALED;
 	return (OK);
 }
 

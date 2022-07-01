@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 17:31:19 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 17:46:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	check_leaks(void)
 
 STATIC void	try_move_player(t_data *data)
 {
-	const int32_t	pixels_per_tile = (int32_t)data->pixels_per_tile;
+	const int32_t	pixels_per_tile = (int32_t)data->texture.pixels_per_tile;
 	uint32_t		player_index;
 	t_player		*players;
 	t_player		*player;
