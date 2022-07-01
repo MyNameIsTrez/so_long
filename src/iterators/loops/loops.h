@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/30 15:04:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/30 16:23:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 13:45:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,16 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_loop_status	sl_loop_char_grid_height(uint32_t *row_index_res, t_data *data,
+t_loop_status	sl_loop_char_grid_height(uint32_t *row_index_ptr, t_data *data,
 					bool reset);
 
-t_loop_status	sl_loop_char_grid(uint32_t *column_index_res,
-					uint32_t *row_index_res, t_data *data, bool reset);
+t_loop_status	sl_loop_char_grid(uint32_t *column_index_ptr,
+					uint32_t *row_index_ptr, t_data *data, bool reset);
+
+////////////////////////////////////////////////////////////////////////////////
+
+t_loop_status	sl_loop_frame_count(t_loop_args_frame_count const *loop_args,
+			t_generated_args_frame_count *generated_args, bool reset);
 
 ////////////////////////////////////////////////////////////////////////////////
 
