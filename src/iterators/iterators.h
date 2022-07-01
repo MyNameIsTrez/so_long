@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/29 13:28:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 13:49:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 13:59:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct s_callback_args_frame_count
 	t_tile		*tile;
 	uint32_t	column_index;
 	uint32_t	row_index;
-}	t_callback_args_frame_count;
+}	t_callback_args_initialize_frame_instance;
 
 typedef t_status	(*t_iterator_callback_frame_count)(
 			t_generated_args_frame_count *generated_args,
