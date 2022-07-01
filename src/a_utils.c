@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 14:01:30 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 14:03:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,12 @@ bool	is_entity(uint32_t column_index, uint32_t row_index, t_data *data)
 
 STATIC t_status	callback_initialize_frame_instance(
 			t_generated_args_frame_count *generated_args,
-			void const *_callback_args, t_data *data)
+			t_callback_args_initialize_frame_instance *callback_args,
+			t_data *data)
 {
-	t_callback_args_initialize_frame_instance	*callback_args;
-	t_tile_type									*tile_type;
-	int32_t										frame_instance_index;
+	t_tile_type	*tile_type;
+	int32_t		frame_instance_index;
 
-	callback_args = (t_callback_args_initialize_frame_instance *)_callback_args;
 	tile_type = callback_args->tile->tile_type;
 	frame_instance_index = mlx_image_to_window(data->mlx,
 			sl_get_frame(tile_type, generated_args->frame_index),

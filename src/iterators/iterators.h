@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/29 13:28:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 13:59:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 14:12:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,11 @@ typedef struct s_callback_args_frame_count
 
 typedef t_status	(*t_iterator_callback_frame_count)(
 			t_generated_args_frame_count *generated_args,
-			void const *_callback_args, t_data *data);
+			t_callback_args_initialize_frame_instance *callback_args,
+			t_data *data);
 
-t_status	sl_iterate_frame_count(t_loop_args_frame_count const *loop_args,
-			void const *callback_args, t_iterator_callback_frame_count callback,
+t_status	sl_iterate_frame_count(t_loop_args_frame_count *loop_args,
+			void *callback_args, t_iterator_callback_frame_count callback,
 			t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
