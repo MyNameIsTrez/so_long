@@ -1,48 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   sl_player.h                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 18:18:33 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/01 17:55:06 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/01 18:12:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SL_PLAYER_H
+# define SL_PLAYER_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "MLX42/MLX42.h"
+// typedef struct ;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "libft.h"
-# include "ft_printf.h"
+typedef struct s_controls
+{
+	keys_t		up_key;
+	keys_t		down_key;
+	keys_t		left_key;
+	keys_t		right_key;
+}	t_controls;
 
-////////////////////////////////////////////////////////////////////////////////
-
-# include "a_utils.h"
-# include "iterators/iterators.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-# include "sl_settings.h"
-# include "sl_structs.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_status	sl_parse_argv(int argc, char **argv, t_data *data);
-t_status	sl_load_texture(t_data *data);
-t_status	sl_instantiate_tile_types(t_data *data);
-t_status	sl_instantiate_tile_grid(t_data *data);
-t_status	sl_instantiate_entities(t_data *data);
-t_status	sl_instantiate_players(t_data *data);
-void		sl_cleanup(t_data *data);
+typedef struct s_player
+{
+	t_entity	*entity;
+	t_controls	controls;
+}	t_player;
 
 ////////////////////////////////////////////////////////////////////////////////
 

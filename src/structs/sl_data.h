@@ -1,48 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   so_long.h                                          :+:    :+:            */
+/*   sl_data.h                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 18:18:33 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/01 17:55:51 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/01 18:11:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SL_DATA_H
+# define SL_DATA_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "MLX42/MLX42.h"
+
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "libft.h"
-# include "ft_printf.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-# include "a_utils.h"
-# include "iterators/iterators.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-# include "sl_settings.h"
-# include "sl_structs.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_status	sl_parse_argv(int argc, char **argv, t_data *data);
-t_status	sl_load_texture(t_data *data);
-t_status	sl_instantiate_tile_types(t_data *data);
-t_status	sl_instantiate_tile_grid(t_data *data);
-t_status	sl_instantiate_entities(t_data *data);
-t_status	sl_instantiate_players(t_data *data);
-void		sl_cleanup(t_data *data);
+typedef struct s_data
+{
+	mlx_t		*mlx;
+	t_grid		char_grid;
+	t_window	window;
+	t_texture	texture;
+	uint32_t	tile_type_count;
+	t_tile_type	tile_types[1 << (sizeof(char) * 8)];
+	t_tile_grid	tile_grid;
+	t_list		*entities;
+	uint32_t	player_count;
+	t_player	players[MAX_PLAYER_COUNT];
+}	t_data;
 
 ////////////////////////////////////////////////////////////////////////////////
 
