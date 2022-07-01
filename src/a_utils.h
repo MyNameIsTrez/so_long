@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/29 12:13:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/29 15:31:57 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 17:35:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,24 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_data	t_data;
+typedef struct s_data		t_data;
+typedef struct s_tile		t_tile;
+typedef struct s_tile_type	t_tile_type;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status		sl_parse_argv(int argc, char **argv, t_data *data);
-t_status		sl_load_texture(t_data *data);
-t_status		sl_instantiate_tile_types(t_data *data);
-t_status		sl_instantiate_tile_grid(t_data *data);
-t_status		sl_instantiate_entities(t_data *data);
-t_status		sl_instantiate_players(t_data *data);
+bool			sl_is_entity(uint32_t column_index, uint32_t row_index,
+					t_data *data);
+t_status		sl_initialize_instance_for_frames(t_tile *tile,
+					uint32_t column_index, uint32_t row_index, t_data *data);
+void			sl_shift_tile_pos(t_tile *tile, int32_t x, int32_t y);
+void			sl_set_tile_pos(t_tile *tile, int32_t x, int32_t y);
+t_status		sl_fill_tile_data(t_tile_type *tile_type, t_tile *tile);
+mlx_instance_t	*sl_get_instance(t_tile *tile, uint32_t frame_index);
+mlx_image_t		*sl_get_frame(t_tile_type *tile_type,
+					uint32_t frame_instance_index);
+unsigned char	sl_get_grid_character(uint32_t column_index, uint32_t row_index,
+					t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

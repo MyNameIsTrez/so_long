@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 15:28:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 17:32:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	is_entity(uint32_t column_index, uint32_t row_index, t_data *data)
+bool	sl_is_entity(uint32_t column_index, uint32_t row_index, t_data *data)
 {
 	const unsigned char	grid_character = sl_get_grid_character(column_index,
 			row_index, data);

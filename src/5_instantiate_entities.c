@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 13:33:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/30 14:41:55 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 17:32:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ STATIC t_status	instantiate_entity(uint32_t column_index,
 STATIC t_status	callback_instantiate_entity(uint32_t column_index,
 			uint32_t row_index, t_data *data)
 {
-	if (is_entity(column_index, row_index, data))
+	if (sl_is_entity(column_index, row_index, data))
 	{
 		if (instantiate_entity(column_index, row_index, data) != OK)
 		{

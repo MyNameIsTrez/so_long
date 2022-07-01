@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/29 12:52:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 17:31:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,6 @@ t_status	sl_instantiate_tile_types(t_data *data)
 		MAP_EXIT_CHARACTER, data);
 	add_tile_type(PLAYER_TEXTURE_FRAME_COUNT, PLAYER_TEXTURE_ROW,
 		PLAYER_CHARACTER, data);
-	mlx_delete_texture(data->texture);
 	return (check_tile_type_errors(data));
 }
 

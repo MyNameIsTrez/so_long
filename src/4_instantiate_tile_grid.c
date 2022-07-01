@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/30 15:42:40 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 17:32:34 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ STATIC t_status	malloc_tile_grid_cells(t_data *data)
 STATIC t_status	callback_instantiate_tile(uint32_t column_index,
 			uint32_t row_index, t_data *data)
 {
-	if (!is_entity(column_index, row_index, data))
+	if (!sl_is_entity(column_index, row_index, data))
 	{
 		if (instantiate_tile(column_index, row_index, data) != OK)
 		{
