@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/30 14:28:55 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 17:27:29 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,15 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define TEXTUREPACK "BitsyDungeonTiles/"
+# define WINDOW_TITLE "so_long"
+# define MAX_PLAYER_COUNT 2
+
 # define PIXELS_PER_TILE_UNSCALED 8
 # define DEFAULT_SCALE 3
-# define MAX_PLAYER_COUNT 2
 
 ////////////////////////////////////////////////////////////////////////////////
 
+# define TEXTUREPACK "BitsyDungeonTiles/"
 # define TEXTUREPACKS_PATH "texturepacks/"
 # define TEXTURES_DIR "textures/"
 # define TEXTURE_SCALES_DIR "texture_scales/"

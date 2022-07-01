@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/06/30 14:12:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 17:27:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,30 +60,47 @@ STATIC void	loop(void *param)
 	try_move_player(data);
 }
 
+STATIC void	print_error(void)
+{
+	// TODO: Add a lookup table with errors here and add ft_print_error()
+	ft_get_error();
+}
+
+STATIC t_status	run(int argc, char **argv, t_data *data)
+{
+	if (sl_parse_argv(argc, argv, data) != OK)
+		return (ft_get_error());
+	data->mlx = mlx_init((int32_t)data->window_width,
+			(int32_t)data->window_height, WINDOW_TITLE, true);
+	if (data->mlx == NULL)
+		return (ft_get_error());
+	if (sl_load_texture(data) != OK)
+		return (ft_get_error());
+	if (sl_instantiate_tile_types(data) != OK)
+		return (ft_get_error());
+	if (sl_instantiate_tile_grid(data) != OK)
+		return (ft_get_error());
+	if (sl_instantiate_entities(data) != OK)
+		return (ft_get_error());
+	if (sl_instantiate_players(data) != OK)
+		return (ft_get_error());
+	if (mlx_loop_hook(data->mlx, &loop, data) != true)
+		return (ft_set_error(ERROR_MLX42));
+	return (OK);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 int32_t	main(int argc, char **argv)
 {
 	static t_data	data;
 
-	atexit(check_leaks);
-	if (sl_parse_argv(argc, argv, &data) != OK)
+	atexit(check_leaks); // TODO: Remove!
+	if (run(argc, argv, &data) != OK)
+	{
+		print_error();
 		return (EXIT_FAILURE);
-	data.mlx = mlx_init((int32_t)data.window_width, (int32_t)data.window_height,
-			"so_long", true);
-	if (!data.mlx)
-		return (EXIT_FAILURE);
-	if (sl_load_texture(&data) != OK)
-		return (EXIT_FAILURE);
-	if (sl_instantiate_tile_types(&data) != OK)
-		return (EXIT_FAILURE);
-	if (sl_instantiate_tile_grid(&data) != OK)
-		return (EXIT_FAILURE);
-	if (sl_instantiate_entities(&data) != OK)
-		return (EXIT_FAILURE);
-	if (sl_instantiate_players(&data) != OK)
-		return (EXIT_FAILURE);
-	mlx_loop_hook(data.mlx, &loop, &data);
+	}
 	mlx_loop(data.mlx);
 	mlx_terminate(data.mlx);
 	return (EXIT_SUCCESS);
