@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 18:18:33 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 18:23:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 
 t_status	sl_parse_argv(int argc, char **argv, t_data *data);
 t_status	sl_load_texture(t_data *data);
-t_status	sl_instantiate_tile_types(t_data *data);
+t_status	sl_instantiate_tile_kinds(t_data *data);
 t_status	sl_instantiate_tile_grid(t_data *data);
 t_status	sl_instantiate_entities(t_data *data);
 t_status	sl_instantiate_players(t_data *data);

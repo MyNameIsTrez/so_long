@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:58:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 18:12:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 18:23:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_tile_type
+typedef struct s_tile_kind
 {
 	unsigned char	character;
 	uint32_t		frame_count;
 	mlx_image_t		**frames;
-}	t_tile_type;
+}	t_tile_kind;
 
 typedef struct s_tile
 {
-	t_tile_type	*tile_type;
+	t_tile_kind	*tile_kind;
 	uint32_t	frame_index;
 	uint32_t	*frame_instances_indices;
 }	t_tile;

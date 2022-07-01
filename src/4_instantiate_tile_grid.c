@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 17:32:34 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 18:23:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,26 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_status	malloc_tile(t_tile_type *tile_type, t_tile **tile)
+STATIC t_status	malloc_tile(t_tile_kind *tile_kind, t_tile **tile)
 {
 	*tile = malloc(sizeof(t_tile));
 	if (*tile == NULL)
 		return (ft_set_error(ERROR_MALLOC));
-	return (sl_fill_tile_data(tile_type, *tile));
+	return (sl_fill_tile_data(tile_kind, *tile));
 }
 
-STATIC t_tile_type	*get_tile_type(uint32_t column_index, uint32_t row_index, t_data *data)
+STATIC t_tile_kind	*get_tile_kind(uint32_t column_index, uint32_t row_index, t_data *data)
 {
-	return (&data->tile_types[(unsigned char)sl_get_grid_character(column_index, row_index, data)]);
+	return (&data->tile_kinds[(unsigned char)sl_get_grid_character(column_index, row_index, data)]);
 }
 
 STATIC t_status	instantiate_tile(uint32_t column_index, uint32_t row_index,
 			t_data *data)
 {
-	t_tile_type*const	tile_type = get_tile_type(column_index, row_index, data);
+	t_tile_kind*const	tile_kind = get_tile_kind(column_index, row_index, data);
 	t_tile				*tile;
 
-	if (malloc_tile(tile_type, &data->tile_grid.cells[row_index][column_index]) != OK)
+	if (malloc_tile(tile_kind, &data->tile_grid.cells[row_index][column_index]) != OK)
 		return (ft_get_error());
 	tile = data->tile_grid.cells[row_index][column_index];
 	if (sl_initialize_instance_for_frames(tile, column_index, row_index,

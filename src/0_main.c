@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 17:48:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 18:23:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ STATIC t_status	run(int argc, char **argv, t_data *data)
 		return (ft_get_error());
 	if (sl_load_texture(data) != OK)
 		return (ft_get_error());
-	if (sl_instantiate_tile_types(data) != OK)
+	if (sl_instantiate_tile_kinds(data) != OK)
 		return (ft_get_error());
 	if (sl_instantiate_tile_grid(data) != OK)
 		return (ft_get_error());

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 17:46:47 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 18:23:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ STATIC t_status	callback_initialize_frame_instance(
 			t_data *data)
 {
 	t_tile*const		tile = callback_args->tile;
-	t_tile_type*const	tile_type = tile->tile_type;
+	t_tile_kind*const	tile_kind = tile->tile_kind;
 	uint32_t const		frame_index = generated_args->frame_index;
 	int32_t				frame_instance_index;
 
 	frame_instance_index = mlx_image_to_window(data->mlx,
-			sl_get_frame(tile_type, frame_index),
+			sl_get_frame(tile_kind, frame_index),
 			(int32_t)(data->texture.pixels_per_tile * callback_args->column_index),
 			(int32_t)(data->texture.pixels_per_tile * callback_args->row_index));
 	if (frame_instance_index < 0)
@@ -55,7 +55,7 @@ t_status	sl_initialize_instance_for_frames(t_tile *tile,
 			uint32_t column_index, uint32_t row_index, t_data *data)
 {
 	if (sl_iterate_frame_count(
-			&(t_loop_args_frame_count){tile->tile_type->frame_count},
+			&(t_loop_args_frame_count){tile->tile_kind->frame_count},
 		&(t_callback_args_initialize_frame_instance){tile, column_index,
 		row_index}, callback_initialize_frame_instance, data) != OK)
 		return (ft_get_error());
@@ -80,11 +80,11 @@ void	sl_set_tile_pos(t_tile *tile, int32_t x, int32_t y)
 	instance->y = y;
 }
 
-t_status	sl_fill_tile_data(t_tile_type *tile_type, t_tile *tile)
+t_status	sl_fill_tile_data(t_tile_kind *tile_kind, t_tile *tile)
 {
-	tile->tile_type = tile_type;
+	tile->tile_kind = tile_kind;
 	tile->frame_index = 0;
-	tile->frame_instances_indices = malloc(sizeof(uint32_t) * tile_type->frame_count);
+	tile->frame_instances_indices = malloc(sizeof(uint32_t) * tile_kind->frame_count);
 	if (tile->frame_instances_indices == NULL)
 		return (ft_set_error(ERROR_MALLOC));
 	return (OK);
@@ -93,14 +93,14 @@ t_status	sl_fill_tile_data(t_tile_type *tile_type, t_tile *tile)
 mlx_instance_t	*sl_get_instance(t_tile *tile, uint32_t frame_index)
 {
 	const uint32_t		frame_instance_index = tile->frame_instances_indices[frame_index];
-	const mlx_image_t	*frame = sl_get_frame(tile->tile_type, frame_index);
+	const mlx_image_t	*frame = sl_get_frame(tile->tile_kind, frame_index);
 
 	return (&frame->instances[frame_instance_index]);
 }
 
-mlx_image_t	*sl_get_frame(t_tile_type *tile_type, uint32_t frame_index)
+mlx_image_t	*sl_get_frame(t_tile_kind *tile_kind, uint32_t frame_index)
 {
-	return (tile_type->frames[frame_index]);
+	return (tile_kind->frames[frame_index]);
 }
 
 unsigned char	sl_get_grid_character(uint32_t column_index, uint32_t row_index,

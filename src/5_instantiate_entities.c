@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 13:33:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 17:32:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 18:23:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ STATIC void	free_entity(void *_entity)
 
 	entity = _entity;
 	frame_index = 0;
-	while (frame_index < entity->tile.tile_type->frame_count)
+	while (frame_index < entity->tile.tile_kind->frame_count)
 	{
 		instance = sl_get_instance(&entity->tile, frame_index);
 		instance->enabled = false;
@@ -37,16 +37,16 @@ STATIC t_status	instantiate_entity(uint32_t column_index,
 {
 	const unsigned char	grid_character = sl_get_grid_character(column_index,
 			row_index, data);
-	t_tile_type			*tile_type;
+	t_tile_kind			*tile_kind;
 	t_entity			*entity;
 
-	tile_type = &data->tile_types[grid_character];
+	tile_kind = &data->tile_kinds[grid_character];
 	entity = malloc(sizeof(t_entity));
 	if (entity == NULL)
 		return (ft_set_error(ERROR_MALLOC));
 	entity->column_index = column_index;
 	entity->row_index = row_index;
-	if (sl_fill_tile_data(tile_type, &entity->tile) != OK)
+	if (sl_fill_tile_data(tile_kind, &entity->tile) != OK)
 		return (ft_get_error());
 	if (sl_initialize_instance_for_frames(&entity->tile, entity->column_index,
 			entity->row_index, data) != OK)

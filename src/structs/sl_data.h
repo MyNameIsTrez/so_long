@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 18:11:41 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 18:23:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ typedef struct s_data
 	t_grid		char_grid;
 	t_window	window;
 	t_texture	texture;
-	uint32_t	tile_type_count;
-	t_tile_type	tile_types[1 << (sizeof(char) * 8)];
+	uint32_t	tile_kind_count;
+	t_tile_kind	tile_kinds[1 << (sizeof(char) * 8)];
 	t_tile_grid	tile_grid;
 	t_list		*entities;
 	uint32_t	player_count;
