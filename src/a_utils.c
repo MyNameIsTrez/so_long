@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 14:03:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 15:28:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,13 @@ STATIC t_status	callback_initialize_frame_instance(
 			t_callback_args_initialize_frame_instance *callback_args,
 			t_data *data)
 {
-	t_tile_type	*tile_type;
-	int32_t		frame_instance_index;
+	t_tile*const		tile = callback_args->tile;
+	t_tile_type*const	tile_type = tile->tile_type;
+	uint32_t const		frame_index = generated_args->frame_index;
+	int32_t				frame_instance_index;
 
-	tile_type = callback_args->tile->tile_type;
 	frame_instance_index = mlx_image_to_window(data->mlx,
-			sl_get_frame(tile_type, generated_args->frame_index),
+			sl_get_frame(tile_type, frame_index),
 			(int32_t)(data->pixels_per_tile * callback_args->column_index),
 			(int32_t)(data->pixels_per_tile * callback_args->row_index));
 	if (frame_instance_index < 0)
@@ -44,9 +45,9 @@ STATIC t_status	callback_initialize_frame_instance(
 		// TODO: Delete previous images in ERROR_MLX42 cases?
 		return (ft_set_error(ERROR_MLX42));
 	}
-	callback_args->tile->frame_instances_indices[generated_args->frame_index] = (uint32_t)frame_instance_index;
-	if (generated_args->frame_index != 0)
-		sl_get_instance(callback_args->tile, generated_args->frame_index)->enabled = false;
+	tile->frame_instances_indices[frame_index] = (uint32_t)frame_instance_index;
+	if (frame_index != 0)
+		sl_get_instance(tile, frame_index)->enabled = false;
 	return (OK);
 }
 
@@ -55,8 +56,8 @@ t_status	sl_initialize_instance_for_frames(t_tile *tile,
 {
 	if (sl_iterate_frame_count(
 			&(t_loop_args_frame_count){tile->tile_type->frame_count},
-		&(t_callback_args_initialize_frame_instance){tile, column_index, row_index},
-		callback_initialize_frame_instance, data) != OK)
+		&(t_callback_args_initialize_frame_instance){tile, column_index,
+		row_index}, callback_initialize_frame_instance, data) != OK)
 		return (ft_get_error());
 	return (OK);
 }
