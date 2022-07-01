@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 17:45:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 17:48:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+typedef struct s_window
+{
+	uint32_t	window_width;
+	uint32_t	window_height;
+}	t_window;
+
 typedef struct s_texture
 {
 	char			*filename;
@@ -141,8 +147,7 @@ typedef struct s_data
 {
 	mlx_t		*mlx;
 	t_grid		char_grid;
-	uint32_t	window_width;
-	uint32_t	window_height;
+	t_window	window;
 	t_texture	texture;
 	uint32_t	tile_type_count;
 	t_tile_type	tile_types[1 << (sizeof(char) * 8)];

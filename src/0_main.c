@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 17:46:13 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 17:48:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ STATIC t_status	run(int argc, char **argv, t_data *data)
 {
 	if (sl_parse_argv(argc, argv, data) != OK)
 		return (ft_get_error());
-	data->mlx = mlx_init((int32_t)data->window_width,
-			(int32_t)data->window_height, WINDOW_TITLE, true);
+	data->mlx = mlx_init((int32_t)data->window.window_width,
+			(int32_t)data->window.window_height, WINDOW_TITLE, true);
 	if (data->mlx == NULL)
 		return (ft_get_error());
 	if (sl_load_texture(data) != OK)
