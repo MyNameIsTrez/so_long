@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 17:31:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/01 17:43:01 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ STATIC void	add_tile_type(uint32_t frame_count, uint32_t texture_row,
 	while (frame_index < frame_count)
 	{
 		tile_type->frames[frame_index] = mlx_texture_area_to_image(data->mlx,
-				data->texture,
+				data->texture.data,
 				(uint32_t[2]){
 				data->pixels_per_tile * frame_index,
 				data->pixels_per_tile * texture_row},
