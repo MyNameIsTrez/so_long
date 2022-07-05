@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/29 13:28:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 15:23:45 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/05 14:06:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,35 +37,9 @@ t_status	sl_iterate_char_grid(t_iterator_callback_char_grid callback,
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_loop_args_frame_count
-{
-	uint32_t	frame_count;
-}	t_loop_args_frame_count;
-
-typedef struct s_generated_args_frame_count
-{
-	uint32_t	frame_index;
-}	t_generated_args_frame_count;
-
-// TODO: How can this be done on a single line with norme?
-typedef struct s_tile \
-					t_tile;
-
-typedef struct s_callback_args_frame_count
-{
-	t_tile		*tile;
-	uint32_t	column_index;
-	uint32_t	row_index;
-}	t_callback_args_initialize_frame_instance;
-
-typedef t_status	(*t_iterator_callback_frame_count)(
-			t_generated_args_frame_count *generated_args,
-			t_callback_args_initialize_frame_instance *callback_args,
-			t_data *data);
-
-t_status	sl_iterate_frame_count(t_loop_args_frame_count *loop_args,
-				void *callback_args, t_iterator_callback_frame_count callback,
-				t_data *data);
+// TODO: Rename to t_iterate_status
+t_loop_status	sl_iterate_frame_count(uint32_t frame_count, t_data *data,
+					bool reset);
 
 ////////////////////////////////////////////////////////////////////////////////
 

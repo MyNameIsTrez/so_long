@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 18:24:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/05 13:49:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// TODO: Rename data to d
 typedef struct s_data
 {
+	t_t			t;
 	mlx_t		*mlx;
 	t_grid		char_grid;
 	t_window	window;

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/30 15:02:34 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 13:32:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/05 14:07:10 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,25 +81,6 @@ t_loop_status	sl_loop_char_grid(uint32_t *column_index_ptr,
 		sl_loop_char_grid_width(NULL, NULL, true);
 		if (sl_loop_char_grid_height(&row_index, data, false) != 1)
 			break ;
-	}
-	return (FINISHED);
-}
-
-t_loop_status	sl_loop_frame_count(t_loop_args_frame_count	*loop_args,
-	t_generated_args_frame_count *generated_args, bool reset)
-{
-	static uint32_t	frame_index = 0;
-
-	if (reset)
-	{
-		frame_index = 0;
-		return (RESET);
-	}
-	while (frame_index < loop_args->frame_count)
-	{
-		generated_args->frame_index = frame_index;
-		frame_index++;
-		return (LOOPED);
 	}
 	return (FINISHED);
 }

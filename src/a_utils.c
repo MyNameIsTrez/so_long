@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 18:23:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/05 14:05:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,39 +26,27 @@ bool	sl_is_entity(uint32_t column_index, uint32_t row_index, t_data *data)
 	return (ft_chr_in_str(grid_character, ENTITY_CHARACTERS));
 }
 
-STATIC t_status	callback_initialize_frame_instance(
-			t_generated_args_frame_count *generated_args,
-			t_callback_args_initialize_frame_instance *callback_args,
-			t_data *data)
-{
-	t_tile*const		tile = callback_args->tile;
-	t_tile_kind*const	tile_kind = tile->tile_kind;
-	uint32_t const		frame_index = generated_args->frame_index;
-	int32_t				frame_instance_index;
-
-	frame_instance_index = mlx_image_to_window(data->mlx,
-			sl_get_frame(tile_kind, frame_index),
-			(int32_t)(data->texture.pixels_per_tile * callback_args->column_index),
-			(int32_t)(data->texture.pixels_per_tile * callback_args->row_index));
-	if (frame_instance_index < 0)
-	{
-		// TODO: Delete previous images in ERROR_MLX42 cases?
-		return (ft_set_error(ERROR_MLX42));
-	}
-	tile->frame_instances_indices[frame_index] = (uint32_t)frame_instance_index;
-	if (frame_index != 0)
-		sl_get_instance(tile, frame_index)->enabled = false;
-	return (OK);
-}
-
 t_status	sl_initialize_instance_for_frames(t_tile *tile,
 			uint32_t column_index, uint32_t row_index, t_data *data)
 {
-	if (sl_iterate_frame_count(
-			&(t_loop_args_frame_count){tile->tile_kind->frame_count},
-		&(t_callback_args_initialize_frame_instance){tile, column_index,
-		row_index}, callback_initialize_frame_instance, data) != OK)
-		return (ft_get_error());
+	int32_t				frame_instance_index;
+
+	sl_iterate_frame_count(tile->tile_kind->frame_count, data, true);
+	while (sl_iterate_frame_count(tile->tile_kind->frame_count, data, false) != FINISHED)
+	{
+		frame_instance_index = mlx_image_to_window(data->mlx,
+				sl_get_frame(tile->tile_kind, data->t.frame_index),
+				(int32_t)(data->texture.pixels_per_tile * column_index),
+				(int32_t)(data->texture.pixels_per_tile * row_index));
+		if (frame_instance_index < 0)
+		{
+			// TODO: Delete previous images in ERROR_MLX42 cases?
+			return (ft_set_error(ERROR_MLX42));
+		}
+		tile->frame_instances_indices[data->t.frame_index] = (uint32_t)frame_instance_index;
+		if (data->t.frame_index != 0)
+			sl_get_instance(tile, data->t.frame_index)->enabled = false;
+	}
 	return (OK);
 }
 
