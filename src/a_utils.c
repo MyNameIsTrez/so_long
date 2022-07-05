@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/05 14:05:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/05 16:15:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,22 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	sl_is_entity(uint32_t column_index, uint32_t row_index, t_data *data)
+bool	sl_is_entity(t_data *data)
 {
-	const unsigned char	grid_character = sl_get_grid_character(column_index,
-			row_index, data);
-
-	return (ft_chr_in_str(grid_character, ENTITY_CHARACTERS));
+	return (ft_chr_in_str(sl_get_grid_character(data), ENTITY_CHARACTERS));
 }
 
-t_status	sl_initialize_instance_for_frames(t_tile *tile,
-			uint32_t column_index, uint32_t row_index, t_data *data)
+t_status	sl_instance_tile_frames(t_tile *tile, t_data *data)
 {
 	int32_t				frame_instance_index;
 
-	sl_iterate_frame_count(tile->tile_kind->frame_count, data, true);
+	sl_iterate_frame_count(0, data, true);
 	while (sl_iterate_frame_count(tile->tile_kind->frame_count, data, false) != FINISHED)
 	{
 		frame_instance_index = mlx_image_to_window(data->mlx,
 				sl_get_frame(tile->tile_kind, data->t.frame_index),
-				(int32_t)(data->texture.pixels_per_tile * column_index),
-				(int32_t)(data->texture.pixels_per_tile * row_index));
+				(int32_t)(data->texture.pixels_per_tile * data->t.column_index),
+				(int32_t)(data->texture.pixels_per_tile * data->t.row_index));
 		if (frame_instance_index < 0)
 		{
 			// TODO: Delete previous images in ERROR_MLX42 cases?
@@ -91,10 +87,14 @@ mlx_image_t	*sl_get_frame(t_tile_kind *tile_kind, uint32_t frame_index)
 	return (tile_kind->frames[frame_index]);
 }
 
-unsigned char	sl_get_grid_character(uint32_t column_index, uint32_t row_index,
-			t_data *data)
+unsigned char	sl_get_grid_character(t_data *data)
 {
-	return ((unsigned char)data->char_grid.cells[row_index][column_index]);
+	return ((unsigned char)data->t.char_grid.cells[data->t.row_index][data->t.column_index]);
+}
+
+t_tile	*sl_get_tile(t_data *data)
+{
+	return (data->tile_grid.cells[data->t.row_index][data->t.column_index]);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

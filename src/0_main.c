@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 18:23:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/05 15:30:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ STATIC t_status	run(int argc, char **argv, t_data *data)
 	data->mlx = mlx_init((int32_t)data->window.window_width,
 			(int32_t)data->window.window_height, WINDOW_TITLE, true);
 	if (data->mlx == NULL)
-		return (ft_get_error());
+		return (ft_set_error(ERROR_MLX42));
 	if (sl_load_texture(data) != OK)
 		return (ft_get_error());
 	if (sl_instantiate_tile_kinds(data) != OK)

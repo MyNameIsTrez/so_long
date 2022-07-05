@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 17:48:49 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/05 16:15:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 STATIC void	calculate_width_and_height(t_data *data)
 {
-	data->window.window_width = (uint32_t)data->char_grid.width * data->texture.pixels_per_tile;
-	data->window.window_height = (uint32_t)data->char_grid.height * data->texture.pixels_per_tile;
+	data->window.window_width = (uint32_t)data->t.char_grid.width * data->texture.pixels_per_tile;
+	data->window.window_height = (uint32_t)data->t.char_grid.height * data->texture.pixels_per_tile;
 }
 
 STATIC t_status	calculate_pixels_per_tile(int scale, t_data *data)
@@ -51,12 +51,9 @@ STATIC int	get_scale(int argc, char **argv)
 	return (scale);
 }
 
-STATIC t_status	callback_grid_has_invalid_character(uint32_t column_index,
-			uint32_t row_index, t_data *data)
+STATIC bool	grid_has_invalid_character(t_data *data)
 {
-	char const	chr = data->char_grid.cells[row_index][column_index];
-
-	if (!ft_chr_in_str(chr, MAP_CHARACTERS))
+	if (!ft_chr_in_str(sl_get_grid_character(data), MAP_CHARACTERS))
 		return (ft_set_error(ERROR_FILE_HAS_INVALID_CHAR));
 	return (OK);
 }
@@ -79,10 +76,12 @@ t_status	sl_parse_argv(int argc, char **argv, t_data *data)
 	if (verify_argc(argc) != OK)
 		return (ft_get_error());
 	map_filename = argv[1];
-	if (ft_read_grid_from_file(&data->char_grid, map_filename) != OK)
+	if (ft_read_grid_from_file(&data->t.char_grid, map_filename) != OK)
 		return (ft_get_error());
-	if (sl_iterate_char_grid(callback_grid_has_invalid_character, data) != OK)
-		return (ft_get_error());
+	sl_iterate_char_grid(data, true);
+	while (sl_iterate_char_grid(data, false) != FINISHED)
+		if (grid_has_invalid_character(data))
+			return (ft_get_error());
 	if (calculate_pixels_per_tile(get_scale(argc, argv), data) != OK)
 		return (ft_get_error());
 	calculate_width_and_height(data);
