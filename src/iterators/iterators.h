@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/29 13:28:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/05 14:06:55 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/05 14:11:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_status	sl_iterate_char_grid(t_iterator_callback_char_grid callback,
 ////////////////////////////////////////////////////////////////////////////////
 
 // TODO: Rename to t_iterate_status
-t_loop_status	sl_iterate_frame_count(uint32_t frame_count, t_data *data,
+t_iterator_status	sl_iterate_frame_count(uint32_t frame_count, t_data *data,
 					bool reset);
 
 ////////////////////////////////////////////////////////////////////////////////
