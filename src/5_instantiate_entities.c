@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 13:33:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/05 16:15:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/06 14:57:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,15 @@ STATIC t_status	instantiate_entity(t_data *data)
 	tile_kind = &data->tile_kinds[sl_get_grid_character(data)];
 	entity = malloc(sizeof(t_entity));
 	if (entity == NULL)
-		return (ft_set_error(ERROR_MALLOC));
+		return (ft_set_error(FT_ERROR_MALLOC));
 	entity->column_index = data->t.column_index;
 	entity->row_index = data->t.row_index;
 	if (sl_fill_tile_data(tile_kind, &entity->tile) != OK)
-		return (ft_get_error());
+		return (sl_any_error());
 	if (sl_instance_tile_frames(&entity->tile, data) != OK)
-		return (ft_get_error());
+		return (sl_any_error());
 	if (ft_lst_new_front(&data->entities, entity) == NULL)
-		return (ft_set_error(ERROR_MALLOC));
+		return (ft_set_error(FT_ERROR_MALLOC));
 	return (OK);
 }
 
@@ -59,7 +59,7 @@ STATIC t_status	try_instantiate_entity(t_data *data)
 		if (instantiate_entity(data) != OK)
 		{
 			ft_lstclear(&data->entities, free_entity);
-			return (ft_get_error());
+			return (sl_any_error());
 		}
 	}
 	return (OK);
@@ -72,7 +72,7 @@ t_status	sl_instantiate_entities(t_data *data)
 	sl_iterate_char_grid(data, true);
 	while (sl_iterate_char_grid(data, false) != FINISHED)
 		if (try_instantiate_entity(data) != OK)
-			return (ft_get_error());
+			return (sl_any_error());
 	return (OK);
 }
 

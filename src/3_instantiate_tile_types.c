@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 18:23:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/06 14:57:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ STATIC t_status	check_tile_kind_errors(t_data *data)
 			if (frame == NULL)
 			{
 				free_all_tile_kinds(data);
-				return (ft_set_error(ERROR_MALLOC));
+				return (ft_set_error(FT_ERROR_MALLOC));
 			}
 			frame_index++;
 		}

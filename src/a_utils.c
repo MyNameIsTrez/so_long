@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/05 16:15:57 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/06 14:57:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ t_status	sl_instance_tile_frames(t_tile *tile, t_data *data)
 				(int32_t)(data->texture.pixels_per_tile * data->t.row_index));
 		if (frame_instance_index < 0)
 		{
-			// TODO: Delete previous images in ERROR_MLX42 cases?
-			return (ft_set_error(ERROR_MLX42));
+			// TODO: Delete previous images in SL_ERROR_MLX42 cases?
+			return (sl_set_error(SL_ERROR_MLX42));
 		}
 		tile->frame_instances_indices[data->t.frame_index] = (uint32_t)frame_instance_index;
 		if (data->t.frame_index != 0)
@@ -70,7 +70,7 @@ t_status	sl_fill_tile_data(t_tile_kind *tile_kind, t_tile *tile)
 	tile->frame_index = 0;
 	tile->frame_instances_indices = malloc(sizeof(uint32_t) * tile_kind->frame_count);
 	if (tile->frame_instances_indices == NULL)
-		return (ft_set_error(ERROR_MALLOC));
+		return (ft_set_error(FT_ERROR_MALLOC));
 	return (OK);
 }
 

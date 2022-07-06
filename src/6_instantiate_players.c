@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 16:48:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 18:23:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/06 14:57:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_status	sl_instantiate_players(t_data *data)
 		if (entity->tile.tile_kind->character == PLAYER_CHARACTER)
 		{
 			if (player_index >= MAX_PLAYER_COUNT)
-				return (ft_set_error(ERROR_TOO_MANY_PLAYERS));
+				return (sl_set_error(SL_ERROR_TOO_MANY_PLAYERS));
 			player = &players[player_index];
 			player->entity = entity;
 			player->controls = get_players_controls(player_index);

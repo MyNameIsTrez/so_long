@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/05 15:30:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/06 14:54:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,30 +62,29 @@ STATIC void	loop(void *param)
 
 STATIC void	print_error(void)
 {
-	// TODO: Add a lookup table with errors here and add ft_print_error()
-	ft_get_error();
+	sl_print_all_errors();
 }
 
 STATIC t_status	run(int argc, char **argv, t_data *data)
 {
 	if (sl_parse_argv(argc, argv, data) != OK)
-		return (ft_get_error());
+		return (sl_any_error());
 	data->mlx = mlx_init((int32_t)data->window.window_width,
 			(int32_t)data->window.window_height, WINDOW_TITLE, true);
 	if (data->mlx == NULL)
-		return (ft_set_error(ERROR_MLX42));
+		return (sl_set_error(SL_ERROR_MLX42));
 	if (sl_load_texture(data) != OK)
-		return (ft_get_error());
+		return (sl_any_error());
 	if (sl_instantiate_tile_kinds(data) != OK)
-		return (ft_get_error());
+		return (sl_any_error());
 	if (sl_instantiate_tile_grid(data) != OK)
-		return (ft_get_error());
+		return (sl_any_error());
 	if (sl_instantiate_entities(data) != OK)
-		return (ft_get_error());
+		return (sl_any_error());
 	if (sl_instantiate_players(data) != OK)
-		return (ft_get_error());
+		return (sl_any_error());
 	if (mlx_loop_hook(data->mlx, &loop, data) != true)
-		return (ft_set_error(ERROR_MLX42));
+		return (sl_set_error(SL_ERROR_MLX42));
 	return (OK);
 }
 

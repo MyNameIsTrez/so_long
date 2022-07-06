@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/05 14:40:01 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/06 14:58:23 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,18 @@ SOURCES :=\
 	src/a_utils.c\
 	src/iterators/0_iterators.c\
 	src/cleanup.c
+
+################################################################################
+
+SOURCES +=\
+	src/error/sl_any_error.c\
+	src/error/sl_get_error_ptr.c\
+	src/error/sl_get_error.c\
+	src/error/sl_print_all_errors.c\
+	src/error/sl_print_error.c\
+	src/error/sl_set_error.c
+
+################################################################################
 
 BONUS_SOURCES :=
 
