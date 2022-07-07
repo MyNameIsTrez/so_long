@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:22:03 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/07 17:10:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,26 @@ void	check_leaks(void)
 
 ////////////////////////////////////////////////////////////////////////////////
 
+STATIC void	update_frames(t_data *data)
+{
+	t_entity	*entity;
+	t_tile		*tile;
+
+	sl_reset_iterate_entities(data);
+	while (sl_iterate_entities(data) != FINISHED)
+	{
+		entity = data->t.entity;
+		tile = &entity->tile;
+		if (data->seconds - entity->last_frame_seconds > entity->seconds_per_frame)
+		{
+			sl_get_instance(tile, tile->frame_index)->enabled = false;
+			tile->frame_index = (tile->frame_index + 1) % tile->tile_kind->frame_count;
+			sl_get_instance(tile, tile->frame_index)->enabled = true;
+			entity->last_frame_seconds = data->seconds;
+		}
+	}
+}
+
 STATIC void	try_move_player(t_data *data)
 {
 	const int32_t	pixels_per_tile = (int32_t)data->texture.pixels_per_tile;
@@ -37,13 +57,13 @@ STATIC void	try_move_player(t_data *data)
 	{
 		player = &data->players[data->t.player_index];
 		if (mlx_is_key_down(data->mlx, player->controls.up_key))
-			sl_shift_tile_pos(&player->entity->tile, 0, -pixels_per_tile);
+			sl_shift_tile_pos(&player->entity->tile, 0, -pixels_per_tile, data);
 		if (mlx_is_key_down(data->mlx, player->controls.down_key))
-			sl_shift_tile_pos(&player->entity->tile, 0, pixels_per_tile);
+			sl_shift_tile_pos(&player->entity->tile, 0, pixels_per_tile, data);
 		if (mlx_is_key_down(data->mlx, player->controls.left_key))
-			sl_shift_tile_pos(&player->entity->tile, -pixels_per_tile, 0);
+			sl_shift_tile_pos(&player->entity->tile, -pixels_per_tile, 0, data);
 		if (mlx_is_key_down(data->mlx, player->controls.right_key))
-			sl_shift_tile_pos(&player->entity->tile, pixels_per_tile, 0);
+			sl_shift_tile_pos(&player->entity->tile, pixels_per_tile, 0, data);
 	}
 }
 
@@ -52,9 +72,11 @@ STATIC void	loop(void *param)
 	t_data	*data;
 
 	data = param;
+	data->seconds += data->mlx->delta_time;
 	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(data->mlx);
 	try_move_player(data);
+	update_frames(data);
 }
 
 STATIC t_status	run(int argc, char **argv, t_data *data)

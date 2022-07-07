@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_entity.h                                        :+:    :+:            */
+/*   sl_settings_entities.h                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:57:30 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 16:59:55 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/07 16:57:34 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/07 17:00:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_ENTITY_H
-# define SL_ENTITY_H
+#ifndef SL_SETTINGS_ENTITIES_H
+# define SL_SETTINGS_ENTITIES_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_entity
-{
-	uint32_t	column_index;
-	uint32_t	row_index;
-	t_tile		tile;
-	double		last_frame_seconds;
-	double		seconds_per_frame;
-}	t_entity;
+
 
 ////////////////////////////////////////////////////////////////////////////////
 

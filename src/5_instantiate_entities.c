@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 13:33:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:11:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/07 17:01:01 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ STATIC t_status	instantiate_entity(t_data *data)
 		return (sl_any_error());
 	if (sl_instance_tile_frames(&entity->tile, data) != OK)
 		return (sl_any_error());
+	entity->last_frame_seconds = 0;
+	entity->seconds_per_frame = 0.5; // TODO: DON'T HARDCODE!!!
 	if (ft_lst_new_front(&data->entities, entity) == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	return (OK);

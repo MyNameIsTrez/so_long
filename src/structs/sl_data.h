@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:01:40 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/07 16:35:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_data
 	t_list		*entities;
 	uint32_t	player_count;
 	t_player	players[MAX_PLAYER_COUNT];
+	double		seconds;
 }	t_data;
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 16:08:11 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/07 16:10:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@
 
 # include "utils/utils.h"
 # include "iterators/iterators.h"
+# include "cleanup/cleanup.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -46,8 +47,6 @@ t_status	sl_instantiate_tile_kinds(t_data *data);
 t_status	sl_instantiate_tile_grid(t_data *data);
 t_status	sl_instantiate_entities(t_data *data);
 t_status	sl_instantiate_players(t_data *data);
-
-void		sl_cleanup(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

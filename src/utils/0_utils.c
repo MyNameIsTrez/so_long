@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 16:08:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/07 17:10:29 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,31 @@ t_status	sl_instance_tile_frames(t_tile *tile, t_data *data)
 	return (OK);
 }
 
-void	sl_shift_tile_pos(t_tile *tile, int32_t x, int32_t y)
+void	sl_shift_tile_pos(t_tile *tile, int32_t x, int32_t y, t_data *data)
 {
 	mlx_instance_t	*instance;
 
-	instance = sl_get_instance(tile, tile->frame_index);
-	instance->x += x;
-	instance->y += y;
+	sl_reset_iterate_frame_count(data);
+	while (sl_iterate_frame_count(tile->tile_kind->frame_count, data) != FINISHED)
+	{
+		instance = sl_get_instance(tile, data->t.frame_index);
+		instance->x += x;
+		instance->y += y;
+	}
 }
 
-void	sl_set_tile_pos(t_tile *tile, int32_t x, int32_t y)
-{
-	mlx_instance_t	*instance;
+// void	sl_set_tile_pos(t_tile *tile, int32_t x, int32_t y, t_data *data)
+// {
+// 	mlx_instance_t	*instance;
 
-	instance = sl_get_instance(tile, tile->frame_index);
-	instance->x = x;
-	instance->y = y;
-}
+// 	sl_reset_iterate_frame_count(data);
+// 	while (sl_iterate_frame_count(tile->tile_kind->frame_count, data) != FINISHED)
+// 	{
+// 		instance = sl_get_instance(tile, data->t.frame_index);
+// 		instance->x = x;
+// 		instance->y = y;
+// 	}
+// }
 
 t_status	sl_fill_tile_data(t_tile_kind *tile_kind, t_tile *tile)
 {

@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_entity.h                                        :+:    :+:            */
+/*   cleanup.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:57:30 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 16:59:55 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/01 17:31:01 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/07 16:13:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_ENTITY_H
-# define SL_ENTITY_H
+#include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_entity
+void	sl_cleanup(t_data *data)
 {
-	uint32_t	column_index;
-	uint32_t	row_index;
-	t_tile		tile;
-	double		last_frame_seconds;
-	double		seconds_per_frame;
-}	t_entity;
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	if (data->texture.data != NULL)
+		mlx_delete_texture(data->texture.data);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
