@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 17:10:14 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/07 17:20:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ STATIC void	try_move_player(t_data *data)
 	t_player		*player;
 
 	sl_reset_iterate_player_count(data);
+	// TODO: Throttle speed when button is held, but allow spamming manually.
 	while (sl_iterate_player_count(data) != FINISHED)
 	{
 		player = &data->players[data->t.player_index];

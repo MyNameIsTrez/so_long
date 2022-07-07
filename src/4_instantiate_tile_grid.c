@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:02:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/07 17:17:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ STATIC t_status	malloc_tile(t_tile_kind *tile_kind, t_tile **tile)
 
 STATIC t_tile_kind	*get_tile_kind(t_data *data)
 {
+	if (sl_is_entity(data))
+		return (&data->tile_kinds[EMPTY_SPACE_CHARACTER]);
 	return (&data->tile_kinds[sl_get_char_grid_character(data)]);
 }
 
@@ -74,13 +76,10 @@ STATIC t_status	malloc_tile_grid_cells(t_data *data)
 
 STATIC t_status	try_instantiate_tile(t_data *data)
 {
-	if (!sl_is_entity(data))
+	if (instantiate_tile(data) != OK)
 	{
-		if (instantiate_tile(data) != OK)
-		{
-			// TODO: Free previous stuff.
-			return (sl_any_error());
-		}
+		// TODO: Free previous stuff.
+		return (sl_any_error());
 	}
 	return (OK);
 }
