@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:25:12 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/07 15:34:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,47 +18,42 @@
 
 STATIC void	free_all_tile_kinds(t_data *data)
 {
-	uint32_t	tile_kind_index;
 	t_tile_kind	*tile_kind;
 	mlx_image_t	*frame;
 
-	tile_kind_index = 0;
-	while (tile_kind_index < data->tile_kind_count)
+	sl_reset_iterate_tile_kind_count(data);
+	while (sl_iterate_tile_kind_count(data) != FINISHED)
 	{
-		tile_kind = &data->tile_kinds[tile_kind_index];
+		tile_kind = &data->tile_kinds[data->t.tile_kind_index];
+		sl_reset_iterate_frame_count(data);
 		while (sl_iterate_frame_count(tile_kind->frame_count, data) != FINISHED)
 		{
 			frame = tile_kind->frames[data->t.frame_index];
 			if (frame != NULL)
 				mlx_delete_image(data->mlx, frame);
 		}
-		tile_kind_index++;
 	}
 }
 
 STATIC t_status	check_tile_kind_errors(t_data *data)
 {
-	uint32_t	tile_kind_index;
 	t_tile_kind	*tile_kind;
-	uint32_t	frame_index;
 	mlx_image_t	*frame;
 
-	tile_kind_index = 0;
-	while (tile_kind_index < data->tile_kind_count)
+	sl_reset_iterate_tile_kind_count(data);
+	while (sl_iterate_tile_kind_count(data) != FINISHED)
 	{
-		tile_kind = &data->tile_kinds[tile_kind_index];
-		frame_index = 0;
-		while (frame_index < tile_kind->frame_count)
+		tile_kind = &data->tile_kinds[data->t.tile_kind_index];
+		sl_reset_iterate_frame_count(data);
+		while (sl_iterate_frame_count(tile_kind->frame_count, data) != FINISHED)
 		{
-			frame = tile_kind->frames[frame_index];
+			frame = tile_kind->frames[data->t.frame_index];
 			if (frame == NULL)
 			{
 				free_all_tile_kinds(data);
 				return (ft_set_error(FT_ERROR_MALLOC));
 			}
-			frame_index++;
 		}
-		tile_kind_index++;
 	}
 	return (OK);
 }
@@ -67,22 +62,20 @@ STATIC void	add_tile_kind(uint32_t frame_count, uint32_t texture_row,
 			unsigned char grid_character, t_data *data)
 {
 	t_tile_kind*const	tile_kind = &data->tile_kinds[grid_character];
-	uint32_t			frame_index;
 
 	tile_kind->character = grid_character;
 	tile_kind->frame_count = frame_count;
 	tile_kind->frames = malloc(sizeof(mlx_image_t *) * frame_count);
 	// TODO: check malloc fail
-	frame_index = 0;
-	while (frame_index < frame_count)
+	sl_reset_iterate_frame_count(data);
+	while (sl_iterate_frame_count(frame_count, data) != FINISHED)
 	{
-		tile_kind->frames[frame_index] = mlx_texture_area_to_image(data->mlx,
+		tile_kind->frames[data->t.frame_index] = mlx_texture_area_to_image(data->mlx,
 				data->texture.data,
 				(uint32_t[2]){
-				data->texture.pixels_per_tile * frame_index,
+				data->texture.pixels_per_tile * data->t.frame_index,
 				data->texture.pixels_per_tile * texture_row},
 				(uint32_t[2]){data->texture.pixels_per_tile, data->texture.pixels_per_tile});
-		frame_index++;
 	}
 }
 
