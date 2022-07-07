@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_structs.h                                       :+:    :+:            */
+/*   entities.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:56:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:51:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/07 15:41:27 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/07 16:01:09 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCTS_H
-# define SL_STRUCTS_H
+#include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "sl_window.h"
-# include "sl_texture.h"
-# include "sl_tiles.h"
-# include "sl_entity.h"
-# include "sl_player.h"
-# include "sl_temporary.h"
+t_iterator_status	sl_iterate_entities(t_data *data)
+{
+	while (data->t.it.entities != NULL)
+	{
+		data->t.entity = data->t.it.entities->content;
+		data->t.it.entities = data->t.it.entities->next;
+		return (LOOPED);
+	}
+	return (FINISHED);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "sl_data.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+void	sl_reset_iterate_entities(t_data *data)
+{
+	data->t.it.entities = data->entities;
+}
 
 ////////////////////////////////////////////////////////////////////////////////

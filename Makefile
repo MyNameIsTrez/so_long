@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/07 15:28:21 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/07 15:53:08 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,6 +73,7 @@ SOURCES +=\
 	src/iterators/char_grid_height.c\
 	src/iterators/char_grid_width.c\
 	src/iterators/char_grid.c\
+	src/iterators/entities.c\
 	src/iterators/frame_count.c\
 	src/iterators/player_count.c\
 	src/iterators/tile_kind_count.c
