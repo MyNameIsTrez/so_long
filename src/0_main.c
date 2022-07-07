@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/06 14:54:07 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/06 15:33:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 // __attribute__((destructor))
 void	check_leaks(void)
 {
+	ft_putendl("");
 	system("leaks -q so_long");
 }
 
@@ -60,11 +61,6 @@ STATIC void	loop(void *param)
 	try_move_player(data);
 }
 
-STATIC void	print_error(void)
-{
-	sl_print_all_errors();
-}
-
 STATIC t_status	run(int argc, char **argv, t_data *data)
 {
 	if (sl_parse_argv(argc, argv, data) != OK)
@@ -98,7 +94,7 @@ int32_t	main(int argc, char **argv)
 	if (run(argc, argv, &data) != OK)
 	{
 		sl_cleanup(&data);
-		print_error();
+		sl_print_all_errors();
 		return (EXIT_FAILURE);
 	}
 	mlx_loop(data.mlx);

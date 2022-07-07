@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_structs.h                                       :+:    :+:            */
+/*   char_grid_height.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:56:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/05 13:45:05 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/06 15:59:38 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/07 15:02:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCTS_H
-# define SL_STRUCTS_H
+#include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "structs/sl_temporary.h"
-# include "structs/sl_window.h"
-# include "structs/sl_texture.h"
-# include "structs/sl_tiles.h"
-# include "structs/sl_entity.h"
-# include "structs/sl_player.h"
+t_iterator_status	sl_iterate_char_grid_height(t_data *data)
+{
+	while (data->t.it.row_index < data->char_grid.height)
+	{
+		data->t.row_index = data->t.it.row_index;
+		data->t.it.row_index++;
+		return (LOOPED);
+	}
+	return (FINISHED);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "structs/sl_data.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+void	sl_reset_iterate_char_grid_height(t_data *data)
+{
+	data->t.it.row_index = 0;
+}
 
 ////////////////////////////////////////////////////////////////////////////////

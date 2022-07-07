@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_tiles.h                                         :+:    :+:            */
+/*   frame_count.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:58:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:05:08 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/06 15:56:03 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/06 15:56:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_TILES_H
-# define SL_TILES_H
+#include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_tile_kind
+t_iterator_status	sl_iterate_frame_count(uint32_t frame_count, t_data *data)
 {
-	unsigned char	character;
-	uint32_t		frame_count;
-	mlx_image_t		**frames;
-}	t_tile_kind;
-
-typedef struct s_tile
-{
-	t_tile_kind	*tile_kind;
-	uint32_t	frame_index;
-	uint32_t	*frame_instances_indices;
-}	t_tile;
-
-typedef struct s_tile_grid
-{
-	t_tile	***cells;
-}	t_tile_grid;
+	while (data->t.it.frame_index < frame_count)
+	{
+		data->t.frame_index = data->t.it.frame_index;
+		data->t.it.frame_index++;
+		return (LOOPED);
+	}
+	return (FINISHED);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif
+void	sl_reset_iterate_frame_count(t_data *data)
+{
+	data->t.it.frame_index = 0;
+}
 
 ////////////////////////////////////////////////////////////////////////////////

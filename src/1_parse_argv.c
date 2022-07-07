@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/06 14:57:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/07 15:02:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 STATIC void	calculate_width_and_height(t_data *data)
 {
-	data->window.window_width = (uint32_t)data->t.char_grid.width * data->texture.pixels_per_tile;
-	data->window.window_height = (uint32_t)data->t.char_grid.height * data->texture.pixels_per_tile;
+	data->window.window_width = (uint32_t)data->char_grid.width * data->texture.pixels_per_tile;
+	data->window.window_height = (uint32_t)data->char_grid.height * data->texture.pixels_per_tile;
 }
 
 STATIC t_status	calculate_pixels_per_tile(int scale, t_data *data)
@@ -53,7 +53,7 @@ STATIC int	get_scale(int argc, char **argv)
 
 STATIC bool	grid_has_invalid_character(t_data *data)
 {
-	if (!ft_chr_in_str(sl_get_grid_character(data), MAP_CHARACTERS))
+	if (!ft_chr_in_str(sl_get_char_grid_character(data), MAP_CHARACTERS))
 		return (sl_set_error(SL_ERROR_FILE_HAS_INVALID_CHAR));
 	return (OK);
 }
@@ -76,10 +76,10 @@ t_status	sl_parse_argv(int argc, char **argv, t_data *data)
 	if (verify_argc(argc) != OK)
 		return (sl_any_error());
 	map_filename = argv[1];
-	if (ft_read_grid_from_file(&data->t.char_grid, map_filename) != OK)
+	if (ft_read_grid_from_file(&data->char_grid, map_filename) != OK)
 		return (sl_any_error());
-	sl_iterate_char_grid(data, true);
-	while (sl_iterate_char_grid(data, false) != FINISHED)
+	sl_reset_iterate_char_grid(data);
+	while (sl_iterate_char_grid(data) != FINISHED)
 		if (grid_has_invalid_character(data))
 			return (sl_any_error());
 	if (calculate_pixels_per_tile(get_scale(argc, argv), data) != OK)

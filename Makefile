@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/06 14:58:23 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/06 16:44:14 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,12 +50,11 @@ SOURCES :=\
 	src/0_main.c\
 	src/1_parse_argv.c\
 	src/2_load_texture.c\
-	src/3_instantiate_tile_types.c\
+	src/3_instantiate_tile_kinds.c\
 	src/4_instantiate_tile_grid.c\
 	src/5_instantiate_entities.c\
 	src/6_instantiate_players.c\
 	src/a_utils.c\
-	src/iterators/0_iterators.c\
 	src/cleanup.c
 
 ################################################################################
@@ -67,6 +66,14 @@ SOURCES +=\
 	src/error/sl_print_all_errors.c\
 	src/error/sl_print_error.c\
 	src/error/sl_set_error.c
+
+################################################################################
+
+SOURCES +=\
+	src/iterators/char_grid_height.c\
+	src/iterators/char_grid_width.c\
+	src/iterators/char_grid.c\
+	src/iterators/frame_count.c
 
 ################################################################################
 
@@ -84,8 +91,11 @@ ifdef DEBUG
 LIBS +=
 HEADERS +=
 CFLAGS += -g3 -Wconversion
-# CFLAGS += -fsanitize=address
 FCLEANED_FILES +=
+endif
+
+ifdef SAN
+CFLAGS += -fsanitize=address
 endif
 
 ################################################################################
@@ -123,7 +133,7 @@ $(FT_PRINTF_LIB_PATH):
 ################################################################################
 
 $(NAME): $(OBJECT_PATHS)
-	$(CC) $(OBJECT_PATHS) $(LIBS) -o $(NAME)
+	$(CC) $(CFLAGS) $(LIBS) $(OBJECT_PATHS) -o $(NAME)
 	@echo "$(MAKE_DATA)" > $(DATA_FILE)
 
 $(OBJ_DIR)/%.o: %.c $(HEADERS)

@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_tiles.h                                         :+:    :+:            */
+/*   char_grid_width.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:58:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:05:08 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/06 15:57:06 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/07 15:02:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_TILES_H
-# define SL_TILES_H
+#include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_tile_kind
+t_iterator_status	sl_iterate_char_grid_width(t_data *data)
 {
-	unsigned char	character;
-	uint32_t		frame_count;
-	mlx_image_t		**frames;
-}	t_tile_kind;
-
-typedef struct s_tile
-{
-	t_tile_kind	*tile_kind;
-	uint32_t	frame_index;
-	uint32_t	*frame_instances_indices;
-}	t_tile;
-
-typedef struct s_tile_grid
-{
-	t_tile	***cells;
-}	t_tile_grid;
+	while (data->t.it.column_index < data->char_grid.width)
+	{
+		data->t.column_index = data->t.it.column_index;
+		data->t.it.column_index++;
+		return (LOOPED);
+	}
+	return (FINISHED);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif
+void	sl_reset_iterate_char_grid_width(t_data *data)
+{
+	data->t.it.column_index = 0;
+}
 
 ////////////////////////////////////////////////////////////////////////////////

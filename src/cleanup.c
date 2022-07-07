@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:31:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 17:43:01 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/06 15:03:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 
 void	sl_cleanup(t_data *data)
 {
-	mlx_delete_texture(data->texture.data);
+	if (data->texture.data != NULL)
+		mlx_delete_texture(data->texture.data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

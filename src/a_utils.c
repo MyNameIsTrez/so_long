@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/06 14:57:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/07 15:10:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@
 
 bool	sl_is_entity(t_data *data)
 {
-	return (ft_chr_in_str(sl_get_grid_character(data), ENTITY_CHARACTERS));
+	return (ft_chr_in_str(sl_get_char_grid_character(data), ENTITY_CHARACTERS));
 }
 
 t_status	sl_instance_tile_frames(t_tile *tile, t_data *data)
 {
 	int32_t				frame_instance_index;
 
-	sl_iterate_frame_count(0, data, true);
-	while (sl_iterate_frame_count(tile->tile_kind->frame_count, data, false) != FINISHED)
+	sl_reset_iterate_frame_count(data);
+	while (sl_iterate_frame_count(tile->tile_kind->frame_count, data) != FINISHED)
 	{
 		frame_instance_index = mlx_image_to_window(data->mlx,
 				sl_get_frame(tile->tile_kind, data->t.frame_index),
@@ -87,10 +87,15 @@ mlx_image_t	*sl_get_frame(t_tile_kind *tile_kind, uint32_t frame_index)
 	return (tile_kind->frames[frame_index]);
 }
 
-unsigned char	sl_get_grid_character(t_data *data)
+unsigned char	sl_get_char_grid_character(t_data *data)
 {
-	return ((unsigned char)data->t.char_grid.cells[data->t.row_index][data->t.column_index]);
+	return ((unsigned char)data->char_grid.cells[data->t.row_index][data->t.column_index]);
 }
+
+// unsigned char	sl_get_grid_character(t_data *data)
+// {
+// 	return ((unsigned char)data->tile_grid.cells[data->t.row_index][data->t.column_index]);
+// }
 
 t_tile	*sl_get_tile(t_data *data)
 {

@@ -1,31 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_settings.h                                      :+:    :+:            */
+/*   char_grid.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:50:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 18:19:13 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/06 15:55:13 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/07 14:39:29 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_SETTINGS_H
-# define SL_SETTINGS_H
+#include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "settings/sl_settings_controls.h"
-# include "settings/sl_settings_map.h"
-# include "settings/sl_settings_players.h"
-# include "settings/sl_settings_texture.h"
-# include "settings/sl_settings_tiles.h"
-# include "settings/sl_settings_window.h"
+t_iterator_status	sl_iterate_char_grid(t_data *data)
+{
+	while (true)
+	{
+		while (true)
+		{
+			if (sl_iterate_char_grid_width(data) != LOOPED)
+				break ;
+			return (LOOPED);
+		}
+		sl_reset_iterate_char_grid_width(data);
+		if (sl_iterate_char_grid_height(data) != LOOPED)
+			break ;
+	}
+	return (FINISHED);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif
+void	sl_reset_iterate_char_grid(t_data *data)
+{
+	sl_reset_iterate_char_grid_height(data);
+	sl_iterate_char_grid_height(data);
+	sl_reset_iterate_char_grid_width(data);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
