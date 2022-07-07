@@ -27,7 +27,7 @@
 		"program": "${workspaceFolder}/so_long",
 		"args": [
 			// "foo.ber", // TODO: Make sure this nonexistent file prints a proper error!
-			"maps/example_1.ber",
+			"extra/map_tests/two_players.ber",
 			"asdi"
 		],
 		// "stopAtEntry": false,

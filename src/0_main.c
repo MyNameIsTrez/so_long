@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/06 15:33:54 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/07 15:22:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,12 @@ void	check_leaks(void)
 STATIC void	try_move_player(t_data *data)
 {
 	const int32_t	pixels_per_tile = (int32_t)data->texture.pixels_per_tile;
-	uint32_t		player_index;
-	t_player		*players;
 	t_player		*player;
 
-	player_index = 0;
-	players = data->players;
-	while (player_index < data->player_count)
+	sl_reset_iterate_player_count(data);
+	while (sl_iterate_player_count(data) != FINISHED)
 	{
-		player = &players[player_index];
+		player = &data->players[data->t.player_index];
 		if (mlx_is_key_down(data->mlx, player->controls.up_key))
 			sl_shift_tile_pos(&player->entity->tile, 0, -pixels_per_tile);
 		if (mlx_is_key_down(data->mlx, player->controls.down_key))
@@ -47,7 +44,6 @@ STATIC void	try_move_player(t_data *data)
 			sl_shift_tile_pos(&player->entity->tile, -pixels_per_tile, 0);
 		if (mlx_is_key_down(data->mlx, player->controls.right_key))
 			sl_shift_tile_pos(&player->entity->tile, pixels_per_tile, 0);
-		player_index++;
 	}
 }
 

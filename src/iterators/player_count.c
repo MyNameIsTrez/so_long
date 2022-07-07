@@ -1,45 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_temporary.h                                     :+:    :+:            */
+/*   player_count.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:21:28 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/07 15:17:20 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/07 15:21:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_TEMPORARY_H
-# define SL_TEMPORARY_H
+#include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// This struct is used for Temporary iterator counter storage.
-typedef struct s_it
+t_iterator_status	sl_iterate_player_count(t_data *data)
 {
-	uint32_t	column_index;
-	uint32_t	row_index;
-	uint32_t	frame_index;
-	uint32_t	player_index;
-}	t_it;
+	while (data->t.it.player_index < data->player_count)
+	{
+		data->t.player_index = data->t.it.player_index;
+		data->t.it.player_index++;
+		return (LOOPED);
+	}
+	return (FINISHED);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// This struct is used for Temporary data storage. Used by iterators.
-typedef struct s_t
+void	sl_reset_iterate_player_count(t_data *data)
 {
-	uint32_t	column_index;
-	uint32_t	row_index;
-	uint32_t	frame_index;
-	uint32_t	player_index;
-	t_it		it;
-}	t_t;
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	data->t.it.player_index = 0;
+}
 
 ////////////////////////////////////////////////////////////////////////////////

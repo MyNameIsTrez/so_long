@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   3_instantiate_tile_types.c                         :+:    :+:            */
+/*   3_instantiate_tile_kinds.c                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/06 14:57:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/07 15:25:12 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,17 @@ STATIC void	free_all_tile_kinds(t_data *data)
 {
 	uint32_t	tile_kind_index;
 	t_tile_kind	*tile_kind;
-	uint32_t	frame_index;
 	mlx_image_t	*frame;
 
 	tile_kind_index = 0;
 	while (tile_kind_index < data->tile_kind_count)
 	{
 		tile_kind = &data->tile_kinds[tile_kind_index];
-		frame_index = 0;
-		while (frame_index < tile_kind->frame_count)
+		while (sl_iterate_frame_count(tile_kind->frame_count, data) != FINISHED)
 		{
-			frame = tile_kind->frames[frame_index];
+			frame = tile_kind->frames[data->t.frame_index];
 			if (frame != NULL)
 				mlx_delete_image(data->mlx, frame);
-			frame_index++;
 		}
 		tile_kind_index++;
 	}
