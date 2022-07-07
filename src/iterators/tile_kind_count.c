@@ -1,47 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_temporary.h                                     :+:    :+:            */
+/*   tile_kind_count.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:29:32 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/07 15:26:09 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/07 15:29:22 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_TEMPORARY_H
-# define SL_TEMPORARY_H
+#include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// This struct is used for Temporary iterator counter storage.
-typedef struct s_it
+t_iterator_status	sl_iterate_tile_kind_count(t_data *data)
 {
-	uint32_t	column_index;
-	uint32_t	row_index;
-	uint32_t	frame_index;
-	uint32_t	player_index;
-	uint32_t	tile_kind_index;
-}	t_it;
+	while (data->t.it.tile_kind_index < data->tile_kind_count)
+	{
+		data->t.tile_kind_index = data->t.it.tile_kind_index;
+		data->t.it.tile_kind_index++;
+		return (LOOPED);
+	}
+	return (FINISHED);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// This struct is used for Temporary data storage. Used by iterators.
-typedef struct s_t
+void	sl_reset_iterate_tile_kind_count(t_data *data)
 {
-	uint32_t	column_index;
-	uint32_t	row_index;
-	uint32_t	frame_index;
-	uint32_t	player_index;
-	uint32_t	tile_kind_index;
-	t_it		it;
-}	t_t;
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	data->t.it.tile_kind_index = 0;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
