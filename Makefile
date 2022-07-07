@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/07 15:53:08 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/07 16:08:45 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,8 +54,12 @@ SOURCES :=\
 	src/4_instantiate_tile_grid.c\
 	src/5_instantiate_entities.c\
 	src/6_instantiate_players.c\
-	src/a_utils.c\
 	src/cleanup.c
+
+################################################################################
+
+SOURCES +=\
+	src/utils/0_utils.c
 
 ################################################################################
 
