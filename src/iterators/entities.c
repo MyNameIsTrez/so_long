@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/07 15:41:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 14:08:03 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 14:25:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ STATIC t_iterator_status	resettable_iterate_entities(t_data *data,
 		entities = entities->next;
 		return (LOOPED);
 	}
-	entities = data->entities;
-	// sl_reset_iterate_entities(data);
+	sl_reset_iterate_entities(data);
 	return (FINISHED);
 }
 

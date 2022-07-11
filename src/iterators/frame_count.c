@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:56:03 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 14:07:58 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 14:26:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ STATIC t_iterator_status	resettable_iterate_frame_count(uint32_t frame_count,
 		frame_index++;
 		return (LOOPED);
 	}
-	frame_index = 0;
-	// sl_reset_iterate_frame_count(data);
+	sl_reset_iterate_frame_count(data);
 	return (FINISHED);
 }
 

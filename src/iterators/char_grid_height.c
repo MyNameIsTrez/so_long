@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:59:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 14:08:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 14:25:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ STATIC t_iterator_status	resettable_iterate_char_grid_height(t_data *data,
 		row_index++;
 		return (LOOPED);
 	}
-	row_index = 0;
-	// sl_reset_iterate_char_grid_height(data);
+	sl_reset_iterate_char_grid_height(data);
 	return (FINISHED);
 }
 

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/07 15:26:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 14:07:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 14:26:21 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ STATIC t_iterator_status	resettable_iterate_tile_kind_count(t_data *data,
 		tile_kind_index++;
 		return (LOOPED);
 	}
-	tile_kind_index = 0;
-	// sl_reset_iterate_tile_kind_count(data);
+	sl_reset_iterate_tile_kind_count(data);
 	return (FINISHED);
 }
 
