@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/07 15:26:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:29:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 14:07:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,37 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_tile_kind_count(t_data *data)
+STATIC t_iterator_status	resettable_iterate_tile_kind_count(t_data *data,
+			bool reset)
 {
-	while (data->t.it.tile_kind_index < data->tile_kind_count)
+	static uint32_t	tile_kind_index;
+
+	if (reset)
 	{
-		data->t.tile_kind_index = data->t.it.tile_kind_index;
-		data->t.it.tile_kind_index++;
+		tile_kind_index = 0;
+		return (RESET);
+	}
+	while (tile_kind_index < data->tile_kind_count)
+	{
+		data->t.tile_kind_index = tile_kind_index;
+		tile_kind_index++;
 		return (LOOPED);
 	}
+	tile_kind_index = 0;
+	// sl_reset_iterate_tile_kind_count(data);
 	return (FINISHED);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
+t_iterator_status	sl_iterate_tile_kind_count(t_data *data)
+{
+	return (resettable_iterate_tile_kind_count(data, false));
+}
+
 void	sl_reset_iterate_tile_kind_count(t_data *data)
 {
-	data->t.it.tile_kind_index = 0;
+	resettable_iterate_tile_kind_count(data, true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

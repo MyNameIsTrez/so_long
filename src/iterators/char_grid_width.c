@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:57:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:02:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 14:08:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,37 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_char_grid_width(t_data *data)
+STATIC t_iterator_status	resettable_iterate_char_grid_width(t_data *data,
+			bool reset)
 {
-	while (data->t.it.column_index < data->char_grid.width)
+	static uint32_t	column_index;
+
+	if (reset)
 	{
-		data->t.column_index = data->t.it.column_index;
-		data->t.it.column_index++;
+		column_index = 0;
+		return (RESET);
+	}
+	while (column_index < data->char_grid.width)
+	{
+		data->t.column_index = column_index;
+		column_index++;
 		return (LOOPED);
 	}
+	column_index = 0;
+	// sl_reset_iterate_char_grid_width(data);
 	return (FINISHED);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
+t_iterator_status	sl_iterate_char_grid_width(t_data *data)
+{
+	return (resettable_iterate_char_grid_width(data, false));
+}
+
 void	sl_reset_iterate_char_grid_width(t_data *data)
 {
-	data->t.it.column_index = 0;
+	resettable_iterate_char_grid_width(data, true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

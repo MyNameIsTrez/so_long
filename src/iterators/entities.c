@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/07 15:41:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 16:01:09 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 14:08:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,37 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_entities(t_data *data)
+STATIC t_iterator_status	resettable_iterate_entities(t_data *data,
+			bool reset)
 {
-	while (data->t.it.entities != NULL)
+	static t_list	*entities;
+
+	if (reset)
 	{
-		data->t.entity = data->t.it.entities->content;
-		data->t.it.entities = data->t.it.entities->next;
+		entities = data->entities;
+		return (RESET);
+	}
+	while (entities != NULL)
+	{
+		data->t.entity = entities->content;
+		entities = entities->next;
 		return (LOOPED);
 	}
+	entities = data->entities;
+	// sl_reset_iterate_entities(data);
 	return (FINISHED);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
+t_iterator_status	sl_iterate_entities(t_data *data)
+{
+	return (resettable_iterate_entities(data, false));
+}
+
 void	sl_reset_iterate_entities(t_data *data)
 {
-	data->t.it.entities = data->entities;
+	resettable_iterate_entities(data, true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

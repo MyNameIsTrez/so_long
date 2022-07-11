@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 18:16:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 18:18:56 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 13:28:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define WINDOW_TITLE "so_long"
+# define WINDOW_TITLE "variables? more like variabLESS!"
 
 # define DEFAULT_SCALE 3
 

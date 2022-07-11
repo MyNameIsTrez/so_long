@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:59:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:02:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 14:08:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,37 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_char_grid_height(t_data *data)
+STATIC t_iterator_status	resettable_iterate_char_grid_height(t_data *data,
+			bool reset)
 {
-	while (data->t.it.row_index < data->char_grid.height)
+	static uint32_t	row_index;
+
+	if (reset)
 	{
-		data->t.row_index = data->t.it.row_index;
-		data->t.it.row_index++;
+		row_index = 0;
+		return (RESET);
+	}
+	while (row_index < data->char_grid.height)
+	{
+		data->t.row_index = row_index;
+		row_index++;
 		return (LOOPED);
 	}
+	row_index = 0;
+	// sl_reset_iterate_char_grid_height(data);
 	return (FINISHED);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
+t_iterator_status	sl_iterate_char_grid_height(t_data *data)
+{
+	return (resettable_iterate_char_grid_height(data, false));
+}
+
 void	sl_reset_iterate_char_grid_height(t_data *data)
 {
-	data->t.it.row_index = 0;
+	resettable_iterate_char_grid_height(data, true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
