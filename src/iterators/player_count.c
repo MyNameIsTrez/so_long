@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/07 15:17:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 14:26:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 14:54:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ STATIC t_iterator_status	resettable_iterate_player_count(t_data *data,
 	if (reset)
 	{
 		player_index = 0;
+		data->t.player_index = 0;
 		return (RESET);
 	}
 	while (player_index < data->player_count)
