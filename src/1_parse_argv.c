@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:02:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 13:54:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ t_status	sl_parse_argv(int argc, char **argv, t_data *data)
 	map_filename = argv[1];
 	if (ft_read_grid_from_file(&data->char_grid, map_filename) != OK)
 		return (sl_any_error());
-	sl_reset_iterate_char_grid(data);
 	while (sl_iterate_char_grid(data) != FINISHED)
 		if (grid_has_invalid_character(data))
 			return (sl_any_error());

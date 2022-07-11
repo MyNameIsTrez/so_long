@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 15:34:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 13:54:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@ STATIC void	free_all_tile_kinds(t_data *data)
 	t_tile_kind	*tile_kind;
 	mlx_image_t	*frame;
 
-	sl_reset_iterate_tile_kind_count(data);
 	while (sl_iterate_tile_kind_count(data) != FINISHED)
 	{
 		tile_kind = &data->tile_kinds[data->t.tile_kind_index];
-		sl_reset_iterate_frame_count(data);
 		while (sl_iterate_frame_count(tile_kind->frame_count, data) != FINISHED)
 		{
 			frame = tile_kind->frames[data->t.frame_index];
@@ -40,11 +38,9 @@ STATIC t_status	check_tile_kind_errors(t_data *data)
 	t_tile_kind	*tile_kind;
 	mlx_image_t	*frame;
 
-	sl_reset_iterate_tile_kind_count(data);
 	while (sl_iterate_tile_kind_count(data) != FINISHED)
 	{
 		tile_kind = &data->tile_kinds[data->t.tile_kind_index];
-		sl_reset_iterate_frame_count(data);
 		while (sl_iterate_frame_count(tile_kind->frame_count, data) != FINISHED)
 		{
 			frame = tile_kind->frames[data->t.frame_index];
@@ -67,7 +63,6 @@ STATIC void	add_tile_kind(uint32_t frame_count, uint32_t texture_row,
 	tile_kind->frame_count = frame_count;
 	tile_kind->frames = malloc(sizeof(mlx_image_t *) * frame_count);
 	// TODO: check malloc fail
-	sl_reset_iterate_frame_count(data);
 	while (sl_iterate_frame_count(frame_count, data) != FINISHED)
 	{
 		tile_kind->frames[data->t.frame_index] = mlx_texture_area_to_image(data->mlx,

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 17:20:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 13:54:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ STATIC void	update_frames(t_data *data)
 	t_entity	*entity;
 	t_tile		*tile;
 
-	sl_reset_iterate_entities(data);
 	while (sl_iterate_entities(data) != FINISHED)
 	{
 		entity = data->t.entity;
@@ -52,7 +51,6 @@ STATIC void	try_move_player(t_data *data)
 	const int32_t	pixels_per_tile = (int32_t)data->texture.pixels_per_tile;
 	t_player		*player;
 
-	sl_reset_iterate_player_count(data);
 	// TODO: Throttle speed when button is held, but allow spamming manually.
 	while (sl_iterate_player_count(data) != FINISHED)
 	{
