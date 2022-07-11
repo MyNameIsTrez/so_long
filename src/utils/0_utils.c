@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 17:10:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 13:55:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ t_status	sl_instance_tile_frames(t_tile *tile, t_data *data)
 {
 	int32_t				frame_instance_index;
 
-	sl_reset_iterate_frame_count(data);
 	while (sl_iterate_frame_count(tile->tile_kind->frame_count, data) != FINISHED)
 	{
 		frame_instance_index = mlx_image_to_window(data->mlx,
@@ -48,7 +47,6 @@ void	sl_shift_tile_pos(t_tile *tile, int32_t x, int32_t y, t_data *data)
 {
 	mlx_instance_t	*instance;
 
-	sl_reset_iterate_frame_count(data);
 	while (sl_iterate_frame_count(tile->tile_kind->frame_count, data) != FINISHED)
 	{
 		instance = sl_get_instance(tile, data->t.frame_index);
@@ -61,7 +59,6 @@ void	sl_shift_tile_pos(t_tile *tile, int32_t x, int32_t y, t_data *data)
 // {
 // 	mlx_instance_t	*instance;
 
-// 	sl_reset_iterate_frame_count(data);
 // 	while (sl_iterate_frame_count(tile->tile_kind->frame_count, data) != FINISHED)
 // 	{
 // 		instance = sl_get_instance(tile, data->t.frame_index);
