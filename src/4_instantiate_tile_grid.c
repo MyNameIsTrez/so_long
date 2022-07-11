@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 14:41:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 15:05:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ STATIC t_status	malloc_tile_grid_cells(t_data *data)
 	if (cells == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	data->tile_grid.cells = cells;
-	// sl_reset_iterate_char_grid_height(data);
 	while (sl_iterate_char_grid_height(data) != FINISHED)
 		if (malloc_rows(data) != OK)
 			return (sl_any_error());

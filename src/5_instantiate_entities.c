@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 13:33:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 17:01:01 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 13:55:09 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ STATIC t_status	try_instantiate_entity(t_data *data)
 
 t_status	sl_instantiate_entities(t_data *data)
 {
-	sl_reset_iterate_char_grid(data);
 	while (sl_iterate_char_grid(data) != FINISHED)
 		if (try_instantiate_entity(data) != OK)
 			return (sl_any_error());
