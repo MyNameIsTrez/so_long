@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 13:30:53 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 17:03:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_t
 	uint32_t	player_index;
 	uint32_t	tile_kind_index;
 	t_entity	*entity;
+	keys_t		key;
 }	t_t;
 
 ////////////////////////////////////////////////////////////////////////////////

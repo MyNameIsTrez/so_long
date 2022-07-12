@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_structs.h                                       :+:    :+:            */
+/*   sl_held_keys.h                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:56:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 17:05:18 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/11 16:39:47 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/11 17:10:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCTS_H
-# define SL_STRUCTS_H
+#ifndef SL_HELD_KEYS_H
+# define SL_HELD_KEYS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "sl_mlx42.h"
-# include "sl_window.h"
-# include "sl_texture.h"
-# include "sl_tiles.h"
-# include "sl_entity.h"
-# include "sl_player.h"
-# include "sl_temporary.h"
+# include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "sl_data.h"
+void	sl_update_held_keys(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_structs.h                                       :+:    :+:            */
+/*   update_held_keys.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:56:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 17:05:18 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/11 16:39:23 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/12 10:35:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCTS_H
-# define SL_STRUCTS_H
+#include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "sl_mlx42.h"
-# include "sl_window.h"
-# include "sl_texture.h"
-# include "sl_tiles.h"
-# include "sl_entity.h"
-# include "sl_player.h"
-# include "sl_temporary.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-# include "sl_data.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+void	sl_update_held_keys(t_data *data)
+{
+	while (sl_iterate_keys(data) != FINISHED)
+	{
+		if (mlx_is_key_down(data->mlx, data->t.key))
+			data->held_keys[data->t.key]++;
+		else if (data->held_keys[data->t.key] > 0)
+			data->held_keys[data->t.key] = 0;
+	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////

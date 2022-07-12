@@ -1,36 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_structs.h                                       :+:    :+:            */
+/*   keys.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:56:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 17:05:18 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/11 16:59:56 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/11 17:33:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCTS_H
-# define SL_STRUCTS_H
+#include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "sl_mlx42.h"
-# include "sl_window.h"
-# include "sl_texture.h"
-# include "sl_tiles.h"
-# include "sl_entity.h"
-# include "sl_player.h"
-# include "sl_temporary.h"
+STATIC t_iterator_status	resettable_iterate_keys(t_data *data, bool reset)
+{
+	static keys_t	key;
+
+	if (reset)
+	{
+		key = 0;
+		return (RESET);
+	}
+	while (key < MLX42_KEY_COUNT)
+	{
+		data->t.key = key;
+		key++;
+		return (LOOPED);
+	}
+	sl_reset_iterate_keys(data);
+	return (FINISHED);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "sl_data.h"
+t_iterator_status	sl_iterate_keys(t_data *data)
+{
+	return (resettable_iterate_keys(data, false));
+}
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+void	sl_reset_iterate_keys(t_data *data)
+{
+	resettable_iterate_keys(data, true);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

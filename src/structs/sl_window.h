@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:58:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 17:59:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/11 17:26:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 typedef struct s_window
 {
-	uint32_t	window_width;
-	uint32_t	window_height;
+	uint32_t	width;
+	uint32_t	height;
 }	t_window;
 
 ////////////////////////////////////////////////////////////////////////////////
