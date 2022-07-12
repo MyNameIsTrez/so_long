@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/12 10:38:32 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/12 11:00:34 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ STATIC void	loop(void *param)
 	// ft_printf("%d\n", data->frame);
 	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(data->mlx);
+	sl_update_colors(data);
 	sl_try_move_players(data);
 	sl_update_held_keys(data);
 	update_frames(data);
