@@ -1,47 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_temporary.h                                     :+:    :+:            */
+/*   channel_indices.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/12 15:08:53 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/12 14:31:40 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/12 14:31:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_TEMPORARY_H
-# define SL_TEMPORARY_H
+#include "../../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_frame_pixels
+STATIC t_iterator_status	resettable_iterate_channel_indices(t_data *data, bool reset)
 {
-	uint32_t	x;
-	uint32_t	y;
-}	t_frame_pixels;
+	static uint32_t	channel_index;
+
+	if (reset)
+	{
+		channel_index = 0;
+		data->t.channel_index = 0;
+		return (RESET);
+	}
+	while (channel_index < 4)
+	{
+		data->t.channel_index = channel_index;
+		channel_index++;
+		return (LOOPED);
+	}
+	sl_reset_iterate_channel_indices(data);
+	return (FINISHED);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// This struct is used for Temporary data storage. Used by iterators.
-typedef struct s_t
+t_iterator_status	sl_iterate_channel_indices(t_data *data)
 {
-	uint32_t		column_index;
-	uint32_t		row_index;
-	uint32_t		frame_index;
-	uint32_t		player_index;
-	uint32_t		tile_kind_index;
-	t_entity		*entity;
-	keys_t			key;
-	uint8_t			red;
-	t_frame_pixels	frame_pixels;
-	uint32_t		channel_index;
-}	t_t;
+	return (resettable_iterate_channel_indices(data, false));
+}
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+void	sl_reset_iterate_channel_indices(t_data *data)
+{
+	resettable_iterate_channel_indices(data, true);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
