@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/12 11:07:59 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/12 13:48:34 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC void	update_wall_colors(mlx_image_t *frame)
+STATIC void	update_wall_colors(mlx_image_t *frame, t_data *data)
 {
-	frame->pixels[0]++;
+	while (sl_iterate_frame_pixels(frame, data) != FINISHED)
+		frame->pixels[(data->t.frame_pixels.x + data->t.frame_pixels.y * frame->width) * 4]++;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
 void	sl_update_colors(t_data *data)
 {
-	update_wall_colors(data->tile_kinds[WALL_CHARACTER].frames[0]);
+	update_wall_colors(data->tile_kinds[WALL_CHARACTER].frames[0], data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
