@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/12 10:38:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 14:43:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,27 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+STATIC void	shift_player(t_player *player, int32_t x, int32_t y, t_data *data)
+{
+	sl_shift_tile_pos(&player->entity->tile, x, y, data);
+}
+
+STATIC bool	is_walkable(t_player *player, keys_t key, t_data *data)
+{
+	const t_entity		*entity = player->entity;
+	t_controls*const	controls = &player->controls;
+	const int32_t		column = (int32_t)entity->column_index + \
+									sl_get_key_column_offset(key, controls);
+	const int32_t		row = (int32_t)entity->row_index + \
+									sl_get_key_row_offset(key, controls);
+	char				tile_character;
+
+	if (sl_out_of_bounds(column, row, data))
+		return (false);
+	tile_character = data->char_grid.cells[row][column];
+	return (ft_chr_in_str(tile_character, WALKABLE_CHARACTERS));
+}
+
 STATIC bool	can_autowalk(uint32_t frames_held)
 {
 	const bool	held_long_enough = frames_held >= MIN_FRAMES_HELD_FOR_AUTOWALK;
@@ -24,35 +45,41 @@ STATIC bool	can_autowalk(uint32_t frames_held)
 	return (held_long_enough && is_autowalk_frame);
 }
 
-STATIC bool	should_player_shift(keys_t key, t_data *data)
+STATIC bool	can_player_shift(t_player *player, keys_t key, t_data *data)
 {
-	const bool		holding_key = mlx_is_key_down(data->mlx, key);
-	const uint32_t	frames_held = data->held_keys[key];
-	const bool		key_wasnt_pressed = frames_held == 0;
+	uint32_t	frames_held;
+	bool		key_was_held;
 
-	return (holding_key && (key_wasnt_pressed || can_autowalk(frames_held)));
-}
-
-STATIC void	shift_player(t_player *player, int32_t x, int32_t y, t_data *data)
-{
-	sl_shift_tile_pos(&player->entity->tile, x, y, data);
+	if (!mlx_is_key_down(data->mlx, key))
+		return (false);
+	if (key == MLX_KEY_A)
+		ft_printf("xd");
+	frames_held = data->held_keys[key];
+	key_was_held = frames_held > 0;
+	if (key_was_held && !can_autowalk(frames_held))
+		return (false);
+	if (!is_walkable(player, key, data))
+		return (false);
+	return (true);
 }
 
 void	sl_try_move_players(t_data *data)
 {
 	const int32_t	pixels_per_tile = (int32_t)data->texture.pixels_per_tile;
 	t_player		*player;
+	t_controls		*controls;
 
 	while (sl_iterate_player_count(data) != FINISHED)
 	{
 		player = &data->players[data->t.player_index];
-		if (should_player_shift(player->controls.up_key, data))
+		controls = &player->controls;
+		if (can_player_shift(player, controls->up_key, data))
 			shift_player(player, 0, -pixels_per_tile, data);
-		if (should_player_shift(player->controls.down_key, data))
+		if (can_player_shift(player, controls->down_key, data))
 			shift_player(player, 0, pixels_per_tile, data);
-		if (should_player_shift(player->controls.left_key, data))
+		if (can_player_shift(player, controls->left_key, data))
 			shift_player(player, -pixels_per_tile, 0, data);
-		if (should_player_shift(player->controls.right_key, data))
+		if (can_player_shift(player, controls->right_key, data))
 			shift_player(player, pixels_per_tile, 0, data);
 	}
 }

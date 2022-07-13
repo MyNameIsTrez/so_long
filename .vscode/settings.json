@@ -8,6 +8,7 @@
 		"string": "c",
 		"string_view": "c",
 		"vector": "c",
-		"chrono": "c"
+		"chrono": "c",
+		"__node_handle": "c"
 	}
 }

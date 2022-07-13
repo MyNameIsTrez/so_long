@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 18:02:55 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 18:13:56 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 13:16:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # define MAP_CHARACTERS	"01CEP"
 
 # define ENTITY_CHARACTERS	"CP"
+
+# define WALKABLE_CHARACTERS	"0CE"
 
 ////////////////////////////////////////////////////////////////////////////////
 
