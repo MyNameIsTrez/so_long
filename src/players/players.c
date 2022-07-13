@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 14:43:31 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 14:56:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ STATIC bool	can_player_shift(t_player *player, keys_t key, t_data *data)
 
 	if (!mlx_is_key_down(data->mlx, key))
 		return (false);
-	if (key == MLX_KEY_A)
-		ft_printf("xd");
+	// if (key == MLX_KEY_A)
+	// 	ft_printf("xd");
 	frames_held = data->held_keys[key];
 	key_was_held = frames_held > 0;
 	if (key_was_held && !can_autowalk(frames_held))

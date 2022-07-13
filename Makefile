@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/13 14:24:29 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/13 15:00:42 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -123,35 +123,35 @@ SOURCES +=\
 
 ################################################################################
 
-# HEADERS =\
-# 	src/background/sl_background.h\
-# 	src/cleanup/sl_cleanup.h\
-# 	src/error/sl_error.h\
-# 	src/frames/utils/sl_frame_utils.h\
-# 	src/frames/sl_frames.h\
-# 	src/held_keys/sl_held_keys.h\
-# 	src/iterators/sl_iterators.h\
-# 	src/iterators/frames/sl_iterator_frames.h\
-# 	src/players/utils/sl_players_utils.h\
-# 	src/players/sl_players.h\
-# 	src/settings/sl_settings_controls.h\
-# 	src/settings/sl_settings_map.h\
-# 	src/settings/sl_settings_players.h\
-# 	src/settings/sl_settings_texture.h\
-# 	src/settings/sl_settings_tiles.h\
-# 	src/settings/sl_settings_window.h\
-# 	src/settings/sl_settings.h\
-# 	src/structs/sl_structs_data.h\
-# 	src/structs/sl_structs_entity.h\
-# 	src/structs/sl_structs_mlx42.h\
-# 	src/structs/sl_structs_player.h\
-# 	src/structs/sl_structs_structs.h\
-# 	src/structs/sl_structs_temporary.h\
-# 	src/structs/sl_structs_texture.h\
-# 	src/structs/sl_structs_tiles.h\
-# 	src/tiles/sl_tiles.h\
-# 	src/utils/sl_utils.h\
-# 	src/so_long.h
+HEADERS =\
+	src/background/sl_background.h\
+	src/cleanup/sl_cleanup.h\
+	src/error/sl_error.h\
+	src/frames/utils/sl_frame_utils.h\
+	src/frames/sl_frames.h\
+	src/held_keys/sl_held_keys.h\
+	src/iterators/sl_iterators.h\
+	src/iterators/frames/sl_iterator_frames.h\
+	src/players/utils/sl_players_utils.h\
+	src/players/sl_players.h\
+	src/settings/sl_settings_controls.h\
+	src/settings/sl_settings_map.h\
+	src/settings/sl_settings_players.h\
+	src/settings/sl_settings_texture.h\
+	src/settings/sl_settings_tiles.h\
+	src/settings/sl_settings_window.h\
+	src/settings/sl_settings.h\
+	src/structs/sl_structs_data.h\
+	src/structs/sl_structs_entity.h\
+	src/structs/sl_structs_mlx42.h\
+	src/structs/sl_structs_player.h\
+	src/structs/sl_structs.h\
+	src/structs/sl_structs_temporary.h\
+	src/structs/sl_structs_texture.h\
+	src/structs/sl_structs_tiles.h\
+	src/tiles/sl_tiles.h\
+	src/utils/sl_utils.h\
+	src/so_long.h
 
 ################################################################################
 
