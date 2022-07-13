@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/12 14:32:39 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/13 11:58:00 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,10 +83,10 @@ SOURCES +=\
 	src/iterators/tile_kind_count.c
 
 SOURCES +=\
-	src/iterators/frame/frame_width.c\
-	src/iterators/frame/frame_height.c\
-	src/iterators/frame/frame_pixels.c\
-	src/iterators/frame/channel_indices.c
+	src/iterators/frames/frame_width.c\
+	src/iterators/frames/frame_height.c\
+	src/iterators/frames/frame_pixels.c\
+	src/iterators/frames/channel_indices.c
 
 ################################################################################
 
@@ -101,12 +101,40 @@ SOURCES +=\
 ################################################################################
 
 SOURCES +=\
-	src/colors/update_colors.c
+	src/frames/update_frames.c
 
 ################################################################################
 
 SOURCES +=\
 	src/cleanup/cleanup.c
+
+################################################################################
+
+HEADERS =\
+	src/cleanup/sl_cleanup.h\
+	src/error/sl_error.h\
+	src/frames/sl_frames.h\
+	src/held_keys/sl_held_keys.h\
+	src/iterators/sl_iterators.h\
+	src/iterators/frames/sl_iterator_frames.h\
+	src/players/sl_players.h\
+	src/settings/sl_settings_controls.h\
+	src/settings/sl_settings_map.h\
+	src/settings/sl_settings_players.h\
+	src/settings/sl_settings_texture.h\
+	src/settings/sl_settings_tiles.h\
+	src/settings/sl_settings_window.h\
+	src/settings/sl_settings.h\
+	src/structs/sl_data.h\
+	src/structs/sl_entity.h\
+	src/structs/sl_mlx42.h\
+	src/structs/sl_player.h\
+	src/structs/sl_structs.h\
+	src/structs/sl_temporary.h\
+	src/structs/sl_texture.h\
+	src/structs/sl_tiles.h\
+	src/utils/sl_utils.h\
+	src/so_long.h
 
 ################################################################################
 

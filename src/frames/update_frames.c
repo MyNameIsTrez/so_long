@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   update_colors.c                                    :+:    :+:            */
+/*   update_frames.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/12 15:18:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 11:50:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ STATIC uint32_t	get_pixel_index(mlx_image_t *frame, t_data *data)
 	return (x + y * width);
 }
 
-STATIC void	update_wall_colors(mlx_image_t *frame, t_data *data)
+STATIC void	update_wall_frames(mlx_image_t *frame, t_data *data)
 {
 	uint32_t	pixel_index;
 	uint32_t	pixels_data_index;
@@ -46,9 +46,9 @@ STATIC void	update_wall_colors(mlx_image_t *frame, t_data *data)
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_update_colors(t_data *data)
+void	sl_update_frames(t_data *data)
 {
-	update_wall_colors(data->tile_kinds[WALL_CHARACTER].frames[0], data);
+	update_wall_frames(data->tile_kinds[WALL_CHARACTER].frames[0], data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

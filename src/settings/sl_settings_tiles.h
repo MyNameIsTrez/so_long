@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:51:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/07 17:12:31 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 11:58:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 # define WALL_TEXTURE_ROW 3
 # define WALL_CHARACTER '1'
 
-# define COLLECTIBLE_TEXTURE_FRAME_COUNT 2
-# define COLLECTIBLE_TEXTURE_ROW 43
+# define COLLECTIBLE_TEXTURE_FRAME_COUNT 4
+# define COLLECTIBLE_TEXTURE_ROW 46
 # define COLLECTIBLE_CHARACTER 'C'
 
 # define MAP_EXIT_TEXTURE_FRAME_COUNT 1
