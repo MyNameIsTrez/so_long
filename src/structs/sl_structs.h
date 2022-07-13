@@ -6,9 +6,13 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:56:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 17:05:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 13:21:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -17,17 +21,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "sl_mlx42.h"
-# include "sl_window.h"
-# include "sl_texture.h"
-# include "sl_tiles.h"
-# include "sl_entity.h"
-# include "sl_player.h"
-# include "sl_temporary.h"
+# include "sl_structs_mlx42.h"
+# include "sl_structs_window.h"
+# include "sl_structs_texture.h"
+# include "sl_structs_tiles.h"
+# include "sl_structs_entity.h"
+# include "sl_structs_player.h"
+# include "sl_structs_temporary.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "sl_data.h"
+# include "sl_structs_data.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

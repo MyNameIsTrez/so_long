@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_player.h                                        :+:    :+:            */
+/*   sl_structs_mlx42.h                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:55:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/01 18:24:24 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/11 17:04:09 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/13 13:20:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PLAYER_H
-# define SL_PLAYER_H
+////////////////////////////////////////////////////////////////////////////////
+
+#ifndef SL_STRUCTS_MLX42_H
+# define SL_STRUCTS_MLX42_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_controls
-{
-	keys_t		up_key;
-	keys_t		down_key;
-	keys_t		left_key;
-	keys_t		right_key;
-}	t_controls;
-
-typedef struct s_player
-{
-	t_entity	*entity;
-	t_controls	controls;
-}	t_player;
+# define MLX42_KEY_COUNT 349
 
 ////////////////////////////////////////////////////////////////////////////////
 

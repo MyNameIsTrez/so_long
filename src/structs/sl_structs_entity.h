@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_window.h                                        :+:    :+:            */
+/*   sl_structs_entity.h                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:58:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 17:26:31 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/01 17:57:30 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/13 14:52:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_WINDOW_H
-# define SL_WINDOW_H
+////////////////////////////////////////////////////////////////////////////////
+
+#ifndef SL_STRUCTS_ENTITY_H
+# define SL_STRUCTS_ENTITY_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_window
+typedef struct s_entity
 {
-	uint32_t	width;
-	uint32_t	height;
-}	t_window;
+	uint32_t	column_index;
+	uint32_t	row_index;
+	t_tile		tile;
+	double		last_frame_seconds;
+	double		seconds_per_frame;
+}	t_entity;
 
 ////////////////////////////////////////////////////////////////////////////////
 
