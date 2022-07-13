@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_settings.h                                      :+:    :+:            */
+/*   sl_settings_background.h                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:50:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 14:01:27 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/13 14:01:18 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/13 14:01:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_SETTINGS_H
-# define SL_SETTINGS_H
+#ifndef SL_SETTINGS_BACKGROUND_H
+# define SL_SETTINGS_BACKGROUND_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "sl_settings_background.h"
-# include "sl_settings_controls.h"
-# include "sl_settings_map.h"
-# include "sl_settings_players.h"
-# include "sl_settings_texture.h"
-# include "sl_settings_tiles.h"
-# include "sl_settings_window.h"
+# define BACKGROUND_R 0
+# define BACKGROUND_G 0
+# define BACKGROUND_B 0
+# define BACKGROUND_A 255
 
 ////////////////////////////////////////////////////////////////////////////////
 
