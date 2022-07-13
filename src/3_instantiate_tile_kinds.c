@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/12 10:51:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 12:10:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ STATIC t_status	add_tile_kind(uint32_t frame_count, uint32_t texture_row,
 				data->texture.pixels_per_tile * data->t.frame_index,
 				data->texture.pixels_per_tile * texture_row},
 				(uint32_t[2]){data->texture.pixels_per_tile, data->texture.pixels_per_tile});
+		if (tile_kind->frames[data->t.frame_index] == NULL)
+			return (sl_set_error(SL_ERROR_MLX42));
 	}
 	return (OK);
 }

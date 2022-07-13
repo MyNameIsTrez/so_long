@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/13 11:58:00 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/13 12:26:45 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,6 +73,18 @@ SOURCES +=\
 ################################################################################
 
 SOURCES +=\
+	src/background/background.c
+
+################################################################################
+
+SOURCES +=\
+	src/iterators/frames/channel_indices.c\
+	src/iterators/frames/frame_channels.c\
+	src/iterators/frames/frame_height.c\
+	src/iterators/frames/frame_pixels.c\
+	src/iterators/frames/frame_width.c
+
+SOURCES +=\
 	src/iterators/char_grid_height.c\
 	src/iterators/char_grid_width.c\
 	src/iterators/char_grid.c\
@@ -81,12 +93,6 @@ SOURCES +=\
 	src/iterators/keys.c\
 	src/iterators/player_count.c\
 	src/iterators/tile_kind_count.c
-
-SOURCES +=\
-	src/iterators/frames/frame_width.c\
-	src/iterators/frames/frame_height.c\
-	src/iterators/frames/frame_pixels.c\
-	src/iterators/frames/channel_indices.c
 
 ################################################################################
 
@@ -111,6 +117,7 @@ SOURCES +=\
 ################################################################################
 
 HEADERS =\
+	src/background/sl_background.h\
 	src/cleanup/sl_cleanup.h\
 	src/error/sl_error.h\
 	src/frames/sl_frames.h\

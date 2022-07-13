@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 11:54:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 12:04:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ STATIC t_status	run(int argc, char **argv, t_data *data)
 			(int32_t)data->window.height, WINDOW_TITLE, true);
 	if (data->mlx == NULL)
 		return (sl_set_error(SL_ERROR_MLX42));
+	if (sl_instantiate_background(data) != OK)
+		return (sl_any_error());
 	if (sl_load_texture(data) != OK)
 		return (sl_any_error());
 	if (sl_instantiate_tile_kinds(data) != OK)
