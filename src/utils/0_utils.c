@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 15:12:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 15:27:59 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 16:07:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,18 @@ t_status	sl_instance_tile_frames(t_tile *tile, t_data *data)
 	return (OK);
 }
 
-void	sl_shift_tile_pos(t_tile *tile, int32_t x, int32_t y, t_data *data)
+void	sl_shift_tile_pos(t_tile *tile, int32_t columns, int32_t rows, t_data *data)
 {
+	const int32_t	pixels_per_tile = (int32_t)data->texture.pixels_per_tile;
 	mlx_instance_t	*instance;
 
+	tile->column_index = (uint32_t)((int32_t)tile->column_index + columns);
+	tile->row_index = (uint32_t)((int32_t)tile->row_index + rows);
 	while (sl_iterate_frame_count(tile->tile_kind->frame_count, data) != FINISHED)
 	{
 		instance = sl_get_instance(tile, data->t.frame_index);
-		instance->x += x;
-		instance->y += y;
+		instance->x += columns * pixels_per_tile;
+		instance->y += rows * pixels_per_tile;
 	}
 }
 
@@ -96,6 +99,14 @@ mlx_image_t	*sl_get_frame(t_tile_kind *tile_kind, uint32_t frame_index)
 unsigned char	sl_get_char_grid_character(t_data *data)
 {
 	return ((unsigned char)data->char_grid.cells[data->t.row_index][data->t.column_index]);
+}
+
+unsigned char	sl_get_tile_grid_character(t_data *data)
+{
+	t_tile	*tile;
+
+	tile = data->tile_grid.cells[data->t.row_index][data->t.column_index];
+	return (tile->tile_kind->character);
 }
 
 t_tile	*sl_get_tile(t_data *data)

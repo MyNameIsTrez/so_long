@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 15:03:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 16:07:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ STATIC bool	is_walkable(t_player *player, keys_t key, t_data *data)
 
 	if (sl_out_of_bounds(column, row, data))
 		return (false);
+	data->t.column_index = (uint32_t)column;
+	data->t.row_index = (uint32_t)row;
 	tile_character = data->char_grid.cells[row][column];
 	return (ft_chr_in_str(tile_character, WALKABLE_CHARACTERS));
 }
@@ -52,8 +54,6 @@ STATIC bool	can_player_shift(t_player *player, keys_t key, t_data *data)
 
 	if (!mlx_is_key_down(data->mlx, key))
 		return (false);
-	// if (key == MLX_KEY_A)
-	// 	ft_printf("xd");
 	frames_held = data->held_keys[key];
 	key_was_held = frames_held > 0;
 	if (key_was_held && !can_autowalk(frames_held))
@@ -65,7 +65,6 @@ STATIC bool	can_player_shift(t_player *player, keys_t key, t_data *data)
 
 void	sl_try_move_players(t_data *data)
 {
-	const int32_t	pixels_per_tile = (int32_t)data->texture.pixels_per_tile;
 	t_player		*player;
 	t_controls		*controls;
 
@@ -74,13 +73,13 @@ void	sl_try_move_players(t_data *data)
 		player = &data->players[data->t.player_index];
 		controls = &player->controls;
 		if (can_player_shift(player, controls->up_key, data))
-			shift_player(player, 0, -pixels_per_tile, data);
+			shift_player(player, 0, -1, data);
 		if (can_player_shift(player, controls->down_key, data))
-			shift_player(player, 0, pixels_per_tile, data);
+			shift_player(player, 0, 1, data);
 		if (can_player_shift(player, controls->left_key, data))
-			shift_player(player, -pixels_per_tile, 0, data);
+			shift_player(player, -1, 0, data);
 		if (can_player_shift(player, controls->right_key, data))
-			shift_player(player, pixels_per_tile, 0, data);
+			shift_player(player, 1, 0, data);
 	}
 }
 
