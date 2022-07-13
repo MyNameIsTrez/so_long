@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 14:56:35 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 15:03:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ STATIC void	shift_player(t_player *player, int32_t x, int32_t y, t_data *data)
 
 STATIC bool	is_walkable(t_player *player, keys_t key, t_data *data)
 {
-	const t_entity		*entity = player->entity;
+	const t_tile		*tile = &player->entity->tile;
 	t_controls*const	controls = &player->controls;
-	const int32_t		column = (int32_t)entity->column_index + \
+	const int32_t		column = (int32_t)tile->column_index + \
 									sl_get_key_column_offset(key, controls);
-	const int32_t		row = (int32_t)entity->row_index + \
+	const int32_t		row = (int32_t)tile->row_index + \
 									sl_get_key_row_offset(key, controls);
 	char				tile_character;
 

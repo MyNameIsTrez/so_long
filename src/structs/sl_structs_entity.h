@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:57:30 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 14:52:19 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 15:01:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 
 typedef struct s_entity
 {
-	uint32_t	column_index;
-	uint32_t	row_index;
 	t_tile		tile;
 	double		last_frame_seconds;
 	double		seconds_per_frame;
