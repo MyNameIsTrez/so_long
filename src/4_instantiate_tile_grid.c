@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 15:22:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 15:28:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ STATIC t_status	instantiate_tile(t_data *data)
 	if (malloc_tile(&data->tile_grid.cells[data->t.row_index][data->t.column_index]) != OK)
 		return (sl_any_error());
 	tile = sl_get_tile(data);
-	if (sl_fill_tile_data(tile, tile_kind, data->t.column_index, data->t.row_index) != OK)
+	if (sl_fill_tile_data(tile, tile_kind, data) != OK)
 		return (sl_any_error());
 	if (sl_instance_tile_frames(tile, data) != OK)
 		return (sl_any_error());

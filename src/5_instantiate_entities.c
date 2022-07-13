@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 13:33:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 15:09:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 15:29:01 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ STATIC t_status	instantiate_entity(t_data *data)
 	entity = malloc(sizeof(t_entity));
 	if (entity == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
-	if (sl_fill_tile_data(&entity->tile, tile_kind,
-			data->t.column_index, data->t.row_index) != OK)
+	if (sl_fill_tile_data(&entity->tile, tile_kind, data) != OK)
 		return (sl_any_error());
 	if (sl_instance_tile_frames(&entity->tile, data) != OK)
 		return (sl_any_error());
