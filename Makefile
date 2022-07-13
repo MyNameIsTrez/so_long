@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/13 12:26:45 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/13 12:37:24 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,18 +47,12 @@ LIBS := $(GLFW) $(MLX42) $(LIBFT) $(FT_PRINTF)
 ################################################################################
 
 SOURCES :=\
-	src/0_main.c\
-	src/1_parse_argv.c\
-	src/2_load_texture.c\
-	src/3_instantiate_tile_kinds.c\
-	src/4_instantiate_tile_grid.c\
-	src/5_instantiate_entities.c\
-	src/6_instantiate_players.c
+	src/background/background.c
 
 ################################################################################
 
 SOURCES +=\
-	src/utils/0_utils.c
+	src/cleanup/cleanup.c
 
 ################################################################################
 
@@ -73,7 +67,24 @@ SOURCES +=\
 ################################################################################
 
 SOURCES +=\
-	src/background/background.c
+	src/frames/utils/frame_utils.c\
+	src/frames/update_frames.c
+
+################################################################################
+
+SOURCES +=\
+	src/0_main.c\
+	src/1_parse_argv.c\
+	src/2_load_texture.c\
+	src/3_instantiate_tile_kinds.c\
+	src/4_instantiate_tile_grid.c\
+	src/5_instantiate_entities.c\
+	src/6_instantiate_players.c
+
+################################################################################
+
+SOURCES +=\
+	src/utils/0_utils.c
 
 ################################################################################
 
@@ -106,20 +117,11 @@ SOURCES +=\
 
 ################################################################################
 
-SOURCES +=\
-	src/frames/update_frames.c
-
-################################################################################
-
-SOURCES +=\
-	src/cleanup/cleanup.c
-
-################################################################################
-
 HEADERS =\
 	src/background/sl_background.h\
 	src/cleanup/sl_cleanup.h\
 	src/error/sl_error.h\
+	src/frames/utils/sl_frame_utils.h\
 	src/frames/sl_frames.h\
 	src/held_keys/sl_held_keys.h\
 	src/iterators/sl_iterators.h\
