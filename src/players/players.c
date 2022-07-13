@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 16:07:57 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 16:15:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,14 @@ STATIC bool	is_walkable(t_player *player, keys_t key, t_data *data)
 									sl_get_key_column_offset(key, controls);
 	const int32_t		row = (int32_t)tile->row_index + \
 									sl_get_key_row_offset(key, controls);
-	char				tile_character;
+	unsigned char		tile_character;
 
 	if (sl_out_of_bounds(column, row, data))
 		return (false);
 	data->t.column_index = (uint32_t)column;
 	data->t.row_index = (uint32_t)row;
-	tile_character = data->char_grid.cells[row][column];
+	// tile_character = data->char_grid.cells[row][column];
+	tile_character = sl_get_tile_grid_character(data);
 	return (ft_chr_in_str(tile_character, WALKABLE_CHARACTERS));
 }
 

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:51:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 11:58:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 16:32:21 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 # define MAP_EXIT_TEXTURE_ROW 18
 # define MAP_EXIT_CHARACTER 'E'
 
-# define PLAYER_TEXTURE_FRAME_COUNT 2
+# define PLAYER_TEXTURE_FRAME_COUNT 4
 # define PLAYER_TEXTURE_ROW 25
 # define PLAYER_CHARACTER 'P'
 

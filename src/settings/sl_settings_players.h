@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 18:17:24 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/12 10:34:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 16:17:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 # define MAX_PLAYER_COUNT 2
 
-# define MIN_FRAMES_HELD_FOR_AUTOWALK 25
-# define FRAMES_BETWEEN_AUTOWALK 10
+# define MIN_FRAMES_HELD_FOR_AUTOWALK 15
+# define FRAMES_BETWEEN_AUTOWALK 7
 
 ////////////////////////////////////////////////////////////////////////////////
 

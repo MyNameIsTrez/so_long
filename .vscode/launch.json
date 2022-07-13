@@ -28,7 +28,7 @@
 		"args": [
 			// "foo.ber", // TODO: Make sure this nonexistent file prints a proper error!
 			"extra/map_tests/two_players.ber",
-			"asdi"
+			"1"
 		],
 		// "stopAtEntry": false,
 		"cwd": "${workspaceFolder}",

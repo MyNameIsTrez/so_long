@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 13:01:33 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 17:03:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@
 
 STATIC void	update_wall_frames(mlx_image_t *frame, t_data *data)
 {
-	uint32_t	pixel_index;
-	uint32_t	pixels_data_index;
+	static t_color_step	color_step = {-1, -1, -1};
+	uint32_t			pixel_index;
+	uint32_t			pixels_data_index;
 
 	while (sl_iterate_frame_pixels(frame, data) != FINISHED)
 	{
@@ -27,9 +28,27 @@ STATIC void	update_wall_frames(mlx_image_t *frame, t_data *data)
 		while (sl_iterate_channel_indices(data) != FINISHED)
 		{
 			pixels_data_index = pixel_index + data->t.channel_index;
-			if (data->t.channel_index == 0)
+			if (data->t.channel_index == 0 && data->frame % 1 == 0)
 				if (frame->pixels[pixels_data_index + 3] > 0)
-					frame->pixels[pixels_data_index]++;
+				{
+					frame->pixels[pixels_data_index] += color_step.r;
+					if (frame->pixels[pixels_data_index] == 0 || frame->pixels[pixels_data_index] == 255)
+						color_step.r *= -1;
+				}
+			if (data->t.channel_index == 1 && data->frame % 2 == 0)
+				if (frame->pixels[pixels_data_index + 2] > 0)
+				{
+					frame->pixels[pixels_data_index] += color_step.g;
+					if (frame->pixels[pixels_data_index] == 0 || frame->pixels[pixels_data_index] == 255)
+						color_step.g *= -1;
+				}
+			if (data->t.channel_index == 2 && data->frame % 3 == 0)
+				if (frame->pixels[pixels_data_index + 1] > 0)
+				{
+					frame->pixels[pixels_data_index] += color_step.b;
+					if (frame->pixels[pixels_data_index] == 0 || frame->pixels[pixels_data_index] == 255)
+						color_step.b *= -1;
+				}
 		}
 	}
 }
