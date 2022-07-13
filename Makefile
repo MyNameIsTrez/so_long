@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/13 12:37:24 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/13 14:24:29 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,24 +67,13 @@ SOURCES +=\
 ################################################################################
 
 SOURCES +=\
-	src/frames/utils/frame_utils.c\
+	src/frames/utils/utils.c\
 	src/frames/update_frames.c
 
 ################################################################################
 
 SOURCES +=\
-	src/0_main.c\
-	src/1_parse_argv.c\
-	src/2_load_texture.c\
-	src/3_instantiate_tile_kinds.c\
-	src/4_instantiate_tile_grid.c\
-	src/5_instantiate_entities.c\
-	src/6_instantiate_players.c
-
-################################################################################
-
-SOURCES +=\
-	src/utils/0_utils.c
+	src/held_keys/update_held_keys.c
 
 ################################################################################
 
@@ -108,42 +97,61 @@ SOURCES +=\
 ################################################################################
 
 SOURCES +=\
-	src/held_keys/update_held_keys.c
-
-################################################################################
-
-SOURCES +=\
+	src/players/utils/utils.c\
 	src/players/players.c
 
 ################################################################################
 
-HEADERS =\
-	src/background/sl_background.h\
-	src/cleanup/sl_cleanup.h\
-	src/error/sl_error.h\
-	src/frames/utils/sl_frame_utils.h\
-	src/frames/sl_frames.h\
-	src/held_keys/sl_held_keys.h\
-	src/iterators/sl_iterators.h\
-	src/iterators/frames/sl_iterator_frames.h\
-	src/players/sl_players.h\
-	src/settings/sl_settings_controls.h\
-	src/settings/sl_settings_map.h\
-	src/settings/sl_settings_players.h\
-	src/settings/sl_settings_texture.h\
-	src/settings/sl_settings_tiles.h\
-	src/settings/sl_settings_window.h\
-	src/settings/sl_settings.h\
-	src/structs/sl_data.h\
-	src/structs/sl_entity.h\
-	src/structs/sl_mlx42.h\
-	src/structs/sl_player.h\
-	src/structs/sl_structs.h\
-	src/structs/sl_temporary.h\
-	src/structs/sl_texture.h\
-	src/structs/sl_tiles.h\
-	src/utils/sl_utils.h\
-	src/so_long.h
+SOURCES +=\
+	src/tiles/tiles.c
+
+################################################################################
+
+SOURCES +=\
+	src/utils/0_utils.c
+
+################################################################################
+
+SOURCES +=\
+	src/0_main.c\
+	src/1_parse_argv.c\
+	src/2_load_texture.c\
+	src/3_instantiate_tile_kinds.c\
+	src/4_instantiate_tile_grid.c\
+	src/5_instantiate_entities.c\
+	src/6_instantiate_players.c
+
+################################################################################
+
+# HEADERS =\
+# 	src/background/sl_background.h\
+# 	src/cleanup/sl_cleanup.h\
+# 	src/error/sl_error.h\
+# 	src/frames/utils/sl_frame_utils.h\
+# 	src/frames/sl_frames.h\
+# 	src/held_keys/sl_held_keys.h\
+# 	src/iterators/sl_iterators.h\
+# 	src/iterators/frames/sl_iterator_frames.h\
+# 	src/players/utils/sl_players_utils.h\
+# 	src/players/sl_players.h\
+# 	src/settings/sl_settings_controls.h\
+# 	src/settings/sl_settings_map.h\
+# 	src/settings/sl_settings_players.h\
+# 	src/settings/sl_settings_texture.h\
+# 	src/settings/sl_settings_tiles.h\
+# 	src/settings/sl_settings_window.h\
+# 	src/settings/sl_settings.h\
+# 	src/structs/sl_structs_data.h\
+# 	src/structs/sl_structs_entity.h\
+# 	src/structs/sl_structs_mlx42.h\
+# 	src/structs/sl_structs_player.h\
+# 	src/structs/sl_structs_structs.h\
+# 	src/structs/sl_structs_temporary.h\
+# 	src/structs/sl_structs_texture.h\
+# 	src/structs/sl_structs_tiles.h\
+# 	src/tiles/sl_tiles.h\
+# 	src/utils/sl_utils.h\
+# 	src/so_long.h
 
 ################################################################################
 
