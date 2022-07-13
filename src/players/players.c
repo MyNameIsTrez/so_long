@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 16:15:36 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/13 17:17:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,34 @@ STATIC void	shift_player(t_player *player, int32_t x, int32_t y, t_data *data)
 	sl_shift_tile_pos(&player->entity->tile, x, y, data);
 }
 
+STATIC bool	is_entity_walkable(uint32_t column, uint32_t row, t_data *data)
+{
+	t_entity		*entity;
+	unsigned char	character;
+
+	while (sl_iterate_entities(data) != FINISHED)
+	{
+		entity = data->t.entity;
+		if (entity->tile.column_index != column
+			|| entity->tile.row_index != row)
+			continue ;
+		character = entity->tile.tile_kind->character;
+		if (!ft_chr_in_str(character, WALKABLE_CHARACTERS))
+			return (false);
+	}
+	return (true);
+}
+
+STATIC bool	is_tile_walkable(uint32_t column, uint32_t row, t_data *data)
+{
+	unsigned char		tile_character;
+
+	data->t.column_index = column;
+	data->t.row_index = row;
+	tile_character = sl_get_tile_grid_character(data);
+	return (ft_chr_in_str(tile_character, WALKABLE_CHARACTERS));
+}
+
 STATIC bool	is_walkable(t_player *player, keys_t key, t_data *data)
 {
 	const t_tile		*tile = &player->entity->tile;
@@ -29,15 +57,11 @@ STATIC bool	is_walkable(t_player *player, keys_t key, t_data *data)
 									sl_get_key_column_offset(key, controls);
 	const int32_t		row = (int32_t)tile->row_index + \
 									sl_get_key_row_offset(key, controls);
-	unsigned char		tile_character;
 
 	if (sl_out_of_bounds(column, row, data))
 		return (false);
-	data->t.column_index = (uint32_t)column;
-	data->t.row_index = (uint32_t)row;
-	// tile_character = data->char_grid.cells[row][column];
-	tile_character = sl_get_tile_grid_character(data);
-	return (ft_chr_in_str(tile_character, WALKABLE_CHARACTERS));
+	return (is_tile_walkable((uint32_t)column, (uint32_t)row, data)
+		&& is_entity_walkable((uint32_t)column, (uint32_t)row, data));
 }
 
 STATIC bool	can_autowalk(uint32_t frames_held)
