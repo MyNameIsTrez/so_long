@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/14 11:29:34 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/14 11:43:32 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,11 +74,11 @@ SOURCES +=\
 	src/held_keys/update_held_keys.c
 
 SOURCES +=\
-	src/iterators/frames/channel_indices.c\
-	src/iterators/frames/frame_channels.c\
-	src/iterators/frames/frame_height.c\
-	src/iterators/frames/frame_pixels.c\
-	src/iterators/frames/frame_width.c
+	src/iterators/frame_pixels/channel_indices.c\
+	src/iterators/frame_pixels/frame_channels.c\
+	src/iterators/frame_pixels/frame_height.c\
+	src/iterators/frame_pixels/frame_pixels.c\
+	src/iterators/frame_pixels/frame_width.c
 
 SOURCES +=\
 	src/iterators/char_grid_height.c\
@@ -135,7 +135,7 @@ HEADERS +=\
 
 HEADERS +=\
 	src/iterators/sl_iterators.h\
-	src/iterators/frames/sl_iterator_frames.h
+	src/iterators/frame_pixels/sl_iterator_frame_pixels.h
 
 HEADERS +=\
 	src/players/utils/sl_players_utils.h\
