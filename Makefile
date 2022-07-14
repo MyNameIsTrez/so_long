@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/14 12:09:24 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/14 12:33:28 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,7 @@ SOURCES +=\
 
 SOURCES +=\
 	src/iterators/frame_pixels/channel_indices.c\
+	src/iterators/frame_pixels/frame_byte_indices.c\
 	src/iterators/frame_pixels/frame_channels.c\
 	src/iterators/frame_pixels/frame_height.c\
 	src/iterators/frame_pixels/frame_pixels.c\

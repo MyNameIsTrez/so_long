@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 13:51:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 11:42:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 12:33:10 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ void				sl_reset_iterate_channel_indices(t_data *data);
 
 t_iterator_status	sl_iterate_frame_channels(mlx_image_t *frame, t_data *data);
 void				sl_reset_iterate_frame_channels(t_data *data);
+
+t_iterator_status	sl_iterate_frame_byte_indices(mlx_image_t *frame,
+						t_data *data);
+void				sl_reset_iterate_frame_byte_indices(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

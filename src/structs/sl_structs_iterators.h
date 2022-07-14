@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 11:58:54 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 12:30:12 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_it
 	uint8_t			red;
 	t_frame_pixels	frame_pixels;
 	uint32_t		channel_index;
+	uint32_t		frame_byte_index;
 	mlx_image_t		*frame;
 }	t_it;
 
