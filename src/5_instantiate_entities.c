@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 13:33:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 15:29:01 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 11:09:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ STATIC void	free_entity(void *_entity)
 	frame_index = 0;
 	while (frame_index < entity->tile.tile_kind->frame_count)
 	{
-		instance = sl_get_instance(&entity->tile, frame_index);
+		instance = sl_get_frame_instance(&entity->tile, frame_index);
 		instance->enabled = false;
 		frame_index++;
 	}
@@ -43,7 +43,7 @@ STATIC t_status	instantiate_entity(t_data *data)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	if (sl_fill_tile_data(&entity->tile, tile_kind, data) != OK)
 		return (sl_any_error());
-	if (sl_instance_tile_frames(&entity->tile, data) != OK)
+	if (sl_instantiate_tile_frames(&entity->tile, data) != OK)
 		return (sl_any_error());
 	entity->last_frame_seconds = 0;
 	entity->seconds_per_frame = 0.5; // TODO: DON'T HARDCODE!!!

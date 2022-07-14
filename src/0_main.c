@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 12:04:59 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 11:09:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ STATIC void	update_frames(t_data *data)
 		tile = &entity->tile;
 		if (data->seconds - entity->last_frame_seconds > entity->seconds_per_frame)
 		{
-			sl_get_instance(tile, tile->frame_index)->enabled = false;
+			sl_get_frame_instance(tile, tile->frame_index)->enabled = false;
 			tile->frame_index = (tile->frame_index + 1) % tile->tile_kind->frame_count;
-			sl_get_instance(tile, tile->frame_index)->enabled = true;
+			sl_get_frame_instance(tile, tile->frame_index)->enabled = true;
 			entity->last_frame_seconds = data->seconds;
 		}
 		entity->seconds_per_frame -= 0.001;
