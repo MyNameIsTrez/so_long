@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 11:44:54 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 12:03:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 12:10:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ STATIC t_iterator_status	resettable_iterate_frames(t_tile_kind *tile_kind,
 	uint32_t			frame_count;
 	mlx_image_t			**frames;
 
-	frame_count = tile_kind->frame_count;
-	frames = tile_kind->frames;
 	if (reset)
 	{
 		frame = NULL;
 		data->it.frame = NULL;
 		return (RESET);
 	}
+	frame_count = tile_kind->frame_count;
+	frames = tile_kind->frames;
 	while (sl_iterate_frame_count(frame_count, data) != FINISHED)
 	{
-		data->it.frame = frames[data->t.frame_index];
+		data->it.frame = frames[data->it.frame_index];
 		return (LOOPED);
 	}
 	sl_reset_iterate_frames(data);
