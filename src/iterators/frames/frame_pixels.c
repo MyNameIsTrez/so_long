@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 13:49:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 13:17:49 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 13:26:53 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ STATIC t_iterator_status	resettable_iterate_frame_pixels(mlx_image_t *frame,
 	}
 	while (true)
 	{
-		if (data->it.frame_pixels.y == 0)
-			sl_iterate_frame_height(frame, data);
 		while (true)
 		{
 			if (sl_iterate_frame_width(frame, data) != LOOPED)
@@ -36,6 +34,8 @@ STATIC t_iterator_status	resettable_iterate_frame_pixels(mlx_image_t *frame,
 			return (LOOPED);
 		}
 		sl_reset_iterate_frame_width(data);
+		if (data->it.frame_pixels.y == 0)
+			sl_iterate_frame_height(frame, data);
 		if (sl_iterate_frame_height(frame, data) != LOOPED)
 			break ;
 	}
