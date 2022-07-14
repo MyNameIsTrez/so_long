@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 13:33:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 16:57:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 17:48:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 STATIC void	free_entity(void *_entity)
 {
 	t_entity		*entity;
-	t_i32		frame_index;
+	t_i32			frame_index;
 	mlx_instance_t	*instance;
 
 	entity = _entity;

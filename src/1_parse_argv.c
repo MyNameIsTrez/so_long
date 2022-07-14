@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 16:56:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 17:27:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@
 
 STATIC void	calculate_width_and_height(t_data *data)
 {
-	data->window.width = data->char_grid.width * data->texture.pixels_per_tile;
-	data->window.height = data->char_grid.height * data->texture.pixels_per_tile;
+	t_i32	pixels_per_tile;
+
+	pixels_per_tile = data->texture.pixels_per_tile;
+	data->window.width = data->char_grid.width * pixels_per_tile;
+	data->window.height = data->char_grid.height * pixels_per_tile;
 }
 
 STATIC t_status	calculate_pixels_per_tile(t_i32 scale, t_data *data)
@@ -30,11 +33,13 @@ STATIC t_status	calculate_pixels_per_tile(t_i32 scale, t_data *data)
 	[3] = 10,
 	[4] = 20,
 	};
+	t_texture			*texture;
 
 	if (scale < 1 || scale > 4)
 		return (sl_set_error(SL_ERROR_INVALID_SCALE));
-	data->texture.scale = valid_pixels_per_tile[scale];
-	data->texture.pixels_per_tile = data->texture.scale * PIXELS_PER_TILE_UNSCALED;
+	texture = &data->texture;
+	texture->scale = valid_pixels_per_tile[scale];
+	texture->pixels_per_tile = texture->scale * PIXELS_PER_TILE_UNSCALED;
 	return (OK);
 }
 

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 17:07:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 17:48:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,14 @@ STATIC t_tile_kind	*get_tile_kind(t_data *data)
 STATIC t_status	instantiate_tile(t_data *data)
 {
 	t_tile_kind	*tile_kind;
+	t_i32		row_index;
+	t_i32		column_index;
 	t_tile		*tile;
 
 	tile_kind = get_tile_kind(data);
-	if (malloc_tile(&data->tile_grid.cells[data->it.row_index][data->it.column_index]) != OK)
+	row_index = data->it.row_index;
+	column_index = data->it.column_index;
+	if (malloc_tile(&data->tile_grid.cells[row_index][column_index]) != OK)
 		return (sl_any_error());
 	tile = sl_get_tile(data);
 	if (sl_fill_tile_data(tile, tile_kind, data) != OK)
@@ -49,11 +53,15 @@ STATIC t_status	instantiate_tile(t_data *data)
 
 STATIC t_status	malloc_rows(t_data *data)
 {
-	t_tile		***cells;
+	t_tile	***cells;
+	size_t	tile_row_bytes;
+	t_i32	row_index;
 
 	cells = data->tile_grid.cells;
-	cells[data->it.row_index] = malloc(sizeof(t_tile *) * (size_t)data->char_grid.width);
-	if (cells[data->it.row_index] == NULL)
+	tile_row_bytes = sizeof(t_tile *) * (size_t)data->char_grid.width;
+	row_index = data->it.row_index;
+	cells[row_index] = malloc(tile_row_bytes);
+	if (cells[row_index] == NULL)
 	{
 		// TODO: Free previously allocated rows.
 		ft_free(&data->tile_grid.cells);

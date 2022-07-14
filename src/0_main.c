@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 15:35:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 17:24:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,19 @@ STATIC void	update_frames(t_data *data)
 {
 	t_entity	*entity;
 	t_tile		*tile;
+	t_f64		seconds_elapsed;
+	t_i32		frame_count;
 
 	while (sl_iterate_entities(data) != FINISHED)
 	{
 		entity = data->it.entity;
-		tile = &entity->tile;
-		if (data->seconds - entity->last_frame_seconds > entity->seconds_per_frame)
+		seconds_elapsed = data->seconds - entity->last_frame_seconds;
+		if (seconds_elapsed > entity->seconds_per_frame)
 		{
+			tile = &entity->tile;
 			sl_get_frame_instance(tile, tile->frame_index)->enabled = false;
-			tile->frame_index = (tile->frame_index + 1) % tile->tile_kind->frame_count;
+			frame_count = tile->tile_kind->frame_count;
+			tile->frame_index = (tile->frame_index + 1) % frame_count;
 			sl_get_frame_instance(tile, tile->frame_index)->enabled = true;
 			entity->last_frame_seconds = data->seconds;
 		}

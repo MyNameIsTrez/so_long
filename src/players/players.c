@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 16:58:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 17:16:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ STATIC void	shift_player(t_player *player, t_i32 x, t_i32 y, t_data *data)
 
 STATIC bool	is_entity_walkable(t_i32 column, t_i32 row, t_data *data)
 {
-	t_entity		*entity;
-	t_u8	character;
+	t_entity	*entity;
+	t_u8		character;
 
 	while (sl_iterate_entities(data) != FINISHED)
 	{
@@ -41,7 +41,7 @@ STATIC bool	is_entity_walkable(t_i32 column, t_i32 row, t_data *data)
 
 STATIC bool	is_tile_walkable(t_i32 column, t_i32 row, t_data *data)
 {
-	t_u8		tile_character;
+	t_u8	tile_character;
 
 	data->it.column_index = column;
 	data->it.row_index = row;
@@ -79,7 +79,7 @@ STATIC bool	can_autowalk(t_i32 frames_held)
 STATIC bool	can_player_shift(t_player *player, keys_t key, t_data *data)
 {
 	t_i32	frames_held;
-	bool		key_was_held;
+	bool	key_was_held;
 
 	if (!mlx_is_key_down(data->mlx, key))
 		return (false);

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:57:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 16:58:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 17:17:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ typedef struct s_texture
 {
 	char			*filename;
 	mlx_texture_t	*data;
-	t_i32		scale;
-	t_i32		pixels_per_tile;
+	t_i32			scale;
+	t_i32			pixels_per_tile;
 }	t_texture;
 
 ////////////////////////////////////////////////////////////////////////////////

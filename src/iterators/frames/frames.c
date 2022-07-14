@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 11:44:54 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 16:57:59 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 17:13:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 STATIC t_iterator_status	resettable_iterate_frames(t_tile_kind *tile_kind,
 			t_data *data, bool reset)
 {
-	t_i32			frame_count;
-	mlx_image_t			**frames;
+	t_i32		frame_count;
+	mlx_image_t	**frames;
 
 	if (reset)
 	{

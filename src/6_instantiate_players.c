@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 16:48:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 16:57:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 17:48:53 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ STATIC t_controls	get_players_controls(t_i32 player_index)
 
 t_status	sl_instantiate_players(t_data *data)
 {
-	t_i32	player_index;
+	t_i32		player_index;
 	t_player	*players;
 	t_player	*player;
 
