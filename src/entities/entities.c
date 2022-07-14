@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_tiles.h                                         :+:    :+:            */
+/*   entities.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/13 13:22:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 11:14:16 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/14 11:13:57 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/14 11:14:10 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_TILES_H
-# define SL_TILES_H
+#include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool		sl_out_of_bounds(int32_t column, int32_t row, t_data *data);
-t_status	sl_instantiate_tile_frames(t_tile *tile, t_data *data);
-void		sl_shift_tile_pos(t_tile *tile, int32_t columns, int32_t rows,
-				t_data *data);
-t_status	sl_fill_tile_data(t_tile *tile, t_tile_kind *tile_kind,
-				t_data *data);
-t_tile		*sl_get_tile(t_data *data);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+bool	sl_is_entity(t_data *data)
+{
+	return (ft_chr_in_str(sl_get_char_grid_character(data), ENTITY_CHARACTERS));
+}
 
 ////////////////////////////////////////////////////////////////////////////////

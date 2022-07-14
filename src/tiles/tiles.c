@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 13:22:41 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 11:12:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 11:14:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@ bool	sl_out_of_bounds(int32_t column, int32_t row, t_data *data)
 	if (row < 0 || row >= (int32_t)data->char_grid.height)
 		return (true);
 	return (false);
-}
-
-bool	sl_is_entity(t_data *data)
-{
-	return (ft_chr_in_str(sl_get_char_grid_character(data), ENTITY_CHARACTERS));
 }
 
 t_status	sl_instantiate_tile_frames(t_tile *tile, t_data *data)
