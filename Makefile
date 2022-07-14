@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/14 11:43:32 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/14 11:58:21 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -153,10 +153,10 @@ HEADERS +=\
 HEADERS +=\
 	src/structs/sl_structs_data.h\
 	src/structs/sl_structs_entity.h\
+	src/structs/sl_structs_iterators.h\
 	src/structs/sl_structs_mlx42.h\
 	src/structs/sl_structs_player.h\
 	src/structs/sl_structs.h\
-	src/structs/sl_structs_temporary.h\
 	src/structs/sl_structs_texture.h\
 	src/structs/sl_structs_tiles.h
 

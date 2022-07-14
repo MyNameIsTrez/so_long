@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 12:12:41 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 12:21:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 11:58:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ STATIC t_iterator_status	resettable_iterate_frame_channels(mlx_image_t *frame,
 			return (LOOPED);
 		}
 		sl_reset_iterate_channel_indices(data);
-		if (data->t.frame_pixels.x == 0 && data->t.frame_pixels.y == 0)
+		if (data->it.frame_pixels.x == 0 && data->it.frame_pixels.y == 0)
 			sl_iterate_frame_pixels(frame, data);
 		if (sl_iterate_frame_pixels(frame, data) != LOOPED)
 			break ;

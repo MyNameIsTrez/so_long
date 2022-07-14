@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 11:06:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 11:58:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ STATIC t_status	instantiate_tile(t_data *data)
 	t_tile		*tile;
 
 	tile_kind = get_tile_kind(data);
-	if (malloc_tile(&data->tile_grid.cells[data->t.row_index][data->t.column_index]) != OK)
+	if (malloc_tile(&data->tile_grid.cells[data->it.row_index][data->it.column_index]) != OK)
 		return (sl_any_error());
 	tile = sl_get_tile(data);
 	if (sl_fill_tile_data(tile, tile_kind, data) != OK)
@@ -52,8 +52,8 @@ STATIC t_status	malloc_rows(t_data *data)
 	t_tile		***cells;
 
 	cells = data->tile_grid.cells;
-	cells[data->t.row_index] = malloc(sizeof(t_tile *) * data->char_grid.width);
-	if (cells[data->t.row_index] == NULL)
+	cells[data->it.row_index] = malloc(sizeof(t_tile *) * data->char_grid.width);
+	if (cells[data->it.row_index] == NULL)
 	{
 		// TODO: Free previously allocated rows.
 		ft_free(&data->tile_grid.cells);

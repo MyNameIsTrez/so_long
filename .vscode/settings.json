@@ -9,6 +9,21 @@
 		"string_view": "c",
 		"vector": "c",
 		"chrono": "c",
-		"__node_handle": "c"
+		"__node_handle": "c",
+		"__config": "c",
+		"__hash_table": "c",
+		"__locale": "c",
+		"algorithm": "c",
+		"atomic": "c",
+		"bit": "c",
+		"cstddef": "c",
+		"exception": "c",
+		"functional": "c",
+		"locale": "c",
+		"memory": "c",
+		"new": "c",
+		"tuple": "c",
+		"utility": "c",
+		"complex": "c"
 	}
 }

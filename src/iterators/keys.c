@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/11 16:59:56 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 17:33:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 11:58:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ STATIC t_iterator_status	resettable_iterate_keys(t_data *data, bool reset)
 	}
 	while (key < MLX42_KEY_COUNT)
 	{
-		data->t.key = key;
+		data->it.key = key;
 		key++;
 		return (LOOPED);
 	}

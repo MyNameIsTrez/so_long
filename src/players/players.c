@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 17:17:14 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 11:58:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ STATIC bool	is_entity_walkable(uint32_t column, uint32_t row, t_data *data)
 
 	while (sl_iterate_entities(data) != FINISHED)
 	{
-		entity = data->t.entity;
+		entity = data->it.entity;
 		if (entity->tile.column_index != column
 			|| entity->tile.row_index != row)
 			continue ;
@@ -43,8 +43,8 @@ STATIC bool	is_tile_walkable(uint32_t column, uint32_t row, t_data *data)
 {
 	unsigned char		tile_character;
 
-	data->t.column_index = column;
-	data->t.row_index = row;
+	data->it.column_index = column;
+	data->it.row_index = row;
 	tile_character = sl_get_tile_grid_character(data);
 	return (ft_chr_in_str(tile_character, WALKABLE_CHARACTERS));
 }
@@ -95,7 +95,7 @@ void	sl_try_move_players(t_data *data)
 
 	while (sl_iterate_player_count(data) != FINISHED)
 	{
-		player = &data->players[data->t.player_index];
+		player = &data->players[data->it.player_index];
 		controls = &player->controls;
 		if (can_player_shift(player, controls->up_key, data))
 			shift_player(player, 0, -1, data);

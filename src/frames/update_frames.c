@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 11:36:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 11:58:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,22 @@ STATIC void	update_wall_frames(unsigned char tile_kind_character, t_data *data)
 		pixel_index = sl_get_pixel_index(frame, data);
 		while (sl_iterate_channel_indices(data) != FINISHED)
 		{
-			pixels_data_index = pixel_index + data->t.channel_index;
-			if (data->t.channel_index == 0 && data->frame % 1 == 0)
+			pixels_data_index = pixel_index + data->it.channel_index;
+			if (data->it.channel_index == 0 && data->frame % 1 == 0)
 				if (frame->pixels[pixels_data_index + 3] > 0)
 				{
 					frame->pixels[pixels_data_index] += color_step.r;
 					if (frame->pixels[pixels_data_index] == 0 || frame->pixels[pixels_data_index] == 255)
 						color_step.r *= -1;
 				}
-			if (data->t.channel_index == 1 && data->frame % 2 == 0)
+			if (data->it.channel_index == 1 && data->frame % 2 == 0)
 				if (frame->pixels[pixels_data_index + 2] > 0)
 				{
 					frame->pixels[pixels_data_index] += color_step.g;
 					if (frame->pixels[pixels_data_index] == 0 || frame->pixels[pixels_data_index] == 255)
 						color_step.g *= -1;
 				}
-			if (data->t.channel_index == 2 && data->frame % 3 == 0)
+			if (data->it.channel_index == 2 && data->frame % 3 == 0)
 				if (frame->pixels[pixels_data_index + 1] > 0)
 				{
 					frame->pixels[pixels_data_index] += color_step.b;

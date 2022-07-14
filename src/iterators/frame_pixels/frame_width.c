@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 13:52:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/12 14:03:17 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 12:03:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ STATIC t_iterator_status	resettable_iterate_frame_width(mlx_image_t *frame,
 	if (reset)
 	{
 		x = 0;
-		data->t.frame_pixels.x = 0;
+		data->it.frame_pixels.x = 0;
 		return (RESET);
 	}
 	while (x < frame->width)
 	{
-		data->t.frame_pixels.x = x;
+		data->it.frame_pixels.x = x;
 		x++;
 		return (LOOPED);
 	}

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 14:31:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/12 14:31:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 11:58:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ STATIC t_iterator_status	resettable_iterate_channel_indices(t_data *data, bool r
 	if (reset)
 	{
 		channel_index = 0;
-		data->t.channel_index = 0;
+		data->it.channel_index = 0;
 		return (RESET);
 	}
 	while (channel_index < 4)
 	{
-		data->t.channel_index = channel_index;
+		data->it.channel_index = channel_index;
 		channel_index++;
 		return (LOOPED);
 	}

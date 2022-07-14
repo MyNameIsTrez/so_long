@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 11:09:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 11:58:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ STATIC void	update_frames(t_data *data)
 
 	while (sl_iterate_entities(data) != FINISHED)
 	{
-		entity = data->t.entity;
+		entity = data->it.entity;
 		tile = &entity->tile;
 		if (data->seconds - entity->last_frame_seconds > entity->seconds_per_frame)
 		{

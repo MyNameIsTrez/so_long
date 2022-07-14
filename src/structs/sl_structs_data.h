@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 13:20:35 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 11:58:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 // TODO: Rename data to d
 typedef struct s_data
 {
-	t_t			t;
+	t_it		it;
 	uint32_t	held_keys[MLX42_KEY_COUNT];
 	mlx_t		*mlx;
 	t_grid		char_grid;

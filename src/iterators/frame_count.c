@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:56:03 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 14:54:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 11:58:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ STATIC t_iterator_status	resettable_iterate_frame_count(uint32_t frame_count,
 	if (reset)
 	{
 		frame_index = 0;
-		data->t.frame_index = 0;
+		data->it.frame_index = 0;
 		return (RESET);
 	}
 	while (frame_index < frame_count)
 	{
-		data->t.frame_index = frame_index;
+		data->it.frame_index = frame_index;
 		frame_index++;
 		return (LOOPED);
 	}
