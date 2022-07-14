@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/14 11:20:27 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/14 11:29:34 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,17 +49,11 @@ LIBS := $(GLFW) $(MLX42) $(LIBFT) $(FT_PRINTF)
 SOURCES :=\
 	src/background/background.c
 
-################################################################################
-
 SOURCES +=\
 	src/cleanup/cleanup.c
 
-################################################################################
-
 SOURCES +=\
 	src/entities/entities.c
-
-################################################################################
 
 SOURCES +=\
 	src/error/sl_any_error.c\
@@ -69,18 +63,15 @@ SOURCES +=\
 	src/error/sl_print_error.c\
 	src/error/sl_set_error.c
 
-################################################################################
-
 SOURCES +=\
 	src/frames/utils/utils.c\
 	src/frames/update_frames.c
 
-################################################################################
+SOURCES +=\
+	src/grid/grid.c
 
 SOURCES +=\
 	src/held_keys/update_held_keys.c
-
-################################################################################
 
 SOURCES +=\
 	src/iterators/frames/channel_indices.c\
@@ -99,23 +90,15 @@ SOURCES +=\
 	src/iterators/player_count.c\
 	src/iterators/tile_kind_count.c
 
-################################################################################
-
 SOURCES +=\
 	src/players/utils/utils.c\
 	src/players/players.c
 
-################################################################################
-
 SOURCES +=\
 	src/tiles/tiles.c
 
-################################################################################
-
 SOURCES +=\
 	src/utils/0_utils.c
-
-################################################################################
 
 SOURCES +=\
 	src/0_main.c\
@@ -128,24 +111,46 @@ SOURCES +=\
 
 ################################################################################
 
-HEADERS =\
-	src/background/sl_background.h\
-	src/cleanup/sl_cleanup.h\
-	src/error/sl_error.h\
+HEADERS +=\
+	src/background/sl_background.h
+
+HEADERS +=\
+	src/cleanup/sl_cleanup.h
+
+HEADERS +=\
+	src/entities/sl_entities.h
+
+HEADERS +=\
+	src/error/sl_error.h
+
+HEADERS +=\
 	src/frames/utils/sl_frame_utils.h\
-	src/frames/sl_frames.h\
-	src/held_keys/sl_held_keys.h\
+	src/frames/sl_frames.h
+
+HEADERS +=\
+	src/grid/sl_grid.h
+
+HEADERS +=\
+	src/held_keys/sl_held_keys.h
+
+HEADERS +=\
 	src/iterators/sl_iterators.h\
-	src/iterators/frames/sl_iterator_frames.h\
+	src/iterators/frames/sl_iterator_frames.h
+
+HEADERS +=\
 	src/players/utils/sl_players_utils.h\
-	src/players/sl_players.h\
+	src/players/sl_players.h
+
+HEADERS +=\
 	src/settings/sl_settings_controls.h\
 	src/settings/sl_settings_map.h\
 	src/settings/sl_settings_players.h\
 	src/settings/sl_settings_texture.h\
 	src/settings/sl_settings_tiles.h\
 	src/settings/sl_settings_window.h\
-	src/settings/sl_settings.h\
+	src/settings/sl_settings.h
+
+HEADERS +=\
 	src/structs/sl_structs_data.h\
 	src/structs/sl_structs_entity.h\
 	src/structs/sl_structs_mlx42.h\
@@ -153,9 +158,15 @@ HEADERS =\
 	src/structs/sl_structs.h\
 	src/structs/sl_structs_temporary.h\
 	src/structs/sl_structs_texture.h\
-	src/structs/sl_structs_tiles.h\
-	src/tiles/sl_tiles.h\
-	src/utils/sl_utils.h\
+	src/structs/sl_structs_tiles.h
+
+HEADERS +=\
+	src/tiles/sl_tiles.h
+
+HEADERS +=\
+	src/utils/sl_utils.h
+
+HEADERS +=\
 	src/so_long.h
 
 ################################################################################
