@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 13:28:56 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 14:17:14 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:35:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-int32_t	sl_get_key_column_offset(keys_t key, t_controls *controls)
+t_i32	sl_get_key_column_offset(keys_t key, t_controls *controls)
 {
 	if (key == controls->left_key)
 		return (-1);
@@ -26,7 +26,7 @@ int32_t	sl_get_key_column_offset(keys_t key, t_controls *controls)
 		return (0);
 }
 
-int32_t	sl_get_key_row_offset(keys_t key, t_controls *controls)
+t_i32	sl_get_key_row_offset(keys_t key, t_controls *controls)
 {
 	if (key == controls->up_key)
 		return (-1);

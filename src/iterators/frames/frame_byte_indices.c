@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 12:27:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 13:09:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:35:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 STATIC t_iterator_status	resettable_iterate_frame_byte_indices(
 			mlx_image_t *frame, t_data *data, bool reset)
 {
-	uint32_t	pixel_index;
+	t_u32	pixel_index;
 
 	if (reset)
 	{

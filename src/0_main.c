@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 11:58:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:35:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ STATIC void	loop(void *param)
 
 	data = param;
 	data->seconds += data->mlx->delta_time;
-	// ft_printf("%d\n", (int)data->seconds);
+	// ft_printf("%d\n", (t_i32)data->seconds);
 	// ft_printf("%d\n", data->frame);
 	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(data->mlx);
@@ -64,12 +64,12 @@ STATIC void	loop(void *param)
 	data->frame++;
 }
 
-STATIC t_status	run(int argc, char **argv, t_data *data)
+STATIC t_status	run(t_i32 argc, char **argv, t_data *data)
 {
 	if (sl_parse_argv(argc, argv, data) != OK)
 		return (sl_any_error());
-	data->mlx = mlx_init((int32_t)data->window.width,
-			(int32_t)data->window.height, WINDOW_TITLE, true);
+	data->mlx = mlx_init((t_i32)data->window.width,
+			(t_i32)data->window.height, WINDOW_TITLE, true);
 	if (data->mlx == NULL)
 		return (sl_set_error(SL_ERROR_MLX42));
 	if (sl_instantiate_background(data) != OK)
@@ -91,7 +91,7 @@ STATIC t_status	run(int argc, char **argv, t_data *data)
 
 ////////////////////////////////////////////////////////////////////////////////
 
-int32_t	main(int argc, char **argv)
+t_i32	main(t_i32 argc, char **argv)
 {
 	static t_data	data;
 

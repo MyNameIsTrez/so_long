@@ -24,6 +24,7 @@
 		"new": "c",
 		"tuple": "c",
 		"utility": "c",
-		"complex": "c"
+		"complex": "c",
+		"cstdint": "c"
 	}
 }

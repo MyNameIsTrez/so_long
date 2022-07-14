@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 12:45:54 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:32:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ STATIC void	update_frames(t_tile_kind *tile_kind, t_data *data)
 	}
 }
 
-STATIC void	update_wall_frames(unsigned char tile_kind_character, t_data *data)
+STATIC void	update_wall_frames(t_u8 tile_kind_character, t_data *data)
 {
 	t_tile_kind	*tile_kind;
 

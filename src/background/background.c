@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 12:05:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/13 16:09:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:38:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 STATIC void	fill_background(mlx_image_t *background, t_data *data)
 {
-	const uint8_t	color[] = {BACKGROUND_R, BACKGROUND_G, BACKGROUND_B, \
+	const t_u8	color[] = {BACKGROUND_R, BACKGROUND_G, BACKGROUND_B, \
 								BACKGROUND_A};
 
 	while (sl_iterate_frame_pixels(background, data) != FINISHED)
@@ -32,7 +32,7 @@ STATIC void	fill_background(mlx_image_t *background, t_data *data)
 t_status	sl_instantiate_background(t_data *data)
 {
 	mlx_image_t	*background;
-	int32_t		background_instance_index;
+	t_i32		background_instance_index;
 
 	background = mlx_new_image(data->mlx, data->window.width, data->window.height);
 	if (background == NULL)

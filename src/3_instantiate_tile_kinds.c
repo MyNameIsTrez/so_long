@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 11:58:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:35:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ STATIC t_status	check_tile_kind_errors(t_data *data)
 	return (OK);
 }
 
-STATIC t_status	add_tile_kind(uint32_t frame_count, uint32_t texture_row,
-			unsigned char grid_character, t_data *data)
+STATIC t_status	add_tile_kind(t_u32 frame_count, t_u32 texture_row,
+			t_u8 grid_character, t_data *data)
 {
 	t_tile_kind*const	tile_kind = &data->tile_kinds[grid_character];
 
@@ -68,10 +68,10 @@ STATIC t_status	add_tile_kind(uint32_t frame_count, uint32_t texture_row,
 	{
 		tile_kind->frames[data->it.frame_index] = mlx_texture_area_to_image(data->mlx,
 				data->texture.data,
-				(uint32_t[2]){
+				(t_u32[2]){
 				data->texture.pixels_per_tile * data->it.frame_index,
 				data->texture.pixels_per_tile * texture_row},
-				(uint32_t[2]){data->texture.pixels_per_tile, data->texture.pixels_per_tile});
+				(t_u32[2]){data->texture.pixels_per_tile, data->texture.pixels_per_tile});
 		if (tile_kind->frames[data->it.frame_index] == NULL)
 			return (sl_set_error(SL_ERROR_MLX42));
 	}
@@ -80,7 +80,7 @@ STATIC t_status	add_tile_kind(uint32_t frame_count, uint32_t texture_row,
 
 STATIC void	calculate_tile_kind_count(t_data *data)
 {
-	data->tile_kind_count = (uint32_t)ft_strlen(MAP_CHARACTERS);
+	data->tile_kind_count = (t_u32)ft_strlen(MAP_CHARACTERS);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

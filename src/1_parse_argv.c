@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/11 17:26:31 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:35:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 STATIC void	calculate_width_and_height(t_data *data)
 {
-	data->window.width = (uint32_t)data->char_grid.width * data->texture.pixels_per_tile;
-	data->window.height = (uint32_t)data->char_grid.height * data->texture.pixels_per_tile;
+	data->window.width = (t_u32)data->char_grid.width * data->texture.pixels_per_tile;
+	data->window.height = (t_u32)data->char_grid.height * data->texture.pixels_per_tile;
 }
 
-STATIC t_status	calculate_pixels_per_tile(int scale, t_data *data)
+STATIC t_status	calculate_pixels_per_tile(t_i32 scale, t_data *data)
 {
-	static const uint32_t	valid_pixels_per_tile[] = {
+	static const t_u32	valid_pixels_per_tile[] = {
 	[1] = 1,
 	[2] = 5,
 	[3] = 10,
@@ -38,9 +38,9 @@ STATIC t_status	calculate_pixels_per_tile(int scale, t_data *data)
 	return (OK);
 }
 
-STATIC int	get_scale(int argc, char **argv)
+STATIC t_i32	get_scale(t_i32 argc, char **argv)
 {
-	int	scale;
+	t_i32	scale;
 
 	// TODO: Add min and max scale checks?
 	// TODO: Check if ft_atoi_safe is robust enough
@@ -58,7 +58,7 @@ STATIC bool	grid_has_invalid_character(t_data *data)
 	return (OK);
 }
 
-STATIC t_status	verify_argc(int argc)
+STATIC t_status	verify_argc(t_i32 argc)
 {
 	if (argc <= 1)
 		return (ft_set_error(FT_ERROR_TOO_FEW_ARGS));
@@ -69,7 +69,7 @@ STATIC t_status	verify_argc(int argc)
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_parse_argv(int argc, char **argv, t_data *data)
+t_status	sl_parse_argv(t_i32 argc, char **argv, t_data *data)
 {
 	char	*map_filename;
 

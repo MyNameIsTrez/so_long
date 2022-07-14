@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 16:48:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 11:58:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:35:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_controls	get_players_controls(uint32_t player_index)
+STATIC t_controls	get_players_controls(t_u32 player_index)
 {
 	static const t_controls	players_controls[] = {
 	{.up_key = PLAYER_1_UP_KEY, .down_key = PLAYER_1_DOWN_KEY,
@@ -32,7 +32,7 @@ STATIC t_controls	get_players_controls(uint32_t player_index)
 
 t_status	sl_instantiate_players(t_data *data)
 {
-	uint32_t	player_index;
+	t_u32	player_index;
 	t_player	*players;
 	t_player	*player;
 

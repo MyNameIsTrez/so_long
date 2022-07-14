@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 11:25:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 11:58:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:32:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-unsigned char	sl_get_char_grid_character(t_data *data)
+t_u8	sl_get_char_grid_character(t_data *data)
 {
-	return ((unsigned char)data->char_grid.cells[data->it.row_index][data->it.column_index]);
+	return ((t_u8)data->char_grid.cells[data->it.row_index][data->it.column_index]);
 }
 
-unsigned char	sl_get_tile_grid_character(t_data *data)
+t_u8	sl_get_tile_grid_character(t_data *data)
 {
 	t_tile	*tile;
 

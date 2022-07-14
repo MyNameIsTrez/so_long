@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 13:52:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 12:03:49 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:35:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 STATIC t_iterator_status	resettable_iterate_frame_width(mlx_image_t *frame,
 			t_data *data, bool reset)
 {
-	static uint32_t	x;
+	static t_u32	x;
 
 	if (reset)
 	{

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 11:26:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:34:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_parse_argv(int argc, char **argv, t_data *data);
+t_status	sl_parse_argv(t_i32 argc, char **argv, t_data *data);
 t_status	sl_load_texture(t_data *data);
 t_status	sl_instantiate_tile_kinds(t_data *data);
 t_status	sl_instantiate_tile_grid(t_data *data);

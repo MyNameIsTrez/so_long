@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:54:58 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/06 14:57:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 15:34:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ STATIC t_status	get_texture_filename(t_data *data)
 	char	*str_pixels_per_tile;
 	char	*filename_stem;
 
-	str_pixels_per_tile = ft_itoa((int)data->texture.scale);
+	str_pixels_per_tile = ft_itoa((t_i32)data->texture.scale);
 	if (str_pixels_per_tile == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	if (get_texture_filename_stem(str_pixels_per_tile,
