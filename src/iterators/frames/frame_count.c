@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:56:03 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 15:35:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 16:57:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_frame_count(t_u32 frame_count,
+STATIC t_iterator_status	resettable_iterate_frame_count(t_i32 frame_count,
 			t_data *data, bool reset)
 {
-	static t_u32	frame_index;
+	static t_i32	frame_index;
 
 	if (reset)
 	{
@@ -39,7 +39,7 @@ STATIC t_iterator_status	resettable_iterate_frame_count(t_u32 frame_count,
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_frame_count(t_u32 frame_count, t_data *data)
+t_iterator_status	sl_iterate_frame_count(t_i32 frame_count, t_data *data)
 {
 	return (resettable_iterate_frame_count(frame_count, data, false));
 }

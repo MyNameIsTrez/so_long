@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 15:35:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 16:58:29 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ STATIC void	shift_player(t_player *player, t_i32 x, t_i32 y, t_data *data)
 	sl_shift_tile_pos(&player->entity->tile, x, y, data);
 }
 
-STATIC bool	is_entity_walkable(t_u32 column, t_u32 row, t_data *data)
+STATIC bool	is_entity_walkable(t_i32 column, t_i32 row, t_data *data)
 {
 	t_entity		*entity;
 	t_u8	character;
@@ -39,7 +39,7 @@ STATIC bool	is_entity_walkable(t_u32 column, t_u32 row, t_data *data)
 	return (true);
 }
 
-STATIC bool	is_tile_walkable(t_u32 column, t_u32 row, t_data *data)
+STATIC bool	is_tile_walkable(t_i32 column, t_i32 row, t_data *data)
 {
 	t_u8		tile_character;
 
@@ -51,30 +51,34 @@ STATIC bool	is_tile_walkable(t_u32 column, t_u32 row, t_data *data)
 
 STATIC bool	is_walkable(t_player *player, keys_t key, t_data *data)
 {
-	const t_tile		*tile = &player->entity->tile;
-	t_controls*const	controls = &player->controls;
-	const t_i32		column = (t_i32)tile->column_index + \
-									sl_get_key_column_offset(key, controls);
-	const t_i32		row = (t_i32)tile->row_index + \
-									sl_get_key_row_offset(key, controls);
+	t_tile		*tile;
+	t_controls	*controls;
+	t_i32		column;
+	t_i32		row;
 
+	tile = &player->entity->tile;
+	controls = &player->controls;
+	column = tile->column_index + sl_get_key_column_offset(key, controls);
+	row = tile->row_index + sl_get_key_row_offset(key, controls);
 	if (sl_out_of_bounds(column, row, data))
 		return (false);
-	return (is_tile_walkable((t_u32)column, (t_u32)row, data)
-		&& is_entity_walkable((t_u32)column, (t_u32)row, data));
+	return (is_tile_walkable(column, row, data)
+		&& is_entity_walkable(column, row, data));
 }
 
-STATIC bool	can_autowalk(t_u32 frames_held)
+STATIC bool	can_autowalk(t_i32 frames_held)
 {
-	const bool	held_long_enough = frames_held >= MIN_FRAMES_HELD_FOR_AUTOWALK;
-	const bool	is_autowalk_frame = frames_held % FRAMES_BETWEEN_AUTOWALK == 0;
+	bool	held_long_enough;
+	bool	is_autowalk_frame;
 
+	held_long_enough = frames_held >= MIN_FRAMES_HELD_FOR_AUTOWALK;
+	is_autowalk_frame = frames_held % FRAMES_BETWEEN_AUTOWALK == 0;
 	return (held_long_enough && is_autowalk_frame);
 }
 
 STATIC bool	can_player_shift(t_player *player, keys_t key, t_data *data)
 {
-	t_u32	frames_held;
+	t_i32	frames_held;
 	bool		key_was_held;
 
 	if (!mlx_is_key_down(data->mlx, key))

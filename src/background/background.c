@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 12:05:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 15:38:31 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 17:04:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_status	sl_instantiate_background(t_data *data)
 	mlx_image_t	*background;
 	t_i32		background_instance_index;
 
-	background = mlx_new_image(data->mlx, data->window.width, data->window.height);
+	background = mlx_new_image(data->mlx, (t_u32)data->window.width, (t_u32)data->window.height);
 	if (background == NULL)
 		return (sl_set_error(SL_ERROR_MLX42));
 	fill_background(background, data);

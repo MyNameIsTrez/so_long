@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 12:33:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 15:35:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 16:57:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_u32		sl_get_pixel_index(mlx_image_t *frame, t_data *data);
-mlx_image_t		*sl_get_frame(t_tile_kind *tile_kind, t_u32 frame_index);
-mlx_instance_t	*sl_get_frame_instance(t_tile *tile, t_u32 frame_index);
+t_i32		sl_get_pixel_index(mlx_image_t *frame, t_data *data);
+mlx_image_t		*sl_get_frame(t_tile_kind *tile_kind, t_i32 frame_index);
+mlx_instance_t	*sl_get_frame_instance(t_tile *tile, t_i32 frame_index);
 
 ////////////////////////////////////////////////////////////////////////////////
 

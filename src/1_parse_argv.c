@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 15:35:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 16:56:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 STATIC void	calculate_width_and_height(t_data *data)
 {
-	data->window.width = (t_u32)data->char_grid.width * data->texture.pixels_per_tile;
-	data->window.height = (t_u32)data->char_grid.height * data->texture.pixels_per_tile;
+	data->window.width = data->char_grid.width * data->texture.pixels_per_tile;
+	data->window.height = data->char_grid.height * data->texture.pixels_per_tile;
 }
 
 STATIC t_status	calculate_pixels_per_tile(t_i32 scale, t_data *data)
 {
-	static const t_u32	valid_pixels_per_tile[] = {
+	static const t_i32	valid_pixels_per_tile[] = {
 	[1] = 1,
 	[2] = 5,
 	[3] = 10,
