@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 12:27:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 12:34:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 13:09:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ STATIC t_iterator_status	resettable_iterate_frame_byte_indices(
 		data->it.frame_byte_index = 0;
 		return (RESET);
 	}
-	while (sl_iterate_frame_channels(frame, data) != FINISHED)
+	while (sl_iterate_frame_channel_indices(frame, data) != FINISHED)
 	{
 		pixel_index = sl_get_pixel_index(frame, data);
 		data->it.frame_byte_index = pixel_index + data->it.channel_index;
