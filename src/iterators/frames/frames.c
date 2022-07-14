@@ -6,26 +6,24 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 11:44:54 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 12:10:13 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 12:59:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
 STATIC t_iterator_status	resettable_iterate_frames(t_tile_kind *tile_kind,
 			t_data *data, bool reset)
 {
-	static mlx_image_t	*frame;
 	uint32_t			frame_count;
 	mlx_image_t			**frames;
 
 	if (reset)
 	{
-		frame = NULL;
 		data->it.frame = NULL;
 		return (RESET);
 	}

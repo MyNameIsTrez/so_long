@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/14 12:33:28 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/14 13:01:31 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,20 +74,21 @@ SOURCES +=\
 	src/held_keys/update_held_keys.c
 
 SOURCES +=\
-	src/iterators/frame_pixels/channel_indices.c\
-	src/iterators/frame_pixels/frame_byte_indices.c\
-	src/iterators/frame_pixels/frame_channels.c\
-	src/iterators/frame_pixels/frame_height.c\
-	src/iterators/frame_pixels/frame_pixels.c\
-	src/iterators/frame_pixels/frame_width.c
+	src/iterators/frames/channel_indices.c\
+	src/iterators/frames/frame_byte_indices.c\
+	src/iterators/frames/frame_channels.c\
+	src/iterators/frames/frame_count.c\
+	src/iterators/frames/frame_height.c\
+	src/iterators/frames/frame_pixels.c\
+	src/iterators/frames/frame_width.c\
+	src/iterators/frames/frames_byte_indices.c\
+	src/iterators/frames/frames.c
 
 SOURCES +=\
 	src/iterators/char_grid_height.c\
 	src/iterators/char_grid_width.c\
 	src/iterators/char_grid.c\
 	src/iterators/entities.c\
-	src/iterators/frame_count.c\
-	src/iterators/frames.c\
 	src/iterators/keys.c\
 	src/iterators/player_count.c\
 	src/iterators/tile_kind_count.c
@@ -137,7 +138,7 @@ HEADERS +=\
 
 HEADERS +=\
 	src/iterators/sl_iterators.h\
-	src/iterators/frame_pixels/sl_iterator_frame_pixels.h
+	src/iterators/frames/sl_iterator_frames.h
 
 HEADERS +=\
 	src/players/utils/sl_players_utils.h\
