@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 13:48:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 14:30:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ STATIC t_tile_kind	*get_tile_grid_tile_kind(t_data *data)
 {
 	if (sl_is_entity(data))
 		return (sl_get_tile_kind(EMPTY_SPACE_CHARACTER, data));
-	return (sl_get_tile_kind(sl_get_char_grid_character(data), data));
+	return (sl_get_character_tile_kind(data));
 }
 
 STATIC t_status	instantiate_tile(t_data *data)
