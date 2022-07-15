@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/29 13:28:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 12:57:36 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 13:16:01 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,15 @@ void				sl_reset_iterate_char_grid(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
+t_iterator_status	sl_iterate_tile_kinds(t_data *data);
+void				sl_reset_iterate_tile_kinds(t_data *data);
+
+////////////////////////////////////////////////////////////////////////////////
+
 t_iterator_status	sl_iterate_player_count(t_data *data);
 void				sl_reset_iterate_player_count(t_data *data);
 
-t_iterator_status	sl_iterate_tile_kind_count(t_data *data);
-void				sl_reset_iterate_tile_kind_count(t_data *data);
+////////////////////////////////////////////////////////////////////////////////
 
 t_iterator_status	sl_iterate_entities(t_data *data);
 void				sl_reset_iterate_entities(t_data *data);

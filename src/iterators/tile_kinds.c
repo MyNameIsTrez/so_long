@@ -1,31 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_frames.h                                        :+:    :+:            */
+/*   tile_kinds.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/12 11:00:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 13:44:00 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/14 17:54:51 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/15 14:26:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_FRAMES_H
-# define SL_FRAMES_H
+#include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "utils/sl_frame_utils.h"
+STATIC t_iterator_status	resettable_iterate_tile_kinds(t_data *data, bool reset)
+{
+	static t_list	*lst;
+
+	if (reset)
+	{
+		lst = data->tile_kinds;
+		return (RESET);
+	}
+	while (lst != NULL)
+	{
+		data->it.tile_kind = lst->content;
+		lst = lst->next;
+		return (LOOPED);
+	}
+	sl_reset_iterate_tile_kinds(data);
+	return (FINISHED);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_initialize_tile_kinds_colors(t_data *data);
-void	sl_update_frames(t_data *data);
+t_iterator_status	sl_iterate_tile_kinds(t_data *data)
+{
+	return (resettable_iterate_tile_kinds(data, false));
+}
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+void	sl_reset_iterate_tile_kinds(t_data *data)
+{
+	resettable_iterate_tile_kinds(data, true);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

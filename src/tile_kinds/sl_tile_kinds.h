@@ -1,52 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   tile_kind_count.c                                  :+:    :+:            */
+/*   sl_tile_kinds.h                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/07 15:26:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 16:57:46 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/15 13:49:22 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/15 13:55:53 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../so_long.h"
+#ifndef SL_TILE_KINDS_H
+# define SL_TILE_KINDS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_tile_kind_count(t_data *data,
-			bool reset)
-{
-	static t_i32	tile_kind_index;
-
-	if (reset)
-	{
-		tile_kind_index = 0;
-		data->it.tile_kind_index = 0;
-		return (RESET);
-	}
-	while (tile_kind_index < data->tile_kind_count)
-	{
-		data->it.tile_kind_index = tile_kind_index;
-		tile_kind_index++;
-		return (LOOPED);
-	}
-	sl_reset_iterate_tile_kind_count(data);
-	return (FINISHED);
-}
+# include "utils/sl_tile_kinds_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_tile_kind_count(t_data *data)
+typedef struct s_tile_kind_data
 {
-	return (resettable_iterate_tile_kind_count(data, false));
-}
+	t_i32				frame_count;
+	t_i32				texture_row;
+	t_u8				character;
+	t_tile_kind_color	color;
+}	t_tile_kind_data;
 
-void	sl_reset_iterate_tile_kind_count(t_data *data)
-{
-	resettable_iterate_tile_kind_count(data, true);
-}
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

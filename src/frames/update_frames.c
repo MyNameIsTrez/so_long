@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 15:32:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 13:43:12 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,49 +16,45 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC void	update_frames(t_tile_kind *tile_kind, t_data *data)
+STATIC void	update_frames(t_data *data)
 {
-	static t_color_step	color_step = {-1, -1, -1};
+	t_color_step	*color_step;
 
-	while (sl_iterate_frames_byte_indices(tile_kind, data) != FINISHED)
+	while (sl_iterate_tile_kinds(data) != FINISHED)
 	{
-		if (data->it.channel_index == 0 && data->frame % 1 == 0)
-			if (data->it.frame->pixels[data->it.frame_byte_index + 3] > 0)
-			{
-				data->it.frame->pixels[data->it.frame_byte_index] += color_step.r;
-				if (data->it.frame->pixels[data->it.frame_byte_index] == 0 || data->it.frame->pixels[data->it.frame_byte_index] == 255)
-					color_step.r *= -1;
-			}
-		if (data->it.channel_index == 1 && data->frame % 2 == 0)
-			if (data->it.frame->pixels[data->it.frame_byte_index + 2] > 0)
-			{
-				data->it.frame->pixels[data->it.frame_byte_index] += color_step.g;
-				if (data->it.frame->pixels[data->it.frame_byte_index] == 0 || data->it.frame->pixels[data->it.frame_byte_index] == 255)
-					color_step.g *= -1;
-			}
-		if (data->it.channel_index == 2 && data->frame % 3 == 0)
-			if (data->it.frame->pixels[data->it.frame_byte_index + 1] > 0)
-			{
-				data->it.frame->pixels[data->it.frame_byte_index] += color_step.b;
-				if (data->it.frame->pixels[data->it.frame_byte_index] == 0 || data->it.frame->pixels[data->it.frame_byte_index] == 255)
-					color_step.b *= -1;
-			}
+		while (sl_iterate_frames_byte_indices(data->it.tile_kind, data) != FINISHED)
+		{
+			color_step = &data->it.tile_kind->color.step;
+			if (data->it.channel_index == 0 && data->frame % 1 == 0)
+				if (data->it.frame->pixels[data->it.frame_byte_index + 3] > 0)
+				{
+					data->it.frame->pixels[data->it.frame_byte_index] += color_step->r;
+					if (data->it.frame->pixels[data->it.frame_byte_index] == 0 || data->it.frame->pixels[data->it.frame_byte_index] == 255)
+						color_step->r *= -1;
+				}
+			if (data->it.channel_index == 1 && data->frame % 2 == 0)
+				if (data->it.frame->pixels[data->it.frame_byte_index + 2] > 0)
+				{
+					data->it.frame->pixels[data->it.frame_byte_index] += color_step->g;
+					if (data->it.frame->pixels[data->it.frame_byte_index] == 0 || data->it.frame->pixels[data->it.frame_byte_index] == 255)
+						color_step->g *= -1;
+				}
+			if (data->it.channel_index == 2 && data->frame % 3 == 0)
+				if (data->it.frame->pixels[data->it.frame_byte_index + 1] > 0)
+				{
+					data->it.frame->pixels[data->it.frame_byte_index] += color_step->b;
+					if (data->it.frame->pixels[data->it.frame_byte_index] == 0 || data->it.frame->pixels[data->it.frame_byte_index] == 255)
+						color_step->b *= -1;
+				}
+		}
 	}
-}
-
-STATIC void	update_wall_frames(t_u8 tile_kind_character, t_data *data)
-{
-	t_tile_kind	*tile_kind;
-
-	tile_kind = &data->tile_kinds[tile_kind_character];
-	update_frames(tile_kind, data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
 void	sl_update_frames(t_data *data)
 {
-	update_wall_frames(WALL_CHARACTER, data);
+	update_frames(data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

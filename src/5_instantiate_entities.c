@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 13:33:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 17:48:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 13:57:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ STATIC t_status	instantiate_entity(t_data *data)
 	t_tile_kind			*tile_kind;
 	t_entity			*entity;
 
-	tile_kind = &data->tile_kinds[sl_get_char_grid_character(data)];
+	tile_kind = sl_get_tile_kind(sl_get_char_grid_character(data), data);
 	entity = malloc(sizeof(t_entity));
 	if (entity == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));

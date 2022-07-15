@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_frames.h                                        :+:    :+:            */
+/*   utils.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/12 11:00:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 13:44:00 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/15 13:49:28 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/15 14:23:01 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_FRAMES_H
-# define SL_FRAMES_H
+#include "../../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "utils/sl_frame_utils.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-void	sl_initialize_tile_kinds_colors(t_data *data);
-void	sl_update_frames(t_data *data);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+t_tile_kind	*sl_get_tile_kind(t_u8 character, t_data *data)
+{
+	while (sl_iterate_tile_kinds(data) != FINISHED)
+	{
+		if (data->it.tile_kind->character == character)
+		{
+			sl_reset_iterate_tile_kinds(data);
+			return (data->it.tile_kind);
+		}
+	}
+	return (NULL);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

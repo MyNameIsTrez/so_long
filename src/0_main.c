@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 17:24:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/14 17:53:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ STATIC t_status	run(t_i32 argc, char **argv, t_data *data)
 		return (sl_any_error());
 	if (sl_instantiate_tile_kinds(data) != OK)
 		return (sl_any_error());
+	sl_initialize_tile_kinds_colors(data);
 	if (sl_instantiate_tile_grid(data) != OK)
 		return (sl_any_error());
 	if (sl_instantiate_entities(data) != OK)

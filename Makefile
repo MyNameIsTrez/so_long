@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/14 13:10:53 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/15 13:56:18 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +65,7 @@ SOURCES +=\
 
 SOURCES +=\
 	src/frames/utils/utils.c\
+	src/frames/initialize_tile_kinds_colors.c\
 	src/frames/update_frames.c
 
 SOURCES +=\
@@ -91,11 +92,15 @@ SOURCES +=\
 	src/iterators/entities.c\
 	src/iterators/keys.c\
 	src/iterators/player_count.c\
-	src/iterators/tile_kind_count.c
+	src/iterators/tile_kinds.c
 
 SOURCES +=\
 	src/players/utils/utils.c\
 	src/players/players.c
+
+SOURCES +=\
+	src/tile_kinds/utils/utils.c\
+	src/tile_kinds/instantiate_tile_kinds.c
 
 SOURCES +=\
 	src/tiles/tiles.c
@@ -107,7 +112,6 @@ SOURCES +=\
 	src/0_main.c\
 	src/1_parse_argv.c\
 	src/2_load_texture.c\
-	src/3_instantiate_tile_kinds.c\
 	src/4_instantiate_tile_grid.c\
 	src/5_instantiate_entities.c\
 	src/6_instantiate_players.c
@@ -162,6 +166,10 @@ HEADERS +=\
 	src/structs/sl_structs.h\
 	src/structs/sl_structs_texture.h\
 	src/structs/sl_structs_tiles.h
+
+HEADERS +=\
+	src/tile_kinds/utils/sl_tile_kinds_utils.h\
+	src/tile_kinds/sl_tile_kinds.h
 
 HEADERS +=\
 	src/tiles/sl_tiles.h

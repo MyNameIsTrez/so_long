@@ -21,8 +21,16 @@
 	},
 	{
 		"name": "so_long testing",
-		// "type": "cppdbg", // Prints to the debug console instead of the terminal.
-		"type": "lldb", // Doesn't support expression-based breakpoints.
+
+		// Prints to the debug console instead of the terminal
+		// Can't see statics in debugger
+		"type": "cppdbg",
+		"MIMode": "lldb",
+
+		// Doesn't support expression-based breakpoints
+		// Casting in watch window will give "invalid syntax"
+		// "type": "lldb",
+
 		"request": "launch",
 		"program": "${workspaceFolder}/so_long",
 		"args": [
@@ -35,7 +43,6 @@
 		// "reverseDebugging": true,
 		// "environment": [],
 		// "externalConsole": false,
-		// "MIMode": "lldb",
 		"preLaunchTask": "Build so_long",
 		"internalConsoleOptions": "neverOpen"
 	}]
