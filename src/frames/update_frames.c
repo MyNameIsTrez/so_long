@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 15:32:31 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 16:22:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,34 +18,22 @@
 
 STATIC void	update_frames(t_data *data)
 {
+	t_tile_kind	*tile_kind;
 	t_rgb_step	*color_step;
 
 	while (sl_iterate_tile_kinds(data) != FINISHED)
 	{
-		while (sl_iterate_frames_byte_indices(data->it.tile_kind, data) != FINISHED)
+		tile_kind = data->it.tile_kind;
+		while (sl_iterate_frames_pixel_indices(tile_kind, data) != FINISHED)
 		{
-			color_step = &data->it.tile_kind->color.step;
-			if (data->it.channel_index == 0 && data->frame % 1 == 0)
-				// TODO: Use sl_is_opaque() somehow here
-				if (data->it.frame->pixels[data->it.frame_byte_index + 3] > 0)
+			color_step = &tile_kind->color.step;
+			if (data->frame % 1 == 0)
+				// TODO: Use sl_is_opaque() here once the new iterator TODO above is used
+				if (data->it.frame->pixels[data->it.pixel_index + 0 + 3] > 0)
 				{
-					data->it.frame->pixels[data->it.frame_byte_index] += color_step->r;
-					if (data->it.frame->pixels[data->it.frame_byte_index] == 0 || data->it.frame->pixels[data->it.frame_byte_index] == 255)
+					data->it.frame->pixels[data->it.pixel_index + 0] += color_step->r;
+					if (data->it.frame->pixels[data->it.pixel_index + 0] == 0 || data->it.frame->pixels[data->it.pixel_index + 0] == 255)
 						color_step->r *= -1;
-				}
-			if (data->it.channel_index == 1 && data->frame % 2 == 0)
-				if (data->it.frame->pixels[data->it.frame_byte_index + 2] > 0)
-				{
-					data->it.frame->pixels[data->it.frame_byte_index] += color_step->g;
-					if (data->it.frame->pixels[data->it.frame_byte_index] == 0 || data->it.frame->pixels[data->it.frame_byte_index] == 255)
-						color_step->g *= -1;
-				}
-			if (data->it.channel_index == 2 && data->frame % 3 == 0)
-				if (data->it.frame->pixels[data->it.frame_byte_index + 1] > 0)
-				{
-					data->it.frame->pixels[data->it.frame_byte_index] += color_step->b;
-					if (data->it.frame->pixels[data->it.frame_byte_index] == 0 || data->it.frame->pixels[data->it.frame_byte_index] == 255)
-						color_step->b *= -1;
 				}
 		}
 	}

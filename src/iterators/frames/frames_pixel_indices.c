@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   frame_byte_indices.c                               :+:    :+:            */
+/*   frames_pixel_indices.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/14 12:27:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 16:57:49 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/15 16:01:18 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/15 16:11:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,38 +16,44 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_frame_byte_indices(
-			mlx_image_t *frame, t_data *data, bool reset)
+STATIC t_iterator_status	resettable_iterate_frames_pixel_indices(
+			t_tile_kind *tile_kind, t_data *data, bool reset)
 {
-	t_i32	pixel_index;
-
 	if (reset)
 	{
-		sl_reset_iterate_frame_channels(data);
-		data->it.frame_byte_index = 0;
+		sl_reset_iterate_frames(data);
+		sl_reset_iterate_frame_pixel_indices(data);
 		return (RESET);
 	}
-	while (sl_iterate_frame_channel_indices(frame, data) != FINISHED)
+	while (true)
 	{
-		pixel_index = sl_get_pixel_index(frame, data);
-		data->it.frame_byte_index = pixel_index + data->it.channel_index;
-		return (LOOPED);
+		if (data->it.frame == NULL)
+			sl_iterate_frames(tile_kind, data);
+		while (true)
+		{
+			if (sl_iterate_frame_pixel_indices(data->it.frame, data) != LOOPED)
+				break ;
+			return (LOOPED);
+		}
+		sl_reset_iterate_frame_pixel_indices(data);
+		if (sl_iterate_frames(tile_kind, data) != LOOPED)
+			break ;
 	}
-	sl_reset_iterate_frame_byte_indices(data);
+	sl_reset_iterate_frames_pixel_indices(data);
 	return (FINISHED);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_frame_byte_indices(mlx_image_t *frame,
+t_iterator_status	sl_iterate_frames_pixel_indices(t_tile_kind *tile_kind,
 			t_data *data)
 {
-	return (resettable_iterate_frame_byte_indices(frame, data, false));
+	return (resettable_iterate_frames_pixel_indices(tile_kind, data, false));
 }
 
-void	sl_reset_iterate_frame_byte_indices(t_data *data)
+void	sl_reset_iterate_frames_pixel_indices(t_data *data)
 {
-	resettable_iterate_frame_byte_indices(NULL, data, true);
+	resettable_iterate_frames_pixel_indices(NULL, data, true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
