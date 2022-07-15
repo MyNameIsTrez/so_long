@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 16:26:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 16:57:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ STATIC t_status	add_empty_space_tile_kind(t_data *data)
 			EMPTY_SPACE_TEXTURE_ROW, EMPTY_SPACE_CHARACTER,
 			(t_tile_kind_color){
 			(t_rgb){EMPTY_SPACE_R, EMPTY_SPACE_G, EMPTY_SPACE_B},
-		(t_rgb_step){-1, -1, -1}}},
+		{-1, -1, -1}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);
@@ -130,7 +130,7 @@ STATIC t_status	add_wall_tile_kind(t_data *data)
 			WALL_TEXTURE_ROW, WALL_CHARACTER,
 			(t_tile_kind_color){
 			(t_rgb){WALL_R, WALL_G, WALL_B},
-		(t_rgb_step){-1, -1, -1}}},
+		{-1, -1, -1}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);
@@ -142,7 +142,7 @@ STATIC t_status	add_collectible_tile_kind(t_data *data)
 			COLLECTIBLE_TEXTURE_ROW, COLLECTIBLE_CHARACTER,
 			(t_tile_kind_color){
 			(t_rgb){COLLECTIBLE_R, COLLECTIBLE_G, COLLECTIBLE_B},
-		(t_rgb_step){-1, -1, -1}}},
+		{-1, -1, -1}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);
@@ -154,7 +154,7 @@ STATIC t_status	add_map_exit_tile_kind(t_data *data)
 			MAP_EXIT_TEXTURE_ROW, MAP_EXIT_CHARACTER,
 			(t_tile_kind_color){
 			(t_rgb){MAP_EXIT_R, MAP_EXIT_G, MAP_EXIT_B},
-		(t_rgb_step){-1, -1, -1}}},
+		{-1, -1, -1}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);
@@ -166,7 +166,7 @@ STATIC t_status	add_player_tile_kind(t_data *data)
 			PLAYER_TEXTURE_ROW, PLAYER_CHARACTER,
 			(t_tile_kind_color){
 			(t_rgb){PLAYER_R, PLAYER_G, PLAYER_B},
-		(t_rgb_step){-1, -1, -1}}},
+		{-1, -1, -1}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);

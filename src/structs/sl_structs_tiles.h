@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:58:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 14:52:25 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 16:53:29 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,10 @@ typedef struct s_rgb
 	t_u8	b;
 }	t_rgb;
 
-typedef struct s_rgb_step
-{
-	t_i32	r;
-	t_i32	g;
-	t_i32	b;
-}	t_rgb_step;
-
 typedef struct s_tile_kind_color
 {
-	t_rgb		initial_color;
-	t_rgb_step	step;
+	t_rgb	initial_color;
+	t_i32	step[3];
 }	t_tile_kind_color;
 
 typedef struct s_tile_kind
