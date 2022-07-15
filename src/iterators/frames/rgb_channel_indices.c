@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 14:31:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 17:13:17 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 16:37:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,37 +16,37 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_channel_indices(t_data *data,
+STATIC t_iterator_status	resettable_iterate_rgb_channel_indices(t_data *data,
 			bool reset)
 {
-	static t_i32	channel_index;
+	static t_i32	rgb_channel_index;
 
 	if (reset)
 	{
-		channel_index = 0;
-		data->it.channel_index = 0;
+		rgb_channel_index = 0;
+		data->it.rgb_channel_index = 0;
 		return (RESET);
 	}
-	while (channel_index < 4)
+	while (rgb_channel_index < 3)
 	{
-		data->it.channel_index = channel_index;
-		channel_index++;
+		data->it.rgb_channel_index = rgb_channel_index;
+		rgb_channel_index++;
 		return (LOOPED);
 	}
-	sl_reset_iterate_channel_indices(data);
+	sl_reset_iterate_rgb_channel_indices(data);
 	return (FINISHED);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_channel_indices(t_data *data)
+t_iterator_status	sl_iterate_rgb_channel_indices(t_data *data)
 {
-	return (resettable_iterate_channel_indices(data, false));
+	return (resettable_iterate_rgb_channel_indices(data, false));
 }
 
-void	sl_reset_iterate_channel_indices(t_data *data)
+void	sl_reset_iterate_rgb_channel_indices(t_data *data)
 {
-	resettable_iterate_channel_indices(data, true);
+	resettable_iterate_rgb_channel_indices(data, true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

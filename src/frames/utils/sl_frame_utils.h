@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 12:33:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 15:31:07 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 16:49:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 t_i32			sl_get_pixel_index(mlx_image_t *frame, t_data *data);
 mlx_image_t		*sl_get_frame(t_tile_kind *tile_kind, t_i32 frame_index);
 mlx_instance_t	*sl_get_frame_instance(t_tile *tile, t_i32 frame_index);
-bool			sl_is_opaque(t_data *data);
+bool			sl_is_color(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

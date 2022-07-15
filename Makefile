@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/15 16:16:46 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/15 16:38:34 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,8 +75,8 @@ SOURCES +=\
 	src/held_keys/update_held_keys.c
 
 SOURCES +=\
-	src/iterators/frames/channel_indices.c\
-	src/iterators/frames/frame_channel_indices.c\
+	src/iterators/frames/rgb_channel_indices.c\
+	src/iterators/frames/frame_rgb_channel_indices.c\
 	src/iterators/frames/frame_count.c\
 	src/iterators/frames/frame_height.c\
 	src/iterators/frames/frame_pixel_indices.c\

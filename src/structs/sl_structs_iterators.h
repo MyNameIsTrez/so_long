@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 16:21:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 16:35:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_it
 	keys_t			key;
 	t_u8			red;
 	t_frame_pixels	frame_pixels;
-	t_i32			channel_index;
+	t_i32			rgb_channel_index;
 	mlx_image_t		*frame;
 	t_tile_kind		*tile_kind;
 	t_i32			pixel_index;

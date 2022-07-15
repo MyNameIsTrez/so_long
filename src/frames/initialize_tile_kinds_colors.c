@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 17:52:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 15:31:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 16:49:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	sl_initialize_tile_kinds_colors(t_data *data)
 			{
 				frame = data->it.frame;
 				pixels = frame->pixels;
-				if (sl_is_opaque(data))
+				if (sl_is_color(data))
 				{
 					initial_color.r = data->it.tile_kind->color.initial_color.r;
 					initial_color.g = data->it.tile_kind->color.initial_color.g;
