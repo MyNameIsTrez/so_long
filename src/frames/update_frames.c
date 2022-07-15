@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 17:49:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 17:50:22 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,12 @@ STATIC bool	should_step(t_data *data)
 	return (data->frame % wait[rgb_channel_index] == 0);
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 // Predicts what the color will be after a step and use that to change the rgb_step correctly:
 // So if R is 2 and step is -3, R should end up as 2 -> 1 -> 0 -> 1, so 1
 // If R is 253 and step is 6, R should end up as 253 -> 254 -> 255 -> 254 -> 253 -> 252 -> 251, so 251
-STATIC void	update_frames(t_data *data)
+void	sl_update_frames(t_data *data)
 {
 	t_tile_kind	*tile_kind;
 	t_i32		*rgb_step;
@@ -79,13 +81,6 @@ STATIC void	update_frames(t_data *data)
 			}
 		}
 	}
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-void	sl_update_frames(t_data *data)
-{
-	update_frames(data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

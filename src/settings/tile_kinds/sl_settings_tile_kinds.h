@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_settings.h                                      :+:    :+:            */
+/*   sl_settings_tile_kinds.h                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:50:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 17:55:15 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/01 17:51:47 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/15 17:59:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_SETTINGS_H
-# define SL_SETTINGS_H
+#ifndef SL_SETTINGS_TILE_KINDS_H
+# define SL_SETTINGS_TILE_KINDS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "tile_kinds/sl_settings_tile_kinds.h"
-# include "sl_settings_background.h"
-# include "sl_settings_controls.h"
-# include "sl_settings_map.h"
-# include "sl_settings_players.h"
-# include "sl_settings_texture.h"
-# include "sl_settings_window.h"
+# include "collectible.h"
+# include "empty_space.h"
+# include "map_exit.h"
+# include "player.h"
+# include "wall.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

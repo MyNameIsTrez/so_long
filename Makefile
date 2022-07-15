@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/15 16:38:34 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/15 17:58:23 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -149,11 +149,18 @@ HEADERS +=\
 	src/players/sl_players.h
 
 HEADERS +=\
+	src/settings/tile_kinds/sl_settings_tile_kinds.h\
+	src/settings/tile_kinds/collectible.h\
+	src/settings/tile_kinds/empty_space.h\
+	src/settings/tile_kinds/map_exit.h\
+	src/settings/tile_kinds/player.h\
+	src/settings/tile_kinds/wall.h
+
+HEADERS +=\
 	src/settings/sl_settings_controls.h\
 	src/settings/sl_settings_map.h\
 	src/settings/sl_settings_players.h\
 	src/settings/sl_settings_texture.h\
-	src/settings/sl_settings_tiles.h\
 	src/settings/sl_settings_window.h\
 	src/settings/sl_settings.h
 
