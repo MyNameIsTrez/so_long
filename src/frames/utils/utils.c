@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 12:29:13 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 17:04:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 15:33:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,16 @@ mlx_instance_t	*sl_get_frame_instance(t_tile *tile, t_i32 frame_index)
 	frame = sl_get_frame(tile->tile_kind, frame_index);
 	frame_instance_index = tile->frame_instances_indices[frame_index];
 	return (&frame->instances[frame_instance_index]);
+}
+
+bool	sl_is_opaque(t_data *data)
+{
+	mlx_image_t	*frame;
+	t_u8		*pixels;
+
+	frame = data->it.frame;
+	pixels = frame->pixels;
+	return (pixels[data->it.pixel_index + 3] > 0);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

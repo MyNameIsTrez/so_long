@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 14:53:36 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 15:32:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ STATIC void	update_frames(t_data *data)
 		{
 			color_step = &data->it.tile_kind->color.step;
 			if (data->it.channel_index == 0 && data->frame % 1 == 0)
+				// TODO: Use sl_is_opaque() somehow here
 				if (data->it.frame->pixels[data->it.frame_byte_index + 3] > 0)
 				{
 					data->it.frame->pixels[data->it.frame_byte_index] += color_step->r;
