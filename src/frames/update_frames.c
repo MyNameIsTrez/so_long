@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 17:50:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 18:23:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,35 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC void	step_pixel(t_i32 *rgb_step, t_data *data)
+STATIC void	step_pixel(t_data *data)
 {
-	t_u8	*pixels;
-	t_u8	*channel;
-	t_i32	step;
-	t_i32	rgb_channel_index;
+	t_u8		*pixels;
+	t_i32		rgb_channel_index;
+	t_u8		*channel;
+	t_i32		step;
+	t_tile_kind	*tile_kind;
+	t_i32		*rgb_step;
+	t_i32		*min_color;
+	t_i32		*max_color;
 
 	pixels = data->it.frame->pixels;
 	rgb_channel_index = data->it.rgb_channel_index;
 	channel = &pixels[data->it.pixel_index + rgb_channel_index];
+	tile_kind = data->it.tile_kind;
+	rgb_step = tile_kind->color.step;
 	step = rgb_step[rgb_channel_index];
-	if (*channel + step < 0)
+	min_color = tile_kind->color.min_color;
+	max_color = tile_kind->color.max_color;
+	if (*channel + step < min_color[rgb_channel_index])
 	{
-		step += *channel;
-		*channel = (t_u8)(-step);
+		step += *channel - min_color[rgb_channel_index];
+		*channel = (t_u8)(min_color[rgb_channel_index] - step);
 		rgb_step[rgb_channel_index] *= -1;
 	}
-	else if (*channel + step > 255)
+	else if (*channel + step > max_color[rgb_channel_index])
 	{
-		step -= 255 - *channel;
-		*channel = (t_u8)(255 - step);
+		step -= max_color[rgb_channel_index] - *channel;
+		*channel = (t_u8)(max_color[rgb_channel_index] - step);
 		rgb_step[rgb_channel_index] *= -1;
 	}
 	else
@@ -60,14 +68,9 @@ STATIC bool	should_step(t_data *data)
 // If R is 253 and step is 6, R should end up as 253 -> 254 -> 255 -> 254 -> 253 -> 252 -> 251, so 251
 void	sl_update_frames(t_data *data)
 {
-	t_tile_kind	*tile_kind;
-	t_i32		*rgb_step;
-
 	while (sl_iterate_tile_kinds(data) != FINISHED)
 	{
-		tile_kind = data->it.tile_kind;
-		rgb_step = tile_kind->color.step;
-		while (sl_iterate_frames_pixel_indices(tile_kind, data) != FINISHED)
+		while (sl_iterate_frames_pixel_indices(data->it.tile_kind, data) != FINISHED)
 		{
 			while (sl_iterate_rgb_channel_indices(data) != FINISHED)
 			{
@@ -75,7 +78,7 @@ void	sl_update_frames(t_data *data)
 				{
 					if (sl_is_color(data))
 					{
-						step_pixel(rgb_step, data);
+						step_pixel(data);
 					}
 				}
 			}
