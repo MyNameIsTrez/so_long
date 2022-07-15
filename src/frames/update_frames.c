@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 13:43:12 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 14:53:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 STATIC void	update_frames(t_data *data)
 {
-	t_color_step	*color_step;
+	t_rgb_step	*color_step;
 
 	while (sl_iterate_tile_kinds(data) != FINISHED)
 	{

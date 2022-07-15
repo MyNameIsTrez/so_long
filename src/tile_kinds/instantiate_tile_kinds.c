@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 14:11:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 14:52:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,29 +112,74 @@ STATIC t_status	add_tile_kind(t_tile_kind_data tk_data, t_data *data)
 	return (OK);
 }
 
+STATIC t_status	add_empty_space_tile_kind(t_data *data)
+{
+	if (add_tile_kind((t_tile_kind_data){EMPTY_SPACE_TEXTURE_FRAME_COUNT,
+			EMPTY_SPACE_TEXTURE_ROW, EMPTY_SPACE_CHARACTER,
+			(t_tile_kind_color){(t_rgb){50, 30, 85},
+		(t_rgb_step){-1, -1, -1}}},
+			data) != OK)
+		return (sl_any_error());
+	return (OK);
+}
+
+STATIC t_status	add_wall_tile_kind(t_data *data)
+{
+	if (add_tile_kind((t_tile_kind_data){WALL_TEXTURE_FRAME_COUNT,
+			WALL_TEXTURE_ROW, WALL_CHARACTER,
+			(t_tile_kind_color){(t_rgb){200, 90, 123},
+		(t_rgb_step){-1, -1, -1}}},
+			data) != OK)
+		return (sl_any_error());
+	return (OK);
+}
+
+STATIC t_status	add_collectible_tile_kind(t_data *data)
+{
+	if (add_tile_kind((t_tile_kind_data){COLLECTIBLE_TEXTURE_FRAME_COUNT,
+			COLLECTIBLE_TEXTURE_ROW, COLLECTIBLE_CHARACTER,
+			(t_tile_kind_color){(t_rgb){123, 54, 18},
+		(t_rgb_step){-1, -1, -1}}},
+			data) != OK)
+		return (sl_any_error());
+	return (OK);
+}
+
+STATIC t_status	add_map_exit_tile_kind(t_data *data)
+{
+	if (add_tile_kind((t_tile_kind_data){MAP_EXIT_TEXTURE_FRAME_COUNT,
+			MAP_EXIT_TEXTURE_ROW, MAP_EXIT_CHARACTER,
+			(t_tile_kind_color){(t_rgb){39, 198, 200},
+		(t_rgb_step){-1, -1, -1}}},
+			data) != OK)
+		return (sl_any_error());
+	return (OK);
+}
+
+STATIC t_status	add_player_tile_kind(t_data *data)
+{
+	if (add_tile_kind((t_tile_kind_data){PLAYER_TEXTURE_FRAME_COUNT,
+			PLAYER_TEXTURE_ROW, PLAYER_CHARACTER,
+			(t_tile_kind_color){(t_rgb){104, 58, 200},
+		(t_rgb_step){-1, -1, -1}}},
+			data) != OK)
+		return (sl_any_error());
+	return (OK);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 t_status	sl_instantiate_tile_kinds(t_data *data)
 {
-	if (add_tile_kind((t_tile_kind_data){EMPTY_SPACE_TEXTURE_FRAME_COUNT,
-			EMPTY_SPACE_TEXTURE_ROW, EMPTY_SPACE_CHARACTER,
-			(t_tile_kind_color){(t_color_step){-1, -1, -1}}}, data) != OK)
+	if (add_empty_space_tile_kind(data) != OK)
 		return (sl_any_error());
-	if (add_tile_kind((t_tile_kind_data){WALL_TEXTURE_FRAME_COUNT,
-			WALL_TEXTURE_ROW, WALL_CHARACTER,
-			(t_tile_kind_color){(t_color_step){-1, -1, -1}}}, data) != OK)
+	if (add_wall_tile_kind(data) != OK)
 		return (sl_any_error());
-	if (add_tile_kind((t_tile_kind_data){COLLECTIBLE_TEXTURE_FRAME_COUNT,
-			COLLECTIBLE_TEXTURE_ROW, COLLECTIBLE_CHARACTER,
-			(t_tile_kind_color){(t_color_step){-1, -1, -1}}}, data) != OK)
+	if (add_collectible_tile_kind(data) != OK)
 		return (sl_any_error());
-	if (add_tile_kind((t_tile_kind_data){MAP_EXIT_TEXTURE_FRAME_COUNT,
-			MAP_EXIT_TEXTURE_ROW, MAP_EXIT_CHARACTER,
-			(t_tile_kind_color){(t_color_step){-1, -1, -1}}}, data) != OK)
+	if (add_map_exit_tile_kind(data) != OK)
 		return (sl_any_error());
-	if (add_tile_kind((t_tile_kind_data){PLAYER_TEXTURE_FRAME_COUNT,
-			PLAYER_TEXTURE_ROW, PLAYER_CHARACTER,
-			(t_tile_kind_color){(t_color_step){-1, -1, -1}}}, data) != OK)
+	if (add_player_tile_kind(data) != OK)
 		return (sl_any_error());
 	// return (check_tile_kind_errors(data));
 	return (OK);
