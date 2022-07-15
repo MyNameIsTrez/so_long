@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:51:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 17:06:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 17:14:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@
 # define EMPTY_SPACE_G_WAIT 1
 # define EMPTY_SPACE_B_WAIT 1
 
+# define EMPTY_SPACE_R_STEP 1
+# define EMPTY_SPACE_G_STEP 1
+# define EMPTY_SPACE_B_STEP 1
+
 ////////////////////////////////////////////////////////////////////////////////
 
 # define WALL_TEXTURE_FRAME_COUNT 1
@@ -42,6 +46,10 @@
 # define WALL_R_WAIT 1
 # define WALL_G_WAIT 1
 # define WALL_B_WAIT 1
+
+# define WALL_R_STEP 1
+# define WALL_G_STEP 1
+# define WALL_B_STEP 1
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -57,6 +65,10 @@
 # define COLLECTIBLE_G_WAIT 1
 # define COLLECTIBLE_B_WAIT 1
 
+# define COLLECTIBLE_R_STEP 1
+# define COLLECTIBLE_G_STEP 1
+# define COLLECTIBLE_B_STEP 1
+
 ////////////////////////////////////////////////////////////////////////////////
 
 # define MAP_EXIT_TEXTURE_FRAME_COUNT 1
@@ -71,19 +83,27 @@
 # define MAP_EXIT_G_WAIT 1
 # define MAP_EXIT_B_WAIT 1
 
+# define MAP_EXIT_R_STEP 1
+# define MAP_EXIT_G_STEP 1
+# define MAP_EXIT_B_STEP 1
+
 ////////////////////////////////////////////////////////////////////////////////
 
 # define PLAYER_TEXTURE_FRAME_COUNT 4
 # define PLAYER_TEXTURE_ROW 25
 # define PLAYER_CHARACTER 'P'
 
-# define PLAYER_R 104
-# define PLAYER_G 58
+# define PLAYER_R 0
+# define PLAYER_G 0
 # define PLAYER_B 167
 
 # define PLAYER_R_WAIT 100
 # define PLAYER_G_WAIT 100
 # define PLAYER_B_WAIT 1
+
+# define PLAYER_R_STEP 1
+# define PLAYER_G_STEP 1
+# define PLAYER_B_STEP 10
 
 ////////////////////////////////////////////////////////////////////////////////
 

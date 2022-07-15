@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 17:03:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 17:11:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ STATIC t_status	add_empty_space_tile_kind(t_data *data)
 			(t_tile_kind_color){
 			(t_rgb){EMPTY_SPACE_R, EMPTY_SPACE_G, EMPTY_SPACE_B},
 		{EMPTY_SPACE_R_WAIT, EMPTY_SPACE_G_WAIT, EMPTY_SPACE_B_WAIT},
-		{-1, -1, -1}}},
+		{EMPTY_SPACE_R_STEP, EMPTY_SPACE_G_STEP, EMPTY_SPACE_B_STEP}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);
@@ -136,7 +136,7 @@ STATIC t_status	add_wall_tile_kind(t_data *data)
 			(t_tile_kind_color){
 			(t_rgb){WALL_R, WALL_G, WALL_B},
 		{WALL_R_WAIT, WALL_G_WAIT, WALL_B_WAIT},
-		{-1, -1, -1}}},
+		{WALL_R_STEP, WALL_G_STEP, WALL_B_STEP}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);
@@ -151,7 +151,7 @@ STATIC t_status	add_collectible_tile_kind(t_data *data)
 			(t_tile_kind_color){
 			(t_rgb){COLLECTIBLE_R, COLLECTIBLE_G, COLLECTIBLE_B},
 		{COLLECTIBLE_R_WAIT, COLLECTIBLE_G_WAIT, COLLECTIBLE_B_WAIT},
-		{-1, -1, -1}}},
+		{COLLECTIBLE_R_STEP, COLLECTIBLE_G_STEP, COLLECTIBLE_B_STEP}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);
@@ -166,7 +166,7 @@ STATIC t_status	add_map_exit_tile_kind(t_data *data)
 			(t_tile_kind_color){
 			(t_rgb){MAP_EXIT_R, MAP_EXIT_G, MAP_EXIT_B},
 		{MAP_EXIT_R_WAIT, MAP_EXIT_G_WAIT, MAP_EXIT_B_WAIT},
-		{-1, -1, -1}}},
+		{MAP_EXIT_R_STEP, MAP_EXIT_G_STEP, MAP_EXIT_B_STEP}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);
@@ -181,7 +181,7 @@ STATIC t_status	add_player_tile_kind(t_data *data)
 			(t_tile_kind_color){
 			(t_rgb){PLAYER_R, PLAYER_G, PLAYER_B},
 		{PLAYER_R_WAIT, PLAYER_G_WAIT, PLAYER_B_WAIT},
-		{-1, -1, -1}}},
+		{PLAYER_R_STEP, PLAYER_G_STEP, PLAYER_B_STEP}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);
