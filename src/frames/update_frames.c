@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 16:55:58 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 17:05:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ STATIC void	update_frames(t_data *data)
 		{
 			while (sl_iterate_rgb_channel_indices(data) != FINISHED)
 			{
-				if (data->frame % 1 == 0) // TODO: Don't hardcode % 1
+				if (data->frame % data->it.tile_kind->color.wait[data->it.rgb_channel_index] == 0)
 				{
 					if (sl_is_color(data))
 					{
