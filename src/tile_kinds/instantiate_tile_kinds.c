@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 18:06:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 15:38:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,11 +119,11 @@ STATIC t_status	add_empty_space_tile_kind(t_data *data)
 			EMPTY_SPACE_TEXTURE_ROW,
 			EMPTY_SPACE_CHARACTER,
 			(t_tile_kind_color){
-			(t_rgb){EMPTY_SPACE_R, EMPTY_SPACE_G, EMPTY_SPACE_B},
-		{EMPTY_SPACE_MIN_R, EMPTY_SPACE_MIN_G, EMPTY_SPACE_MIN_B},
-		{EMPTY_SPACE_MAX_R, EMPTY_SPACE_MAX_G, EMPTY_SPACE_MAX_B},
-		{EMPTY_SPACE_R_WAIT, EMPTY_SPACE_G_WAIT, EMPTY_SPACE_B_WAIT},
-		{EMPTY_SPACE_R_STEP, EMPTY_SPACE_G_STEP, EMPTY_SPACE_B_STEP}}},
+			{EMPTY_SPACE_R, EMPTY_SPACE_G, EMPTY_SPACE_B},
+			{EMPTY_SPACE_MIN_R, EMPTY_SPACE_MIN_G, EMPTY_SPACE_MIN_B},
+			{EMPTY_SPACE_MAX_R, EMPTY_SPACE_MAX_G, EMPTY_SPACE_MAX_B},
+			{EMPTY_SPACE_R_WAIT, EMPTY_SPACE_G_WAIT, EMPTY_SPACE_B_WAIT},
+			{EMPTY_SPACE_R_STEP, EMPTY_SPACE_G_STEP, EMPTY_SPACE_B_STEP}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);
@@ -136,11 +136,11 @@ STATIC t_status	add_wall_tile_kind(t_data *data)
 			WALL_TEXTURE_ROW,
 			WALL_CHARACTER,
 			(t_tile_kind_color){
-			(t_rgb){WALL_R, WALL_G, WALL_B},
-		{WALL_MIN_R, WALL_MIN_G, WALL_MIN_B},
-		{WALL_MAX_R, WALL_MAX_G, WALL_MAX_B},
-		{WALL_R_WAIT, WALL_G_WAIT, WALL_B_WAIT},
-		{WALL_R_STEP, WALL_G_STEP, WALL_B_STEP}}},
+			{WALL_R, WALL_G, WALL_B},
+			{WALL_MIN_R, WALL_MIN_G, WALL_MIN_B},
+			{WALL_MAX_R, WALL_MAX_G, WALL_MAX_B},
+			{WALL_R_WAIT, WALL_G_WAIT, WALL_B_WAIT},
+			{WALL_R_STEP, WALL_G_STEP, WALL_B_STEP}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);
@@ -153,11 +153,11 @@ STATIC t_status	add_collectible_tile_kind(t_data *data)
 			COLLECTIBLE_TEXTURE_ROW,
 			COLLECTIBLE_CHARACTER,
 			(t_tile_kind_color){
-			(t_rgb){COLLECTIBLE_R, COLLECTIBLE_G, COLLECTIBLE_B},
-		{COLLECTIBLE_MIN_R, COLLECTIBLE_MIN_G, COLLECTIBLE_MIN_B},
-		{COLLECTIBLE_MAX_R, COLLECTIBLE_MAX_G, COLLECTIBLE_MAX_B},
-		{COLLECTIBLE_R_WAIT, COLLECTIBLE_G_WAIT, COLLECTIBLE_B_WAIT},
-		{COLLECTIBLE_R_STEP, COLLECTIBLE_G_STEP, COLLECTIBLE_B_STEP}}},
+			{COLLECTIBLE_R, COLLECTIBLE_G, COLLECTIBLE_B},
+			{COLLECTIBLE_MIN_R, COLLECTIBLE_MIN_G, COLLECTIBLE_MIN_B},
+			{COLLECTIBLE_MAX_R, COLLECTIBLE_MAX_G, COLLECTIBLE_MAX_B},
+			{COLLECTIBLE_R_WAIT, COLLECTIBLE_G_WAIT, COLLECTIBLE_B_WAIT},
+			{COLLECTIBLE_R_STEP, COLLECTIBLE_G_STEP, COLLECTIBLE_B_STEP}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);
@@ -170,11 +170,11 @@ STATIC t_status	add_map_exit_tile_kind(t_data *data)
 			MAP_EXIT_TEXTURE_ROW,
 			MAP_EXIT_CHARACTER,
 			(t_tile_kind_color){
-			(t_rgb){MAP_EXIT_R, MAP_EXIT_G, MAP_EXIT_B},
-		{MAP_EXIT_MIN_R, MAP_EXIT_MIN_G, MAP_EXIT_MIN_B},
-		{MAP_EXIT_MAX_R, MAP_EXIT_MAX_G, MAP_EXIT_MAX_B},
-		{MAP_EXIT_R_WAIT, MAP_EXIT_G_WAIT, MAP_EXIT_B_WAIT},
-		{MAP_EXIT_R_STEP, MAP_EXIT_G_STEP, MAP_EXIT_B_STEP}}},
+			{MAP_EXIT_R, MAP_EXIT_G, MAP_EXIT_B},
+			{MAP_EXIT_MIN_R, MAP_EXIT_MIN_G, MAP_EXIT_MIN_B},
+			{MAP_EXIT_MAX_R, MAP_EXIT_MAX_G, MAP_EXIT_MAX_B},
+			{MAP_EXIT_R_WAIT, MAP_EXIT_G_WAIT, MAP_EXIT_B_WAIT},
+			{MAP_EXIT_R_STEP, MAP_EXIT_G_STEP, MAP_EXIT_B_STEP}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);
@@ -187,11 +187,11 @@ STATIC t_status	add_player_tile_kind(t_data *data)
 			PLAYER_TEXTURE_ROW,
 			PLAYER_CHARACTER,
 			(t_tile_kind_color){
-			(t_rgb){PLAYER_R, PLAYER_G, PLAYER_B},
-		{PLAYER_MIN_R, PLAYER_MIN_G, PLAYER_MIN_B},
-		{PLAYER_MAX_R, PLAYER_MAX_G, PLAYER_MAX_B},
-		{PLAYER_R_WAIT, PLAYER_G_WAIT, PLAYER_B_WAIT},
-		{PLAYER_R_STEP, PLAYER_G_STEP, PLAYER_B_STEP}}},
+			{PLAYER_R, PLAYER_G, PLAYER_B},
+			{PLAYER_MIN_R, PLAYER_MIN_G, PLAYER_MIN_B},
+			{PLAYER_MAX_R, PLAYER_MAX_G, PLAYER_MAX_B},
+			{PLAYER_R_WAIT, PLAYER_G_WAIT, PLAYER_B_WAIT},
+			{PLAYER_R_STEP, PLAYER_G_STEP, PLAYER_B_STEP}}},
 			data) != OK)
 		return (sl_any_error());
 	return (OK);

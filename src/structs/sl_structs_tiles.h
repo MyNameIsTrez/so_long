@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:58:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 18:03:49 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 16:43:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_rgba
-{
-	t_u8	r;
-	t_u8	g;
-	t_u8	b;
-	t_u8	a;
-}	t_rgba;
-
 typedef struct s_rgb
 {
 	t_u8	r;
@@ -34,7 +26,7 @@ typedef struct s_rgb
 
 typedef struct s_tile_kind_color
 {
-	t_rgb	initial_color; // TODO: Make this a t_u8[3] for consistency with the other members?
+	t_u8	initial_color[3];
 	t_i32	min_color[3];
 	t_i32	max_color[3];
 	t_i32	wait[3];
@@ -60,7 +52,7 @@ typedef struct s_tile
 
 typedef struct s_tile_grid
 {
-	t_tile	***cells;
+	t_tile	**cells;
 }	t_tile_grid;
 
 ////////////////////////////////////////////////////////////////////////////////

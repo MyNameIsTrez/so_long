@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 13:22:41 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 12:38:11 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 16:32:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ t_status	sl_fill_tile_data(t_tile *tile, t_tile_kind *tile_kind,
 
 t_tile	*sl_get_tile(t_data *data)
 {
-	return (data->tile_grid.cells[data->it.row_index][data->it.column_index]);
+	return (&data->tile_grid.cells[data->it.row_index][data->it.column_index]);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
