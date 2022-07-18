@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 12:01:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 15:02:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,18 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Light theme
 
-# define COLLECTIBLE_R 159
-# define COLLECTIBLE_G 184
-# define COLLECTIBLE_B 173
+// # define COLLECTIBLE_R 159
+// # define COLLECTIBLE_G 184
+// # define COLLECTIBLE_B 173
+
+////////////////////////////////////////////////////////////////////////////////
+// Dark theme
+
+# define COLLECTIBLE_R 246
+# define COLLECTIBLE_G 174
+# define COLLECTIBLE_B 45
+
+////////////////////////////////////////////////////////////////////////////////
 
 # define COLLECTIBLE_MIN_R 159
 # define COLLECTIBLE_MIN_G 184

@@ -17,7 +17,8 @@
 !so_long.pdf
 
 # Debug settings
-!*.json
+!.vscode/launch.json
+!.vscode/tasks.json
 
 
 

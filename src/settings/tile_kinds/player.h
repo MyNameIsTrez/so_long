@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 12:03:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 14:59:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,18 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Light theme
 
-# define PLAYER_R 63
-# define PLAYER_G 64
-# define PLAYER_B 63
+// # define PLAYER_R 63
+// # define PLAYER_G 64
+// # define PLAYER_B 63
+
+////////////////////////////////////////////////////////////////////////////////
+// Dark theme
+
+# define PLAYER_R 0
+# define PLAYER_G 121
+# define PLAYER_B 140
+
+////////////////////////////////////////////////////////////////////////////////
 
 # define PLAYER_MIN_R 63
 # define PLAYER_MIN_G 64

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 14:01:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 12:01:31 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 14:54:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,16 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Light theme
 
-# define BACKGROUND_R 230
-# define BACKGROUND_G 232
-# define BACKGROUND_B 230
+// # define BACKGROUND_R 230
+// # define BACKGROUND_G 232
+// # define BACKGROUND_B 230
+
+////////////////////////////////////////////////////////////////////////////////
+// Dark theme
+
+# define BACKGROUND_R 44
+# define BACKGROUND_G 44
+# define BACKGROUND_B 52
 
 ////////////////////////////////////////////////////////////////////////////////
 

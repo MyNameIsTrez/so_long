@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:56:43 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 12:01:21 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 14:55:10 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,18 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Light theme
 
-# define EMPTY_SPACE_R 206
-# define EMPTY_SPACE_G 208
-# define EMPTY_SPACE_B 206
+// # define EMPTY_SPACE_R 206
+// # define EMPTY_SPACE_G 208
+// # define EMPTY_SPACE_B 206
+
+////////////////////////////////////////////////////////////////////////////////
+// Dark theme
+
+# define EMPTY_SPACE_R 73
+# define EMPTY_SPACE_G 72
+# define EMPTY_SPACE_B 80
+
+////////////////////////////////////////////////////////////////////////////////
 
 # define EMPTY_SPACE_MIN_R 206
 # define EMPTY_SPACE_MIN_G 208

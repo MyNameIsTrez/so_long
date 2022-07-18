@@ -16,14 +16,15 @@
 		"request": "launch",
 		"program": "${workspaceFolder}/so_long",
 		"args": [
-			"extra/map_tests/two_players.ber",
+			// "extra/map_tests/two_players.ber",
+			// "3"
 
 			// TODO: Make sure this nonexistent file prints a proper error!
 			// "foo.ber",
 
 			// TODO: This hangs the game
-			// "extra/map_tests/big.ber",
-			// "1"
+			"extra/map_tests/big.ber",
+			"1"
 		],
 		// "stopAtEntry": false,
 		"cwd": "${workspaceFolder}",
