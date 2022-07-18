@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 13:22:41 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 17:23:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 12:38:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 bool	sl_out_of_bounds(t_i32 column, t_i32 row, t_data *data)
 {
-	if (column < 0 || column >= (t_i32)data->char_grid.width)
+	if (column < 0 || column >= data->char_grid.width)
 		return (true);
-	if (row < 0 || row >= (t_i32)data->char_grid.height)
+	if (row < 0 || row >= data->char_grid.height)
 		return (true);
 	return (false);
 }
