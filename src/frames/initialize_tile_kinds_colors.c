@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 17:52:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 16:49:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 15:36:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_initialize_tile_kinds_colors(t_data *data)
+t_status	sl_initialize_tile_kinds_colors(t_data *data)
 {
-	t_rgba		initial_color;
 	mlx_image_t	*frame;
 	t_u8		*pixels;
 
-	initial_color.a = 255;
 	sl_reset_iterate_tile_kinds(data);
 	while (sl_iterate_tile_kinds(data) != FINISHED)
 	{
@@ -34,14 +32,15 @@ void	sl_initialize_tile_kinds_colors(t_data *data)
 				pixels = frame->pixels;
 				if (sl_is_color(data))
 				{
-					initial_color.r = data->it.tile_kind->color.initial_color.r;
-					initial_color.g = data->it.tile_kind->color.initial_color.g;
-					initial_color.b = data->it.tile_kind->color.initial_color.b;
-					ft_memcpy(&pixels[data->it.pixel_index], &initial_color, 4);
+					while (sl_iterate_rgb_channel_indices(data) != FINISHED)
+					{
+						pixels[data->it.pixel_index + data->it.rgb_channel_index] = data->it.tile_kind->color.initial_color[data->it.rgb_channel_index] * pixels[data->it.pixel_index + data->it.rgb_channel_index] / 255;
+					}
 				}
 			}
 		}
 	}
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
