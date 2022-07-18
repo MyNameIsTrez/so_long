@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 17:27:25 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 11:36:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,11 @@ STATIC t_i32	get_scale(t_i32 argc, char **argv)
 
 	// TODO: Add min and max scale checks?
 	// TODO: Check if ft_atoi_safe is robust enough
-	if (argc == 3 && ft_atoi_safe(argv[2], &scale) != OK)
-		scale = DEFAULT_SCALE;
+	if (argc == 3)
+	{
+		if (ft_atoi_safe(argv[2], &scale) != OK)
+			scale = DEFAULT_SCALE;
+	}
 	else
 		scale = DEFAULT_SCALE;
 	return (scale);
