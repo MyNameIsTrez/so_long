@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/18 12:08:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 12:29:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 12:41:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_player_movement_keys(t_player *player, t_data *data, bool reset)
+STATIC t_iterator_status	resettable_iterate_player_movement_keys(
+			t_player *player, t_data *data, bool reset)
 {
 	static keys_t	player_movement_key_index;
 	keys_t			*movement_keys;
@@ -40,7 +41,8 @@ STATIC t_iterator_status	resettable_iterate_player_movement_keys(t_player *playe
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_player_movement_keys(t_player *player, t_data *data)
+t_iterator_status	sl_iterate_player_movement_keys(t_player *player,
+			t_data *data)
 {
 	return (resettable_iterate_player_movement_keys(player, data, false));
 }

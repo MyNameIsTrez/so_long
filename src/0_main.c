@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 12:37:19 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 12:40:22 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,10 @@ STATIC t_status	run(t_i32 argc, char **argv, t_data *data)
 
 t_i32	main(t_i32 argc, char **argv)
 {
-	static t_data	data;
+	t_data	data;
 
 	atexit(check_leaks); // TODO: Remove!
+	ft_bzero(&data, sizeof(t_data));
 	if (run(argc, argv, &data) != OK)
 	{
 		sl_cleanup(&data);
