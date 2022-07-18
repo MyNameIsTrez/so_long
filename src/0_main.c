@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 17:53:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 11:42:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ STATIC void	update_frames(t_data *data)
 			sl_get_frame_instance(tile, tile->frame_index)->enabled = true;
 			entity->last_frame_seconds = data->seconds;
 		}
-		entity->seconds_per_frame -= 0.001;
+		// TODO: Do something with varying frame rates during gameplay
+		// entity->seconds_per_frame -= 0.001;
 	}
 }
 

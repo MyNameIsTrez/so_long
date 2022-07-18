@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/15 17:58:23 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/18 11:50:11 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -157,6 +157,7 @@ HEADERS +=\
 	src/settings/tile_kinds/wall.h
 
 HEADERS +=\
+	src/settings/sl_settings_background.h\
 	src/settings/sl_settings_controls.h\
 	src/settings/sl_settings_map.h\
 	src/settings/sl_settings_players.h\

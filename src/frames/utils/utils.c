@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 12:29:13 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 16:49:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/15 19:03:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,14 @@ STATIC bool	sl_is_opaque(t_data *data)
 
 STATIC bool	sl_is_background(t_data *data)
 {
-	static const t_u8	black[] = {0, 0, 0, 255};
+	static const t_u8	color[] = {
+		BACKGROUND_R, BACKGROUND_G, BACKGROUND_B, 255};
 	mlx_image_t			*frame;
 	t_u8				*pixels;
 
 	frame = data->it.frame;
 	pixels = frame->pixels;
-	return (ft_memcmp(&pixels[data->it.pixel_index], black, 4) == 0);
+	return (ft_memcmp(&pixels[data->it.pixel_index], color, 4) == 0);
 }
 
 bool	sl_is_color(t_data *data)

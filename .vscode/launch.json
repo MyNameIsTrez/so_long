@@ -1,42 +1,29 @@
 {
 	"version": "0.2.0",
-	"configurations": [{
-		"name": "so_long",
-		// "type": "cppdbg", // Prints to the debug console instead of the terminal.
-		"type": "lldb", // Doesn't support expression-based breakpoints.
-		"request": "launch",
-		"program": "${workspaceFolder}/so_long",
-		"args": [
-			"maps/example_1.ber",
-			"asdi"
-		],
-		// "stopAtEntry": false,
-		"cwd": "${workspaceFolder}",
-		// "reverseDebugging": true,
-		// "environment": [],
-		// "externalConsole": false,
-		// "MIMode": "lldb",
-		"preLaunchTask": "Build so_long",
-		"internalConsoleOptions": "neverOpen"
-	},
+	"configurations": [
 	{
-		"name": "so_long testing",
+		"name": "so_long",
 
 		// Prints to the debug console instead of the terminal
 		// Can't see statics in debugger
-		"type": "cppdbg",
-		"MIMode": "lldb",
+		// "type": "cppdbg",
+		// "MIMode": "lldb",
 
 		// Doesn't support expression-based breakpoints
 		// Casting in watch window will give "invalid syntax"
-		// "type": "lldb",
+		"type": "lldb",
 
 		"request": "launch",
 		"program": "${workspaceFolder}/so_long",
 		"args": [
-			// "foo.ber", // TODO: Make sure this nonexistent file prints a proper error!
 			"extra/map_tests/two_players.ber",
-			"1"
+
+			// TODO: Make sure this nonexistent file prints a proper error!
+			// "foo.ber",
+
+			// TODO: This hangs the game
+			// "extra/map_tests/big.ber",
+			// "1"
 		],
 		// "stopAtEntry": false,
 		"cwd": "${workspaceFolder}",
