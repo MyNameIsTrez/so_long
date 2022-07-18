@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 11:36:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 16:03:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ STATIC void	calculate_width_and_height(t_data *data)
 
 	pixels_per_tile = data->texture.pixels_per_tile;
 	data->window.width = data->char_grid.width * pixels_per_tile;
+	if (data->window.width > data->monitor.width)
+		data->window.width = data->monitor.width;
 	data->window.height = data->char_grid.height * pixels_per_tile;
+	if (data->window.height > data->monitor.height)
+		data->window.height = data->monitor.height;
 }
 
 STATIC t_status	calculate_pixels_per_tile(t_i32 scale, t_data *data)

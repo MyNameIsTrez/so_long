@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/18 12:14:48 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/18 16:51:19 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -113,9 +113,9 @@ SOURCES +=\
 	src/0_main.c\
 	src/1_parse_argv.c\
 	src/2_load_texture.c\
-	src/4_instantiate_tile_grid.c\
-	src/5_instantiate_entities.c\
-	src/6_instantiate_players.c
+	src/3_instantiate_tile_grid.c\
+	src/4_instantiate_entities.c\
+	src/5_instantiate_players.c
 
 ################################################################################
 
@@ -161,6 +161,7 @@ HEADERS +=\
 	src/settings/sl_settings_background.h\
 	src/settings/sl_settings_controls.h\
 	src/settings/sl_settings_map.h\
+	src/settings/sl_settings_monitor.h\
 	src/settings/sl_settings_players.h\
 	src/settings/sl_settings_texture.h\
 	src/settings/sl_settings_window.h\
@@ -171,6 +172,7 @@ HEADERS +=\
 	src/structs/sl_structs_entity.h\
 	src/structs/sl_structs_iterators.h\
 	src/structs/sl_structs_mlx42.h\
+	src/structs/sl_structs_monitor.h\
 	src/structs/sl_structs_player.h\
 	src/structs/sl_structs.h\
 	src/structs/sl_structs_texture.h\
@@ -185,6 +187,9 @@ HEADERS +=\
 
 HEADERS +=\
 	src/utils/sl_utils.h
+
+HEADERS +=\
+	src/sl_main.h
 
 HEADERS +=\
 	src/so_long.h
@@ -204,7 +209,8 @@ FCLEANED_FILES := $(NAME)
 ifdef DEBUG
 LIBS +=
 HEADERS +=
-CFLAGS += -g3 -Wconversion
+CFLAGS += -g3
+CFLAGS += -Wconversion
 FCLEANED_FILES +=
 endif
 

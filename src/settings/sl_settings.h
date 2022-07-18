@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:50:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 17:55:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 15:58:21 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include "sl_settings_background.h"
 # include "sl_settings_controls.h"
 # include "sl_settings_map.h"
+# include "sl_settings_monitor.h"
 # include "sl_settings_players.h"
 # include "sl_settings_texture.h"
 # include "sl_settings_window.h"

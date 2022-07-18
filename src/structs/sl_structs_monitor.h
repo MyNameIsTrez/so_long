@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_structs_data.h                                  :+:    :+:            */
+/*   sl_structs_monitor.h                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:55:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 15:57:37 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/18 15:50:14 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/18 15:58:10 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCTS_DATA_H
-# define SL_STRUCTS_DATA_H
+#ifndef SL_STRUCTS_MONITOR_H
+# define SL_STRUCTS_MONITOR_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// This struct is used for so_long DATA storage
-typedef struct s_data
+typedef struct s_monitor
 {
-	t_monitor	monitor;
-	t_it		it;
-	t_i32		held_keys[MLX42_KEY_COUNT];
-	mlx_t		*mlx;
-	t_grid		char_grid;
-	t_window	window;
-	t_texture	texture;
-	t_list		*tile_kinds;
-	t_tile_grid	tile_grid;
-	t_list		*entities;
-	t_i32		player_count;
-	t_player	players[MAX_PLAYER_COUNT];
-	t_f64		seconds;
-	t_i32		frame;
-}	t_data;
+	t_i32	width;
+	t_i32	height;
+}	t_monitor;
 
 ////////////////////////////////////////////////////////////////////////////////
 
