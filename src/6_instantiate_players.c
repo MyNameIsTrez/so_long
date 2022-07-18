@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 16:48:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 17:48:53 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 12:21:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_controls	get_players_controls(t_i32 player_index)
+STATIC t_controls	get_player_controls(t_i32 player_index)
 {
 	static const t_controls	players_controls[] = {
-	{.up_key = PLAYER_1_UP_KEY, .down_key = PLAYER_1_DOWN_KEY,
-		.left_key = PLAYER_1_LEFT_KEY, .right_key = PLAYER_1_RIGHT_KEY},
-	{.up_key = PLAYER_2_UP_KEY, .down_key = PLAYER_2_DOWN_KEY,
-		.left_key = PLAYER_2_LEFT_KEY, .right_key = PLAYER_2_RIGHT_KEY},
+	{.movement_keys = {PLAYER_1_UP_KEY, PLAYER_1_DOWN_KEY,
+		PLAYER_1_LEFT_KEY, PLAYER_1_RIGHT_KEY}},
+	{.movement_keys = {PLAYER_2_UP_KEY, PLAYER_2_DOWN_KEY,
+		PLAYER_2_LEFT_KEY, PLAYER_2_RIGHT_KEY}},
 	};
 
 	return (players_controls[player_index]);
@@ -47,7 +47,7 @@ t_status	sl_instantiate_players(t_data *data)
 				return (sl_set_error(SL_ERROR_TOO_MANY_PLAYERS));
 			player = &players[player_index];
 			player->entity = data->it.entity;
-			player->controls = get_players_controls(player_index);
+			player->controls = get_player_controls(player_index);
 			player_index++;
 		}
 	}

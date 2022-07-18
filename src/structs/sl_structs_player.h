@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 17:17:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 12:27:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+# define UP_MOVEMENT_KEY_INDEX 0
+# define DOWN_MOVEMENT_KEY_INDEX 1
+# define LEFT_MOVEMENT_KEY_INDEX 2
+# define RIGHT_MOVEMENT_KEY_INDEX 3
+
 typedef struct s_controls
 {
-	keys_t	up_key;
-	keys_t	down_key;
-	keys_t	left_key;
-	keys_t	right_key;
+	keys_t	movement_keys[4];
 }	t_controls;
 
 typedef struct s_player

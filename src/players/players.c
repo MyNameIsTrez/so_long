@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 17:16:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 12:33:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,29 +51,39 @@ STATIC bool	is_tile_walkable(t_i32 column, t_i32 row, t_data *data)
 
 STATIC bool	is_walkable(t_player *player, keys_t key, t_data *data)
 {
-	t_tile		*tile;
-	t_controls	*controls;
-	t_i32		column;
-	t_i32		row;
+	t_tile	*tile;
+	keys_t	*movement_keys;
+	t_i32	column;
+	t_i32	row;
 
 	tile = &player->entity->tile;
-	controls = &player->controls;
-	column = tile->column_index + sl_get_key_column_offset(key, controls);
-	row = tile->row_index + sl_get_key_row_offset(key, controls);
+	movement_keys = player->controls.movement_keys;
+	column = tile->column_index + sl_get_key_column_offset(key, movement_keys);
+	row = tile->row_index + sl_get_key_row_offset(key, movement_keys);
 	if (sl_out_of_bounds(column, row, data))
 		return (false);
 	return (is_tile_walkable(column, row, data)
 		&& is_entity_walkable(column, row, data));
 }
 
-STATIC bool	can_autowalk(t_i32 frames_held)
+STATIC bool	can_autowalk(t_player *player, t_data *data)
 {
+	t_i32	frames_held;
 	bool	held_long_enough;
 	bool	is_autowalk_frame;
 
-	held_long_enough = frames_held >= MIN_FRAMES_HELD_FOR_AUTOWALK;
-	is_autowalk_frame = frames_held % FRAMES_BETWEEN_AUTOWALK == 0;
-	return (held_long_enough && is_autowalk_frame);
+	while (sl_iterate_player_movement_keys(player, data) != FINISHED)
+	{
+		frames_held = data->held_keys[data->it.player_movement_key];
+		held_long_enough = frames_held >= MIN_FRAMES_HELD_FOR_AUTOWALK;
+		is_autowalk_frame = frames_held % FRAMES_BETWEEN_AUTOWALK == 0;
+		if (held_long_enough && is_autowalk_frame)
+		{
+			sl_reset_iterate_player_movement_keys(data);
+			return (true);
+		}
+	}
+	return (false);
 }
 
 STATIC bool	can_player_shift(t_player *player, keys_t key, t_data *data)
@@ -85,7 +95,7 @@ STATIC bool	can_player_shift(t_player *player, keys_t key, t_data *data)
 		return (false);
 	frames_held = data->held_keys[key];
 	key_was_held = frames_held > 0;
-	if (key_was_held && !can_autowalk(frames_held))
+	if (key_was_held && !can_autowalk(player, data))
 		return (false);
 	if (!is_walkable(player, key, data))
 		return (false);
@@ -94,20 +104,21 @@ STATIC bool	can_player_shift(t_player *player, keys_t key, t_data *data)
 
 void	sl_try_move_players(t_data *data)
 {
-	t_player		*player;
-	t_controls		*controls;
+	t_player	*player;
+	keys_t		*movement_keys;
 
 	while (sl_iterate_player_count(data) != FINISHED)
 	{
 		player = &data->players[data->it.player_index];
-		controls = &player->controls;
-		if (can_player_shift(player, controls->up_key, data))
+		movement_keys = player->controls.movement_keys;
+		// TODO: Replace with lookup table
+		if (can_player_shift(player, movement_keys[UP_MOVEMENT_KEY_INDEX], data))
 			shift_player(player, 0, -1, data);
-		if (can_player_shift(player, controls->down_key, data))
+		if (can_player_shift(player, movement_keys[DOWN_MOVEMENT_KEY_INDEX], data))
 			shift_player(player, 0, 1, data);
-		if (can_player_shift(player, controls->left_key, data))
+		if (can_player_shift(player, movement_keys[LEFT_MOVEMENT_KEY_INDEX], data))
 			shift_player(player, -1, 0, data);
-		if (can_player_shift(player, controls->right_key, data))
+		if (can_player_shift(player, movement_keys[RIGHT_MOVEMENT_KEY_INDEX], data))
 			shift_player(player, 1, 0, data);
 	}
 }

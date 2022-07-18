@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 16:35:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 12:30:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_it
 	mlx_image_t		*frame;
 	t_tile_kind		*tile_kind;
 	t_i32			pixel_index;
+	keys_t			player_movement_key;
 }	t_it;
 
 ////////////////////////////////////////////////////////////////////////////////
