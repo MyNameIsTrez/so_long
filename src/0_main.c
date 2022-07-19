@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 16:36:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/19 12:09:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ STATIC t_status	init(t_i32 argc, char **argv, t_data *data)
 	if (sl_parse_argv(argc, argv, data) != OK)
 		return (sl_any_error());
 	data->mlx = mlx_init(data->window.width, data->window.height, WINDOW_TITLE,
-			true);
+			false);
 	if (data->mlx == NULL)
 		return (sl_set_error(SL_ERROR_MLX42));
 	if (subinits(data) != OK)
@@ -136,7 +136,6 @@ t_i32	main(t_i32 argc, char **argv)
 		sl_print_all_errors();
 		return (EXIT_FAILURE);
 	}
-	// exit(EXIT_SUCCESS);
 	mlx_loop(data.mlx);
 	sl_cleanup(&data);
 	mlx_terminate(data.mlx);

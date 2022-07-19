@@ -22,9 +22,11 @@
 			// TODO: Make sure this nonexistent file prints a proper error!
 			// "foo.ber",
 
-			// TODO: This hangs the game
-			"extra/map_tests/big.ber",
-			"1"
+			"extra/map_tests/1_MB.ber",
+			"1",
+
+			// "extra/map_tests/100_kB.ber",
+			// "1"
 		],
 		// "stopAtEntry": false,
 		"cwd": "${workspaceFolder}",

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:56:55 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 12:03:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 18:33:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Light theme
 
-# define WALL_R 159
-# define WALL_G 184
-# define WALL_B 173
+# define WALL_R 133
+# define WALL_G 100
+# define WALL_B 43
 
-# define WALL_MIN_R 159
-# define WALL_MIN_G 184
-# define WALL_MIN_B 173
+# define WALL_MIN_R 133
+# define WALL_MIN_G 100
+# define WALL_MIN_B 43
 
-# define WALL_MAX_R 170
-# define WALL_MAX_G 190
-# define WALL_MAX_B 197
+# define WALL_MAX_R 140
+# define WALL_MAX_G 115
+# define WALL_MAX_B 67
 
 ////////////////////////////////////////////////////////////////////////////////
 

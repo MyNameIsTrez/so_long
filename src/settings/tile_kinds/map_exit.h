@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:11 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 12:01:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/18 18:34:10 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,19 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Light theme
 
-# define MAP_EXIT_R 71
-# define MAP_EXIT_G 88
-# define MAP_EXIT_B 65
+# define MAP_EXIT_R 141
+# define MAP_EXIT_G 99
+# define MAP_EXIT_B 43
 
-# define MAP_EXIT_MIN_R 71
-# define MAP_EXIT_MIN_G 88
-# define MAP_EXIT_MIN_B 65
+////////////////////////////////////////////////////////////////////////////////
 
-# define MAP_EXIT_MAX_R 115
-# define MAP_EXIT_MAX_G 120
-# define MAP_EXIT_MAX_B 105
+# define MAP_EXIT_MIN_R 170
+# define MAP_EXIT_MIN_G 189
+# define MAP_EXIT_MIN_B 140
+
+# define MAP_EXIT_MAX_R 193
+# define MAP_EXIT_MAX_G 198
+# define MAP_EXIT_MAX_B 153
 
 ////////////////////////////////////////////////////////////////////////////////
 
