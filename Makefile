@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/18 16:51:19 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/21 17:07:27 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ SOURCES :=\
 	src/background/background.c
 
 SOURCES +=\
-	src/cleanup/cleanup.c
+	src/mlx_cleanup/mlx_cleanup.c
 
 SOURCES +=\
 	src/entities/entities.c
@@ -123,7 +123,7 @@ HEADERS +=\
 	src/background/sl_background.h
 
 HEADERS +=\
-	src/cleanup/sl_cleanup.h
+	src/mlx_cleanup/sl_mlx_cleanup.h
 
 HEADERS +=\
 	src/entities/sl_entities.h

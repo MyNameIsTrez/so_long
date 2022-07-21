@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:54:58 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 17:28:21 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/21 17:19:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ STATIC t_status	get_texture_filename_stem(char *str_pixels_per_tile,
 			char **filename_stem)
 {
 	*filename_stem = ft_strjoin(TEXTURE_FILENAME_PREFIX, str_pixels_per_tile);
-	free(str_pixels_per_tile);
+	ft_free(&str_pixels_per_tile);
 	if (*filename_stem == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	return (OK);
@@ -40,7 +40,7 @@ STATIC t_status	get_texture_filename(t_data *data)
 			&filename_stem) != OK)
 		return (sl_any_error());
 	texture->filename = ft_strjoin(filename_stem, TEXTURE_FILENAME_EXTENSION);
-	free(filename_stem);
+	ft_free(&filename_stem);
 	if (texture->filename == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	return (OK);
@@ -59,7 +59,7 @@ t_status	sl_load_texture(t_data *data)
 				data->texture.filename)) != OK)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	data->texture.data = mlx_load_png(tex_filepath);
-	free(tex_filepath);
+	ft_free(&tex_filepath);
 	if (data->texture.data == NULL)
 		return (sl_set_error(SL_ERROR_MLX42));
 	return (OK);
