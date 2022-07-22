@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 17:39:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 20:17:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,6 +174,7 @@ t_status	sl_instantiate_tile_kinds(t_data *data)
 		return (sl_any_error());
 	if (add_player_tile_kind(data) != OK)
 		return (sl_any_error());
+	sl_reset_iterate_tile_kinds(data);
 	return (OK);
 }
 

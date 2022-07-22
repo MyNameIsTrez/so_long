@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 17:52:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 15:36:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 20:17:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ t_status	sl_initialize_tile_kinds_colors(t_data *data)
 	mlx_image_t	*frame;
 	t_u8		*pixels;
 
-	sl_reset_iterate_tile_kinds(data);
 	while (sl_iterate_tile_kinds(data) != FINISHED)
 	{
 		while (sl_iterate_frames(data->it.tile_kind, data) != FINISHED)

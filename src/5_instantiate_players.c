@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   6_instantiate_players.c                            :+:    :+:            */
+/*   5_instantiate_players.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 16:48:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 12:21:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 20:16:29 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ t_status	sl_instantiate_players(t_data *data)
 
 	player_index = 0;
 	players = data->players;
-	sl_reset_iterate_entities(data);
 	while (sl_iterate_entities(data) != FINISHED)
 	{
 		if (data->it.entity->tile.tile_kind->character == PLAYER_CHARACTER)
