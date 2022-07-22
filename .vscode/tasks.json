@@ -5,7 +5,7 @@
 			"label": "Build so_long",
 			"type": "shell",
 			"command": "make",
-			"args": [ "bonus", "DEBUG=1" ],
+			"args": [ "bonus", "DEBUG=1", "SAN=1" ],
 			"problemMatcher": [
 				"$gcc"
 			],

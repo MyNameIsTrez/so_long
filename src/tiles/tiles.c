@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 13:22:41 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 17:39:56 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 21:49:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ t_status	sl_fill_tile_data(t_tile *tile, t_tile_kind *tile_kind,
 	tile->tile_kind = tile_kind;
 	tile->frame_index = 0;
 	frame_count = tile_kind->frame_count;
-	tile->frame_instances_indices = ft_malloc(sizeof(t_i32) * (size_t)frame_count);
+	tile->frame_instances_indices = ft_malloc((size_t)frame_count, sizeof(t_i32));
 	if (tile->frame_instances_indices == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	tile->column_index = data->it.column_index;

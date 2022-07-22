@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/21 17:07:27 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/22 20:24:29 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -207,11 +207,8 @@ endif
 FCLEANED_FILES := $(NAME)
 
 ifdef DEBUG
-LIBS +=
-HEADERS +=
 CFLAGS += -g3
 CFLAGS += -Wconversion
-FCLEANED_FILES +=
 endif
 
 ifdef SAN

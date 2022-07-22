@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 17:19:53 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 21:53:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,11 @@ STATIC t_status	instantiate_tile(t_data *data)
 STATIC t_status	malloc_rows(t_data *data)
 {
 	t_tile	**cells;
-	size_t	tile_row_bytes;
 	t_i32	row_index;
 
 	cells = data->tile_grid.cells;
-	tile_row_bytes = sizeof(t_tile) * (size_t)data->char_grid.width;
 	row_index = data->it.row_index;
-	cells[row_index] = ft_malloc(tile_row_bytes);
+	cells[row_index] = ft_malloc((size_t)data->char_grid.width, sizeof(t_tile));
 	if (cells[row_index] == NULL)
 	{
 		// TODO: Free previously allocated rows.
@@ -61,7 +59,7 @@ STATIC t_status	malloc_tile_grid_cells(t_data *data)
 {
 	t_tile		**cells;
 
-	cells = ft_malloc(sizeof(t_tile *) * (size_t)data->char_grid.height);
+	cells = ft_malloc((size_t)data->char_grid.height, sizeof(t_tile *));
 	if (cells == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	data->tile_grid.cells = cells;
