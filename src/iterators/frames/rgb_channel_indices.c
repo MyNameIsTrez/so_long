@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   channel_indices.c                                  :+:    :+:            */
+/*   rgb_channel_indices.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 14:31:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 16:37:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 17:38:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 STATIC t_iterator_status	resettable_iterate_rgb_channel_indices(t_data *data,
-			bool reset)
+								bool reset)
 {
 	static t_i32	rgb_channel_index;
 

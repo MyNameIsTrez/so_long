@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 16:01:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 16:11:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 17:38:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 STATIC t_iterator_status	resettable_iterate_frames_pixel_indices(
-			t_tile_kind *tile_kind, t_data *data, bool reset)
+								t_tile_kind *tile_kind, t_data *data,
+								bool reset)
 {
 	if (reset)
 	{
@@ -46,7 +47,7 @@ STATIC t_iterator_status	resettable_iterate_frames_pixel_indices(
 ////////////////////////////////////////////////////////////////////////////////
 
 t_iterator_status	sl_iterate_frames_pixel_indices(t_tile_kind *tile_kind,
-			t_data *data)
+						t_data *data)
 {
 	return (resettable_iterate_frames_pixel_indices(tile_kind, data, false));
 }

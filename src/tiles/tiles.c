@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 13:22:41 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 17:19:53 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 17:39:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,7 @@ t_status	sl_instantiate_tile_frames(t_tile *tile, t_data *data)
 	return (OK);
 }
 
-void	sl_shift_tile_pos(t_tile *tile, t_i32 columns, t_i32 rows,
-			t_data *data)
+void	sl_shift_tile_pos(t_tile *tile, t_i32 columns, t_i32 rows, t_data *data)
 {
 	t_i32			pixels_per_tile;
 	t_i32			frame_count;

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 15:09:29 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 15:15:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 17:37:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_frame_pixel_indices(mlx_image_t *frame, t_data *data, bool reset)
+STATIC t_iterator_status	resettable_iterate_frame_pixel_indices(
+								mlx_image_t *frame, t_data *data, bool reset)
 {
 	if (reset)
 	{
@@ -34,7 +35,8 @@ STATIC t_iterator_status	resettable_iterate_frame_pixel_indices(mlx_image_t *fra
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_frame_pixel_indices(mlx_image_t *frame, t_data *data)
+t_iterator_status	sl_iterate_frame_pixel_indices(mlx_image_t *frame,
+						t_data *data)
 {
 	return (resettable_iterate_frame_pixel_indices(frame, data, false));
 }

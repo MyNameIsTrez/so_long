@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:55:13 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 11:58:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 17:38:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 STATIC t_iterator_status	resettable_iterate_char_grid(t_data *data,
-			bool reset)
+								bool reset)
 {
 	if (reset)
 	{

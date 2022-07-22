@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 17:54:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 14:26:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 17:39:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_tile_kinds(t_data *data, bool reset)
+STATIC t_iterator_status	resettable_iterate_tile_kinds(t_data *data,
+								bool reset)
 {
 	static t_list	*lst;
 

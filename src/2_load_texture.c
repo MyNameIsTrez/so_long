@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:54:58 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/21 17:19:11 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 17:40:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 STATIC t_status	get_texture_filename_stem(char *str_pixels_per_tile,
-			char **filename_stem)
+					char **filename_stem)
 {
 	*filename_stem = ft_strjoin(TEXTURE_FILENAME_PREFIX, str_pixels_per_tile);
 	ft_free(&str_pixels_per_tile);

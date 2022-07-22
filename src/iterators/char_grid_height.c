@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:59:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/14 16:57:36 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/22 17:38:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 STATIC t_iterator_status	resettable_iterate_char_grid_height(t_data *data,
-			bool reset)
+								bool reset)
 {
 	static t_i32	row_index;
 
