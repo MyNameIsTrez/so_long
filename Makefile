@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/25 11:39:56 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/25 15:48:37 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -120,76 +120,76 @@ SOURCES +=\
 ################################################################################
 
 HEADERS +=\
-	src/background/background.h
+	src/background/sl_background.h
 
 HEADERS +=\
-	src/mlx_cleanup/mlx_cleanup.h
+	src/mlx_cleanup/sl_mlx_cleanup.h
 
 HEADERS +=\
-	src/entities/entities.h
+	src/entities/sl_entities.h
 
 HEADERS +=\
-	src/error/error.h
+	src/error/sl_error.h
 
 HEADERS +=\
-	src/frames/utils/frame_utils.h\
-	src/frames/frames.h
+	src/frames/utils/sl_frame_utils.h\
+	src/frames/sl_frames.h
 
 HEADERS +=\
-	src/grid/grid.h
+	src/grid/sl_grid.h
 
 HEADERS +=\
-	src/held_keys/held_keys.h
+	src/held_keys/sl_held_keys.h
 
 HEADERS +=\
-	src/iterators/iterators.h\
-	src/iterators/frames/iterator_frames.h
+	src/iterators/sl_iterators.h\
+	src/iterators/frames/sl_iterator_frames.h
 
 HEADERS +=\
-	src/players/utils/players_utils.h\
-	src/players/players.h
+	src/players/utils/sl_players_utils.h\
+	src/players/sl_players.h
 
 HEADERS +=\
-	src/settings/tile_kinds/settings_tile_kinds.h\
-	src/settings/tile_kinds/collectible.h\
-	src/settings/tile_kinds/empty_space.h\
-	src/settings/tile_kinds/map_exit.h\
-	src/settings/tile_kinds/player.h\
-	src/settings/tile_kinds/wall.h
+	src/settings/tile_kinds/sl_settings_tile_kinds.h\
+	src/settings/tile_kinds/sl_collectible.h\
+	src/settings/tile_kinds/sl_empty_space.h\
+	src/settings/tile_kinds/sl_map_exit.h\
+	src/settings/tile_kinds/sl_player.h\
+	src/settings/tile_kinds/sl_wall.h
 
 HEADERS +=\
-	src/settings/settings_background.h\
-	src/settings/settings_controls.h\
-	src/settings/settings_map.h\
-	src/settings/settings_monitor.h\
-	src/settings/settings_players.h\
-	src/settings/settings_texture.h\
-	src/settings/settings_window.h\
-	src/settings/settings.h
+	src/settings/sl_settings_background.h\
+	src/settings/sl_settings_controls.h\
+	src/settings/sl_settings_map.h\
+	src/settings/sl_settings_monitor.h\
+	src/settings/sl_settings_players.h\
+	src/settings/sl_settings_texture.h\
+	src/settings/sl_settings_window.h\
+	src/settings/sl_settings.h
 
 HEADERS +=\
-	src/structs/structs_data.h\
-	src/structs/structs_entity.h\
-	src/structs/structs_iterators.h\
-	src/structs/structs_mlx42.h\
-	src/structs/structs_monitor.h\
-	src/structs/structs_player.h\
-	src/structs/structs.h\
-	src/structs/structs_texture.h\
-	src/structs/structs_tiles.h
+	src/structs/sl_structs_data.h\
+	src/structs/sl_structs_entity.h\
+	src/structs/sl_structs_iterators.h\
+	src/structs/sl_structs_mlx42.h\
+	src/structs/sl_structs_monitor.h\
+	src/structs/sl_structs_player.h\
+	src/structs/sl_structs.h\
+	src/structs/sl_structs_texture.h\
+	src/structs/sl_structs_tiles.h
 
 HEADERS +=\
-	src/tile_kinds/utils/tile_kinds_utils.h\
-	src/tile_kinds/tile_kinds.h
+	src/tile_kinds/utils/sl_tile_kinds_utils.h\
+	src/tile_kinds/sl_tile_kinds.h
 
 HEADERS +=\
-	src/tiles/tiles.h
+	src/tiles/sl_tiles.h
 
 HEADERS +=\
-	src/utils/utils.h
+	src/utils/sl_utils.h
 
 HEADERS +=\
-	src/main.h
+	src/sl_main.h
 
 HEADERS +=\
 	src/so_long.h
@@ -253,7 +253,7 @@ $(NAME): $(OBJECT_PATHS)
 	$(CC) $(CFLAGS) $(LIBS) $(OBJECT_PATHS) -o $(NAME)
 	@echo "$(MAKE_DATA)" > $(DATA_FILE)
 
-$(OBJ_DIR)/%.o: %.c $(HEADERS)
+$(OBJ_DIR)/%.o: %.c #$(HEADERS)
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
