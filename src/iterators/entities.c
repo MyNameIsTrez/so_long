@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/07 15:41:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 16:41:01 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/25 17:32:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ STATIC t_iterator_status	resettable_iterate_entities(t_data *data,
 	if (reset)
 	{
 		entity_index = 0;
-		data->it.entity = NULL;
 		return (RESET);
 	}
 	while (entity_index < data->entity_count)
