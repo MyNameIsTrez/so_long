@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 11:02:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/25 15:04:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,7 @@ STATIC t_status	instantiate_tile_kind(t_tile_kind **tile_kind, t_data *data)
 	if (*tile_kind == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	if (ft_lst_new_front(&data->tile_kinds, *tile_kind) == NULL)
-	{
-		ft_free(tile_kind);
 		return (ft_set_error(FT_ERROR_MALLOC));
-	}
 	return (OK);
 }
 

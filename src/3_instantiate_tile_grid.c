@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 21:53:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/25 15:03:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,7 @@ STATIC t_status	malloc_rows(t_data *data)
 	row_index = data->it.row_index;
 	cells[row_index] = ft_malloc((size_t)data->char_grid.width, sizeof(t_tile));
 	if (cells[row_index] == NULL)
-	{
-		// TODO: Free previously allocated rows.
-		ft_free(&data->tile_grid.cells);
 		return (ft_set_error(FT_ERROR_MALLOC));
-	}
 	return (OK);
 }
 
