@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 21:48:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/25 11:02:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,11 @@ STATIC t_status	instantiate_tile_kind(t_tile_kind **tile_kind, t_data *data)
 STATIC t_status	add_tile_kind(t_tile_kind_data tk_data, t_data *data)
 {
 	t_tile_kind	*tile_kind;
-	size_t		frames_byte_count;
 
 	instantiate_tile_kind(&tile_kind, data);
 	tile_kind->character = tk_data.character;
 	tile_kind->frame_count = tk_data.frame_count;
-	frames_byte_count = sizeof(mlx_image_t *) * (size_t)tk_data.frame_count;
-	tile_kind->frames = ft_malloc(frames_byte_count, sizeof(mlx_image_t *));
+	tile_kind->frames = ft_malloc((size_t)tk_data.frame_count, sizeof(mlx_image_t *));
 	// TODO: Make sure that tile_kind is freed at the end of the program
 	if (tile_kind->frames == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
