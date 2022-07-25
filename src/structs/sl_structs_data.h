@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 16:38:34 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/25 17:06:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ typedef struct s_data
 	t_grid		char_grid;
 	t_window	window;
 	t_texture	texture;
-	t_list		*tile_kinds;
+	t_i32		tile_kind_count;
+	t_tile_kind	*tile_kinds;
 	t_tile_grid	tile_grid;
 	t_i32		entity_count;
 	t_entity	*entities;

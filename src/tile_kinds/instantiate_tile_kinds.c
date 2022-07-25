@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:04:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/25 17:24:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,33 +40,22 @@ STATIC t_status	add_tile_kind_frames(t_tile_kind *tile_kind, t_i32 frame_count,
 	return (OK);
 }
 
-STATIC t_status	instantiate_tile_kind(t_tile_kind **tile_kind, t_data *data)
-{
-	*tile_kind = ft_malloc(1, sizeof(t_tile_kind));
-	if (*tile_kind == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
-	if (ft_lst_new_front(&data->tile_kinds, *tile_kind) == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
-	return (OK);
-}
-
 STATIC t_status	add_tile_kind(t_tile_kind_data tk_data, t_data *data)
 {
-	t_tile_kind	*tile_kind;
+	t_tile_kind	tile_kind;
 
-	instantiate_tile_kind(&tile_kind, data);
-	tile_kind->character = tk_data.character;
-	tile_kind->frame_count = tk_data.frame_count;
-	tile_kind->frames = ft_malloc((size_t)tk_data.frame_count, sizeof(mlx_image_t *));
-	// TODO: Make sure that tile_kind is freed at the end of the program
-	if (tile_kind->frames == NULL)
+	tile_kind.character = tk_data.character;
+	tile_kind.frame_count = tk_data.frame_count;
+	tile_kind.frames = ft_malloc((size_t)tk_data.frame_count, sizeof(mlx_image_t *));
+	if (tile_kind.frames == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
-	// TODO: Make sure that tile_kind is freed at the end of the program
-	// TODO: Make sure that tile_kind->frames is freed at the end of the program
-	if (add_tile_kind_frames(tile_kind, tk_data.frame_count,
+	if (add_tile_kind_frames(&tile_kind, tk_data.frame_count,
 			tk_data.texture_row, data) != OK)
 		return (sl_any_error());
-	tile_kind->color = tk_data.color;
+	tile_kind.color = tk_data.color;
+	if (ft_vector_push(&data->tile_kinds, &tile_kind) != OK)
+		return (sl_any_error());
+	data->tile_kind_count++;
 	return (OK);
 }
 
@@ -159,6 +148,7 @@ STATIC t_status	add_player_tile_kind(t_data *data)
 
 t_status	sl_instantiate_tile_kinds(t_data *data)
 {
+	data->tile_kinds = ft_vector_new(sizeof(t_tile_kind));
 	if (add_empty_space_tile_kind(data) != OK)
 		return (sl_any_error());
 	if (add_wall_tile_kind(data) != OK)
@@ -169,7 +159,6 @@ t_status	sl_instantiate_tile_kinds(t_data *data)
 		return (sl_any_error());
 	if (add_player_tile_kind(data) != OK)
 		return (sl_any_error());
-	sl_reset_iterate_tile_kinds(data);
 	return (OK);
 }
 

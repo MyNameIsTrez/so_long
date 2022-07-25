@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:47:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/25 17:06:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct s_it
 	t_i32			row_index;
 	t_i32			frame_index;
 	t_i32			player_index;
-	t_i32			tile_kind_index;
 	t_entity		*entity;
 	keys_t			key;
 	t_u8			red;

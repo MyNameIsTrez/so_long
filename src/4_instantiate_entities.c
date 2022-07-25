@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 13:33:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 16:59:49 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/25 17:10:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ STATIC t_status	instantiate_entity(t_data *data)
 	entity.last_frame_seconds = 0;
 	entity.seconds_per_frame = 0.5; // TODO: Don't hardcode
 	if (ft_vector_push(&data->entities, &entity) != OK)
-		return (ft_set_error(FT_ERROR_MALLOC));
+		return (sl_any_error());
 	return (OK);
 }
 
