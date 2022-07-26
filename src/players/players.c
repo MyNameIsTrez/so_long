@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/26 16:39:30 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/26 17:59:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ STATIC bool	is_entity_walkable(t_i32 column, t_i32 row, t_data *data)
 			continue ;
 		character = entity->tile.tile_kind->character;
 		if (!ft_chr_in_str(character, WALKABLE_CHARACTERS))
+		{
+			sl_reset_iterate_entities(data);
 			return (false);
+		}
 	}
 	return (true);
 }
