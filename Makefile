@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/25 15:48:37 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/26 14:56:18 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ CC := cc
 OBJ_DIR := obj
 
 CFLAGS := -Wall -Wextra -Werror
-# CFLAGS += -O3 # -O1 adds tail recursion detection
 
 ################################################################################
 
@@ -205,6 +204,10 @@ endif
 ################################################################################
 
 FCLEANED_FILES := $(NAME)
+
+ifdef O3
+CFLAGS += -O3
+endif
 
 ifdef DEBUG
 CFLAGS += -g3
