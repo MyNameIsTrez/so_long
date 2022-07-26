@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:59:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 17:38:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/26 17:47:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,19 @@
 STATIC t_iterator_status	resettable_iterate_char_grid_height(t_data *data,
 								bool reset)
 {
-	static t_i32	row_index;
+	static t_iterator	it;
 
-	if (reset)
+	if (!it.initialized || reset)
 	{
-		row_index = 0;
+		it = ft_get_range_start_0_iterator(data->char_grid.height);
+		it.initialized = true;
 		data->it.row_index = 0;
-		return (RESET);
 	}
-	while (row_index < data->char_grid.height)
+	if (reset)
+		return (RESET);
+	while (ft_iterate(&it) != FINISHED)
 	{
-		data->it.row_index = row_index;
-		row_index++;
+		data->it.row_index = (t_i32)it.current;
 		return (LOOPED);
 	}
 	sl_reset_iterate_char_grid_height(data);

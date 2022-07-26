@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:03:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/26 17:38:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,7 @@ STATIC t_status	malloc_tile_grid_cells(t_data *data)
 STATIC t_status	try_instantiate_tile(t_data *data)
 {
 	if (instantiate_tile(data) != OK)
-	{
-		// TODO: Free previous stuff.
 		return (sl_any_error());
-	}
 	return (OK);
 }
 
