@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 13:33:42 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 17:10:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/26 11:01:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,8 @@ STATIC t_status	instantiate_entity(t_data *data)
 
 STATIC t_status	try_instantiate_entity(t_data *data)
 {
-	if (sl_is_entity(data))
-	{
-		if (instantiate_entity(data) != OK)
-			return (sl_any_error());
-		data->entity_count++;
-	}
+	if (sl_is_entity(data) && instantiate_entity(data) != OK)
+		return (sl_any_error());
 	return (OK);
 }
 

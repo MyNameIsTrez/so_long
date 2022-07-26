@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/07 15:41:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 17:32:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/26 11:18:01 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
 STATIC t_iterator_status	resettable_iterate_entities(t_data *data,
 								bool reset)
 {
-	static t_i32	entity_index;
+	static size_t	entity_index;
 
 	if (reset)
 	{
 		entity_index = 0;
 		return (RESET);
 	}
-	while (entity_index < data->entity_count)
+	while (entity_index < ft_vector_get_size(data->entities))
 	{
 		data->it.entity = &data->entities[entity_index];
 		entity_index++;

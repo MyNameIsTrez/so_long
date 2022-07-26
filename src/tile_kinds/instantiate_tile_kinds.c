@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 17:24:55 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/26 11:19:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ STATIC t_status	add_tile_kind(t_tile_kind_data tk_data, t_data *data)
 	tile_kind.color = tk_data.color;
 	if (ft_vector_push(&data->tile_kinds, &tile_kind) != OK)
 		return (sl_any_error());
-	data->tile_kind_count++;
 	return (OK);
 }
 
