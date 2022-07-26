@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/26 11:19:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/26 16:31:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ typedef struct s_data
 	t_tile_kind	*tile_kinds;
 	t_tile_grid	tile_grid;
 	t_entity	*entities;
-	t_i32		player_count;
-	t_player	players[MAX_PLAYER_COUNT];
+	t_player	*players;
 	t_f64		seconds;
 	t_i32		frame;
 }	t_data;

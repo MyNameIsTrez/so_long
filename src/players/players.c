@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 12:33:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/26 16:39:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,9 @@ void	sl_try_move_players(t_data *data)
 	t_player	*player;
 	keys_t		*movement_keys;
 
-	while (sl_iterate_player_count(data) != FINISHED)
+	while (sl_iterate_players(data) != FINISHED)
 	{
-		player = &data->players[data->it.player_index];
+		player = data->it.player;
 		movement_keys = player->controls.movement_keys;
 		// TODO: Replace with lookup table
 		if (can_player_shift(player, movement_keys[UP_MOVEMENT_KEY_INDEX], data))

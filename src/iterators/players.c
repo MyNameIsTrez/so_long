@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   player_count.c                                     :+:    :+:            */
+/*   players.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/07 15:17:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 17:39:01 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/26 16:35:26 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/26 17:14:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,37 +16,38 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_player_count(t_data *data,
+STATIC t_iterator_status	resettable_iterate_players(t_data *data,
 								bool reset)
 {
-	static t_i32	player_index;
+	static t_iterator	it;
 
-	if (reset)
+	if (!it.initialized || reset)
 	{
-		player_index = 0;
-		data->it.player_index = 0;
-		return (RESET);
+		it = ft_get_range_start_0_iterator((t_i32)ft_vector_get_size(data->players));
+		it.initialized = true;
 	}
-	while (player_index < data->player_count)
+	if (reset)
+		return (RESET);
+	while (ft_iterate(&it) != FINISHED)
 	{
-		data->it.player_index = player_index;
-		player_index++;
+		// TODO: Replace with pointer iterator
+		data->it.player = &data->players[(t_i32)it.current];
 		return (LOOPED);
 	}
-	sl_reset_iterate_player_count(data);
+	sl_reset_iterate_players(data);
 	return (FINISHED);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_player_count(t_data *data)
+t_iterator_status	sl_iterate_players(t_data *data)
 {
-	return (resettable_iterate_player_count(data, false));
+	return (resettable_iterate_players(data, false));
 }
 
-void	sl_reset_iterate_player_count(t_data *data)
+void	sl_reset_iterate_players(t_data *data)
 {
-	resettable_iterate_player_count(data, true);
+	resettable_iterate_players(data, true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
