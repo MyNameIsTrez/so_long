@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/26 16:38:59 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/28 18:02:09 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,7 +114,7 @@ SOURCES +=\
 	src/2_load_texture.c\
 	src/3_instantiate_tile_grid.c\
 	src/4_instantiate_entities.c\
-	src/5_instantiate_players.c
+	src/5_initialize_players.c
 
 ################################################################################
 
@@ -256,7 +256,7 @@ $(NAME): $(OBJECT_PATHS)
 	$(CC) $(CFLAGS) $(LIBS) $(OBJECT_PATHS) -o $(NAME)
 	@echo "$(MAKE_DATA)" > $(DATA_FILE)
 
-$(OBJ_DIR)/%.o: %.c #$(HEADERS)
+$(OBJ_DIR)/%.o: %.c $(HEADERS)
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 

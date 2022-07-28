@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/28 16:48:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/26 17:05:36 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 18:01:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ STATIC t_controls	get_player_controls(t_i32 player_index)
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_instantiate_players(t_data *data)
+t_status	sl_initialize_players(t_data *data)
 {
 	t_i32		player_index;
 	t_player	player;

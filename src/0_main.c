@@ -78,7 +78,7 @@ STATIC t_status	subinits(t_data *data)
 		sl_initialize_tile_kinds_colors,
 		sl_instantiate_tile_grid,
 		sl_instantiate_entities,
-		sl_instantiate_players
+		sl_initialize_players,
 	};
 	size_t					index;
 
