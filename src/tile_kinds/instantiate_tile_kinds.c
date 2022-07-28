@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/26 11:19:32 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 14:16:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_status	add_tile_kind_frames(t_tile_kind *tile_kind, t_i32 frame_count,
-					t_i32 texture_row, t_data *data)
+STATIC t_status	add_tile_kind_frames(t_tile_kind *tile_kind, size_t frame_count,
+					size_t texture_row, t_data *data)
 {
-	t_i32	pixels_per_tile;
-	t_i32	frame_index;
+	size_t	pixels_per_tile;
+	size_t	frame_index;
 	t_u32	wh[2];
 	t_u32	xy[2];
 

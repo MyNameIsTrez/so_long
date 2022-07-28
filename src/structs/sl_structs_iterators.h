@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/26 16:39:49 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 14:22:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 typedef struct s_frame_pixels
 {
-	t_i32	x;
-	t_i32	y;
+	size_t	x;
+	size_t	y;
 }	t_frame_pixels;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -28,18 +28,18 @@ typedef struct s_frame_pixels
 // This struct is used for temporary ITerator data storage
 typedef struct s_it
 {
-	t_i32			column_index;
-	t_i32			row_index;
-	t_i32			frame_index;
+	size_t			column_index;
+	size_t			row_index;
+	size_t			frame_index;
 	t_player		*player;
 	t_entity		*entity;
 	keys_t			key;
 	t_u8			red;
 	t_frame_pixels	frame_pixels;
-	t_i32			rgb_channel_index;
+	size_t			rgb_channel_index;
 	mlx_image_t		*frame;
 	t_tile_kind		*tile_kind;
-	t_i32			pixel_index;
+	size_t			pixel_index;
 	keys_t			player_movement_key;
 }	t_it;
 

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:58:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:47:21 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 14:04:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_tile_kind_color
 typedef struct s_tile_kind
 {
 	t_u8				character;
-	t_i32				frame_count;
+	size_t				frame_count;
 	mlx_image_t			**frames;
 	t_tile_kind_color	color;
 }	t_tile_kind;
@@ -44,10 +44,10 @@ typedef struct s_tile_kind
 typedef struct s_tile
 {
 	t_tile_kind	*tile_kind;
-	t_i32		frame_index;
-	t_i32		*frame_instances_indices;
-	t_i32		column_index;
-	t_i32		row_index;
+	size_t		frame_index;
+	size_t		*frame_instances_indices;
+	size_t		column_index;
+	size_t		row_index;
 }	t_tile;
 
 typedef struct s_tile_grid

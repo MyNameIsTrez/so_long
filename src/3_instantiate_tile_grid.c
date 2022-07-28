@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/26 17:38:47 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 14:08:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ STATIC t_status	instantiate_tile(t_data *data)
 STATIC t_status	malloc_rows(t_data *data)
 {
 	t_tile	**cells;
-	t_i32	row_index;
+	size_t	row_index;
 
 	cells = data->tile_grid.cells;
 	row_index = data->it.row_index;

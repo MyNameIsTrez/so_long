@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 12:52:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 14:50:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ STATIC void	update_frames(t_data *data)
 	t_entity	*entity;
 	t_tile		*tile;
 	t_f64		seconds_elapsed;
-	t_i32		frame_count;
+	size_t		frame_count;
 
 	while (sl_iterate_entities(data) != FINISHED)
 	{
@@ -94,16 +94,16 @@ STATIC t_status	subinits(t_data *data)
 
 STATIC void	init_monitor_size(t_data *data)
 {
-	t_i32	*width;
-	t_i32	*height;
+	t_i32	width;
+	t_i32	height;
 
-	width = &data->monitor.width;
-	height = &data->monitor.height;
-	mlx_get_monitor_size(0, width, height);
-	if (*width <= 0)
-		*width = MAX_MONITOR_WIDTH;
-	if (*height <= 0)
-		*height = MAX_MONITOR_HEIGHT;
+	mlx_get_monitor_size(0, &width, &height);
+	if (width <= 0)
+		width = MAX_MONITOR_WIDTH;
+	if (height <= 0)
+		height = MAX_MONITOR_HEIGHT;
+	data->monitor.width = (size_t)width;
+	data->monitor.height = (size_t)height;
 }
 
 STATIC t_status	init(t_i32 argc, char **argv, t_data *data)
@@ -112,8 +112,8 @@ STATIC t_status	init(t_i32 argc, char **argv, t_data *data)
 	init_monitor_size(data);
 	if (sl_parse_argv(argc, argv, data) != OK)
 		return (sl_any_error());
-	data->mlx = mlx_init(data->window.width, data->window.height, WINDOW_TITLE,
-			false);
+	data->mlx = mlx_init((t_i32)data->window.width, (t_i32)data->window.height,
+			WINDOW_TITLE, false);
 	if (data->mlx == NULL)
 		return (sl_set_error(SL_ERROR_MLX42));
 	if (subinits(data) != OK)

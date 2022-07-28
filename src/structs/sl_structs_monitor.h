@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/18 15:50:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:47:12 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 14:43:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 typedef struct s_monitor
 {
-	t_i32	width;
-	t_i32	height;
+	size_t	width;
+	size_t	height;
 }	t_monitor;
 
 ////////////////////////////////////////////////////////////////////////////////

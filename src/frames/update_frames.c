@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/15 18:23:31 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 14:22:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 STATIC void	step_pixel(t_data *data)
 {
 	t_u8		*pixels;
-	t_i32		rgb_channel_index;
+	size_t		rgb_channel_index;
 	t_u8		*channel;
 	t_i32		step;
 	t_tile_kind	*tile_kind;
@@ -54,7 +54,7 @@ STATIC void	step_pixel(t_data *data)
 STATIC bool	should_step(t_data *data)
 {
 	t_i32	*wait;
-	t_i32	rgb_channel_index;
+	size_t	rgb_channel_index;
 
 	wait = data->it.tile_kind->color.wait;
 	rgb_channel_index = data->it.rgb_channel_index;

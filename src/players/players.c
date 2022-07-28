@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/26 17:59:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 14:23:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ STATIC void	shift_player(t_player *player, t_i32 x, t_i32 y, t_data *data)
 	sl_shift_tile_pos(&player->entity->tile, x, y, data);
 }
 
-STATIC bool	is_entity_walkable(t_i32 column, t_i32 row, t_data *data)
+STATIC bool	is_entity_walkable(size_t column, size_t row, t_data *data)
 {
 	t_entity	*entity;
 	t_u8		character;
@@ -42,7 +42,7 @@ STATIC bool	is_entity_walkable(t_i32 column, t_i32 row, t_data *data)
 	return (true);
 }
 
-STATIC bool	is_tile_walkable(t_i32 column, t_i32 row, t_data *data)
+STATIC bool	is_tile_walkable(size_t column, size_t row, t_data *data)
 {
 	t_u8	tile_character;
 
@@ -61,12 +61,12 @@ STATIC bool	is_walkable(t_player *player, keys_t key, t_data *data)
 
 	tile = &player->entity->tile;
 	movement_keys = player->controls.movement_keys;
-	column = tile->column_index + sl_get_key_column_offset(key, movement_keys);
-	row = tile->row_index + sl_get_key_row_offset(key, movement_keys);
+	column = (t_i32)tile->column_index + sl_get_key_column_offset(key, movement_keys);
+	row = (t_i32)tile->row_index + sl_get_key_row_offset(key, movement_keys);
 	if (sl_out_of_bounds(column, row, data))
 		return (false);
-	return (is_tile_walkable(column, row, data)
-		&& is_entity_walkable(column, row, data));
+	return (is_tile_walkable((size_t)column, (size_t)row, data)
+		&& is_entity_walkable((size_t)column, (size_t)row, data));
 }
 
 STATIC bool	can_autowalk(t_player *player, t_data *data)

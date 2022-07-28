@@ -35,4 +35,8 @@
 !texturepacks/**/*.png
 !texturepacks/**/*.txt
 
+# Ignore test C file
+test.c
+
+# Ignore macOS directory metadata
 **/.DS_Store

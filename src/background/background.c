@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 12:05:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 12:42:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 14:09:21 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 STATIC void	fill_background(mlx_image_t *background, t_data *data)
 {
-	t_i32		pixel_index;
+	size_t		pixel_index;
 	t_u8 const	color[] = {BACKGROUND_R, BACKGROUND_G, BACKGROUND_B, 255};
 
 	while (sl_iterate_frame_pixels(background, data) != FINISHED)
