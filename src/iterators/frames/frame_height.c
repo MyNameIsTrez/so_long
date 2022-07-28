@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 13:54:24 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 11:04:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 14:42:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ STATIC t_iterator_status	resettable_iterate_frame_height(mlx_image_t *frame,
 		return (RESET);
 	}
 	if (!it.initialized)
-		it = ft_get_range_start_0_iterator((t_i32)frame->height);
+		it = ft_get_count_iterator(frame->height);
 	while (ft_iterate(&it) != FINISHED)
 	{
-		data->it.frame_pixels.y = (t_i32)it.current;
+		data->it.frame_pixels.y = (size_t)it.current;
 		return (LOOPED);
 	}
 	sl_reset_iterate_frame_height(data);

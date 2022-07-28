@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/26 16:35:26 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 11:05:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 14:41:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ STATIC t_iterator_status	resettable_iterate_players(t_data *data,
 		return (RESET);
 	}
 	if (!it.initialized)
-		it = ft_get_range_start_0_iterator((t_i32)ft_vector_get_size(data->players));
+		it = ft_get_count_iterator(ft_vector_get_size(data->players));
 	while (ft_iterate(&it) != FINISHED)
 	{
 		// TODO: Replace with pointer iterator
