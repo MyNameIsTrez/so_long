@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 13:49:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 14:16:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 17:03:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_tile_kind_data
 	size_t				frame_count;
 	size_t				texture_row;
 	t_u8				character;
+	t_i32				depth;
 	t_tile_kind_color	color;
 }	t_tile_kind_data;
 

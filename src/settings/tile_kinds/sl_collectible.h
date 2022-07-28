@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:44:07 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 17:11:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # define COLLECTIBLE_TEXTURE_FRAME_COUNT 4
 # define COLLECTIBLE_TEXTURE_ROW 46
 # define COLLECTIBLE_CHARACTER 'C'
+# define COLLECTIBLE_DEPTH 2
 
 ////////////////////////////////////////////////////////////////////////////////
 

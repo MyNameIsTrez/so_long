@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:56:55 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:44:47 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 17:10:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # define WALL_TEXTURE_FRAME_COUNT 1
 # define WALL_TEXTURE_ROW 3
 # define WALL_CHARACTER '1'
+# define WALL_DEPTH 1
 
 ////////////////////////////////////////////////////////////////////////////////
 

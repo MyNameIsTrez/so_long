@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 12:05:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 14:09:21 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 18:38:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ t_status	sl_instantiate_background(t_data *data)
 			0, 0);
 	if (background_instance_index < 0)
 		return (sl_set_error(SL_ERROR_MLX42));
+	mlx_set_instance_depth(&background->instances[background_instance_index],
+		BACKGROUND_DEPTH);
 	return (OK);
 }
 

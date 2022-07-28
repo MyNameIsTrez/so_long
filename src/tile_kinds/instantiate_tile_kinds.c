@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 14:16:11 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 17:09:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ STATIC t_status	add_tile_kind(t_tile_kind_data tk_data, t_data *data)
 	if (add_tile_kind_frames(&tile_kind, tk_data.frame_count,
 			tk_data.texture_row, data) != OK)
 		return (sl_any_error());
+	tile_kind.depth = tk_data.depth;
 	tile_kind.color = tk_data.color;
 	if (ft_vector_push(&data->tile_kinds, &tile_kind) != OK)
 		return (sl_any_error());
@@ -64,6 +65,7 @@ STATIC t_status	add_empty_space_tile_kind(t_data *data)
 			EMPTY_SPACE_TEXTURE_FRAME_COUNT,
 			EMPTY_SPACE_TEXTURE_ROW,
 			EMPTY_SPACE_CHARACTER,
+			EMPTY_SPACE_DEPTH,
 			(t_tile_kind_color){
 			{EMPTY_SPACE_R, EMPTY_SPACE_G, EMPTY_SPACE_B},
 			{EMPTY_SPACE_MIN_R, EMPTY_SPACE_MIN_G, EMPTY_SPACE_MIN_B},
@@ -81,6 +83,7 @@ STATIC t_status	add_wall_tile_kind(t_data *data)
 			WALL_TEXTURE_FRAME_COUNT,
 			WALL_TEXTURE_ROW,
 			WALL_CHARACTER,
+			WALL_DEPTH,
 			(t_tile_kind_color){
 			{WALL_R, WALL_G, WALL_B},
 			{WALL_MIN_R, WALL_MIN_G, WALL_MIN_B},
@@ -98,6 +101,7 @@ STATIC t_status	add_collectible_tile_kind(t_data *data)
 			COLLECTIBLE_TEXTURE_FRAME_COUNT,
 			COLLECTIBLE_TEXTURE_ROW,
 			COLLECTIBLE_CHARACTER,
+			COLLECTIBLE_DEPTH,
 			(t_tile_kind_color){
 			{COLLECTIBLE_R, COLLECTIBLE_G, COLLECTIBLE_B},
 			{COLLECTIBLE_MIN_R, COLLECTIBLE_MIN_G, COLLECTIBLE_MIN_B},
@@ -115,6 +119,7 @@ STATIC t_status	add_map_exit_tile_kind(t_data *data)
 			MAP_EXIT_TEXTURE_FRAME_COUNT,
 			MAP_EXIT_TEXTURE_ROW,
 			MAP_EXIT_CHARACTER,
+			MAP_EXIT_DEPTH,
 			(t_tile_kind_color){
 			{MAP_EXIT_R, MAP_EXIT_G, MAP_EXIT_B},
 			{MAP_EXIT_MIN_R, MAP_EXIT_MIN_G, MAP_EXIT_MIN_B},
@@ -132,6 +137,7 @@ STATIC t_status	add_player_tile_kind(t_data *data)
 			PLAYER_TEXTURE_FRAME_COUNT,
 			PLAYER_TEXTURE_ROW,
 			PLAYER_CHARACTER,
+			PLAYER_DEPTH,
 			(t_tile_kind_color){
 			{PLAYER_R, PLAYER_G, PLAYER_B},
 			{PLAYER_MIN_R, PLAYER_MIN_G, PLAYER_MIN_B},

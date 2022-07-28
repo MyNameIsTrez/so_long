@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 13:22:41 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 15:29:53 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 18:38:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,8 @@ t_status	sl_instantiate_tile_frames(t_tile *tile, t_data *data)
 				(t_i32)(data->texture.pixels_per_tile * data->it.column_index),
 				(t_i32)(data->texture.pixels_per_tile * data->it.row_index));
 		if (frame_instance_index < 0)
-		{
-			// TODO: Delete previous images in SL_ERROR_MLX42 cases?
 			return (sl_set_error(SL_ERROR_MLX42));
-		}
+		mlx_set_instance_depth(&tile->tile_kind->frames[frame_index]->instances[frame_instance_index], tile->tile_kind->depth);
 		tile->frame_instances_indices[frame_index] = (size_t)frame_instance_index;
 		if (frame_index != 0)
 			sl_get_frame_instance(tile, frame_index)->enabled = false;

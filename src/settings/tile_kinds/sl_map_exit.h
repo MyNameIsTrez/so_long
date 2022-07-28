@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:11 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:44:16 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 17:10:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # define MAP_EXIT_TEXTURE_FRAME_COUNT 1
 # define MAP_EXIT_TEXTURE_ROW 18
 # define MAP_EXIT_CHARACTER 'E'
+# define MAP_EXIT_DEPTH 1
 
 ////////////////////////////////////////////////////////////////////////////////
 
