@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 14:31:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 17:38:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/28 11:20:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,26 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+#define CHANNEL_COUNT 3
+
+////////////////////////////////////////////////////////////////////////////////
+
 STATIC t_iterator_status	resettable_iterate_rgb_channel_indices(t_data *data,
 								bool reset)
 {
-	static t_i32	rgb_channel_index;
+	static t_iterator	it;
 
 	if (reset)
 	{
-		rgb_channel_index = 0;
+		it.initialized = false;
 		data->it.rgb_channel_index = 0;
 		return (RESET);
 	}
-	while (rgb_channel_index < 3)
+	if (!it.initialized)
+		it = ft_get_range_start_0_iterator(CHANNEL_COUNT);
+	while (ft_iterate(&it) != FINISHED)
 	{
-		data->it.rgb_channel_index = rgb_channel_index;
-		rgb_channel_index++;
+		data->it.rgb_channel_index = (t_i32)it.current;
 		return (LOOPED);
 	}
 	sl_reset_iterate_rgb_channel_indices(data);
