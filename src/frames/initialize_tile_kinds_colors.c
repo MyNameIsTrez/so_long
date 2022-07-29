@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 17:52:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/22 20:17:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 16:28:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_status	sl_initialize_tile_kinds_colors(t_data *data)
 			{
 				frame = data->it.frame;
 				pixels = frame->pixels;
-				if (sl_is_color(data))
+				if (sl_is_opaque(data))
 				{
 					while (sl_iterate_rgb_channel_indices(data) != FINISHED)
 					{

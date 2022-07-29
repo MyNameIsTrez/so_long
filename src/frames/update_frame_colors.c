@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   update_frames.c                                    :+:    :+:            */
+/*   update_frame_colors.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 13:24:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 16:28:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	sl_update_frame_colors(t_data *data)
 			{
 				if (should_step(data))
 				{
-					if (sl_is_color(data))
+					if (sl_is_opaque(data))
 					{
 						step_pixel(data);
 					}
