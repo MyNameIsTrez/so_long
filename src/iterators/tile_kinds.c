@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 17:54:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 21:18:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,19 @@
 STATIC t_iterator_status	resettable_iterate_tile_kinds(t_data *data,
 								bool reset)
 {
-	static size_t	tile_kind_index;
+	static t_iterator	it;
 
 	if (reset)
 	{
-		tile_kind_index = 0;
+		it.initialized = false;
+		// data->it.tile_kind = NULL; // TODO: Get this in here without having the program crash
 		return (RESET);
 	}
-	while (tile_kind_index < ft_vector_get_size(data->tile_kinds))
+	if (!it.initialized)
+		it = ft_get_vector_iterator(data->tile_kinds);
+	while (ft_iterate(&it) != FINISHED)
 	{
-		data->it.tile_kind = &data->tile_kinds[tile_kind_index];
-		tile_kind_index++;
+		data->it.tile_kind = (t_tile_kind *)it.current;
 		return (LOOPED);
 	}
 	sl_reset_iterate_tile_kinds(data);
