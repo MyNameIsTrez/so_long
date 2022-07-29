@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 14:29:36 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 14:33:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,6 @@
 #include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
-
-STATIC t_i32	get_scale(t_i32 argc, char *scale_string)
-{
-	t_i32	scale;
-
-	// TODO: Add min and max scale checks?
-	// TODO: Check if ft_atoi_safe is robust enough
-	if (argc == 3)
-	{
-		if (ft_atoi_safe(scale_string, &scale) != OK)
-			scale = DEFAULT_SCALE;
-	}
-	else
-		scale = DEFAULT_SCALE;
-	return (scale);
-}
 
 STATIC bool	grid_has_invalid_character(t_data *data)
 {
@@ -64,7 +48,7 @@ t_status	sl_parse_argv(t_i32 argc, char **argv, t_data *data)
 	if (grid_has_invalid_character(data) != OK)
 		return (sl_any_error());
 	scale_string = argv[2];
-	if (sl_set_real_scale(get_scale(argc, scale_string), data) != OK)
+	if (sl_set_real_scale(argc, scale_string, data) != OK)
 		return (sl_any_error());
 	data->texture.pixels_per_tile = data->texture.scale * PIXELS_PER_TILE_UNSCALED;
 	sl_calculate_window_width_and_height(data);
