@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 14:06:51 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 14:20:39 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -122,6 +122,9 @@ SOURCES +=\
 	src/utils/0_utils.c
 
 SOURCES +=\
+	src/window/window.c
+
+SOURCES +=\
 	src/main.c\
 	src/2_load_texture.c\
 	src/3_instantiate_tile_grid.c\
@@ -207,6 +210,9 @@ HEADERS +=\
 
 HEADERS +=\
 	src/utils/sl_utils.h
+
+HEADERS +=\
+	src/window/sl_window.h
 
 HEADERS +=\
 	src/so_long.h
