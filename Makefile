@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/28 18:02:09 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 13:26:40 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ SOURCES +=\
 SOURCES +=\
 	src/frames/utils/utils.c\
 	src/frames/initialize_tile_kinds_colors.c\
-	src/frames/update_frames.c
+	src/frames/update_frame_colors.c
 
 SOURCES +=\
 	src/grid/grid.c

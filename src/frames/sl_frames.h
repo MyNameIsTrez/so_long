@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:42:36 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 13:24:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 t_status	sl_initialize_tile_kinds_colors(t_data *data);
-void		sl_update_frames(t_data *data);
+void		sl_update_frame_colors(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
