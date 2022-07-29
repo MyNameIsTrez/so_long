@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   init_grid.c                                        :+:    :+:            */
+/*   init_char_grid.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 14:40:34 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:33:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 19:41:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "init_grid_utils/sl_init_grid_utils.h"
+#include "init_char_grid_utils/sl_init_char_grid_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_init_grid(char *map_filename, t_data *data)
+t_status	sl_init_char_grid(char *map_filename, t_data *data)
 {
 	if (ft_read_grid_from_file(&data->char_grid, map_filename) != OK)
 		return (sl_any_error());
