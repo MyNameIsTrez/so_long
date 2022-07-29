@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 13:26:40 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 13:33:30 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,6 +96,9 @@ SOURCES +=\
 	src/mlx_cleanup/mlx_cleanup.c
 
 SOURCES +=\
+	src/monitor/init_monitor_size.c
+
+SOURCES +=\
 	src/players/utils/utils.c\
 	src/players/players.c
 
@@ -144,6 +147,9 @@ HEADERS +=\
 
 HEADERS +=\
 	src/mlx_cleanup/sl_mlx_cleanup.h
+
+HEADERS +=\
+	src/monitor/sl_monitor.h
 
 HEADERS +=\
 	src/players/utils/sl_players_utils.h\

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 13:24:35 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 13:31:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,24 +67,10 @@ STATIC t_status	subinits(t_data *data)
 	return (OK);
 }
 
-STATIC void	init_monitor_size(t_data *data)
-{
-	t_i32	width;
-	t_i32	height;
-
-	mlx_get_monitor_size(0, &width, &height);
-	if (width <= 0)
-		width = MAX_MONITOR_WIDTH;
-	if (height <= 0)
-		height = MAX_MONITOR_HEIGHT;
-	data->monitor.width = (size_t)width;
-	data->monitor.height = (size_t)height;
-}
-
 STATIC t_status	init(t_i32 argc, char **argv, t_data *data)
 {
 	ft_bzero(data, sizeof(t_data));
-	init_monitor_size(data);
+	sl_init_monitor_size(data);
 	if (sl_parse_argv(argc, argv, data) != OK)
 		return (sl_any_error());
 	data->mlx = mlx_init((t_i32)data->window.width, (t_i32)data->window.height,
