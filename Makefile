@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 13:53:19 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 13:59:38 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,10 @@ LIBS := $(GLFW) $(MLX42) $(LIBFT) $(FT_PRINTF)
 
 SOURCES :=\
 	src/background/background.c
+
+SOURCES +=\
+	src/cleanup/cleanup.c\
+	src/cleanup/mlx_cleanup.c
 
 SOURCES +=\
 	src/entities/entities.c
@@ -97,8 +101,7 @@ SOURCES +=\
 	src/iterators/tile_kinds.c
 
 SOURCES +=\
-	src/cleanup/cleanup.c\
-	src/cleanup/mlx_cleanup.c
+	src/loop/loop.c
 
 SOURCES +=\
 	src/monitor/init_monitor_size.c
@@ -131,6 +134,9 @@ HEADERS +=\
 	src/background/sl_background.h
 
 HEADERS +=\
+	src/cleanup/sl_cleanup.h
+
+HEADERS +=\
 	src/entities/sl_entities.h
 
 HEADERS +=\
@@ -154,7 +160,7 @@ HEADERS +=\
 	src/iterators/frames/sl_iterator_frames.h
 
 HEADERS +=\
-	src/cleanup/sl_cleanup.h
+	src/loop/sl_loop.h
 
 HEADERS +=\
 	src/monitor/sl_monitor.h

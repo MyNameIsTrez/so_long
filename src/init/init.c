@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 13:51:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 13:55:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 13:56:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_init(t_i32 argc, char **argv, void (*loop)(void *), t_data *data)
+t_status	sl_init(t_i32 argc, char **argv, t_data *data)
 {
 	ft_bzero(data, sizeof(t_data));
 	sl_init_monitor_size(data);
@@ -28,7 +28,7 @@ t_status	sl_init(t_i32 argc, char **argv, void (*loop)(void *), t_data *data)
 		return (sl_set_error(SL_ERROR_MLX42));
 	if (sl_subinits(data) != OK)
 		return (sl_any_error());
-	if (mlx_loop_hook(data->mlx, loop, data) != true)
+	if (mlx_loop_hook(data->mlx, sl_loop, data) != true)
 		return (sl_set_error(SL_ERROR_MLX42));
 	return (OK);
 }

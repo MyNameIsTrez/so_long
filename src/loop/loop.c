@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_init.h                                          :+:    :+:            */
+/*   loop.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 13:51:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 13:56:33 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 13:56:49 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 13:56:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_INIT_H
-# define SL_INIT_H
+#include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_init(t_i32 argc, char **argv, t_data *data);
-t_status	sl_subinits(t_data *data);
+void	sl_loop(void *param)
+{
+	t_data	*data;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	data = param;
+	data->seconds += data->mlx->delta_time;
+	// ft_printf("%d\n", data->seconds);
+	// ft_printf("%d\n", data->frame);
+	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE))
+		mlx_close_window(data->mlx);
+	// sl_update_frame_colors(data);
+	sl_try_move_players(data);
+	sl_update_held_keys(data);
+	sl_change_frames(data);
+	data->frame++;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
