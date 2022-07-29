@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_is_opaque.h                                     :+:    :+:            */
+/*   sl_instantiate_background_utils.h                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 16:15:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 16:26:58 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 17:43:38 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 17:43:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_IS_OPAQUE_H
-# define SL_IS_OPAQUE_H
+#ifndef SL_INSTANTIATE_BACKGROUND_UTILS_H
+# define SL_INSTANTIATE_BACKGROUND_UTILS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	sl_is_opaque(t_data *data);
+void	fill_background(mlx_image_t *background, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

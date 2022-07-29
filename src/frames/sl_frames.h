@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:16:07 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 17:51:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "change_frames/sl_change_frames.h"
-# include "get_frame/sl_get_frame.h"
-# include "get_frame_instance/sl_get_frame_instance.h"
-# include "get_pixel_index/sl_get_pixel_index.h"
-# include "initialize_tile_kinds_colors/sl_initialize_tile_kinds_colors.h"
-# include "is_opaque/sl_is_opaque.h"
-# include "update_frame_colors/sl_update_frame_colors.h"
+void			sl_change_frames(t_data *data);
+mlx_image_t		*sl_get_frame(t_tile_kind *tile_kind, size_t frame_index);
+mlx_instance_t	*sl_get_frame_instance(t_tile *tile, size_t frame_index);
+size_t			sl_get_pixel_index(mlx_image_t *frame, t_data *data);
+t_status		sl_initialize_tile_kinds_colors(t_data *data);
+bool			sl_is_opaque(t_data *data);
+void			sl_update_frame_colors(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_update_frame_colors.h                           :+:    :+:            */
+/*   sl_instantiate_background.h                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 16:44:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:11:37 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 17:46:24 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 17:46:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_UPDATE_FRAME_COLORS_H
-# define SL_UPDATE_FRAME_COLORS_H
+#ifndef SL_INSTANTIATE_BACKGROUND_H
+# define SL_INSTANTIATE_BACKGROUND_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_update_frame_colors(t_data *data);
+t_status	sl_instantiate_background(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 17:39:49 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 17:55:03 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,8 @@ LIBS := $(GLFW) $(MLX42) $(LIBFT) $(FT_PRINTF)
 ################################################################################
 
 SOURCES :=\
-	src/background/instantiate_background.c
+	src/background/instantiate_background/utils/fill_background.c\
+	src/background/instantiate_background/instantiate_background.c
 
 SOURCES +=\
 	src/cleanup/cleanup.c\
@@ -65,12 +66,12 @@ SOURCES +=\
 
 
 SOURCES +=\
-	src/frames/change_frames/change_frames.c\
-	src/frames/get_frame/get_frame.c\
-	src/frames/get_frame_instance/get_frame_instance.c\
-	src/frames/get_pixel_index/get_pixel_index.c\
-	src/frames/initialize_tile_kinds_colors/initialize_tile_kinds_colors.c\
-	src/frames/is_opaque/is_opaque.c
+	src/frames/change_frames.c\
+	src/frames/get_frame.c\
+	src/frames/get_frame_instance.c\
+	src/frames/get_pixel_index.c\
+	src/frames/initialize_tile_kinds_colors.c\
+	src/frames/is_opaque.c
 
 SOURCES +=\
 	src/frames/update_frame_colors/utils/should_step.c\
@@ -149,6 +150,8 @@ SOURCES +=\
 ################################################################################
 
 HEADERS +=\
+	src/background/instantiate_background/utils/sl_instantiate_background_utils.h\
+	src/background/instantiate_background/sl_instantiate_background.h\
 	src/background/sl_background.h
 
 HEADERS +=\
@@ -161,14 +164,7 @@ HEADERS +=\
 	src/error/sl_error.h
 
 HEADERS +=\
-	src/frames/change_frames/sl_change_frames.h\
-	src/frames/get_frame/sl_get_frame.h\
-	src/frames/get_frame_instance/sl_get_frame_instance.h\
-	src/frames/get_pixel_index/sl_get_pixel_index.h\
-	src/frames/is_opaque/sl_is_opaque.h\
-	src/frames/initialize_tile_kinds_colors/sl_initialize_tile_kinds_colors.h\
 	src/frames/update_frame_colors/utils/sl_update_frame_colors_utils.h\
-	src/frames/update_frame_colors/sl_update_frame_colors.h\
 	src/frames/sl_frames.h
 
 HEADERS +=\
