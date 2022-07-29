@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 20:03:38 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 20:07:18 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -120,6 +120,8 @@ SOURCES +=\
 	src/monitor/init_monitor_size.c
 
 SOURCES +=\
+	src/players/initialize_players_utils/get_player_controls.c\
+	src/players/initialize_players.c\
 	src/players/try_move_players_utils/can_autowalk.c\
 	src/players/try_move_players_utils/can_player_shift.c\
 	src/players/try_move_players_utils/get_key_column_offset.c\
@@ -176,8 +178,7 @@ SOURCES +=\
 	src/window/init_window_width_and_height.c
 
 SOURCES +=\
-	src/main.c\
-	src/5_initialize_players.c
+	src/main.c
 
 ################################################################################
 
@@ -221,6 +222,7 @@ HEADERS +=\
 	src/monitor/sl_monitor.h
 
 HEADERS +=\
+	src/players/initialize_players_utils/sl_initialize_players_utils.h\
 	src/players/try_move_players_utils/sl_try_move_players_utils.h\
 	src/players/sl_players.h
 

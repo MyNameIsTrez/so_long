@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_players.h                                       :+:    :+:            */
+/*   get_player_controls.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/12 10:37:54 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 20:08:21 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 20:06:09 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 20:06:10 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PLAYERS_H
-# define SL_PLAYERS_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_initialize_players(t_data *data);
-void		sl_try_move_players(t_data *data);
+t_controls	get_player_controls(t_i32 player_index)
+{
+	static const t_controls	players_controls[] = {
+	{.movement_keys = {PLAYER_1_UP_KEY, PLAYER_1_DOWN_KEY,
+		PLAYER_1_LEFT_KEY, PLAYER_1_RIGHT_KEY}},
+	{.movement_keys = {PLAYER_2_UP_KEY, PLAYER_2_DOWN_KEY,
+		PLAYER_2_LEFT_KEY, PLAYER_2_RIGHT_KEY}},
+	};
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	return (players_controls[player_index]);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
