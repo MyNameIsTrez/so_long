@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   instantiate_tile_kinds.c                           :+:    :+:            */
+/*   add_wall_tile_kind.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:09:29 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:06:19 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 19:06:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,24 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "instantiate_tile_kinds_utils/add_tile_kind/sl_instantiate_tile_kinds_utils_add_tile_kind.h"
+#include "../sl_instantiate_tile_kinds_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_instantiate_tile_kinds(t_data *data)
+t_status	add_wall_tile_kind(t_data *data)
 {
-	data->tile_kinds = ft_vector_new(sizeof(t_tile_kind));
-	if (add_empty_space_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_wall_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_collectible_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_map_exit_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_player_tile_kind(data) != OK)
+	if (add_tile_kind((t_tile_kind_data){
+			WALL_TEXTURE_FRAME_COUNT,
+			WALL_TEXTURE_ROW,
+			WALL_CHARACTER,
+			WALL_DEPTH,
+			(t_tile_kind_color){
+			{WALL_R, WALL_G, WALL_B},
+			{WALL_MIN_R, WALL_MIN_G, WALL_MIN_B},
+			{WALL_MAX_R, WALL_MAX_G, WALL_MAX_B},
+			{WALL_R_WAIT, WALL_G_WAIT, WALL_B_WAIT},
+			{WALL_R_STEP, WALL_G_STEP, WALL_B_STEP}}},
+			data) != OK)
 		return (sl_any_error());
 	return (OK);
 }

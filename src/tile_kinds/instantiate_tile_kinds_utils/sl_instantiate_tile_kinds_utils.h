@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   instantiate_tile_kinds.c                           :+:    :+:            */
+/*   sl_instantiate_tile_kinds_utils.h                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:09:29 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 18:59:44 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 19:00:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_INSTANTIATE_TILE_KINDS_UTILS_H
+# define SL_INSTANTIATE_TILE_KINDS_UTILS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "instantiate_tile_kinds_utils/add_tile_kind/sl_instantiate_tile_kinds_utils_add_tile_kind.h"
+t_status	add_tile_kind_frames(t_tile_kind *tile_kind, size_t frame_count,
+				size_t texture_row, t_data *data);
+t_status	add_tile_kind(t_tile_kind_data tk_data, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_instantiate_tile_kinds(t_data *data)
-{
-	data->tile_kinds = ft_vector_new(sizeof(t_tile_kind));
-	if (add_empty_space_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_wall_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_collectible_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_map_exit_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_player_tile_kind(data) != OK)
-		return (sl_any_error());
-	return (OK);
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

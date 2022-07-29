@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   instantiate_tile_kinds.c                           :+:    :+:            */
+/*   add_empty_space_tile_kind.c                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:09:29 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:06:39 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 19:06:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,24 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "instantiate_tile_kinds_utils/add_tile_kind/sl_instantiate_tile_kinds_utils_add_tile_kind.h"
+#include "../sl_instantiate_tile_kinds_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_instantiate_tile_kinds(t_data *data)
+t_status	add_empty_space_tile_kind(t_data *data)
 {
-	data->tile_kinds = ft_vector_new(sizeof(t_tile_kind));
-	if (add_empty_space_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_wall_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_collectible_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_map_exit_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_player_tile_kind(data) != OK)
+	if (add_tile_kind((t_tile_kind_data){
+			EMPTY_SPACE_TEXTURE_FRAME_COUNT,
+			EMPTY_SPACE_TEXTURE_ROW,
+			EMPTY_SPACE_CHARACTER,
+			EMPTY_SPACE_DEPTH,
+			(t_tile_kind_color){
+			{EMPTY_SPACE_R, EMPTY_SPACE_G, EMPTY_SPACE_B},
+			{EMPTY_SPACE_MIN_R, EMPTY_SPACE_MIN_G, EMPTY_SPACE_MIN_B},
+			{EMPTY_SPACE_MAX_R, EMPTY_SPACE_MAX_G, EMPTY_SPACE_MAX_B},
+			{EMPTY_SPACE_R_WAIT, EMPTY_SPACE_G_WAIT, EMPTY_SPACE_B_WAIT},
+			{EMPTY_SPACE_R_STEP, EMPTY_SPACE_G_STEP, EMPTY_SPACE_B_STEP}}},
+			data) != OK)
 		return (sl_any_error());
 	return (OK);
 }

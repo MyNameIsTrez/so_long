@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   instantiate_tile_kinds.c                           :+:    :+:            */
+/*   add_map_exit_tile_kind.c                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:09:29 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:05:25 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 19:05:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,24 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "instantiate_tile_kinds_utils/add_tile_kind/sl_instantiate_tile_kinds_utils_add_tile_kind.h"
+#include "../sl_instantiate_tile_kinds_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_instantiate_tile_kinds(t_data *data)
+t_status	add_map_exit_tile_kind(t_data *data)
 {
-	data->tile_kinds = ft_vector_new(sizeof(t_tile_kind));
-	if (add_empty_space_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_wall_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_collectible_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_map_exit_tile_kind(data) != OK)
-		return (sl_any_error());
-	if (add_player_tile_kind(data) != OK)
+	if (add_tile_kind((t_tile_kind_data){
+			MAP_EXIT_TEXTURE_FRAME_COUNT,
+			MAP_EXIT_TEXTURE_ROW,
+			MAP_EXIT_CHARACTER,
+			MAP_EXIT_DEPTH,
+			(t_tile_kind_color){
+			{MAP_EXIT_R, MAP_EXIT_G, MAP_EXIT_B},
+			{MAP_EXIT_MIN_R, MAP_EXIT_MIN_G, MAP_EXIT_MIN_B},
+			{MAP_EXIT_MAX_R, MAP_EXIT_MAX_G, MAP_EXIT_MAX_B},
+			{MAP_EXIT_R_WAIT, MAP_EXIT_G_WAIT, MAP_EXIT_B_WAIT},
+			{MAP_EXIT_R_STEP, MAP_EXIT_G_STEP, MAP_EXIT_B_STEP}}},
+			data) != OK)
 		return (sl_any_error());
 	return (OK);
 }

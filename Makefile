@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 18:57:58 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 19:16:59 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -138,6 +138,13 @@ SOURCES +=\
 	src/texture/set_real_scale.c
 
 SOURCES +=\
+	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/collectible.c\
+	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/empty_space.c\
+	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/map_exit.c\
+	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/player_tile.c\
+	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/wall_tile.c\
+	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind_frames.c\
+	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind.c\
 	src/tile_kinds/get_character_tile_kind.c\
 	src/tile_kinds/get_tile_kind.c\
 	src/tile_kinds/instantiate_tile_kinds.c
@@ -234,6 +241,8 @@ HEADERS +=\
 	src/texture/sl_texture.h
 
 HEADERS +=\
+	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/sl_instantiate_tile_kinds_utils_add_tile_kind.h\
+	src/tile_kinds/instantiate_tile_kinds_utils/sl_instantiate_tile_kinds_utils.h\
 	src/tile_kinds/sl_tile_kinds.h
 
 HEADERS +=\
