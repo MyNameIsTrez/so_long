@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_texture.h                                       :+:    :+:            */
+/*   init_texture_metadata.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 14:29:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 15:26:52 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 14:29:43 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 15:27:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_TEXTURE_H
-# define SL_TEXTURE_H
+#include "../../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "init_texture_filename/sl_init_texture_filename.h"
-# include "init_texture_metadata/sl_init_texture_metadata.h"
-# include "load_texture/sl_load_texture.h"
-# include "set_real_scale/sl_set_real_scale.h"
+STATIC void	set_pixels_per_tile(t_data *data)
+{
+	data->texture.pixels_per_tile = data->texture.scale * PIXELS_PER_TILE_UNSCALED;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif
+t_status	sl_init_texture_metadata(t_i32 argc, char *scale_string,
+				t_data *data)
+{
+	if (sl_set_real_scale(argc, scale_string, data) != OK)
+		return (sl_any_error());
+	set_pixels_per_tile(data);
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
