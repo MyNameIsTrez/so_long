@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 13:33:30 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 13:46:30 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,7 +93,8 @@ SOURCES +=\
 	src/iterators/tile_kinds.c
 
 SOURCES +=\
-	src/mlx_cleanup/mlx_cleanup.c
+	src/cleanup/cleanup.c\
+	src/cleanup/mlx_cleanup.c
 
 SOURCES +=\
 	src/monitor/init_monitor_size.c
@@ -146,7 +147,7 @@ HEADERS +=\
 	src/iterators/frames/sl_iterator_frames.h
 
 HEADERS +=\
-	src/mlx_cleanup/sl_mlx_cleanup.h
+	src/cleanup/sl_cleanup.h
 
 HEADERS +=\
 	src/monitor/sl_monitor.h

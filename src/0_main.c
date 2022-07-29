@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 13:31:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 13:44:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,15 +93,13 @@ t_i32	main(t_i32 argc, char **argv)
 	atexit(check_leaks); // TODO: Remove!
 	if (init(argc, argv, &data) != OK)
 	{
-		sl_mlx_cleanup(&data);
-		ft_free_allocations();
+		sl_cleanup(&data);
 		sl_print_all_errors();
 		return (EXIT_FAILURE);
 	}
 	// exit(EXIT_FAILURE);
 	mlx_loop(data.mlx);
-	sl_mlx_cleanup(&data);
-	ft_free_allocations();
+	sl_cleanup(&data);
 	return (EXIT_SUCCESS);
 }
 
