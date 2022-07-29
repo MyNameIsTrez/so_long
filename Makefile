@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 16:28:21 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 16:33:22 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,7 @@ SOURCES +=\
 	src/error/sl_set_error.c
 
 SOURCES +=\
+	src/frames/get_pixel_index/get_pixel_index.c\
 	src/frames/is_opaque/is_opaque.c\
 	src/frames/utils/utils.c\
 	src/frames/change_frames.c\
@@ -154,6 +155,7 @@ HEADERS +=\
 	src/error/sl_error.h
 
 HEADERS +=\
+	src/frames/get_pixel_index/sl_get_pixel_index.h\
 	src/frames/is_opaque/sl_is_opaque.h\
 	src/frames/utils/sl_frame_utils.h\
 	src/frames/sl_frames.h
