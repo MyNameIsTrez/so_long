@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 13:51:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 14:02:49 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 14:06:29 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef t_status	(*t_subinit)(t_data *data);
 ////////////////////////////////////////////////////////////////////////////////
 
 t_status	sl_init(t_i32 argc, char **argv, t_data *data);
+t_status	sl_parse_argv(t_i32 argc, char **argv, t_data *data);
 t_status	sl_subinits(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////

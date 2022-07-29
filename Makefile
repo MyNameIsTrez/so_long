@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 14:04:50 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 14:06:51 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ SOURCES +=\
 
 SOURCES +=\
 	src/init/init.c\
+	src/init/parse_argv.c\
 	src/init/subinits.c
 
 SOURCES +=\
@@ -122,7 +123,6 @@ SOURCES +=\
 
 SOURCES +=\
 	src/main.c\
-	src/1_parse_argv.c\
 	src/2_load_texture.c\
 	src/3_instantiate_tile_grid.c\
 	src/4_instantiate_entities.c\
