@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 14:36:12 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 14:43:14 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,8 @@ SOURCES +=\
 	src/frames/update_frame_colors.c
 
 SOURCES +=\
-	src/grid/grid.c
+	src/grid/grid.c\
+	src/grid/init_grid.c
 
 SOURCES +=\
 	src/held_keys/update_held_keys.c
