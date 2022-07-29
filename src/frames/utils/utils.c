@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 12:29:13 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 16:32:25 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 16:34:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 #include "../../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
-
-mlx_image_t	*sl_get_frame(t_tile_kind *tile_kind, size_t frame_index)
-{
-	return (tile_kind->frames[frame_index]);
-}
 
 mlx_instance_t	*sl_get_frame_instance(t_tile *tile, size_t frame_index)
 {
