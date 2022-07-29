@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   parse_argv.c                                       :+:    :+:            */
+/*   sl_parse_argv_utils.h                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:20:23 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:19:22 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 19:20:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PARSE_ARGV_UTILS_H
+# define SL_PARSE_ARGV_UTILS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "parse_argv_utils/sl_parse_argv_utils.h"
+t_status	verify_argc(t_i32 argc);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_parse_argv(t_i32 argc, char **argv, t_data *data)
-{
-	char	*map_filename;
-	char	*scale_string;
-
-	if (verify_argc(argc) != OK)
-		return (sl_any_error());
-	map_filename = argv[1];
-	if (sl_init_grid(map_filename, data) != OK)
-		return (sl_any_error());
-	scale_string = argv[2];
-	if (sl_init_texture_metadata(argc, scale_string, data) != OK)
-		return (sl_any_error());
-	sl_init_window_width_and_height(data);
-	return (OK);
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

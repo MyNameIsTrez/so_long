@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 19:16:59 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 19:21:30 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,6 +83,7 @@ SOURCES +=\
 	src/held_keys/update_held_keys.c
 
 SOURCES +=\
+	src/init/parse_argv_utils/verify_argc.c\
 	src/init/init.c\
 	src/init/parse_argv.c\
 	src/init/subinits.c
@@ -188,6 +189,7 @@ HEADERS +=\
 	src/held_keys/sl_held_keys.h
 
 HEADERS +=\
+	src/init/parse_argv_utils/sl_parse_argv_utils.h\
 	src/init/sl_init.h
 
 HEADERS +=\
