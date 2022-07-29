@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 19:34:33 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 19:38:27 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -153,7 +153,11 @@ SOURCES +=\
 	src/tile_kinds/instantiate_tile_kinds.c
 
 SOURCES +=\
-	src/tiles/tiles.c
+	src/tiles/fill_tile_data.c\
+	src/tiles/get_tile.c\
+	src/tiles/instantiate_tile_frames.c\
+	src/tiles/out_of_bounds.c\
+	src/tiles/shift_tile_pos.c
 
 SOURCES +=\
 	src/window/init_window_width_and_height_utils/init_window_height.c\
