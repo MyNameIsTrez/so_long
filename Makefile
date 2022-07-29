@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 13:59:38 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 14:03:30 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -207,9 +207,6 @@ HEADERS +=\
 
 HEADERS +=\
 	src/utils/sl_utils.h
-
-HEADERS +=\
-	src/sl_main.h
 
 HEADERS +=\
 	src/so_long.h
