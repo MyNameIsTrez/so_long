@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 16:37:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 16:40:53 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 # include "get_frame/sl_get_frame.h"
+# include "get_frame_instance/sl_get_frame_instance.h"
 # include "get_pixel_index/sl_get_pixel_index.h"
 # include "is_opaque/sl_is_opaque.h"
-# include "utils/sl_frame_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
