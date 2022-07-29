@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 17:34:42 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 17:36:53 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -118,7 +118,8 @@ SOURCES +=\
 	src/monitor/init_monitor_size.c
 
 SOURCES +=\
-	src/players/utils/utils.c\
+	src/players/utils/get_key_column_offset.c\
+	src/players/utils/get_key_row_offset.c\
 	src/players/players.c
 
 SOURCES +=\
