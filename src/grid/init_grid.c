@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 14:40:34 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 19:33:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC bool	grid_has_invalid_character(t_data *data)
-{
-	while (sl_iterate_char_grid(data) != FINISHED)
-		if (!ft_chr_in_str(sl_get_char_grid_character(data), MAP_CHARACTERS))
-			return (sl_set_error(SL_ERROR_FILE_HAS_INVALID_CHAR));
-	return (OK);
-}
+#include "init_grid_utils/sl_init_grid_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

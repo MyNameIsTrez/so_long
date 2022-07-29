@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 19:27:45 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 19:34:33 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,9 @@ SOURCES +=\
 	src/frames/update_frame_colors.c
 
 SOURCES +=\
-	src/grid/grid.c\
+	src/grid/init_grid_utils/grid_has_invalid_character.c\
+	src/grid/get_char_grid_character.c\
+	src/grid/get_tile_grid_character.c\
 	src/grid/init_grid.c
 
 SOURCES +=\
@@ -184,6 +186,7 @@ HEADERS +=\
 	src/frames/sl_frames.h
 
 HEADERS +=\
+	src/grid/init_grid_utils/sl_init_grid_utils.h\
 	src/grid/sl_grid.h
 
 HEADERS +=\

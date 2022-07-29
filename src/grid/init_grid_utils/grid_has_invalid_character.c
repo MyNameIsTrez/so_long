@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_grid.h                                          :+:    :+:            */
+/*   grid_has_invalid_character.c                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/14 11:26:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:32:22 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:33:11 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 19:33:12 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_GRID_H
-# define SL_GRID_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_u8		sl_get_char_grid_character(t_data *data);
-t_u8		sl_get_tile_grid_character(t_data *data);
-t_status	sl_init_grid(char *map_filename, t_data *data);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+bool	grid_has_invalid_character(t_data *data)
+{
+	while (sl_iterate_char_grid(data) != FINISHED)
+		if (!ft_chr_in_str(sl_get_char_grid_character(data), MAP_CHARACTERS))
+			return (sl_set_error(SL_ERROR_FILE_HAS_INVALID_CHAR));
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
