@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 16:41:42 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 16:59:34 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,14 +63,22 @@ SOURCES +=\
 	src/error/sl_print_error.c\
 	src/error/sl_set_error.c
 
+
 SOURCES +=\
 	src/frames/get_frame/get_frame.c\
 	src/frames/get_frame_instance/get_frame_instance.c\
 	src/frames/get_pixel_index/get_pixel_index.c\
-	src/frames/is_opaque/is_opaque.c\
+	src/frames/is_opaque/is_opaque.c
+
+SOURCES +=\
+	src/frames/update_frame_colors/utils/should_step.c\
+	src/frames/update_frame_colors/utils/step_pixel.c\
+	src/frames/update_frame_colors/update_frame_colors.c
+
+SOURCES +=\
 	src/frames/change_frames.c\
-	src/frames/initialize_tile_kinds_colors.c\
-	src/frames/update_frame_colors.c
+	src/frames/initialize_tile_kinds_colors.c
+
 
 SOURCES +=\
 	src/grid/grid.c\
@@ -160,6 +168,8 @@ HEADERS +=\
 	src/frames/get_frame_instance/sl_get_frame_instance.h\
 	src/frames/get_pixel_index/sl_get_pixel_index.h\
 	src/frames/is_opaque/sl_is_opaque.h\
+	src/frames/update_frame_colors/utils/sl_update_frame_colors_utils.h\
+	src/frames/update_frame_colors/sl_update_frame_colors.h\
 	src/frames/sl_frames.h
 
 HEADERS +=\
