@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 13:28:56 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/18 12:26:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 17:22:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	sl_get_key_column_offset(keys_t key, keys_t movement_keys[4])
+t_i32	get_key_column_offset(keys_t key, keys_t movement_keys[4])
 {
 	if (key == movement_keys[LEFT_MOVEMENT_KEY_INDEX])
 		return (-1);
@@ -26,7 +26,7 @@ t_i32	sl_get_key_column_offset(keys_t key, keys_t movement_keys[4])
 		return (0);
 }
 
-t_i32	sl_get_key_row_offset(keys_t key, keys_t movement_keys[4])
+t_i32	get_key_row_offset(keys_t key, keys_t movement_keys[4])
 {
 	if (key == movement_keys[UP_MOVEMENT_KEY_INDEX])
 		return (-1);

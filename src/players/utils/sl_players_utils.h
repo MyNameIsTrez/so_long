@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 13:28:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:43:56 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 17:22:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	sl_get_key_column_offset(keys_t key, keys_t movement_keys[4]);
-t_i32	sl_get_key_row_offset(keys_t key, keys_t movement_keys[4]);
+t_i32	get_key_column_offset(keys_t key, keys_t movement_keys[4]);
+t_i32	get_key_row_offset(keys_t key, keys_t movement_keys[4]);
 
 ////////////////////////////////////////////////////////////////////////////////
 

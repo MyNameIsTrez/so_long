@@ -6,13 +6,17 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 14:23:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 17:22:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "../so_long.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+#include "utils/sl_players_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -61,8 +65,8 @@ STATIC bool	is_walkable(t_player *player, keys_t key, t_data *data)
 
 	tile = &player->entity->tile;
 	movement_keys = player->controls.movement_keys;
-	column = (t_i32)tile->column_index + sl_get_key_column_offset(key, movement_keys);
-	row = (t_i32)tile->row_index + sl_get_key_row_offset(key, movement_keys);
+	column = (t_i32)tile->column_index + get_key_column_offset(key, movement_keys);
+	row = (t_i32)tile->row_index + get_key_row_offset(key, movement_keys);
 	if (sl_out_of_bounds(column, row, data))
 		return (false);
 	return (is_tile_walkable((size_t)column, (size_t)row, data)

@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 17:18:05 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 17:34:42 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -128,14 +128,12 @@ SOURCES +=\
 	src/texture/set_real_scale/set_real_scale.c
 
 SOURCES +=\
-	src/tile_kinds/utils/utils.c\
+	src/tile_kinds/get_character_tile_kind/get_character_tile_kind.c\
+	src/tile_kinds/get_tile_kind/get_tile_kind.c\
 	src/tile_kinds/instantiate_tile_kinds.c
 
 SOURCES +=\
 	src/tiles/tiles.c
-
-SOURCES +=\
-	src/utils/0_utils.c
 
 SOURCES +=\
 	src/window/init_window_width_and_height/init_window_width_and_height.c\
@@ -232,14 +230,12 @@ HEADERS +=\
 	src/texture/sl_texture.h
 
 HEADERS +=\
-	src/tile_kinds/utils/sl_tile_kinds_utils.h\
+	src/tile_kinds/get_character_tile_kind/sl_get_character_tile_kind.h\
+	src/tile_kinds/get_tile_kind/sl_get_tile_kind.h\
 	src/tile_kinds/sl_tile_kinds.h
 
 HEADERS +=\
 	src/tiles/sl_tiles.h
-
-HEADERS +=\
-	src/utils/sl_utils.h
 
 HEADERS +=\
 	src/window/init_window_width_and_height/sl_init_window_width_and_height.h\

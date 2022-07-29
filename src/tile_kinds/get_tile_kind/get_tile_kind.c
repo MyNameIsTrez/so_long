@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_tile_kinds_utils.h                              :+:    :+:            */
+/*   get_tile_kind.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/15 13:55:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:47:50 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 17:28:27 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 17:28:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_TILE_KINDS_UTILS_H
-# define SL_TILE_KINDS_UTILS_H
+#include "../../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_tile_kind	*sl_get_tile_kind(t_u8 character, t_data *data);
-t_tile_kind	*sl_get_character_tile_kind(t_data *data);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+t_tile_kind	*sl_get_tile_kind(t_u8 character, t_data *data)
+{
+	while (sl_iterate_tile_kinds(data) != FINISHED)
+	{
+		if (data->it.tile_kind->character == character)
+		{
+			sl_reset_iterate_tile_kinds(data);
+			return (data->it.tile_kind);
+		}
+	}
+	return (NULL);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

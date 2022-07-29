@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 14:49:32 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 17:34:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "utils/sl_utils.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
 # include "window/sl_window.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -101,7 +97,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_instantiate_tile_kinds(t_data *data);
 t_status	sl_instantiate_tile_grid(t_data *data);
 t_status	sl_instantiate_entities(t_data *data);
 t_status	sl_initialize_players(t_data *data);
