@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_init_texture_filename.h                         :+:    :+:            */
+/*   get_scale.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 15:14:56 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 15:15:20 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 18:50:58 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 18:51:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_INIT_TEXTURE_FILENAME_H
-# define SL_INIT_TEXTURE_FILENAME_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_init_texture_filename(t_data *data);
+t_i32	get_scale(t_i32 argc, char *scale_string)
+{
+	t_i32	scale;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	// TODO: Add min and max scale checks?
+	// TODO: Check if ft_atoi_safe is robust enough
+	if (argc == 3)
+	{
+		if (ft_atoi_safe(scale_string, &scale) != OK)
+			scale = DEFAULT_SCALE;
+	}
+	else
+		scale = DEFAULT_SCALE;
+	return (scale);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

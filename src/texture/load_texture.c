@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_init_texture_metadata.h                         :+:    :+:            */
+/*   load_texture.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 15:24:43 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 15:27:18 by sbos          ########   odam.nl         */
+/*   Created: 2022/06/24 15:54:58 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 18:50:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_INIT_TEXTURE_METADATA_H
-# define SL_INIT_TEXTURE_METADATA_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_init_texture_metadata(t_i32 argc, char *scale_string,
-				t_data *data);
+#include "load_texture_utils/sl_load_texture_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif
+t_status	sl_load_texture(t_data *data)
+{
+	char			*tex_filepath;
+
+	if (sl_init_texture_filename(data) != OK)
+		return (sl_any_error());
+	if (ft_str_assign(&tex_filepath, get_texture_filepath(data)) != OK)
+		return (ft_set_error(FT_ERROR_MALLOC));
+	data->texture.data = mlx_load_png(tex_filepath);
+	if (data->texture.data == NULL)
+		return (sl_set_error(SL_ERROR_MLX42));
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_texture.h                                       :+:    :+:            */
+/*   get_texture_scales_path.c                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 14:29:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 18:44:32 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 18:49:53 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 18:49:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_TEXTURE_H
-# define SL_TEXTURE_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_init_texture_filename(t_data *data);
-t_status	sl_init_texture_metadata(t_i32 argc, char *scale_string,
-				t_data *data);
-t_status	sl_load_texture(t_data *data);
-t_status	sl_set_real_scale(t_i32 argc, char *scale_string, t_data *data);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+char	*get_texture_scales_path(void)
+{
+	return (TEXTUREPACKS_PATH TEXTUREPACK TEXTURE_SCALES_DIR);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

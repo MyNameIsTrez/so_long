@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_set_real_scale.h                                :+:    :+:            */
+/*   init_texture_filename_utils.h                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 14:35:34 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 15:18:36 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 18:45:46 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 18:46:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_SET_REAL_SCALE_H
-# define SL_SET_REAL_SCALE_H
+#ifndef INIT_TEXTURE_FILENAME_UTILS_H
+# define INIT_TEXTURE_FILENAME_UTILS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_set_real_scale(t_i32 argc, char *scale_string, t_data *data);
+t_status	get_str_pixels_per_tile(char **str_pixels_per_tile, t_i32 scale);
+t_status	get_texture_filename_stem(char **filename_stem, t_texture *texture);
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 14:29:43 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 18:48:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC void	set_pixels_per_tile(t_data *data)
-{
-	data->texture.pixels_per_tile = data->texture.scale * PIXELS_PER_TILE_UNSCALED;
-}
+#include "init_texture_metadata_utils/sl_init_texture_metadata_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

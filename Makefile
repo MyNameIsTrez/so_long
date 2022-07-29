@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 18:37:52 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 18:54:21 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -126,10 +126,16 @@ SOURCES +=\
 	src/players/try_move_players.c
 
 SOURCES +=\
-	src/texture/init_texture_filename/init_texture_filename.c\
-	src/texture/init_texture_metadata/init_texture_metadata.c\
-	src/texture/load_texture/load_texture.c\
-	src/texture/set_real_scale/set_real_scale.c
+	src/texture/init_texture_filename_utils/get_str_pixels_per_tile.c\
+	src/texture/init_texture_filename_utils/get_texture_filename_stem.c\
+	src/texture/init_texture_metadata_utils/set_pixels_per_tile.c\
+	src/texture/load_texture_utils/get_texture_filepath.c\
+	src/texture/load_texture_utils/get_texture_scales_path.c\
+	src/texture/set_real_scale_utils/get_scale.c\
+	src/texture/init_texture_filename.c\
+	src/texture/init_texture_metadata.c\
+	src/texture/load_texture.c\
+	src/texture/set_real_scale.c
 
 SOURCES +=\
 	src/tile_kinds/get_character_tile_kind/get_character_tile_kind.c\
@@ -221,10 +227,10 @@ HEADERS +=\
 	src/structs/sl_structs_tiles.h
 
 HEADERS +=\
-	src/texture/init_texture_filename/sl_init_texture_filename.h\
-	src/texture/init_texture_metadata/sl_init_texture_metadata.h\
-	src/texture/load_texture/sl_load_texture.h\
-	src/texture/set_real_scale/sl_set_real_scale.h\
+	src/texture/init_texture_filename_utils/sl_init_texture_filename_utils.h\
+	src/texture/init_texture_metadata_utils/sl_init_texture_metadata_utils.h\
+	src/texture/load_texture_utils/sl_load_texture_utils.h\
+	src/texture/set_real_scale_utils/sl_set_real_scale_utils.h\
 	src/texture/sl_texture.h
 
 HEADERS +=\
