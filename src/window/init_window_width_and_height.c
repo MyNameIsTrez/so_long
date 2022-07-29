@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_window.h                                        :+:    :+:            */
+/*   init_window_width_and_height.c                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 14:19:29 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:25:41 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 15:29:31 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 19:28:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_WINDOW_H
-# define SL_WINDOW_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_init_window_width_and_height(t_data *data);
+#include "init_window_width_and_height_utils/sl_init_window_width_and_height_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif
+void	sl_init_window_width_and_height(t_data *data)
+{
+	size_t	pixels_per_tile;
+
+	pixels_per_tile = data->texture.pixels_per_tile;
+	init_window_width(pixels_per_tile, data);
+	init_window_height(pixels_per_tile, data);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

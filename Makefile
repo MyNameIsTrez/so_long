@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 19:21:30 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 19:27:45 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -154,8 +154,9 @@ SOURCES +=\
 	src/tiles/tiles.c
 
 SOURCES +=\
-	src/window/init_window_width_and_height/init_window_width_and_height.c\
-	src/window/window.c
+	src/window/init_window_width_and_height_utils/init_window_height.c\
+	src/window/init_window_width_and_height_utils/init_window_width.c\
+	src/window/init_window_width_and_height.c
 
 SOURCES +=\
 	src/main.c\
@@ -251,7 +252,7 @@ HEADERS +=\
 	src/tiles/sl_tiles.h
 
 HEADERS +=\
-	src/window/init_window_width_and_height/sl_init_window_width_and_height.h\
+	src/window/init_window_width_and_height_utils/sl_init_window_width_and_height_utils.h\
 	src/window/sl_window.h
 
 HEADERS +=\

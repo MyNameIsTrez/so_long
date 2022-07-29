@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   window.c                                           :+:    :+:            */
+/*   init_window_width.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 14:19:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:46 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:25:56 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 19:26:01 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,12 @@
 #include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
+
+void	init_window_width(size_t pixels_per_tile, t_data *data)
+{
+	data->window.width = data->char_grid.width * pixels_per_tile;
+	if (data->window.width > data->monitor.width)
+		data->window.width = data->monitor.width;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
