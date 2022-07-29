@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/18 12:08:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 21:04:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 21:06:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,11 @@ STATIC t_iterator_status	resettable_iterate_player_movement_keys(
 		data->it.player_movement_key = 0;
 		return (RESET);
 	}
-	movement_keys = player->controls.movement_keys;
 	if (!it.initialized)
+	{
+		movement_keys = player->controls.movement_keys;
 		it = ft_get_array_iterator(movement_keys, 4, sizeof(keys_t));
+	}
 	while (ft_iterate(&it) != FINISHED)
 	{
 		data->it.player_movement_key = *(keys_t *)it.current;
