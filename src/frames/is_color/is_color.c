@@ -1,33 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_frames.h                                        :+:    :+:            */
+/*   is_color.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/12 11:00:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 16:17:49 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 16:14:48 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 16:20:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_FRAMES_H
-# define SL_FRAMES_H
+#include "../../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "is_color/sl_is_color.h"
-# include "utils/sl_frame_utils.h"
+STATIC bool	sl_is_opaque(t_data *data)
+{
+	mlx_image_t	*frame;
+	t_u8		*pixels;
+
+	frame = data->it.frame;
+	pixels = frame->pixels;
+	return (pixels[data->it.pixel_index + 3] > 0);
+}
+
+STATIC bool	sl_is_background(t_data *data)
+{
+	static const t_u8	color[] = {
+		BACKGROUND_R, BACKGROUND_G, BACKGROUND_B, 255};
+	mlx_image_t			*frame;
+	t_u8				*pixels;
+
+	frame = data->it.frame;
+	pixels = frame->pixels;
+	return (ft_memcmp(&pixels[data->it.pixel_index], color, 4) == 0);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void		sl_change_frames(t_data *data);
-t_status	sl_initialize_tile_kinds_colors(t_data *data);
-void		sl_update_frame_colors(t_data *data);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+bool	sl_is_color(t_data *data)
+{
+	return (sl_is_opaque(data) && !sl_is_background(data));
+}
 
 ////////////////////////////////////////////////////////////////////////////////

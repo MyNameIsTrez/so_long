@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 15:30:56 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 16:16:42 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,14 +46,14 @@ LIBS := $(GLFW) $(MLX42) $(LIBFT) $(FT_PRINTF)
 ################################################################################
 
 SOURCES :=\
-	src/background/background.c
+	src/background/instantiate_background.c
 
 SOURCES +=\
 	src/cleanup/cleanup.c\
 	src/cleanup/mlx_cleanup.c
 
 SOURCES +=\
-	src/entities/entities.c
+	src/entities/is_entity.c
 
 SOURCES +=\
 	src/error/sl_any_error.c\
@@ -64,6 +64,7 @@ SOURCES +=\
 	src/error/sl_set_error.c
 
 SOURCES +=\
+	src/frames/is_color/is_color.c\
 	src/frames/utils/utils.c\
 	src/frames/change_frames.c\
 	src/frames/initialize_tile_kinds_colors.c\
@@ -153,6 +154,7 @@ HEADERS +=\
 	src/error/sl_error.h
 
 HEADERS +=\
+	src/frames/is_color/sl_is_color.h\
 	src/frames/utils/sl_frame_utils.h\
 	src/frames/sl_frames.h
 

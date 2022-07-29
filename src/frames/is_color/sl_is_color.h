@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_frames.h                                        :+:    :+:            */
+/*   sl_is_color.h                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/12 11:00:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 16:17:49 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 16:15:50 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 16:21:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_FRAMES_H
-# define SL_FRAMES_H
+#ifndef SL_IS_COLOR_H
+# define SL_IS_COLOR_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "is_color/sl_is_color.h"
-# include "utils/sl_frame_utils.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-void		sl_change_frames(t_data *data);
-t_status	sl_initialize_tile_kinds_colors(t_data *data);
-void		sl_update_frame_colors(t_data *data);
+bool	sl_is_color(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
