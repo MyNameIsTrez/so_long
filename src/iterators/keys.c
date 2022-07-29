@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/11 16:59:56 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 20:57:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,19 @@
 
 STATIC t_iterator_status	resettable_iterate_keys(t_data *data, bool reset)
 {
-	static keys_t	key;
+	static t_iterator	it;
 
 	if (reset)
 	{
-		key = 0;
+		it.initialized = false;
+		data->it.key = 0;
 		return (RESET);
 	}
-	while (key < MLX42_KEY_COUNT)
+	if (!it.initialized)
+		it = ft_get_count_iterator(MLX42_KEY_COUNT);
+	while (ft_iterate(&it) != FINISHED)
 	{
-		data->it.key = key;
-		key++;
+		data->it.key = (keys_t)it.current;
 		return (LOOPED);
 	}
 	sl_reset_iterate_keys(data);
