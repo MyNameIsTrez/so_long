@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 18:54:21 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 18:57:58 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -138,8 +138,8 @@ SOURCES +=\
 	src/texture/set_real_scale.c
 
 SOURCES +=\
-	src/tile_kinds/get_character_tile_kind/get_character_tile_kind.c\
-	src/tile_kinds/get_tile_kind/get_tile_kind.c\
+	src/tile_kinds/get_character_tile_kind.c\
+	src/tile_kinds/get_tile_kind.c\
 	src/tile_kinds/instantiate_tile_kinds.c
 
 SOURCES +=\
@@ -234,8 +234,6 @@ HEADERS +=\
 	src/texture/sl_texture.h
 
 HEADERS +=\
-	src/tile_kinds/get_character_tile_kind/sl_get_character_tile_kind.h\
-	src/tile_kinds/get_tile_kind/sl_get_tile_kind.h\
 	src/tile_kinds/sl_tile_kinds.h
 
 HEADERS +=\

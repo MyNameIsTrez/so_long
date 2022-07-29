@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 13:49:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:33:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 18:57:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 #ifndef SL_TILE_KINDS_H
 # define SL_TILE_KINDS_H
-
-////////////////////////////////////////////////////////////////////////////////
-
-# include "get_character_tile_kind/sl_get_character_tile_kind.h"
-# include "get_tile_kind/sl_get_tile_kind.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -33,6 +28,8 @@ typedef struct s_tile_kind_data
 
 ////////////////////////////////////////////////////////////////////////////////
 
+t_tile_kind	*sl_get_character_tile_kind(t_data *data);
+t_tile_kind	*sl_get_tile_kind(t_u8 character, t_data *data);
 t_status	sl_instantiate_tile_kinds(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
