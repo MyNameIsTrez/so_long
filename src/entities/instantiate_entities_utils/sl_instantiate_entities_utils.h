@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_entities.h                                      :+:    :+:            */
+/*   sl_instantiate_entities_utils.h                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/14 11:13:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 20:01:04 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 20:02:10 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 20:02:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_ENTITIES_H
-# define SL_ENTITIES_H
+#ifndef SL_INSTANTIATE_ENTITIES_UTILS_H
+# define SL_INSTANTIATE_ENTITIES_UTILS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_instantiate_entities(t_data *data);
-bool		sl_is_entity(t_data *data);
+t_status	instantiate_entity(t_data *data);
+t_status	try_instantiate_entity(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

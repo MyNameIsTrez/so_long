@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 19:53:15 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 20:03:38 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,9 @@ SOURCES +=\
 	src/cleanup/mlx_cleanup.c
 
 SOURCES +=\
+	src/entities/instantiate_entities_utils/instantiate_entity.c\
+	src/entities/instantiate_entities_utils/try_instantiate_entity.c\
+	src/entities/instantiate_entities.c\
 	src/entities/is_entity.c
 
 SOURCES +=\
@@ -174,7 +177,6 @@ SOURCES +=\
 
 SOURCES +=\
 	src/main.c\
-	src/4_instantiate_entities.c\
 	src/5_initialize_players.c
 
 ################################################################################
@@ -191,6 +193,7 @@ HEADERS +=\
 	src/cleanup/sl_cleanup.h
 
 HEADERS +=\
+	src/entities/instantiate_entities_utils/sl_instantiate_entities_utils.h\
 	src/entities/sl_entities.h
 
 HEADERS +=\
