@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 17:54:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 21:18:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 21:28:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ STATIC t_iterator_status	resettable_iterate_tile_kinds(t_data *data,
 	if (reset)
 	{
 		it.initialized = false;
-		// data->it.tile_kind = NULL; // TODO: Get this in here without having the program crash
+		data->it.tile_kind = NULL;
 		return (RESET);
 	}
 	if (!it.initialized)
