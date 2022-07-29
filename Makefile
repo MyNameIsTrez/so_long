@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 17:36:53 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 17:39:49 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -285,7 +285,7 @@ endif
 
 ################################################################################
 
-INCLUDES := $(sort $(addprefix -I, $(MLX42_PATH)/include $(LIBFT_PATH) $(FT_PRINTF_PATH)/src))
+INCLUDES := $(sort $(addprefix -I, $(MLX42_PATH)/include $(LIBFT_PATH) $(FT_PRINTF_PATH)/src src))
 
 ################################################################################
 
