@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 19:41:55 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 19:46:57 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,11 @@ SOURCES :=\
 	src/background/instantiate_background.c
 
 SOURCES +=\
+	src/char_grid/init_char_grid_utils/char_grid_has_invalid_character.c\
+	src/char_grid/get_char_grid_character.c\
+	src/char_grid/init_char_grid.c
+
+SOURCES +=\
 	src/cleanup/cleanup.c\
 	src/cleanup/mlx_cleanup.c
 
@@ -74,12 +79,6 @@ SOURCES +=\
 	src/frames/initialize_tile_kinds_colors.c\
 	src/frames/is_opaque.c\
 	src/frames/update_frame_colors.c
-
-SOURCES +=\
-	src/grid/init_char_grid_utils/grid_has_invalid_character.c\
-	src/grid/get_char_grid_character.c\
-	src/grid/get_tile_grid_character.c\
-	src/grid/init_char_grid.c
 
 SOURCES +=\
 	src/held_keys/update_held_keys.c
@@ -141,6 +140,9 @@ SOURCES +=\
 	src/texture/set_real_scale.c
 
 SOURCES +=\
+	src/tile_grid/get_tile_grid_character.c
+
+SOURCES +=\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/collectible.c\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/empty_space.c\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/map_exit.c\
@@ -177,6 +179,10 @@ HEADERS +=\
 	src/background/sl_background.h
 
 HEADERS +=\
+	src/char_grid/init_char_grid_utils/sl_init_char_grid_utils.h\
+	src/char_grid/sl_char_grid.h
+
+HEADERS +=\
 	src/cleanup/sl_cleanup.h
 
 HEADERS +=\
@@ -188,10 +194,6 @@ HEADERS +=\
 HEADERS +=\
 	src/frames/update_frame_colors_utils/sl_update_frame_colors_utils.h\
 	src/frames/sl_frames.h
-
-HEADERS +=\
-	src/grid/init_char_grid_utils/sl_init_char_grid_utils.h\
-	src/grid/sl_grid.h
 
 HEADERS +=\
 	src/held_keys/sl_held_keys.h
@@ -249,6 +251,9 @@ HEADERS +=\
 	src/texture/load_texture_utils/sl_load_texture_utils.h\
 	src/texture/set_real_scale_utils/sl_set_real_scale_utils.h\
 	src/texture/sl_texture.h
+
+HEADERS +=\
+	src/tile_grid/sl_tile_grid.h
 
 HEADERS +=\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/sl_instantiate_tile_kinds_utils_add_tile_kind.h\
