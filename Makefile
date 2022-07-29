@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 14:03:30 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 14:04:50 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,7 +121,7 @@ SOURCES +=\
 	src/utils/0_utils.c
 
 SOURCES +=\
-	src/0_main.c\
+	src/main.c\
 	src/1_parse_argv.c\
 	src/2_load_texture.c\
 	src/3_instantiate_tile_grid.c\
