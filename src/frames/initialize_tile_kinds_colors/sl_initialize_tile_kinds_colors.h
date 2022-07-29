@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_update_frame_colors_utils.h                     :+:    :+:            */
+/*   sl_initialize_tile_kinds_colors.h                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 16:57:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:19:17 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 17:09:32 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 17:10:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_UPDATE_FRAME_COLORS_UTILS_H
-# define SL_UPDATE_FRAME_COLORS_UTILS_H
+#ifndef SL_INITIALIZE_TILE_KINDS_COLORS_H
+# define SL_INITIALIZE_TILE_KINDS_COLORS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	should_step(t_data *data);
-void	step_pixel(t_data *data);
+t_status	sl_initialize_tile_kinds_colors(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

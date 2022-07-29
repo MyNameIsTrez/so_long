@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 16:48:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 16:56:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 17:19:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	sl_should_step(t_data *data)
+bool	should_step(t_data *data)
 {
 	t_i32	*wait;
 	size_t	rgb_channel_index;

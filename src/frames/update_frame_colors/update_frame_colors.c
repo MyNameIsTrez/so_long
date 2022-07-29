@@ -6,13 +6,17 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:00:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 17:19:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "../../so_long.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+#include "utils/sl_update_frame_colors_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -27,11 +31,11 @@ void	sl_update_frame_colors(t_data *data)
 		{
 			while (sl_iterate_rgb_channel_indices(data) != FINISHED)
 			{
-				if (sl_should_step(data))
+				if (should_step(data))
 				{
 					if (sl_is_opaque(data))
 					{
-						sl_step_pixel(data);
+						step_pixel(data);
 					}
 				}
 			}

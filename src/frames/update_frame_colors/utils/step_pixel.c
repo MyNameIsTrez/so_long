@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 16:57:45 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 16:57:56 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 17:19:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_step_pixel(t_data *data)
+void	step_pixel(t_data *data)
 {
 	t_u8		*pixels;
 	size_t		rgb_channel_index;
