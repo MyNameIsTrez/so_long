@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 14:19:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 14:29:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,6 @@
 #include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
-
-STATIC t_status	calculate_pixels_per_tile(t_i32 scale, t_data *data)
-{
-	static const size_t	valid_pixels_per_tile[] = {
-	[1] = 1,
-	[2] = 5,
-	[3] = 10,
-	[4] = 20,
-	};
-	t_texture			*texture;
-
-	if (scale < 1 || scale > 4)
-		return (sl_set_error(SL_ERROR_INVALID_SCALE));
-	texture = &data->texture;
-	texture->scale = valid_pixels_per_tile[scale];
-	texture->pixels_per_tile = texture->scale * PIXELS_PER_TILE_UNSCALED;
-	return (OK);
-}
 
 STATIC t_i32	get_scale(t_i32 argc, char *scale_string)
 {
@@ -82,8 +64,9 @@ t_status	sl_parse_argv(t_i32 argc, char **argv, t_data *data)
 	if (grid_has_invalid_character(data) != OK)
 		return (sl_any_error());
 	scale_string = argv[2];
-	if (calculate_pixels_per_tile(get_scale(argc, scale_string), data) != OK)
+	if (sl_set_real_scale(get_scale(argc, scale_string), data) != OK)
 		return (sl_any_error());
+	data->texture.pixels_per_tile = data->texture.scale * PIXELS_PER_TILE_UNSCALED;
 	sl_calculate_window_width_and_height(data);
 	return (OK);
 }
