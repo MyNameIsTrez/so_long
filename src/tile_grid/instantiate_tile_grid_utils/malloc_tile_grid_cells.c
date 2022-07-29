@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_tile_grid.h                                     :+:    :+:            */
+/*   malloc_tile_grid_cells.c                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:43:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:52:00 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:49:38 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 19:54:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_TILE_GRID_H
-# define SL_TILE_GRID_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_u8		sl_get_tile_grid_character(t_data *data);
-t_status	sl_instantiate_tile_grid(t_data *data);
+#include "sl_instantiate_tile_grid_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif
+t_status	malloc_tile_grid_cells(t_data *data)
+{
+	t_tile		**cells;
+
+	cells = ft_malloc((size_t)data->char_grid.height, sizeof(t_tile *));
+	if (cells == NULL)
+		return (ft_set_error(FT_ERROR_MALLOC));
+	data->tile_grid.cells = cells;
+	while (sl_iterate_char_grid_height(data) != FINISHED)
+		if (malloc_rows(data) != OK)
+			return (sl_any_error());
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

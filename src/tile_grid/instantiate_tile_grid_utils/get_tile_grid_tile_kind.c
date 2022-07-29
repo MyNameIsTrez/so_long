@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_tile_grid.h                                     :+:    :+:            */
+/*   get_tile_grid_tile_kind.c                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:43:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:52:00 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:50:29 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 19:50:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_TILE_GRID_H
-# define SL_TILE_GRID_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_u8		sl_get_tile_grid_character(t_data *data);
-t_status	sl_instantiate_tile_grid(t_data *data);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+t_tile_kind	*get_tile_grid_tile_kind(t_data *data)
+{
+	if (sl_is_entity(data))
+		return (sl_get_tile_kind(EMPTY_SPACE_CHARACTER, data));
+	return (sl_get_character_tile_kind(data));
+}
 
 ////////////////////////////////////////////////////////////////////////////////

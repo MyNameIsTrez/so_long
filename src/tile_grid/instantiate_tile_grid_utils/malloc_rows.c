@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_tile_grid.h                                     :+:    :+:            */
+/*   malloc_rows.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:43:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:52:00 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:49:49 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 19:49:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_TILE_GRID_H
-# define SL_TILE_GRID_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_u8		sl_get_tile_grid_character(t_data *data);
-t_status	sl_instantiate_tile_grid(t_data *data);
+t_status	malloc_rows(t_data *data)
+{
+	t_tile	**cells;
+	size_t	row_index;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	cells = data->tile_grid.cells;
+	row_index = data->it.row_index;
+	cells[row_index] = ft_malloc((size_t)data->char_grid.width, sizeof(t_tile));
+	if (cells[row_index] == NULL)
+		return (ft_set_error(FT_ERROR_MALLOC));
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

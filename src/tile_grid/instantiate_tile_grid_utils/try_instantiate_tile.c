@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_tile_grid.h                                     :+:    :+:            */
+/*   try_instantiate_tile.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:43:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:52:00 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:49:20 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 19:54:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_TILE_GRID_H
-# define SL_TILE_GRID_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_u8		sl_get_tile_grid_character(t_data *data);
-t_status	sl_instantiate_tile_grid(t_data *data);
+#include "sl_instantiate_tile_grid_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif
+t_status	try_instantiate_tile(t_data *data)
+{
+	if (instantiate_tile(data) != OK)
+		return (sl_any_error());
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
