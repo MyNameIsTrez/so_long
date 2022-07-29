@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 18:08:08 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 18:37:52 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -115,9 +115,15 @@ SOURCES +=\
 	src/monitor/init_monitor_size.c
 
 SOURCES +=\
-	src/players/utils/get_key_column_offset.c\
-	src/players/utils/get_key_row_offset.c\
-	src/players/players.c
+	src/players/try_move_players_utils/can_autowalk.c\
+	src/players/try_move_players_utils/can_player_shift.c\
+	src/players/try_move_players_utils/get_key_column_offset.c\
+	src/players/try_move_players_utils/get_key_row_offset.c\
+	src/players/try_move_players_utils/is_entity_walkable.c\
+	src/players/try_move_players_utils/is_tile_walkable.c\
+	src/players/try_move_players_utils/is_walkable.c\
+	src/players/try_move_players_utils/shift_player.c\
+	src/players/try_move_players.c
 
 SOURCES +=\
 	src/texture/init_texture_filename/init_texture_filename.c\
@@ -182,7 +188,7 @@ HEADERS +=\
 	src/monitor/sl_monitor.h
 
 HEADERS +=\
-	src/players/utils/sl_players_utils.h\
+	src/players/try_move_players_utils/sl_try_move_players_utils.h\
 	src/players/sl_players.h
 
 HEADERS +=\

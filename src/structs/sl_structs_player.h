@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:47:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 18:34:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@
 # define SL_STRUCTS_PLAYER_H
 
 ////////////////////////////////////////////////////////////////////////////////
-
-# define UP_MOVEMENT_KEY_INDEX 0
-# define DOWN_MOVEMENT_KEY_INDEX 1
-# define LEFT_MOVEMENT_KEY_INDEX 2
-# define RIGHT_MOVEMENT_KEY_INDEX 3
 
 typedef struct s_controls
 {

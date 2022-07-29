@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_key_row_offset.c                               :+:    :+:            */
+/*   is_tile_walkable.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 17:36:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:38 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 18:14:51 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 18:40:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	get_key_row_offset(keys_t key, keys_t movement_keys[4])
+bool	is_tile_walkable(size_t column, size_t row, t_data *data)
 {
-	if (key == movement_keys[UP_MOVEMENT_KEY_INDEX])
-		return (-1);
-	if (key == movement_keys[DOWN_MOVEMENT_KEY_INDEX])
-		return (1);
-	else
-		return (0);
+	t_u8	tile_character;
+
+	data->it.column_index = column;
+	data->it.row_index = row;
+	tile_character = sl_get_tile_grid_character(data);
+	return (ft_chr_in_str(tile_character, WALKABLE_CHARACTERS));
 }
 
 ////////////////////////////////////////////////////////////////////////////////

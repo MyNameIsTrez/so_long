@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_players_utils.h                                 :+:    :+:            */
+/*   get_key_column_offset.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/13 13:28:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:22:11 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/13 13:28:56 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 18:41:12 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PLAYERS_UTILS_H
-# define SL_PLAYERS_UTILS_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	get_key_column_offset(keys_t key, keys_t movement_keys[4]);
-t_i32	get_key_row_offset(keys_t key, keys_t movement_keys[4]);
+#include "sl_try_move_players_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif
+t_i32	get_key_column_offset(keys_t key, keys_t movement_keys[4])
+{
+	if (key == movement_keys[LEFT_MOVEMENT_KEY_INDEX])
+		return (-1);
+	if (key == movement_keys[RIGHT_MOVEMENT_KEY_INDEX])
+		return (1);
+	else
+		return (0);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

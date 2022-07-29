@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_key_column_offset.c                            :+:    :+:            */
+/*   can_player_shift.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/13 13:28:56 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:38 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 18:18:21 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 18:40:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,27 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	get_key_column_offset(keys_t key, keys_t movement_keys[4])
+#include "sl_try_move_players_utils.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+bool	can_player_shift(t_player *player, size_t movement_key_index,
+			t_data *data)
 {
-	if (key == movement_keys[LEFT_MOVEMENT_KEY_INDEX])
-		return (-1);
-	if (key == movement_keys[RIGHT_MOVEMENT_KEY_INDEX])
-		return (1);
-	else
-		return (0);
+	keys_t	key;
+	t_i32	frames_held;
+	bool	key_was_held;
+
+	key = player->controls.movement_keys[movement_key_index];
+	if (!mlx_is_key_down(data->mlx, key))
+		return (false);
+	frames_held = data->held_keys[key];
+	key_was_held = frames_held > 0;
+	if (key_was_held && !can_autowalk(player, data))
+		return (false);
+	if (!is_walkable(player, key, data))
+		return (false);
+	return (true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
