@@ -6,13 +6,13 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:54:58 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 14:52:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 15:12:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -21,31 +21,9 @@ STATIC char	*get_texture_scales_path(void)
 	return (TEXTUREPACKS_PATH TEXTUREPACK TEXTURE_SCALES_DIR);
 }
 
-STATIC t_status	get_texture_filename_stem(char *str_pixels_per_tile,
-					char **filename_stem)
+STATIC char	*get_texture_filepath(t_data *data)
 {
-	*filename_stem = ft_strjoin(TEXTURE_FILENAME_PREFIX, str_pixels_per_tile);
-	if (*filename_stem == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
-	return (OK);
-}
-
-STATIC t_status	get_texture_filename(t_data *data)
-{
-	t_texture	*texture;
-	char		*str_pixels_per_tile;
-	char		*filename_stem;
-
-	texture = &data->texture;
-	str_pixels_per_tile = ft_itoa((t_i32)texture->scale);
-	if (str_pixels_per_tile == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
-	if (get_texture_filename_stem(str_pixels_per_tile, &filename_stem) != OK)
-		return (sl_any_error());
-	texture->filename = ft_strjoin(filename_stem, TEXTURE_FILENAME_EXTENSION);
-	if (texture->filename == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
-	return (OK);
+	return (ft_strjoin(get_texture_scales_path(), data->texture.filename));
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -54,11 +32,9 @@ t_status	sl_load_texture(t_data *data)
 {
 	char			*tex_filepath;
 
-	if (get_texture_filename(data) != OK)
+	if (sl_init_texture_filename(data) != OK)
 		return (sl_any_error());
-
-	if (ft_str_assign(&tex_filepath, ft_strjoin(get_texture_scales_path(),
-				data->texture.filename)) != OK)
+	if (ft_str_assign(&tex_filepath, get_texture_filepath(data)) != OK)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	data->texture.data = mlx_load_png(tex_filepath);
 	if (data->texture.data == NULL)

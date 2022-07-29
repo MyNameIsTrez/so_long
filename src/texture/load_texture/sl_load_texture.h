@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_texture.h                                       :+:    :+:            */
+/*   sl_load_texture.h                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 14:29:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 15:16:33 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 15:09:22 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 15:15:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_TEXTURE_H
-# define SL_TEXTURE_H
+#ifndef SL_LOAD_TEXTURE_H
+# define SL_LOAD_TEXTURE_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "init_texture_filename/sl_init_texture_filename.h"
-# include "load_texture/sl_load_texture.h"
-# include "sl_real_scale.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_status	sl_init_texture(t_i32 argc, char *scale_string, t_data *data);
+t_status	sl_load_texture(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

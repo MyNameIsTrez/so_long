@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 14:50:20 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 15:15:54 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -113,8 +113,9 @@ SOURCES +=\
 	src/players/players.c
 
 SOURCES +=\
+	src/texture/init_texture_filename/init_texture_filename.c\
+	src/texture/load_texture/load_texture.c\
 	src/texture/init_texture.c\
-	src/texture/load_texture.c\
 	src/texture/real_scale.c
 
 SOURCES +=\
@@ -207,6 +208,8 @@ HEADERS +=\
 	src/structs/sl_structs_tiles.h
 
 HEADERS +=\
+	src/texture/init_texture_filename/sl_init_texture_filename.h\
+	src/texture/load_texture/sl_load_texture.h\
 	src/texture/sl_real_scale.h\
 	src/texture/sl_texture.h
 
