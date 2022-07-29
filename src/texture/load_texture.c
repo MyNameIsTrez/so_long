@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   2_load_texture.c                                   :+:    :+:            */
+/*   load_texture.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:54:58 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 14:44:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 14:52:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#include "../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
+
+STATIC char	*get_texture_scales_path(void)
+{
+	return (TEXTUREPACKS_PATH TEXTUREPACK TEXTURE_SCALES_DIR);
+}
 
 STATIC t_status	get_texture_filename_stem(char *str_pixels_per_tile,
 					char **filename_stem)
@@ -51,8 +56,8 @@ t_status	sl_load_texture(t_data *data)
 
 	if (get_texture_filename(data) != OK)
 		return (sl_any_error());
-	if (ft_str_assign(&tex_filepath, ft_strjoin(
-				TEXTUREPACKS_PATH TEXTUREPACK TEXTURE_SCALES_DIR,
+
+	if (ft_str_assign(&tex_filepath, ft_strjoin(get_texture_scales_path(),
 				data->texture.filename)) != OK)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	data->texture.data = mlx_load_png(tex_filepath);

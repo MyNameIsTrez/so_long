@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 14:43:14 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 14:50:20 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -113,8 +113,9 @@ SOURCES +=\
 	src/players/players.c
 
 SOURCES +=\
-	src/texture/real_scale.c\
-	src/texture/texture.c
+	src/texture/init_texture.c\
+	src/texture/load_texture.c\
+	src/texture/real_scale.c
 
 SOURCES +=\
 	src/tile_kinds/utils/utils.c\
@@ -131,7 +132,6 @@ SOURCES +=\
 
 SOURCES +=\
 	src/main.c\
-	src/2_load_texture.c\
 	src/3_instantiate_tile_grid.c\
 	src/4_instantiate_entities.c\
 	src/5_initialize_players.c
