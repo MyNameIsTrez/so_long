@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 13:48:30 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 13:55:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,45 +44,6 @@ STATIC void	loop(void *param)
 	data->frame++;
 }
 
-STATIC t_status	subinits(t_data *data)
-{
-	static const t_subinit	subinit_table[] = {
-		sl_instantiate_background,
-		sl_load_texture,
-		sl_instantiate_tile_kinds,
-		sl_initialize_tile_kinds_colors,
-		sl_instantiate_tile_grid,
-		sl_instantiate_entities,
-		sl_initialize_players,
-	};
-	size_t					subinit_count;
-	static t_iterator		it;
-
-	subinit_count = sizeof(subinit_table) / sizeof(*subinit_table);
-	it = ft_get_count_iterator(subinit_count);
-	while (ft_iterate(&it) != FINISHED)
-		if (subinit_table[it.current](data) != OK)
-			return (ERROR);
-	return (OK);
-}
-
-STATIC t_status	init(t_i32 argc, char **argv, t_data *data)
-{
-	ft_bzero(data, sizeof(t_data));
-	sl_init_monitor_size(data);
-	if (sl_parse_argv(argc, argv, data) != OK)
-		return (sl_any_error());
-	data->mlx = mlx_init((t_i32)data->window.width, (t_i32)data->window.height,
-			WINDOW_TITLE, false);
-	if (data->mlx == NULL)
-		return (sl_set_error(SL_ERROR_MLX42));
-	if (subinits(data) != OK)
-		return (sl_any_error());
-	if (mlx_loop_hook(data->mlx, &loop, data) != true)
-		return (sl_set_error(SL_ERROR_MLX42));
-	return (OK);
-}
-
 ////////////////////////////////////////////////////////////////////////////////
 
 t_i32	main(t_i32 argc, char **argv)
@@ -90,7 +51,7 @@ t_i32	main(t_i32 argc, char **argv)
 	t_data	data;
 
 	atexit(check_leaks); // TODO: Remove!
-	if (init(argc, argv, &data) != OK)
+	if (sl_init(argc, argv, loop, &data) != OK)
 	{
 		sl_cleanup(&data);
 		sl_print_all_errors();
