@@ -27,31 +27,6 @@ void	check_leaks(void)
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC void	update_frames(t_data *data)
-{
-	t_entity	*entity;
-	t_tile		*tile;
-	t_f64		seconds_elapsed;
-	size_t		frame_count;
-
-	while (sl_iterate_entities(data) != FINISHED)
-	{
-		entity = data->it.entity;
-		seconds_elapsed = data->seconds - entity->last_frame_seconds;
-		if (seconds_elapsed > entity->seconds_per_frame)
-		{
-			tile = &entity->tile;
-			sl_get_frame_instance(tile, tile->frame_index)->enabled = false;
-			frame_count = tile->tile_kind->frame_count;
-			tile->frame_index = (tile->frame_index + 1) % frame_count;
-			sl_get_frame_instance(tile, tile->frame_index)->enabled = true;
-			entity->last_frame_seconds = data->seconds;
-		}
-		// TODO: Do something with varying frame rates during gameplay
-		// entity->seconds_per_frame -= 0.001;
-	}
-}
-
 STATIC void	loop(void *param)
 {
 	t_data	*data;
@@ -65,7 +40,7 @@ STATIC void	loop(void *param)
 	// sl_update_frame_colors(data);
 	sl_try_move_players(data);
 	sl_update_held_keys(data);
-	update_frames(data);
+	sl_change_frames(data);
 	data->frame++;
 }
 

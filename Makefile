@@ -49,9 +49,6 @@ SOURCES :=\
 	src/background/background.c
 
 SOURCES +=\
-	src/mlx_cleanup/mlx_cleanup.c
-
-SOURCES +=\
 	src/entities/entities.c
 
 SOURCES +=\
@@ -64,6 +61,7 @@ SOURCES +=\
 
 SOURCES +=\
 	src/frames/utils/utils.c\
+	src/frames/change_frames.c\
 	src/frames/initialize_tile_kinds_colors.c\
 	src/frames/update_frame_colors.c
 
@@ -95,6 +93,9 @@ SOURCES +=\
 	src/iterators/tile_kinds.c
 
 SOURCES +=\
+	src/mlx_cleanup/mlx_cleanup.c
+
+SOURCES +=\
 	src/players/utils/utils.c\
 	src/players/players.c
 
@@ -122,9 +123,6 @@ HEADERS +=\
 	src/background/sl_background.h
 
 HEADERS +=\
-	src/mlx_cleanup/sl_mlx_cleanup.h
-
-HEADERS +=\
 	src/entities/sl_entities.h
 
 HEADERS +=\
@@ -143,6 +141,9 @@ HEADERS +=\
 HEADERS +=\
 	src/iterators/sl_iterators.h\
 	src/iterators/frames/sl_iterator_frames.h
+
+HEADERS +=\
+	src/mlx_cleanup/sl_mlx_cleanup.h
 
 HEADERS +=\
 	src/players/utils/sl_players_utils.h\
