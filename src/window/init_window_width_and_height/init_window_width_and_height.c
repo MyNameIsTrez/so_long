@@ -1,47 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   parse_argv.c                                       :+:    :+:            */
+/*   sl_init_window_width_and_height.c                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 15:28:36 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 15:29:31 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 15:29:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_status	verify_argc(t_i32 argc)
+STATIC void	sl_calculate_window_width(size_t pixels_per_tile, t_data *data)
 {
-	if (argc <= 1)
-		return (ft_set_error(FT_ERROR_TOO_FEW_ARGS));
-	if (argc >= 4)
-		return (ft_set_error(FT_ERROR_TOO_MANY_ARGS));
-	return (OK);
+	data->window.width = data->char_grid.width * pixels_per_tile;
+	if (data->window.width > data->monitor.width)
+		data->window.width = data->monitor.width;
+}
+
+STATIC void	sl_calculate_window_height(size_t pixels_per_tile, t_data *data)
+{
+	data->window.height = data->char_grid.height * pixels_per_tile;
+	if (data->window.height > data->monitor.height)
+		data->window.height = data->monitor.height;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_parse_argv(t_i32 argc, char **argv, t_data *data)
+void	sl_init_window_width_and_height(t_data *data)
 {
-	char	*map_filename;
-	char	*scale_string;
+	size_t	pixels_per_tile;
 
-	if (verify_argc(argc) != OK)
-		return (sl_any_error());
-	map_filename = argv[1];
-	if (sl_init_grid(map_filename, data) != OK)
-		return (sl_any_error());
-	scale_string = argv[2];
-	if (sl_init_texture_metadata(argc, scale_string, data) != OK)
-		return (sl_any_error());
-	sl_init_window_width_and_height(data);
-	return (OK);
+	pixels_per_tile = data->texture.pixels_per_tile;
+	sl_calculate_window_width(pixels_per_tile, data);
+	sl_calculate_window_height(pixels_per_tile, data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

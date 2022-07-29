@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_window.h                                        :+:    :+:            */
+/*   sl_init_window_width_and_height.h                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 14:19:29 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 15:31:45 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 15:29:01 by sbos          #+#    #+#                 */
+/*   Updated: 2022/07/29 15:29:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_WINDOW_H
-# define SL_WINDOW_H
+#ifndef SL_INIT_WINDOW_WIDTH_AND_HEIGHT_H
+# define SL_INIT_WINDOW_WIDTH_AND_HEIGHT_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "init_window_width_and_height/sl_init_window_width_and_height.h"
+void	sl_init_window_width_and_height(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
