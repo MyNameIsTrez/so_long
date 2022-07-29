@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 13:44:49 by sbos          ########   odam.nl         */
+/*   Updated: 2022/07/29 13:48:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,14 @@ STATIC t_status	subinits(t_data *data)
 		sl_instantiate_entities,
 		sl_initialize_players,
 	};
-	size_t					index;
+	size_t					subinit_count;
+	static t_iterator		it;
 
-	index = 0;
-	while (index < sizeof(subinit_table) / sizeof(subinit_table[0]))
-	{
-		if (subinit_table[index](data) != OK)
+	subinit_count = sizeof(subinit_table) / sizeof(*subinit_table);
+	it = ft_get_count_iterator(subinit_count);
+	while (ft_iterate(&it) != FINISHED)
+		if (subinit_table[it.current](data) != OK)
 			return (ERROR);
-		index++;
-	}
 	return (OK);
 }
 
