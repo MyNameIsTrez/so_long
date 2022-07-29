@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/07/29 17:55:03 by sbos          ########   odam.nl          #
+#    Updated: 2022/07/29 18:04:07 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,20 +64,16 @@ SOURCES +=\
 	src/error/sl_print_error.c\
 	src/error/sl_set_error.c
 
-
 SOURCES +=\
+	src/frames/update_frame_colors_utils/should_step.c\
+	src/frames/update_frame_colors_utils/step_pixel.c\
 	src/frames/change_frames.c\
 	src/frames/get_frame.c\
 	src/frames/get_frame_instance.c\
 	src/frames/get_pixel_index.c\
 	src/frames/initialize_tile_kinds_colors.c\
-	src/frames/is_opaque.c
-
-SOURCES +=\
-	src/frames/update_frame_colors/utils/should_step.c\
-	src/frames/update_frame_colors/utils/step_pixel.c\
-	src/frames/update_frame_colors/update_frame_colors.c
-
+	src/frames/is_opaque.c\
+	src/frames/update_frame_colors.c
 
 SOURCES +=\
 	src/grid/grid.c\
@@ -149,97 +145,97 @@ SOURCES +=\
 
 ################################################################################
 
-HEADERS +=\
-	src/background/instantiate_background/utils/sl_instantiate_background_utils.h\
-	src/background/instantiate_background/sl_instantiate_background.h\
-	src/background/sl_background.h
+# HEADERS +=\
+# 	src/background/instantiate_background/utils/sl_instantiate_background_utils.h\
+# 	src/background/instantiate_background/sl_instantiate_background.h\
+# 	src/background/sl_background.h
 
-HEADERS +=\
-	src/cleanup/sl_cleanup.h
+# HEADERS +=\
+# 	src/cleanup/sl_cleanup.h
 
-HEADERS +=\
-	src/entities/sl_entities.h
+# HEADERS +=\
+# 	src/entities/sl_entities.h
 
-HEADERS +=\
-	src/error/sl_error.h
+# HEADERS +=\
+# 	src/error/sl_error.h
 
-HEADERS +=\
-	src/frames/update_frame_colors/utils/sl_update_frame_colors_utils.h\
-	src/frames/sl_frames.h
+# HEADERS +=\
+# 	src/frames/update_frame_colors_utils/sl_update_frame_colors_utils.h\
+# 	src/frames/sl_frames.h
 
-HEADERS +=\
-	src/grid/sl_grid.h
+# HEADERS +=\
+# 	src/grid/sl_grid.h
 
-HEADERS +=\
-	src/held_keys/sl_held_keys.h
+# HEADERS +=\
+# 	src/held_keys/sl_held_keys.h
 
-HEADERS +=\
-	src/init/sl_init.h
+# HEADERS +=\
+# 	src/init/sl_init.h
 
-HEADERS +=\
-	src/iterators/sl_iterators.h\
-	src/iterators/frames/sl_iterator_frames.h
+# HEADERS +=\
+# 	src/iterators/sl_iterators.h\
+# 	src/iterators/frames/sl_iterator_frames.h
 
-HEADERS +=\
-	src/loop/sl_loop.h
+# HEADERS +=\
+# 	src/loop/sl_loop.h
 
-HEADERS +=\
-	src/monitor/sl_monitor.h
+# HEADERS +=\
+# 	src/monitor/sl_monitor.h
 
-HEADERS +=\
-	src/players/utils/sl_players_utils.h\
-	src/players/sl_players.h
+# HEADERS +=\
+# 	src/players/utils/sl_players_utils.h\
+# 	src/players/sl_players.h
 
-HEADERS +=\
-	src/settings/tile_kinds/sl_settings_tile_kinds.h\
-	src/settings/tile_kinds/sl_collectible.h\
-	src/settings/tile_kinds/sl_empty_space.h\
-	src/settings/tile_kinds/sl_map_exit.h\
-	src/settings/tile_kinds/sl_player.h\
-	src/settings/tile_kinds/sl_wall.h
+# HEADERS +=\
+# 	src/settings/tile_kinds/sl_settings_tile_kinds.h\
+# 	src/settings/tile_kinds/sl_collectible.h\
+# 	src/settings/tile_kinds/sl_empty_space.h\
+# 	src/settings/tile_kinds/sl_map_exit.h\
+# 	src/settings/tile_kinds/sl_player.h\
+# 	src/settings/tile_kinds/sl_wall.h
 
-HEADERS +=\
-	src/settings/sl_settings_background.h\
-	src/settings/sl_settings_controls.h\
-	src/settings/sl_settings_map.h\
-	src/settings/sl_settings_monitor.h\
-	src/settings/sl_settings_players.h\
-	src/settings/sl_settings_texture.h\
-	src/settings/sl_settings_window.h\
-	src/settings/sl_settings.h
+# HEADERS +=\
+# 	src/settings/sl_settings_background.h\
+# 	src/settings/sl_settings_controls.h\
+# 	src/settings/sl_settings_map.h\
+# 	src/settings/sl_settings_monitor.h\
+# 	src/settings/sl_settings_players.h\
+# 	src/settings/sl_settings_texture.h\
+# 	src/settings/sl_settings_window.h\
+# 	src/settings/sl_settings.h
 
-HEADERS +=\
-	src/structs/sl_structs_data.h\
-	src/structs/sl_structs_entity.h\
-	src/structs/sl_structs_iterators.h\
-	src/structs/sl_structs_mlx42.h\
-	src/structs/sl_structs_monitor.h\
-	src/structs/sl_structs_player.h\
-	src/structs/sl_structs.h\
-	src/structs/sl_structs_texture.h\
-	src/structs/sl_structs_tiles.h
+# HEADERS +=\
+# 	src/structs/sl_structs_data.h\
+# 	src/structs/sl_structs_entity.h\
+# 	src/structs/sl_structs_iterators.h\
+# 	src/structs/sl_structs_mlx42.h\
+# 	src/structs/sl_structs_monitor.h\
+# 	src/structs/sl_structs_player.h\
+# 	src/structs/sl_structs.h\
+# 	src/structs/sl_structs_texture.h\
+# 	src/structs/sl_structs_tiles.h
 
-HEADERS +=\
-	src/texture/init_texture_filename/sl_init_texture_filename.h\
-	src/texture/init_texture_metadata/sl_init_texture_metadata.h\
-	src/texture/load_texture/sl_load_texture.h\
-	src/texture/set_real_scale/sl_set_real_scale.h\
-	src/texture/sl_texture.h
+# HEADERS +=\
+# 	src/texture/init_texture_filename/sl_init_texture_filename.h\
+# 	src/texture/init_texture_metadata/sl_init_texture_metadata.h\
+# 	src/texture/load_texture/sl_load_texture.h\
+# 	src/texture/set_real_scale/sl_set_real_scale.h\
+# 	src/texture/sl_texture.h
 
-HEADERS +=\
-	src/tile_kinds/get_character_tile_kind/sl_get_character_tile_kind.h\
-	src/tile_kinds/get_tile_kind/sl_get_tile_kind.h\
-	src/tile_kinds/sl_tile_kinds.h
+# HEADERS +=\
+# 	src/tile_kinds/get_character_tile_kind/sl_get_character_tile_kind.h\
+# 	src/tile_kinds/get_tile_kind/sl_get_tile_kind.h\
+# 	src/tile_kinds/sl_tile_kinds.h
 
-HEADERS +=\
-	src/tiles/sl_tiles.h
+# HEADERS +=\
+# 	src/tiles/sl_tiles.h
 
-HEADERS +=\
-	src/window/init_window_width_and_height/sl_init_window_width_and_height.h\
-	src/window/sl_window.h
+# HEADERS +=\
+# 	src/window/init_window_width_and_height/sl_init_window_width_and_height.h\
+# 	src/window/sl_window.h
 
-HEADERS +=\
-	src/so_long.h
+# HEADERS +=\
+# 	src/so_long.h
 
 ################################################################################
 
