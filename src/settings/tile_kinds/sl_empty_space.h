@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:56:43 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 17:10:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 15:20:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define EMPTY_SPACE_MIN_R 206
-# define EMPTY_SPACE_MIN_G 208
-# define EMPTY_SPACE_MIN_B 206
+# define EMPTY_SPACE_MIN_R_OFFSET 206
+# define EMPTY_SPACE_MIN_G_OFFSET 208
+# define EMPTY_SPACE_MIN_B_OFFSET 206
 
-# define EMPTY_SPACE_MAX_R 220
-# define EMPTY_SPACE_MAX_G 230
-# define EMPTY_SPACE_MAX_B 215
+# define EMPTY_SPACE_MAX_R_OFFSET 220
+# define EMPTY_SPACE_MAX_G_OFFSET 230
+# define EMPTY_SPACE_MAX_B_OFFSET 215
 
 ////////////////////////////////////////////////////////////////////////////////
 

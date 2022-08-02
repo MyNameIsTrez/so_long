@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 17:11:07 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 15:21:12 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define PLAYER_MIN_R 63
-# define PLAYER_MIN_G 64
-# define PLAYER_MIN_B 63
+# define PLAYER_MIN_R_OFFSET 63
+# define PLAYER_MIN_G_OFFSET 64
+# define PLAYER_MIN_B_OFFSET 63
 
-# define PLAYER_MAX_R 80
-# define PLAYER_MAX_G 90
-# define PLAYER_MAX_B 70
+# define PLAYER_MAX_R_OFFSET 80
+# define PLAYER_MAX_G_OFFSET 90
+# define PLAYER_MAX_B_OFFSET 70
 
 ////////////////////////////////////////////////////////////////////////////////
 // TODO: PLAYER 2

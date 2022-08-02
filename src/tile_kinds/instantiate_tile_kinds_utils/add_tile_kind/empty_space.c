@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   add_empty_space_tile_kind.c                        :+:    :+:            */
+/*   empty_space.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:06:39 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:06:44 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 15:22:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ t_status	add_empty_space_tile_kind(t_data *data)
 			EMPTY_SPACE_DEPTH,
 			(t_tile_kind_color){
 			{EMPTY_SPACE_R, EMPTY_SPACE_G, EMPTY_SPACE_B},
-			{EMPTY_SPACE_MIN_R, EMPTY_SPACE_MIN_G, EMPTY_SPACE_MIN_B},
-			{EMPTY_SPACE_MAX_R, EMPTY_SPACE_MAX_G, EMPTY_SPACE_MAX_B},
+			{EMPTY_SPACE_MIN_R_OFFSET, EMPTY_SPACE_MIN_G_OFFSET,
+				EMPTY_SPACE_MIN_B_OFFSET},
+			{EMPTY_SPACE_MAX_R_OFFSET, EMPTY_SPACE_MAX_G_OFFSET,
+				EMPTY_SPACE_MAX_B_OFFSET},
 			{EMPTY_SPACE_R_WAIT, EMPTY_SPACE_G_WAIT, EMPTY_SPACE_B_WAIT},
 			{EMPTY_SPACE_R_STEP, EMPTY_SPACE_G_STEP, EMPTY_SPACE_B_STEP}}},
 			data) != OK)

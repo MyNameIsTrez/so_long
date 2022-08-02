@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 17:11:03 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 15:20:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define COLLECTIBLE_MIN_R 159
-# define COLLECTIBLE_MIN_G 184
-# define COLLECTIBLE_MIN_B 173
+# define COLLECTIBLE_MIN_R_OFFSET 159
+# define COLLECTIBLE_MIN_G_OFFSET 184
+# define COLLECTIBLE_MIN_B_OFFSET 173
 
-# define COLLECTIBLE_MAX_R 168
-# define COLLECTIBLE_MAX_G 194
-# define COLLECTIBLE_MAX_B 180
+# define COLLECTIBLE_MAX_R_OFFSET 168
+# define COLLECTIBLE_MAX_G_OFFSET 194
+# define COLLECTIBLE_MAX_B_OFFSET 180
 
 ////////////////////////////////////////////////////////////////////////////////
 

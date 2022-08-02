@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:11 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 17:10:58 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 15:21:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define MAP_EXIT_MIN_R 170
-# define MAP_EXIT_MIN_G 189
-# define MAP_EXIT_MIN_B 140
+# define MAP_EXIT_MIN_R_OFFSET 170
+# define MAP_EXIT_MIN_G_OFFSET 189
+# define MAP_EXIT_MIN_B_OFFSET 140
 
-# define MAP_EXIT_MAX_R 193
-# define MAP_EXIT_MAX_G 198
-# define MAP_EXIT_MAX_B 153
+# define MAP_EXIT_MAX_R_OFFSET 193
+# define MAP_EXIT_MAX_G_OFFSET 198
+# define MAP_EXIT_MAX_B_OFFSET 153
 
 ////////////////////////////////////////////////////////////////////////////////
 

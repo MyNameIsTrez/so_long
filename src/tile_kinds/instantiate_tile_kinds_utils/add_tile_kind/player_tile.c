@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   add_player_tile_kind.c                             :+:    :+:            */
+/*   player_tile.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:03:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:04:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 15:23:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ t_status	add_player_tile_kind(t_data *data)
 			PLAYER_DEPTH,
 			(t_tile_kind_color){
 			{PLAYER_R, PLAYER_G, PLAYER_B},
-			{PLAYER_MIN_R, PLAYER_MIN_G, PLAYER_MIN_B},
-			{PLAYER_MAX_R, PLAYER_MAX_G, PLAYER_MAX_B},
+			{PLAYER_MIN_R_OFFSET, PLAYER_MIN_G_OFFSET,
+				PLAYER_MIN_B_OFFSET},
+			{PLAYER_MAX_R_OFFSET, PLAYER_MAX_G_OFFSET,
+				PLAYER_MAX_B_OFFSET},
 			{PLAYER_R_WAIT, PLAYER_G_WAIT, PLAYER_B_WAIT},
 			{PLAYER_R_STEP, PLAYER_G_STEP, PLAYER_B_STEP}}},
 			data) != OK)

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:56:55 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 17:10:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 15:21:21 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@
 # define WALL_G 100
 # define WALL_B 43
 
-# define WALL_MIN_R 133
-# define WALL_MIN_G 100
-# define WALL_MIN_B 43
+# define WALL_MIN_R_OFFSET 133
+# define WALL_MIN_G_OFFSET 100
+# define WALL_MIN_B_OFFSET 43
 
-# define WALL_MAX_R 140
-# define WALL_MAX_G 115
-# define WALL_MAX_B 67
+# define WALL_MAX_R_OFFSET 140
+# define WALL_MAX_G_OFFSET 115
+# define WALL_MAX_B_OFFSET 67
 
 ////////////////////////////////////////////////////////////////////////////////
 
