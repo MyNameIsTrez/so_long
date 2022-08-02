@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:51:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:51:33 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 14:26:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 t_tile_kind	*get_tile_grid_tile_kind(t_data *data);
 t_status	instantiate_tile(t_data *data);
-t_status	malloc_rows(t_data *data);
 t_status	malloc_tile_grid_cells(t_data *data);
 t_status	try_instantiate_tile(t_data *data);
 

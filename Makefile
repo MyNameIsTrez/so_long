@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/02 13:56:24 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/02 14:27:06 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -147,7 +147,6 @@ SOURCES +=\
 SOURCES +=\
 	src/tile_grid/instantiate_tile_grid_utils/get_tile_grid_tile_kind.c\
 	src/tile_grid/instantiate_tile_grid_utils/instantiate_tile.c\
-	src/tile_grid/instantiate_tile_grid_utils/malloc_rows.c\
 	src/tile_grid/instantiate_tile_grid_utils/malloc_tile_grid_cells.c\
 	src/tile_grid/instantiate_tile_grid_utils/try_instantiate_tile.c\
 	src/tile_grid/get_tile_grid_character.c\
