@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:49:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:49:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 13:49:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_status	malloc_rows(t_data *data)
 
 	cells = data->tile_grid.cells;
 	row_index = data->it.row_index;
-	cells[row_index] = ft_malloc((size_t)data->char_grid.width, sizeof(t_tile));
+	cells[row_index] = ft_vector_new(sizeof(t_tile));
 	if (cells[row_index] == NULL)
 		return (ft_set_error(FT_ERROR_MALLOC));
 	return (OK);

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 13:22:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 14:24:21 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 13:56:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void		sl_shift_tile_pos(t_tile *tile, t_i32 columns, t_i32 rows,
 				t_data *data);
 t_status	sl_fill_tile_data(t_tile *tile, t_tile_kind *tile_kind,
 				t_data *data);
-t_tile		*sl_get_tile(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
