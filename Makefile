@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/02 14:27:06 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/02 16:35:48 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -133,6 +133,9 @@ SOURCES +=\
 	src/players/try_move_players.c
 
 SOURCES +=\
+	src/sanitize/sanitize.c
+
+SOURCES +=\
 	src/texture/init_texture_filename_utils/get_str_pixels_per_tile.c\
 	src/texture/init_texture_filename_utils/get_texture_filename_stem.c\
 	src/texture/init_texture_metadata_utils/set_pixels_per_tile.c\
@@ -160,6 +163,7 @@ SOURCES +=\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/wall_tile.c\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind_frames.c\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind.c\
+	src/tile_kinds/instantiate_tile_kinds_utils/instantiate_tile_kind_color.c\
 	src/tile_kinds/get_character_tile_kind.c\
 	src/tile_kinds/get_tile_kind.c\
 	src/tile_kinds/instantiate_tile_kinds.c
@@ -223,6 +227,9 @@ HEADERS +=\
 	src/players/initialize_players_utils/sl_initialize_players_utils.h\
 	src/players/try_move_players_utils/sl_try_move_players_utils.h\
 	src/players/sl_players.h
+
+HEADERS +=\
+	src/sanitize/sl_sanitize.h
 
 HEADERS +=\
 	src/settings/tile_kinds/sl_settings_tile_kinds.h\

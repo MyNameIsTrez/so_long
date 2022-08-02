@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:06:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/02 15:23:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 16:12:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_status	add_wall_tile_kind(t_data *data)
 			WALL_TEXTURE_ROW,
 			WALL_CHARACTER,
 			WALL_DEPTH,
-			(t_tile_kind_color){
+			(t_tile_kind_data_color){
 			{WALL_R, WALL_G, WALL_B},
 			{WALL_MIN_R_OFFSET, WALL_MIN_G_OFFSET,
 				WALL_MIN_B_OFFSET},

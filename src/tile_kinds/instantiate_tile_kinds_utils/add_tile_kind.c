@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:00:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 20:51:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 15:51:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ t_status	add_tile_kind(t_tile_kind_data tk_data, t_data *data)
 			tk_data.texture_row, data) != OK)
 		return (sl_any_error());
 	tile_kind.depth = tk_data.depth;
-	tile_kind.color = tk_data.color;
+	if (instantiate_tile_kind_color(&tile_kind.color, tk_data.color, data) != OK)
+		return (sl_any_error());
 	if (ft_vector_push(&data->tile_kinds, &tile_kind) != OK)
 		return (sl_any_error());
 	return (OK);

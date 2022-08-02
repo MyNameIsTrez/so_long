@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/22 16:15:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:42:21 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 15:48:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef enum e_sl_error
 	SL_ERROR_INVALID_SCALE,
 	SL_ERROR_MLX42,
 	SL_ERROR_TOO_MANY_PLAYERS,
+	SL_ERROR_TOO_LOW_MIN_COLOR,
+	SL_ERROR_TOO_HIGH_MAX_COLOR,
 }	t_sl_error;
 
 ////////////////////////////////////////////////////////////////////////////////

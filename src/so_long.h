@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 20:08:10 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 16:30:22 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 # include "held_keys/sl_held_keys.h"
 # include "init/sl_init.h"
 # include "players/sl_players.h"
+# include "sanitize/sl_sanitize.h"
 # include "frames/sl_frames.h"
 # include "tile_kinds/sl_tile_kinds.h"
 # include "texture/sl_texture.h"
