@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/03 14:21:10 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/03 15:06:31 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -133,7 +133,16 @@ SOURCES +=\
 	src/players/try_move_players.c
 
 SOURCES +=\
-	src/sanitize/sanitize_utils/sanitize_tile_kinds.c\
+	src/sanitize/utils/sanitize_color_offset/sanitize_max_color_offset.c\
+	src/sanitize/utils/sanitize_color_offset/sanitize_min_color_offset.c\
+	src/sanitize/utils/sanitize_tile_kinds/sanitize_collectible.c\
+	src/sanitize/utils/sanitize_tile_kinds/sanitize_empty_space.c\
+	src/sanitize/utils/sanitize_tile_kinds/sanitize_map_exit.c\
+	src/sanitize/utils/sanitize_tile_kinds/sanitize_player.c\
+	src/sanitize/utils/sanitize_tile_kinds/sanitize_wall.c\
+	src/sanitize/utils/sanitize_defines.c\
+	src/sanitize/utils/sanitize_tile_kind.c\
+	src/sanitize/utils/sanitize_tile_kinds.c\
 	src/sanitize/sanitize.c
 
 SOURCES +=\
@@ -230,7 +239,9 @@ HEADERS +=\
 	src/players/sl_players.h
 
 HEADERS +=\
-	src/sanitize/sanitize_utils/sl_sanitize_utils.h\
+	src/sanitize/utils/sanitize_color_offset/sl_sanitize_color_offset.h\
+	src/sanitize/utils/sanitize_tile_kinds/sl_sanitize_tile_kinds.h\
+	src/sanitize/utils/sl_sanitize_utils.h\
 	src/sanitize/sl_sanitize.h
 
 HEADERS +=\

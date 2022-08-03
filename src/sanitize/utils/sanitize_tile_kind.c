@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sanitize.c                                         :+:    :+:            */
+/*   sanitize_tile_kind.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/02 16:16:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 15:10:04 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/03 14:54:41 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/03 15:02:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "utils/sl_sanitize_utils.h"
+#include "sanitize_color_offset/sl_sanitize_color_offset.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_sanitize(t_data *data)
+t_status	sanitize_tile_kind(t_tile_kind_data_color tile_kind_data_color,
+				t_data *data)
 {
-	if (sanitize_defines(data) != OK)
+	if (sanitize_min_color_offset(tile_kind_data_color, data) || \
+		sanitize_max_color_offset(tile_kind_data_color, data))
 		return (sl_any_error());
 	return (OK);
 }

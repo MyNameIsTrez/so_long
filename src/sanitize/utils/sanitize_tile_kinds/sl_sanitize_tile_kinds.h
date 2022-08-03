@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sanitize.c                                         :+:    :+:            */
+/*   sl_sanitize_tile_kinds.h                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/02 16:16:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 15:10:04 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/03 14:59:45 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/03 15:00:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_SANITIZE_TILE_KINDS_H
+# define SL_SANITIZE_TILE_KINDS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "utils/sl_sanitize_utils.h"
+t_status	sanitize_collectible(t_data *data);
+t_status	sanitize_empty_space(t_data *data);
+t_status	sanitize_map_exit(t_data *data);
+t_status	sanitize_player(t_data *data);
+t_status	sanitize_wall(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_sanitize(t_data *data)
-{
-	if (sanitize_defines(data) != OK)
-		return (sl_any_error());
-	return (OK);
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sanitize.c                                         :+:    :+:            */
+/*   sanitize_tile_kinds.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/02 16:16:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 15:10:04 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/02 16:47:18 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/03 15:00:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "utils/sl_sanitize_utils.h"
+#include "sanitize_tile_kinds/sl_sanitize_tile_kinds.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_sanitize(t_data *data)
+t_status	sanitize_tile_kinds(t_data *data)
 {
-	if (sanitize_defines(data) != OK)
+	if (sanitize_collectible(data) != OK || \
+		sanitize_empty_space(data) != OK || \
+		sanitize_map_exit(data) != OK || \
+		sanitize_player(data) != OK || \
+		sanitize_wall(data) != OK)
 		return (sl_any_error());
 	return (OK);
 }
