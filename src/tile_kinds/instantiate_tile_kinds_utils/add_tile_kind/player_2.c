@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sanitize_player.c                                  :+:    :+:            */
+/*   player_2.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/03 14:53:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:03:46 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/03 16:53:10 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,26 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../sl_sanitize_defines.h"
+#include "../sl_instantiate_tile_kinds_utils.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sanitize_player(t_data *data)
+t_status	add_player_2_tile_kind(t_data *data)
 {
-	const t_tile_kind_data_color	tile_kind_data_color = {
-		.initial_color = {PLAYER_R, PLAYER_G, PLAYER_B},
-		.min_color_offset = {PLAYER_MIN_R_OFFSET, PLAYER_MIN_G_OFFSET,
-		PLAYER_MIN_B_OFFSET},
-		.max_color_offset = {PLAYER_MAX_R_OFFSET, PLAYER_MAX_G_OFFSET,
-		PLAYER_MAX_B_OFFSET},
-		.wait = {PLAYER_R_WAIT, PLAYER_G_WAIT, PLAYER_B_WAIT},
-		.step = {PLAYER_R_STEP, PLAYER_G_STEP, PLAYER_B_STEP}
-	};
-
-	if (sanitize_tile_kind(tile_kind_data_color, data) != OK)
+	if (add_tile_kind((t_tile_kind_data){
+			PLAYER_2_TEXTURE_FRAME_COUNT,
+			PLAYER_2_TEXTURE_ROW,
+			PLAYER_CHARACTER,
+			PLAYER_2_DEPTH,
+			(t_tile_kind_data_color){
+			{PLAYER_2_R, PLAYER_2_G, PLAYER_2_B},
+			{PLAYER_2_MIN_R_OFFSET, PLAYER_2_MIN_G_OFFSET,
+				PLAYER_2_MIN_B_OFFSET},
+			{PLAYER_2_MAX_R_OFFSET, PLAYER_2_MAX_G_OFFSET,
+				PLAYER_2_MAX_B_OFFSET},
+			{PLAYER_2_R_WAIT, PLAYER_2_G_WAIT, PLAYER_2_B_WAIT},
+			{PLAYER_2_R_STEP, PLAYER_2_G_STEP, PLAYER_2_B_STEP}}},
+			data) != OK)
 		return (ERROR);
 	return (OK);
 }

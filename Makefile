@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/03 16:21:46 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/03 16:52:23 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -140,7 +140,8 @@ SOURCES +=\
 	src/sanitize/utils/sanitize_defines/sanitize_tile_kinds/sanitize_collectible.c\
 	src/sanitize/utils/sanitize_defines/sanitize_tile_kinds/sanitize_empty_space.c\
 	src/sanitize/utils/sanitize_defines/sanitize_tile_kinds/sanitize_map_exit.c\
-	src/sanitize/utils/sanitize_defines/sanitize_tile_kinds/sanitize_player.c\
+	src/sanitize/utils/sanitize_defines/sanitize_tile_kinds/sanitize_player_1.c\
+	src/sanitize/utils/sanitize_defines/sanitize_tile_kinds/sanitize_player_2.c\
 	src/sanitize/utils/sanitize_defines/sanitize_tile_kinds/sanitize_wall.c\
 	src/sanitize/utils/sanitize_defines/sanitize_defines.c\
 	src/sanitize/utils/sanitize_defines/sanitize_tile_kind.c\
@@ -170,7 +171,8 @@ SOURCES +=\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/collectible.c\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/empty_space.c\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/map_exit.c\
-	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/player_tile.c\
+	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/player_1.c\
+	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/player_2.c\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/wall_tile.c\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind_frames.c\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind.c\
@@ -247,11 +249,12 @@ HEADERS +=\
 	src/sanitize/sl_sanitize.h
 
 HEADERS +=\
-	src/settings/tile_kinds/sl_settings_tile_kinds.h\
+	src/settings/tile_kinds/players/sl_player_1.h\
+	src/settings/tile_kinds/players/sl_player_2.h\
 	src/settings/tile_kinds/sl_collectible.h\
 	src/settings/tile_kinds/sl_empty_space.h\
 	src/settings/tile_kinds/sl_map_exit.h\
-	src/settings/tile_kinds/sl_player.h\
+	src/settings/tile_kinds/sl_settings_tile_kinds.h\
 	src/settings/tile_kinds/sl_wall.h
 
 HEADERS +=\
