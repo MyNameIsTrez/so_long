@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 14:29:43 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 18:48:41 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 16:10:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_init_texture_metadata(t_i32 argc, char *scale_string,
-				t_data *data)
+t_status	sl_init_texture_metadata(t_i32 scale, t_data *data)
 {
-	if (sl_set_real_scale(argc, scale_string, data) != OK)
+	if (sl_set_real_scale(scale, data) != OK)
 		return (sl_any_error());
 	set_pixels_per_tile(data);
 	return (OK);

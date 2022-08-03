@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/03 15:44:12 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/03 16:21:46 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,6 +87,7 @@ SOURCES +=\
 	src/held_keys/update_held_keys.c
 
 SOURCES +=\
+	src/init/utils/get_scale.c\
 	src/init/init.c\
 	src/init/parse_argv.c\
 	src/init/subinits.c
@@ -152,7 +153,6 @@ SOURCES +=\
 	src/texture/init_texture_metadata_utils/set_pixels_per_tile.c\
 	src/texture/load_texture_utils/get_texture_filepath.c\
 	src/texture/load_texture_utils/get_texture_scales_path.c\
-	src/texture/set_real_scale_utils/get_scale.c\
 	src/texture/init_texture_filename.c\
 	src/texture/init_texture_metadata.c\
 	src/texture/load_texture.c\
@@ -221,6 +221,7 @@ HEADERS +=\
 	src/held_keys/sl_held_keys.h
 
 HEADERS +=\
+	src/init/utils/sl_init_utils.h\
 	src/init/sl_init.h
 
 HEADERS +=\
@@ -278,7 +279,6 @@ HEADERS +=\
 	src/texture/init_texture_filename_utils/sl_init_texture_filename_utils.h\
 	src/texture/init_texture_metadata_utils/sl_init_texture_metadata_utils.h\
 	src/texture/load_texture_utils/sl_load_texture_utils.h\
-	src/texture/set_real_scale_utils/sl_set_real_scale_utils.h\
 	src/texture/sl_texture.h
 
 HEADERS +=\
