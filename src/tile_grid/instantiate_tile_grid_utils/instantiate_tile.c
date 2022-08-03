@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:50:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/02 13:54:56 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ t_status	instantiate_tile(t_data *data)
 
 	tile_kind = get_tile_grid_tile_kind(data);
 	if (sl_fill_tile_data(&tile, tile_kind, data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	if (sl_instantiate_tile_frames(&tile, data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	ft_vector_push(&data->tile_grid.cells[data->it.row_index], &tile);
 	return (OK);
 }

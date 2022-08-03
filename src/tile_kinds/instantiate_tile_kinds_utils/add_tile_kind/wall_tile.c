@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:06:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/02 16:12:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_status	add_wall_tile_kind(t_data *data)
 			{WALL_R_WAIT, WALL_G_WAIT, WALL_B_WAIT},
 			{WALL_R_STEP, WALL_G_STEP, WALL_B_STEP}}},
 			data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	return (OK);
 }
 

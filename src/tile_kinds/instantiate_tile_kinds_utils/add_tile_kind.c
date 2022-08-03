@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:00:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 15:38:17 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ t_status	add_tile_kind(t_tile_kind_data tk_data, t_data *data)
 	tile_kind.frame_count = tk_data.frame_count;
 	tile_kind.frames = ft_vector_new(sizeof(mlx_image_t *));
 	if (tile_kind.frames == NULL)
-		return (ft_any_error());
+		return (ERROR);
 	if (add_tile_kind_frames(&tile_kind, tk_data.frame_count,
 			tk_data.texture_row, data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	tile_kind.depth = tk_data.depth;
 	if (instantiate_tile_kind_color(&tile_kind.color, tk_data.color, data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	if (ft_vector_push(&data->tile_kinds, &tile_kind) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	return (OK);
 }
 

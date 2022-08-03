@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:03:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/02 16:12:25 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_status	add_player_tile_kind(t_data *data)
 			{PLAYER_R_WAIT, PLAYER_G_WAIT, PLAYER_B_WAIT},
 			{PLAYER_R_STEP, PLAYER_G_STEP, PLAYER_B_STEP}}},
 			data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	return (OK);
 }
 

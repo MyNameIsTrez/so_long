@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/03 14:54:41 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 15:02:44 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 t_status	sanitize_tile_kind(t_tile_kind_data_color tile_kind_data_color,
 				t_data *data)
 {
-	if (sanitize_min_color_offset(tile_kind_data_color, data) || \
-		sanitize_max_color_offset(tile_kind_data_color, data))
-		return (sl_any_error());
+	if (sanitize_min_color_offset(tile_kind_data_color, data) != OK || \
+		sanitize_max_color_offset(tile_kind_data_color, data) != OK)
+		return (ERROR);
 	return (OK);
 }
 

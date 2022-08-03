@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:49:20 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:54:11 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 t_status	try_instantiate_tile(t_data *data)
 {
 	if (instantiate_tile(data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	return (OK);
 }
 

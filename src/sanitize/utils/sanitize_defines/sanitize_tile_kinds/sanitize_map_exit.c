@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/03 14:53:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 15:19:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_status	sanitize_map_exit(t_data *data)
 	};
 
 	if (sanitize_tile_kind(tile_kind_data_color, data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	return (OK);
 }
 

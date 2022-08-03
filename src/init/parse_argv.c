@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:22:10 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ t_status	sl_parse_argv(t_i32 argc, char **argv, t_data *data)
 
 	map_filename = argv[1];
 	if (sl_init_char_grid(map_filename, data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	if (sl_init_texture_metadata(get_scale(argc, argv), data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	sl_init_window_width_and_height(data);
 	return (OK);
 }

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 20:01:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 20:04:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 t_status	try_instantiate_entity(t_data *data)
 {
 	if (sl_is_entity(data) && instantiate_entity(data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	return (OK);
 }
 

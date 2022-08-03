@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:09:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ t_status	sl_instantiate_tile_kinds(t_data *data)
 {
 	data->tile_kinds = ft_vector_new(sizeof(t_tile_kind));
 	if (add_empty_space_tile_kind(data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	if (add_wall_tile_kind(data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	if (add_collectible_tile_kind(data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	if (add_map_exit_tile_kind(data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	if (add_player_tile_kind(data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	return (OK);
 }
 

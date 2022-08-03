@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:37:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 15:38:17 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 16:25:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_status	sl_fill_tile_data(t_tile *tile, t_tile_kind *tile_kind,
 	tile->frame_index = 0;
 	tile->frame_instances_indices = ft_vector_new(sizeof(size_t));
 	if (tile->frame_instances_indices == NULL)
-		return (ft_any_error());
+		return (ERROR);
 	tile->column_index = data->it.column_index;
 	tile->row_index = data->it.row_index;
 	return (OK);

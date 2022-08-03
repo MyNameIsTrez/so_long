@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 20:02:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 20:02:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 16:28:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ t_status	instantiate_entity(t_data *data)
 
 	tile_kind = sl_get_character_tile_kind(data);
 	if (sl_fill_tile_data(&entity.tile, tile_kind, data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	if (sl_instantiate_tile_frames(&entity.tile, data) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	entity.last_frame_seconds = 0;
 	entity.seconds_per_frame = 0.5; // TODO: Don't hardcode
 	if (ft_vector_push(&data->entities, &entity) != OK)
-		return (sl_any_error());
+		return (ERROR);
 	return (OK);
 }
 
