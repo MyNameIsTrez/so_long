@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/02 16:35:48 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/03 14:21:10 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -133,6 +133,7 @@ SOURCES +=\
 	src/players/try_move_players.c
 
 SOURCES +=\
+	src/sanitize/sanitize_utils/sanitize_tile_kinds.c\
 	src/sanitize/sanitize.c
 
 SOURCES +=\
@@ -229,6 +230,7 @@ HEADERS +=\
 	src/players/sl_players.h
 
 HEADERS +=\
+	src/sanitize/sanitize_utils/sl_sanitize_utils.h\
 	src/sanitize/sl_sanitize.h
 
 HEADERS +=\

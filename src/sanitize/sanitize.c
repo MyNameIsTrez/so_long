@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/02 16:16:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/02 16:29:44 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 14:20:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,23 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_sanitize(void)
+#include "sanitize_utils/sl_sanitize_utils.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+t_status	sl_sanitize(t_data *data)
 {
+	if (sanitize_tile_kinds(data) != OK)
+		return (sl_any_error());
 	// t_i32	min;
 	// t_i32	max;
 
-	// while (sl_iterate_rgb_channel_indices(data) != FINISHED)
-	// {
-	// 	min = tk_data_color.initial_color[data->it.rgb_channel_index] - tk_data_color.min_color[data->it.rgb_channel_index];
-	// 	if (min < 0)
-	// 		return (SL_ERROR_TOO_LOW_MIN_COLOR);
-	// 	max = tk_data_color.initial_color[data->it.rgb_channel_index] + tk_data_color.max_color[data->it.rgb_channel_index];
-	// 	if (max > 255)
-	// 		return (SL_ERROR_TOO_HIGH_MAX_COLOR);
-	// }
+	// min = tk_data_color.initial_color[data->it.rgb_channel_index] - tk_data_color.min_color[data->it.rgb_channel_index];
+	// if (min < 0)
+	// 	return (SL_ERROR_TOO_LOW_MIN_COLOR);
+	// max = tk_data_color.initial_color[data->it.rgb_channel_index] + tk_data_color.max_color[data->it.rgb_channel_index];
+	// if (max > 255)
+	// 	return (SL_ERROR_TOO_HIGH_MAX_COLOR);
 	return (OK);
 }
 

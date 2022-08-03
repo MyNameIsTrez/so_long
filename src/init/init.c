@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 13:51:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 14:36:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 t_status	sl_init(t_i32 argc, char **argv, t_data *data)
 {
 	ft_bzero(data, sizeof(t_data));
+	if (sl_sanitize(data) != OK)
+		return (sl_any_error());
 	sl_init_monitor_size(data);
 	if (sl_parse_argv(argc, argv, data) != OK)
 		return (sl_any_error());
