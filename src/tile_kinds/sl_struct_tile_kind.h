@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_structs_window.h                                :+:    :+:            */
+/*   sl_struct_tile_kind.h                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:58:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 14:43:29 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/03 17:50:31 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/03 17:51:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCTS_WINDOW_H
-# define SL_STRUCTS_WINDOW_H
+#ifndef SL_STRUCT_TILE_KIND_H
+# define SL_STRUCT_TILE_KIND_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_window
+typedef struct s_tile_kind_color
 {
-	size_t	width;
-	size_t	height;
-}	t_window;
+	t_u8	initial_color[3];
+	t_u8	min_color[3];
+	t_u8	max_color[3];
+	t_u32	wait[3];
+	t_i32	step[3];
+}	t_tile_kind_color;
+
+typedef struct s_tile_kind
+{
+	t_u8				character;
+	size_t				frame_count;
+	mlx_image_t			**frames;
+	t_i32				depth;
+	t_tile_kind_color	color;
+}	t_tile_kind;
 
 ////////////////////////////////////////////////////////////////////////////////
 

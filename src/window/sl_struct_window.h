@@ -1,47 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_structs_iterators.h                             :+:    :+:            */
+/*   sl_struct_window.h                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 14:22:33 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/01 17:58:46 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/03 17:29:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCTS_ITERATORS_H
-# define SL_STRUCTS_ITERATORS_H
+#ifndef SL_STRUCT_WINDOW_H
+# define SL_STRUCT_WINDOW_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_frame_pixels
+typedef struct s_window
 {
-	size_t	x;
-	size_t	y;
-}	t_frame_pixels;
-
-////////////////////////////////////////////////////////////////////////////////
-
-// This struct is used for temporary ITerator data storage
-typedef struct s_it
-{
-	size_t			column_index;
-	size_t			row_index;
-	size_t			frame_index;
-	t_player		*player;
-	t_entity		*entity;
-	keys_t			key;
-	t_u8			red;
-	t_frame_pixels	frame_pixels;
-	size_t			rgb_channel_index;
-	mlx_image_t		*frame;
-	t_tile_kind		*tile_kind;
-	size_t			pixel_index;
-	keys_t			player_movement_key;
-}	t_it;
+	size_t	width;
+	size_t	height;
+}	t_window;
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:56:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:47:35 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 17:30:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "sl_structs_monitor.h"
 # include "sl_structs_mlx42.h"
-# include "sl_structs_window.h"
-# include "sl_structs_texture.h"
-# include "sl_structs_tiles.h"
-# include "sl_structs_entity.h"
-# include "sl_structs_player.h"
-# include "sl_structs_iterators.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_structs_player.h                                :+:    :+:            */
+/*   sl_struct_monitor.h                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:55:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 18:34:07 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/18 15:50:14 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/03 17:28:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCTS_PLAYER_H
-# define SL_STRUCTS_PLAYER_H
+#ifndef SL_STRUCT_MONITOR_H
+# define SL_STRUCT_MONITOR_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_controls
+typedef struct s_monitor
 {
-	keys_t	movement_keys[4];
-}	t_controls;
-
-typedef struct s_player
-{
-	t_entity	*entity;
-	t_controls	controls;
-}	t_player;
+	size_t	width;
+	size_t	height;
+}	t_monitor;
 
 ////////////////////////////////////////////////////////////////////////////////
 

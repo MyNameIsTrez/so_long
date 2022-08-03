@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/03 16:52:23 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/03 17:53:38 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -210,7 +210,8 @@ HEADERS +=\
 
 HEADERS +=\
 	src/entities/instantiate_entities_utils/sl_instantiate_entities_utils.h\
-	src/entities/sl_entities.h
+	src/entities/sl_entities.h\
+	src/entities/sl_struct_entity.h
 
 HEADERS +=\
 	src/error/sl_error.h
@@ -228,18 +229,21 @@ HEADERS +=\
 
 HEADERS +=\
 	src/iterators/sl_iterators.h\
-	src/iterators/frames/sl_iterator_frames.h
+	src/iterators/frames/sl_iterator_frames.h\
+	src/iterators/sl_struct_iterators.h
 
 HEADERS +=\
 	src/loop/sl_loop.h
 
 HEADERS +=\
-	src/monitor/sl_monitor.h
+	src/monitor/sl_monitor.h\
+	src/monitor/sl_struct_monitor.h
 
 HEADERS +=\
 	src/players/initialize_players_utils/sl_initialize_players_utils.h\
 	src/players/try_move_players_utils/sl_try_move_players_utils.h\
-	src/players/sl_players.h
+	src/players/sl_players.h\
+	src/players/sl_struct_player.h
 
 HEADERS +=\
 	src/sanitize/utils/sanitize_defines/sanitize_color_offset/sl_sanitize_color_offset.h\
@@ -269,31 +273,29 @@ HEADERS +=\
 
 HEADERS +=\
 	src/structs/sl_structs_data.h\
-	src/structs/sl_structs_entity.h\
-	src/structs/sl_structs_iterators.h\
 	src/structs/sl_structs_mlx42.h\
-	src/structs/sl_structs_monitor.h\
-	src/structs/sl_structs_player.h\
-	src/structs/sl_structs.h\
-	src/structs/sl_structs_texture.h\
-	src/structs/sl_structs_tiles.h
+	src/structs/sl_structs.h
 
 HEADERS +=\
 	src/texture/init_texture_filename_utils/sl_init_texture_filename_utils.h\
 	src/texture/init_texture_metadata_utils/sl_init_texture_metadata_utils.h\
 	src/texture/load_texture_utils/sl_load_texture_utils.h\
+	src/texture/sl_struct_texture.h\
 	src/texture/sl_texture.h
 
 HEADERS +=\
 	src/tile_grid/instantiate_tile_grid_utils/sl_instantiate_tile_grid_utils.h\
+	src/tile_grid/sl_struct_tile_grid.h\
 	src/tile_grid/sl_tile_grid.h
 
 HEADERS +=\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/sl_instantiate_tile_kinds_utils_add_tile_kind.h\
 	src/tile_kinds/instantiate_tile_kinds_utils/sl_instantiate_tile_kinds_utils.h\
+	src/tile_kinds/sl_struct_tile_kind.h\
 	src/tile_kinds/sl_tile_kinds.h
 
 HEADERS +=\
+	src/tiles/sl_struct_tiles.h\
 	src/tiles/sl_tiles.h
 
 HEADERS +=\

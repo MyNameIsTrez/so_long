@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_entities.h                                      :+:    :+:            */
+/*   sl_struct_texture.h                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/14 11:13:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 17:26:56 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/01 17:57:51 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/03 17:29:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_ENTITIES_H
-# define SL_ENTITIES_H
+#ifndef SL_STRUCT_TEXTURE_H
+# define SL_STRUCT_TEXTURE_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "sl_struct_entity.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_status	sl_instantiate_entities(t_data *data);
-bool		sl_is_entity(t_data *data);
+typedef struct s_texture
+{
+	char			*filename;
+	mlx_texture_t	*data;
+	size_t			scale;
+	size_t			pixels_per_tile;
+}	t_texture;
 
 ////////////////////////////////////////////////////////////////////////////////
 

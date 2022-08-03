@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_structs_texture.h                               :+:    :+:            */
+/*   sl_struct_player.h                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:57:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 14:44:18 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/01 17:55:06 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/03 17:54:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCTS_TEXTURE_H
-# define SL_STRUCTS_TEXTURE_H
+#ifndef SL_STRUCT_PLAYER_H
+# define SL_STRUCT_PLAYER_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_texture
+# include "../entities/sl_struct_entity.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+typedef struct s_controls
 {
-	char			*filename;
-	mlx_texture_t	*data;
-	size_t			scale;
-	size_t			pixels_per_tile;
-}	t_texture;
+	keys_t	movement_keys[4];
+}	t_controls;
+
+typedef struct s_player
+{
+	t_entity	*entity;
+	t_controls	controls;
+}	t_player;
 
 ////////////////////////////////////////////////////////////////////////////////
 

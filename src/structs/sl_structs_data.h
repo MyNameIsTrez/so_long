@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 14:22:14 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 18:00:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 
 #ifndef SL_STRUCTS_DATA_H
 # define SL_STRUCTS_DATA_H
+
+////////////////////////////////////////////////////////////////////////////////
+
+# include "../monitor/sl_struct_monitor.h"
+# include "../iterators/sl_struct_iterators.h"
+# include "../window/sl_struct_window.h"
+# include "../texture/sl_struct_texture.h"
+# include "../tile_kinds/sl_struct_tile_kind.h"
+# include "../tile_grid/sl_struct_tile_grid.h"
+# include "../entities/sl_struct_entity.h"
+# include "../players/sl_struct_player.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

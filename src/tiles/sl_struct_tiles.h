@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_structs_monitor.h                               :+:    :+:            */
+/*   sl_struct_tiles.h                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/18 15:50:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 14:43:58 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/01 17:58:27 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/03 17:56:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCTS_MONITOR_H
-# define SL_STRUCTS_MONITOR_H
+#ifndef SL_STRUCT_TILES_H
+# define SL_STRUCT_TILES_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_monitor
+# include "../tile_kinds/sl_struct_tile_kind.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+typedef struct s_tile
 {
-	size_t	width;
-	size_t	height;
-}	t_monitor;
+	t_tile_kind	*tile_kind;
+	size_t		frame_index;
+	size_t		*frame_instances_indices;
+	size_t		column_index;
+	size_t		row_index;
+}	t_tile;
 
 ////////////////////////////////////////////////////////////////////////////////
 
