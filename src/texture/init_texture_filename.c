@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 15:09:03 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 18:47:11 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 15:38:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_status	sl_init_texture_filename(t_data *data)
 		return (sl_any_error());
 	texture->filename = ft_strjoin(filename_stem, TEXTURE_FILENAME_EXTENSION);
 	if (texture->filename == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
+		return (ft_any_error());
 	return (OK);
 }
 

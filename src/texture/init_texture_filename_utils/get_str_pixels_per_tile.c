@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 18:45:29 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 18:45:34 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 15:38:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_status	get_str_pixels_per_tile(char **str_pixels_per_tile, t_i32 scale)
 {
 	*str_pixels_per_tile = ft_itoa(scale);
 	if (*str_pixels_per_tile == NULL)
-		return (ft_set_error(FT_ERROR_MALLOC));
+		return (ft_any_error());
 	return (OK);
 }
 

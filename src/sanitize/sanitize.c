@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/02 16:16:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 15:10:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 15:39:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_sanitize(t_data *data)
+t_status	sl_sanitize(t_i32 argc, char **argv, t_data *data)
 {
 	if (sanitize_defines(data) != OK)
+		return (sl_any_error());
+	if (sanitize_argc(argc) != OK)
+		return (sl_any_error());
+	if (sanitize_argv(argv, data) != OK)
 		return (sl_any_error());
 	return (OK);
 }
