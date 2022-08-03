@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 16:48:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:38:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 14:21:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 bool	should_step(t_data *data)
 {
-	t_i32	*wait;
+	t_u32	*wait;
 	size_t	rgb_channel_index;
 
 	wait = data->it.tile_kind->color.wait;

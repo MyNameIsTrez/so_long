@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:56:43 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/02 15:20:55 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 14:45:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,14 @@
 // # define EMPTY_SPACE_G 208
 // # define EMPTY_SPACE_B 206
 
+// # define EMPTY_SPACE_MIN_R_OFFSET 0
+// # define EMPTY_SPACE_MIN_G_OFFSET 0
+// # define EMPTY_SPACE_MIN_B_OFFSET 0
+
+// # define EMPTY_SPACE_MAX_R_OFFSET 0
+// # define EMPTY_SPACE_MAX_G_OFFSET 0
+// # define EMPTY_SPACE_MAX_B_OFFSET 0
+
 ////////////////////////////////////////////////////////////////////////////////
 // Dark theme
 
@@ -46,15 +54,13 @@
 # define EMPTY_SPACE_G 72
 # define EMPTY_SPACE_B 80
 
-////////////////////////////////////////////////////////////////////////////////
+# define EMPTY_SPACE_MIN_R_OFFSET 0
+# define EMPTY_SPACE_MIN_G_OFFSET 0
+# define EMPTY_SPACE_MIN_B_OFFSET 0
 
-# define EMPTY_SPACE_MIN_R_OFFSET 206
-# define EMPTY_SPACE_MIN_G_OFFSET 208
-# define EMPTY_SPACE_MIN_B_OFFSET 206
-
-# define EMPTY_SPACE_MAX_R_OFFSET 220
-# define EMPTY_SPACE_MAX_G_OFFSET 230
-# define EMPTY_SPACE_MAX_B_OFFSET 215
+# define EMPTY_SPACE_MAX_R_OFFSET 0
+# define EMPTY_SPACE_MAX_G_OFFSET 0
+# define EMPTY_SPACE_MAX_B_OFFSET 0
 
 ////////////////////////////////////////////////////////////////////////////////
 

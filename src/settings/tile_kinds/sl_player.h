@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/02 15:21:12 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/03 14:44:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,29 +39,43 @@
 // # define PLAYER_G 64
 // # define PLAYER_B 63
 
+// # define PLAYER_MIN_R_OFFSET 0
+// # define PLAYER_MIN_G_OFFSET 0
+// # define PLAYER_MIN_B_OFFSET 0
+
+// # define PLAYER_MAX_R_OFFSET 0
+// # define PLAYER_MAX_G_OFFSET 0
+// # define PLAYER_MAX_B_OFFSET 0
+
 ////////////////////////////////////////////////////////////////////////////////
 // Dark theme
 
-// # define PLAYER_R 0
-// # define PLAYER_G 121
-// # define PLAYER_B 140
+# define PLAYER_R 0
+# define PLAYER_G 121
+# define PLAYER_B 140
 
-////////////////////////////////////////////////////////////////////////////////
+# define PLAYER_MIN_R_OFFSET 0
+# define PLAYER_MIN_G_OFFSET 0
+# define PLAYER_MIN_B_OFFSET 0
 
-# define PLAYER_MIN_R_OFFSET 63
-# define PLAYER_MIN_G_OFFSET 64
-# define PLAYER_MIN_B_OFFSET 63
-
-# define PLAYER_MAX_R_OFFSET 80
-# define PLAYER_MAX_G_OFFSET 90
-# define PLAYER_MAX_B_OFFSET 70
+# define PLAYER_MAX_R_OFFSET 0
+# define PLAYER_MAX_G_OFFSET 0
+# define PLAYER_MAX_B_OFFSET 0
 
 ////////////////////////////////////////////////////////////////////////////////
 // TODO: PLAYER 2
 
-# define PLAYER_R 178
-# define PLAYER_G 77
-# define PLAYER_B 93
+// # define PLAYER_R 178
+// # define PLAYER_G 77
+// # define PLAYER_B 93
+
+// # define PLAYER_MIN_R_OFFSET 0
+// # define PLAYER_MIN_G_OFFSET 0
+// # define PLAYER_MIN_B_OFFSET 0
+
+// # define PLAYER_MAX_R_OFFSET 0
+// # define PLAYER_MAX_G_OFFSET 0
+// # define PLAYER_MAX_B_OFFSET 0
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:58:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/02 16:08:10 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/02 17:46:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ typedef struct s_rgb
 typedef struct s_tile_kind_color
 {
 	t_u8	initial_color[3];
-	t_i32	min_color[3];
-	t_i32	max_color[3];
-	t_i32	wait[3];
+	t_u8	min_color[3];
+	t_u8	max_color[3];
+	t_u32	wait[3];
 	t_i32	step[3];
 }	t_tile_kind_color;
 
