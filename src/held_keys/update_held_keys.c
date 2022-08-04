@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/11 16:39:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 15:22:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sl_update_held_keys(t_data *data)
 	{
 		if (mlx_is_key_down(data->mlx, data->it.key))
 			data->held_keys[data->it.key]++;
-		else if (data->held_keys[data->it.key] > 0)
+		else
 			data->held_keys[data->it.key] = 0;
 	}
 }
