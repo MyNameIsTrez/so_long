@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/29 13:28:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 17:28:17 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 16:09:01 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,19 @@ void				sl_reset_iterate_keys(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_players(t_data *data);
-void				sl_reset_iterate_players(t_data *data);
+t_iterator_status	sl_iterate_monsters(t_data *data);
+void				sl_reset_iterate_monsters(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
 t_iterator_status	sl_iterate_player_movement_keys(t_player *player,
 						t_data *data);
 void				sl_reset_iterate_player_movement_keys(t_data *data);
+
+////////////////////////////////////////////////////////////////////////////////
+
+t_iterator_status	sl_iterate_players(t_data *data);
+void				sl_reset_iterate_players(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
