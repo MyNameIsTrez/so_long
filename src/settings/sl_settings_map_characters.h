@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 18:02:55 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 14:47:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 16:31:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 # ifdef BONUS
-#  define MAP_CHARACTERS "01CEMPQ"
-#  define ENTITY_CHARACTERS "CMPQ"
-#  define PLAYER_CHARACTERS "PQ"
+#  define MAP_CHARACTERS "01CEMPp"
+#  define ENTITY_CHARACTERS "CMPp"
+#  define PLAYER_CHARACTERS "Pp"
 # else
 #  define MAP_CHARACTERS "01CEP"
 #  define ENTITY_CHARACTERS "CP"

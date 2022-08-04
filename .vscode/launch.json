@@ -19,7 +19,7 @@
 			// "maps/two_players.ber",
 			// "maps/two_player_1_characters.ber",
 			// "maps/two_players_twice.ber",
-			"maps/monster.ber",
+			"maps/monsters.ber",
 			// "1"
 
 			// TODO: Make sure this nonexistent file prints a proper error!
