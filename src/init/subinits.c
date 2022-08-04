@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 13:51:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 14:28:09 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_status	sl_subinits(t_data *data)
 		sl_instantiate_tile_grid,
 		sl_instantiate_entities,
 		sl_initialize_players,
+		sl_instantiate_monsters,
 	};
 	size_t					subinit_count;
 	static t_iterator		it;

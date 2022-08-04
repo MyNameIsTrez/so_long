@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:51:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:51:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 14:48:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "sl_collectible.h"
 # include "sl_empty_space.h"
 # include "sl_map_exit.h"
+# include "sl_monster.h"
 # include "sl_wall.h"
 
 ////////////////////////////////////////////////////////////////////////////////

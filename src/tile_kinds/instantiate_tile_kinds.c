@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:38:07 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 15:04:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ t_status	sl_instantiate_tile_kinds(t_data *data)
 	if (add_collectible_tile_kind(data) != OK)
 		return (ERROR);
 	if (add_map_exit_tile_kind(data) != OK)
+		return (ERROR);
+	if (add_monster_tile_kind(data) != OK)
 		return (ERROR);
 	if (add_player_1_tile_kind(data) != OK)
 		return (ERROR);

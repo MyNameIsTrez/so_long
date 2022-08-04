@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/02 16:30:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 14:28:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@
 # include "iterators/sl_iterators.h"
 # include "loop/sl_loop.h"
 # include "monitor/sl_monitor.h"
+# include "monsters/sl_monsters.h"
 # include "tiles/sl_tiles.h"
 # include "char_grid/sl_char_grid.h"
 # include "tile_grid/sl_tile_grid.h"

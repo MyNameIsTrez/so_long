@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_instantiate_tile_kinds_utils_add_tile_ki        :+:    :+:            */
+/*   update_monster.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:04:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 15:04:57 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/04 14:42:08 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/04 14:52:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_INSTANTIATE_TILE_KINDS_UTILS_ADD_TILE_KIND_H
-# define SL_INSTANTIATE_TILE_KINDS_UTILS_ADD_TILE_KIND_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	add_collectible_tile_kind(t_data *data);
-t_status	add_empty_space_tile_kind(t_data *data);
-t_status	add_map_exit_tile_kind(t_data *data);
-t_status	add_monster_tile_kind(t_data *data);
-t_status	add_player_1_tile_kind(t_data *data);
-t_status	add_player_2_tile_kind(t_data *data);
-t_status	add_wall_tile_kind(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif
+t_status	sl_update_monster(void *monster, t_data *data)
+{
+	t_monster	*_monster;
+
+	_monster = monster;
+	(void)data;
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

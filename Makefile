@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/04 14:04:03 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/04 15:03:58 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,6 +119,10 @@ SOURCES +=\
 	src/monitor/init_monitor_size.c
 
 SOURCES +=\
+	src/monsters/instantiate_monsters.c\
+	src/monsters/update_monster.c
+
+SOURCES +=\
 	src/players/initialize_players_utils/get_player_controls.c\
 	src/players/initialize_players.c\
 	src/players/try_move_players_utils/can_autowalk.c\
@@ -169,6 +173,7 @@ SOURCES +=\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/collectible.c\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/empty_space.c\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/map_exit.c\
+	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/monster.c\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/player_1.c\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/player_2.c\
 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/wall_tile.c\
@@ -238,6 +243,10 @@ HEADERS +=\
 	src/monitor/sl_struct_monitor.h
 
 HEADERS +=\
+	src/monsters/sl_monsters.h\
+	src/monsters/sl_struct_monster.h
+
+HEADERS +=\
 	src/players/initialize_players_utils/sl_initialize_players_utils.h\
 	src/players/try_move_players_utils/sl_try_move_players_utils.h\
 	src/players/sl_players.h\
@@ -256,6 +265,7 @@ HEADERS +=\
 	src/settings/tile_kinds/sl_collectible.h\
 	src/settings/tile_kinds/sl_empty_space.h\
 	src/settings/tile_kinds/sl_map_exit.h\
+	src/settings/tile_kinds/sl_monster.h\
 	src/settings/tile_kinds/sl_settings_tile_kinds.h\
 	src/settings/tile_kinds/sl_wall.h
 

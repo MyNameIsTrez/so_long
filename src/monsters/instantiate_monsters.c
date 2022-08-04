@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_instantiate_tile_kinds_utils_add_tile_ki        :+:    :+:            */
+/*   instantiate_monsters.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:04:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 15:04:57 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/04 14:25:27 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/04 14:57:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_INSTANTIATE_TILE_KINDS_UTILS_ADD_TILE_KIND_H
-# define SL_INSTANTIATE_TILE_KINDS_UTILS_ADD_TILE_KIND_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	add_collectible_tile_kind(t_data *data);
-t_status	add_empty_space_tile_kind(t_data *data);
-t_status	add_map_exit_tile_kind(t_data *data);
-t_status	add_monster_tile_kind(t_data *data);
-t_status	add_player_1_tile_kind(t_data *data);
-t_status	add_player_2_tile_kind(t_data *data);
-t_status	add_wall_tile_kind(t_data *data);
+t_status	sl_instantiate_monsters(t_data *data)
+{
+	t_u8		character;
+	t_monster	monster;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	data->monsters = ft_vector_new(sizeof(t_monster));
+	while (sl_iterate_entities(data) != FINISHED)
+	{
+		character = data->it.entity->tile.tile_kind->character;
+		if (character == MONSTER_CHARACTER)
+		{
+			monster.entity = data->it.entity;
+			monster.entity->update_fn = &sl_update_monster;
+			ft_vector_push(&data->monsters, &monster);
+		}
+	}
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
