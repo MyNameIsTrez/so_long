@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/04 13:36:13 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/04 14:04:03 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -262,7 +262,7 @@ HEADERS +=\
 HEADERS +=\
 	src/settings/sl_settings_background.h\
 	src/settings/sl_settings_controls.h\
-	src/settings/sl_settings_map.h\
+	src/settings/sl_settings_map_characters.h\
 	src/settings/sl_settings_monitor.h\
 	src/settings/sl_settings_players.h\
 	src/settings/sl_settings_texture.h\
@@ -305,14 +305,6 @@ HEADERS +=\
 
 ################################################################################
 
-BONUS_SOURCES :=
-
-ifdef ADD_BONUS
-SOURCES += $(BONUS_SOURCES)
-endif
-
-################################################################################
-
 FCLEANED_FILES := $(NAME)
 
 ifdef O3
@@ -326,6 +318,10 @@ endif
 
 ifdef SAN
 CFLAGS += -fsanitize=address
+endif
+
+ifdef BONUS
+CFLAGS += -DBONUS=
 endif
 
 ################################################################################
@@ -384,7 +380,7 @@ fclean: clean
 re: fclean all
 
 bonus:
-	@$(MAKE) ADD_BONUS=1 all
+	@$(MAKE) BONUS=1 all
 
 ################################################################################
 

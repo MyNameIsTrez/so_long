@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:03:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:53:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 13:44:01 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_status	add_player_1_tile_kind(t_data *data)
 	if (add_tile_kind((t_tile_kind_data){
 			PLAYER_1_TEXTURE_FRAME_COUNT,
 			PLAYER_1_TEXTURE_ROW,
-			PLAYER_CHARACTER,
+			PLAYER_1_CHARACTER,
 			PLAYER_1_DEPTH,
 			(t_tile_kind_data_color){
 			{PLAYER_1_R, PLAYER_1_G, PLAYER_1_B},

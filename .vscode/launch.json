@@ -16,8 +16,10 @@
 		"request": "launch",
 		"program": "${workspaceFolder}/so_long",
 		"args": [
-			"extra/map_tests/two_players.ber",
-			"3"
+			// "extra/map_tests/two_players.ber",
+			// "extra/map_tests/two_player_1_characters.ber",
+			"extra/map_tests/two_players_twice.ber",
+			// "1"
 
 			// TODO: Make sure this nonexistent file prints a proper error!
 			// "foo.ber",

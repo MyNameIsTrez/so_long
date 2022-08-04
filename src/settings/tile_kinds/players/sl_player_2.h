@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:48:57 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 13:40:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # define PLAYER_2_TEXTURE_FRAME_COUNT 4
 # define PLAYER_2_TEXTURE_ROW 25
+# define PLAYER_2_CHARACTER 'Q'
 # define PLAYER_2_DEPTH 3
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_settings_map.h                                  :+:    :+:            */
+/*   sl_settings_map_characters.h                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 18:02:55 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/25 15:45:03 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 13:55:21 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_SETTINGS_MAP_H
-# define SL_SETTINGS_MAP_H
+#ifndef SL_SETTINGS_MAP_CHARACTERS_H
+# define SL_SETTINGS_MAP_CHARACTERS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// TODO: Make sure that *only* the bonus has the enemy character and such here.
-# define MAP_CHARACTERS	"01CEP"
+# ifdef BONUS
+#  define MAP_CHARACTERS "01CEMPQ"
+#  define ENTITY_CHARACTERS "CMPQ"
+#  define PLAYER_CHARACTERS "PQ"
+# else
+#  define MAP_CHARACTERS "01CEP"
+#  define ENTITY_CHARACTERS "CP"
+#  define PLAYER_CHARACTERS "P"
+# endif
 
-# define ENTITY_CHARACTERS	"CP"
-
-# define WALKABLE_CHARACTERS	"0CE"
+# define WALKABLE_CHARACTERS "0CE"
 
 ////////////////////////////////////////////////////////////////////////////////
 
