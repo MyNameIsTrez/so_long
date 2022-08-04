@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/03 17:53:38 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/04 13:36:13 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,6 @@ SOURCES +=\
 
 SOURCES +=\
 	src/entities/instantiate_entities_utils/instantiate_entity.c\
-	src/entities/instantiate_entities_utils/try_instantiate_entity.c\
 	src/entities/instantiate_entities.c\
 	src/entities/is_entity.c
 
@@ -163,7 +162,6 @@ SOURCES +=\
 	src/tile_grid/instantiate_tile_grid_utils/get_tile_grid_tile_kind.c\
 	src/tile_grid/instantiate_tile_grid_utils/instantiate_tile.c\
 	src/tile_grid/instantiate_tile_grid_utils/malloc_tile_grid_cells.c\
-	src/tile_grid/instantiate_tile_grid_utils/try_instantiate_tile.c\
 	src/tile_grid/get_tile_grid_character.c\
 	src/tile_grid/instantiate_tile_grid.c
 
