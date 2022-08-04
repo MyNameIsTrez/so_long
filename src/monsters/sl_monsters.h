@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 14:20:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 14:51:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 16:10:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 t_status	sl_instantiate_monsters(t_data *data);
-t_status	sl_update_monster(void *monster, t_data *data);
+void		sl_update_monsters(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

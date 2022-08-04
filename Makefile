@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/04 15:03:58 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/04 16:12:12 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,8 @@ SOURCES +=\
 SOURCES +=\
 	src/entities/instantiate_entities_utils/instantiate_entity.c\
 	src/entities/instantiate_entities.c\
-	src/entities/is_entity.c
+	src/entities/is_entity.c\
+	src/entities/update_entities.c
 
 SOURCES +=\
 	src/error/sl_any_error.c\
@@ -108,8 +109,9 @@ SOURCES +=\
 	src/iterators/char_grid.c\
 	src/iterators/entities.c\
 	src/iterators/keys.c\
-	src/iterators/players.c\
+	src/iterators/monsters.c\
 	src/iterators/player_movement_keys.c\
+	src/iterators/players.c\
 	src/iterators/tile_kinds.c
 
 SOURCES +=\
@@ -119,8 +121,9 @@ SOURCES +=\
 	src/monitor/init_monitor_size.c
 
 SOURCES +=\
+	src/monsters/private/update_monsters/update_monster.c\
 	src/monsters/instantiate_monsters.c\
-	src/monsters/update_monster.c
+	src/monsters/update_monsters.c
 
 SOURCES +=\
 	src/players/initialize_players_utils/get_player_controls.c\
@@ -243,6 +246,7 @@ HEADERS +=\
 	src/monitor/sl_struct_monitor.h
 
 HEADERS +=\
+	src/monsters/private/update_monsters/sl_private_update_monsters.h\
 	src/monsters/sl_monsters.h\
 	src/monsters/sl_struct_monster.h
 

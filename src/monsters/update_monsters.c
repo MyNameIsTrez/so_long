@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   update_monster.c                                   :+:    :+:            */
+/*   update_monsters.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/04 14:42:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 14:52:17 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/04 15:57:22 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/04 16:11:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,14 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+#include "private/update_monsters/sl_private_update_monsters.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_update_monster(void *monster, t_data *data)
+void	sl_update_monsters(t_data *data)
 {
-	t_monster	*_monster;
-
-	_monster = monster;
-	(void)data;
-	return (OK);
+	while (sl_iterate_monsters(data) != FINISHED)
+		sl_update_monster(data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 11:13:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 17:26:56 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 15:39:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 
 t_status	sl_instantiate_entities(t_data *data);
 bool		sl_is_entity(t_data *data);
+void		sl_update_entities(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

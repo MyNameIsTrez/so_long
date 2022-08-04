@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 14:47:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 15:11:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 15:15:21 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define MONSTER_R 155
-# define MONSTER_G 169
-# define MONSTER_B 180
+# define MONSTER_R 180
+# define MONSTER_G 190
+# define MONSTER_B 200
 
 # define MONSTER_MIN_R_OFFSET 0
 # define MONSTER_MIN_G_OFFSET 0

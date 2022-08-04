@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 14:25:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 14:57:57 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 16:07:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ t_status	sl_instantiate_monsters(t_data *data)
 		if (character == MONSTER_CHARACTER)
 		{
 			monster.entity = data->it.entity;
-			monster.entity->update_fn = &sl_update_monster;
 			ft_vector_push(&data->monsters, &monster);
 		}
 	}
