@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/05 18:01:24 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/05 18:05:30 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,9 +65,9 @@ SOURCES +=\
 	src/entities/update_entities.c
 
 SOURCES +=\
+	src/error/private/print_all_errors/sl_print_error.c\
 	src/error/private/sl_get_error_ptr.c\
 	src/error/private/sl_get_error.c\
-	src/error/private/sl_print_error.c\
 	src/error/sl_any_error.c\
 	src/error/sl_print_all_errors.c\
 	src/error/sl_set_error.c
@@ -221,6 +221,7 @@ HEADERS +=\
 	src/entities/sl_struct_entity.h
 
 HEADERS +=\
+	src/error/private/print_all_errors/sl_private_print_all_errors.h\
 	src/error/private/sl_private_error.h\
 	src/error/sl_error.h
 

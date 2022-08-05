@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/05 15:45:07 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 15:48:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 18:03:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 t_sl_error	*sl_get_error_ptr(void);
 t_sl_error	sl_get_error(void);
-void		sl_print_error(void);
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_print_all_errors.c                              :+:    :+:            */
+/*   sl_private_print_all_errors.h                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/06 14:12:24 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 18:07:20 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/05 18:03:33 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 18:03:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_PRINT_ALL_ERRORS_H
+# define SL_PRIVATE_PRINT_ALL_ERRORS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/print_all_errors/sl_private_print_all_errors.h"
+void		sl_print_error(void);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/sl_private_error.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-void	sl_print_all_errors(void)
-{
-	if (ft_get_error() != FT_OK)
-		ft_print_error();
-	// TODO: Have a newline after ft_print_error()
-	if (sl_get_error() != SL_OK)
-		sl_print_error();
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////
