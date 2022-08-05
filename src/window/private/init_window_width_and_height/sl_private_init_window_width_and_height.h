@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_init_window_width_and_height_utils.h            :+:    :+:            */
+/*   sl_private_init_window_width_and_height.h          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 15:29:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:28:07 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 18:21:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_INIT_WINDOW_WIDTH_AND_HEIGHT_UTILS_H
-# define SL_INIT_WINDOW_WIDTH_AND_HEIGHT_UTILS_H
+#ifndef SL_PRIVATE_INIT_WINDOW_WIDTH_AND_HEIGHT_H
+# define SL_PRIVATE_INIT_WINDOW_WIDTH_AND_HEIGHT_H
 
 ////////////////////////////////////////////////////////////////////////////////
 

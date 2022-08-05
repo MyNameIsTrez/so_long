@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 15:29:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:28:58 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 18:22:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "init_window_width_and_height_utils/sl_init_window_width_and_height_utils.h"
+#include "private/init_window_width_and_height/sl_private_init_window_width_and_height.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
