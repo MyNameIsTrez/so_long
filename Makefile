@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/05 17:14:35 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/05 18:01:24 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -173,16 +173,16 @@ SOURCES +=\
 	src/tile_grid/instantiate_tile_grid.c
 
 SOURCES +=\
-	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/collectible.c\
-	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/empty_space.c\
-	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/map_exit.c\
-	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/monster.c\
-	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/player_1.c\
-	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/player_2.c\
-	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/wall_tile.c\
-	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind_frames.c\
-	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind.c\
-	src/tile_kinds/instantiate_tile_kinds_utils/instantiate_tile_kind_color.c\
+	src/tile_kinds/private/instantiate_tile_kinds/add_thing_tile_kind/add_tile_kind/add_tile_kind_frames.c\
+	src/tile_kinds/private/instantiate_tile_kinds/add_thing_tile_kind/add_tile_kind/instantiate_tile_kind_color.c\
+	src/tile_kinds/private/instantiate_tile_kinds/add_thing_tile_kind/add_tile_kind.c\
+	src/tile_kinds/private/instantiate_tile_kinds/collectible.c\
+	src/tile_kinds/private/instantiate_tile_kinds/empty_space.c\
+	src/tile_kinds/private/instantiate_tile_kinds/map_exit.c\
+	src/tile_kinds/private/instantiate_tile_kinds/monster.c\
+	src/tile_kinds/private/instantiate_tile_kinds/player_1.c\
+	src/tile_kinds/private/instantiate_tile_kinds/player_2.c\
+	src/tile_kinds/private/instantiate_tile_kinds/wall_tile.c\
 	src/tile_kinds/get_character_tile_kind.c\
 	src/tile_kinds/get_tile_kind.c\
 	src/tile_kinds/instantiate_tile_kinds.c
@@ -310,8 +310,9 @@ HEADERS +=\
 	src/tile_grid/sl_tile_grid.h
 
 HEADERS +=\
-	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/sl_instantiate_tile_kinds_utils_add_tile_kind.h\
-	src/tile_kinds/instantiate_tile_kinds_utils/sl_instantiate_tile_kinds_utils.h\
+	src/tile_kinds/private/instantiate_tile_kinds/add_thing_tile_kind/add_tile_kind/sl_private_add_tile_kind.h\
+	src/tile_kinds/private/instantiate_tile_kinds/add_thing_tile_kind/sl_private_add_thing_tile_kind.h\
+	src/tile_kinds/private/instantiate_tile_kinds/sl_private_instantiate_tile_kinds.h\
 	src/tile_kinds/sl_struct_tile_kind.h\
 	src/tile_kinds/sl_tile_kinds.h
 

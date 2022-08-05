@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   collectible.c                                      :+:    :+:            */
+/*   player_1.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:05:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:03:46 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 17:57:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,25 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../sl_instantiate_tile_kinds_utils.h"
+#include "add_thing_tile_kind/sl_private_add_thing_tile_kind.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	add_collectible_tile_kind(t_data *data)
+t_status	add_player_1_tile_kind(t_data *data)
 {
 	if (add_tile_kind((t_tile_kind_data){
-			COLLECTIBLE_TEXTURE_FRAME_COUNT,
-			COLLECTIBLE_TEXTURE_ROW,
-			COLLECTIBLE_CHARACTER,
-			COLLECTIBLE_DEPTH,
+			PLAYER_1_TEXTURE_FRAME_COUNT,
+			PLAYER_1_TEXTURE_ROW,
+			PLAYER_1_CHARACTER,
+			PLAYER_1_DEPTH,
 			(t_tile_kind_data_color){
-			{COLLECTIBLE_R, COLLECTIBLE_G, COLLECTIBLE_B},
-			{COLLECTIBLE_MIN_R_OFFSET, COLLECTIBLE_MIN_G_OFFSET,
-				COLLECTIBLE_MIN_B_OFFSET},
-			{COLLECTIBLE_MAX_R_OFFSET, COLLECTIBLE_MAX_G_OFFSET,
-				COLLECTIBLE_MAX_B_OFFSET},
-			{COLLECTIBLE_R_WAIT, COLLECTIBLE_G_WAIT, COLLECTIBLE_B_WAIT},
-			{COLLECTIBLE_R_STEP, COLLECTIBLE_G_STEP, COLLECTIBLE_B_STEP}}},
+			{PLAYER_1_R, PLAYER_1_G, PLAYER_1_B},
+			{PLAYER_1_MIN_R_OFFSET, PLAYER_1_MIN_G_OFFSET,
+				PLAYER_1_MIN_B_OFFSET},
+			{PLAYER_1_MAX_R_OFFSET, PLAYER_1_MAX_G_OFFSET,
+				PLAYER_1_MAX_B_OFFSET},
+			{PLAYER_1_R_WAIT, PLAYER_1_G_WAIT, PLAYER_1_B_WAIT},
+			{PLAYER_1_R_STEP, PLAYER_1_G_STEP, PLAYER_1_B_STEP}}},
 			data) != OK)
 		return (ERROR);
 	return (OK);

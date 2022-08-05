@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   map_exit.c                                         :+:    :+:            */
+/*   sl_private_add_tile_kind.h                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:05:25 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:04:04 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 17:55:09 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_ADD_TILE_KIND_H
+# define SL_PRIVATE_ADD_TILE_KIND_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../sl_instantiate_tile_kinds_utils.h"
+t_status	add_tile_kind_frames(t_tile_kind *tile_kind, size_t frame_count,
+				size_t texture_row, t_data *data);
+t_status	instantiate_tile_kind_color(t_tile_kind_color *color,
+				t_tile_kind_data_color tk_data_color, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	add_map_exit_tile_kind(t_data *data)
-{
-	if (add_tile_kind((t_tile_kind_data){
-			MAP_EXIT_TEXTURE_FRAME_COUNT,
-			MAP_EXIT_TEXTURE_ROW,
-			MAP_EXIT_CHARACTER,
-			MAP_EXIT_DEPTH,
-			(t_tile_kind_data_color){
-			{MAP_EXIT_R, MAP_EXIT_G, MAP_EXIT_B},
-			{MAP_EXIT_MIN_R_OFFSET, MAP_EXIT_MIN_G_OFFSET,
-				MAP_EXIT_MIN_B_OFFSET},
-			{MAP_EXIT_MAX_R_OFFSET, MAP_EXIT_MAX_G_OFFSET,
-				MAP_EXIT_MAX_B_OFFSET},
-			{MAP_EXIT_R_WAIT, MAP_EXIT_G_WAIT, MAP_EXIT_B_WAIT},
-			{MAP_EXIT_R_STEP, MAP_EXIT_G_STEP, MAP_EXIT_B_STEP}}},
-			data) != OK)
-		return (ERROR);
-	return (OK);
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

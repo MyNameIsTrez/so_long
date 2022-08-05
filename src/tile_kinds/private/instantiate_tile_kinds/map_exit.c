@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   player_2.c                                         :+:    :+:            */
+/*   map_exit.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:03:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 13:44:04 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:05:25 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 17:56:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,25 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../sl_instantiate_tile_kinds_utils.h"
+#include "add_thing_tile_kind/sl_private_add_thing_tile_kind.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	add_player_2_tile_kind(t_data *data)
+t_status	add_map_exit_tile_kind(t_data *data)
 {
 	if (add_tile_kind((t_tile_kind_data){
-			PLAYER_2_TEXTURE_FRAME_COUNT,
-			PLAYER_2_TEXTURE_ROW,
-			PLAYER_2_CHARACTER,
-			PLAYER_2_DEPTH,
+			MAP_EXIT_TEXTURE_FRAME_COUNT,
+			MAP_EXIT_TEXTURE_ROW,
+			MAP_EXIT_CHARACTER,
+			MAP_EXIT_DEPTH,
 			(t_tile_kind_data_color){
-			{PLAYER_2_R, PLAYER_2_G, PLAYER_2_B},
-			{PLAYER_2_MIN_R_OFFSET, PLAYER_2_MIN_G_OFFSET,
-				PLAYER_2_MIN_B_OFFSET},
-			{PLAYER_2_MAX_R_OFFSET, PLAYER_2_MAX_G_OFFSET,
-				PLAYER_2_MAX_B_OFFSET},
-			{PLAYER_2_R_WAIT, PLAYER_2_G_WAIT, PLAYER_2_B_WAIT},
-			{PLAYER_2_R_STEP, PLAYER_2_G_STEP, PLAYER_2_B_STEP}}},
+			{MAP_EXIT_R, MAP_EXIT_G, MAP_EXIT_B},
+			{MAP_EXIT_MIN_R_OFFSET, MAP_EXIT_MIN_G_OFFSET,
+				MAP_EXIT_MIN_B_OFFSET},
+			{MAP_EXIT_MAX_R_OFFSET, MAP_EXIT_MAX_G_OFFSET,
+				MAP_EXIT_MAX_B_OFFSET},
+			{MAP_EXIT_R_WAIT, MAP_EXIT_G_WAIT, MAP_EXIT_B_WAIT},
+			{MAP_EXIT_R_STEP, MAP_EXIT_G_STEP, MAP_EXIT_B_STEP}}},
 			data) != OK)
 		return (ERROR);
 	return (OK);
