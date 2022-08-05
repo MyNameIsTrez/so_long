@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_sanitize_utils.h                                :+:    :+:            */
+/*   sanitize_defines.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/02 17:35:58 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:03:03 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/03 14:47:55 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 14:57:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_SANITIZE_UTILS_H
-# define SL_SANITIZE_UTILS_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "sanitize_defines/sl_sanitize_defines.h"
+#include "sanitize_defines/sl_sanitize_defines.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sanitize_argc(t_i32 argc);
-t_status	sanitize_argv(t_i32 argc, char **argv, t_data *data);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+t_status	sanitize_defines(t_data *data)
+{
+	if (sanitize_tile_kinds(data) != OK)
+		return (ERROR);
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
