@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:37:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/02 15:14:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 22:11:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@
 
 t_status	sl_instantiate_tile_frames(t_tile *tile, t_data *data)
 {
-	size_t	frame_count;
-	size_t	frame_index;
-	t_i32	frame_instance_index;
-	size_t	frame_instance_uindex;
+	t_iterator	it;
+	size_t		frame_count;
+	size_t		frame_index;
+	t_i32		frame_instance_index;
+	size_t		frame_instance_uindex;
 
 	frame_count = tile->tile_kind->frame_count;
-	while (sl_iterate_frame_count(frame_count, data) != FINISHED)
+	ft_init_it(&it);
+	while (sl_iterate_frame_count(&it, frame_count, data) != FINISHED)
 	{
 		frame_index = data->it.frame_index;
 		frame_instance_index = mlx_image_to_window(data->mlx,

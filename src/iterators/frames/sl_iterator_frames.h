@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 13:51:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 18:35:01 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 21:58:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ typedef struct s_tile_kind	t_tile_kind;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_frame_count(size_t frame_count, t_data *data);
-void				sl_reset_iterate_frame_count(t_data *data);
+t_iterator_status	sl_iterate_frame_count(t_iterator *it, size_t frame_count,
+						t_data *data);
 
 t_iterator_status	sl_iterate_frame_height(mlx_image_t *frame, t_data *data);
 void				sl_reset_iterate_frame_height(t_data *data);

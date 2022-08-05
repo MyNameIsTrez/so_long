@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 13:28:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 21:08:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 22:10:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	sl_change_frames(t_data *data)
 	t_tile		*tile;
 	size_t		frame_count;
 
+	ft_init_it(&it);
 	while (sl_iterate_entities(&it, data) != FINISHED)
 	{
 		entity = data->it.entity;

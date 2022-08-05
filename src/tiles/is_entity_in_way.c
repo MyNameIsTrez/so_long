@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 18:19:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 19:56:53 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 22:11:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ bool	is_entity_in_way(size_t column, size_t row, t_data *data)
 	t_entity	*entity;
 	t_u8		character;
 
+	ft_init_it(&it);
 	while (sl_iterate_entities(&it, data) != FINISHED)
 	{
 		entity = data->it.entity;

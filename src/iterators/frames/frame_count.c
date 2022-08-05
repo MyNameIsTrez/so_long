@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:56:03 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 21:58:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,38 +16,19 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_frame_count(size_t frame_count,
-								t_data *data, bool reset)
+t_iterator_status	sl_iterate_frame_count(t_iterator *it, size_t frame_count,
+						t_data *data)
 {
-	static t_iterator	it;
-
-	if (reset)
+	if (!it->initialized)
+		*it = ft_get_count_iterator(frame_count);
+	while (ft_iterate(it) != FINISHED)
 	{
-		it.initialized = false;
-		data->it.frame_index = 0;
-		return (RESET);
-	}
-	if (!it.initialized)
-		it = ft_get_count_iterator(frame_count);
-	while (ft_iterate(&it) != FINISHED)
-	{
-		data->it.frame_index = (size_t)it.current;
+		data->it.frame_index = (size_t)it->current;
 		return (LOOPED);
 	}
-	sl_reset_iterate_frame_count(data);
+	it->initialized = false;
+	data->it.frame_index = 0;
 	return (FINISHED);
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_iterator_status	sl_iterate_frame_count(size_t frame_count, t_data *data)
-{
-	return (resettable_iterate_frame_count(frame_count, data, false));
-}
-
-void	sl_reset_iterate_frame_count(t_data *data)
-{
-	resettable_iterate_frame_count(0, data, true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
