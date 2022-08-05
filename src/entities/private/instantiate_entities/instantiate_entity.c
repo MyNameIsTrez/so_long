@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 20:02:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 20:47:17 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 21:00:21 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ t_status	instantiate_entity(t_data *data)
 		return (ERROR);
 	if (sl_instantiate_tile_frames(&entity.tile, data) != OK)
 		return (ERROR);
-	entity.seconds_since_last_frame_change = 0;
-	entity.seconds_between_frame_changes = 0.5; // TODO: Don't hardcode
+	entity.ticks_since_last_frame_change = 0;
+	entity.ticks_between_frame_changes = 30; // TODO: Don't hardcode
 	if (ft_vector_push(&data->entities, &entity) != OK)
 		return (ERROR);
 	return (OK);

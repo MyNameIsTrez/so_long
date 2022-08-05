@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 14:52:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 20:58:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,7 @@ typedef struct s_data
 	t_entity	*entities;
 	t_player	*players;
 	t_monster	*monsters;
-	t_f64		seconds;
-	t_u32		frame;
+	t_u32		ticks;
 }	t_data;
 
 ////////////////////////////////////////////////////////////////////////////////

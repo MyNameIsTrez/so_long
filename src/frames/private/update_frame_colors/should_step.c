@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 16:48:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 14:21:59 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 20:58:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ bool	should_step(t_data *data)
 
 	wait = data->it.tile_kind->color.wait;
 	rgb_channel_index = data->it.rgb_channel_index;
-	return (data->frame % wait[rgb_channel_index] == 0);
+	return (data->ticks % wait[rgb_channel_index] == 0);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
