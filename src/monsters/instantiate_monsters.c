@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 14:25:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 15:07:54 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 19:45:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+#include "private/instantiate_monsters/sl_private_instantiate_monsters.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
 t_status	sl_instantiate_monsters(t_data *data)
 {
+	t_iterator	it;
 	t_u8		character;
-	t_monster	monster;
 
 	data->monsters = ft_vector_new(sizeof(t_monster));
-	while (sl_iterate_entities(data) != FINISHED)
+	while (sl_iterate_entities(&it, data) != FINISHED)
 	{
 		character = data->it.entity->tile.tile_kind->character;
 		if (character == MONSTER_CHARACTER)
-		{
-			monster.entity = data->it.entity;
-			monster.heading = HEADING_NONE;
-			// TODO: Change the heading to the first seen empty tile
-			ft_vector_push(&data->monsters, &monster);
-		}
+			if (instantiate_monster(data) != OK)
+				return (ERROR);
 	}
 	return (OK);
 }

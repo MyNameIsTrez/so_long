@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_is_walkable.h                           :+:    :+:            */
+/*   is_entity_in_way.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/05 16:14:37 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 19:26:34 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 18:19:16 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 19:56:53 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_IS_WALKABLE_H
-# define SL_PRIVATE_IS_WALKABLE_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	get_key_column_offset(keys_t key, keys_t movement_keys[4]);
-t_i32	get_key_row_offset(keys_t key, keys_t movement_keys[4]);
+bool	is_entity_in_way(size_t column, size_t row, t_data *data)
+{
+	t_iterator	it;
+	t_entity	*entity;
+	t_u8		character;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	while (sl_iterate_entities(&it, data) != FINISHED)
+	{
+		entity = data->it.entity;
+		if (entity->tile.column_index != column
+			|| entity->tile.row_index != row)
+			continue ;
+		character = entity->tile.tile_kind->character;
+		if (!ft_chr_in_str(character, WALKABLE_CHARACTERS))
+			return (true);
+	}
+	return (false);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

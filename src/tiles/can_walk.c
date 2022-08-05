@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_is_walkable.h                           :+:    :+:            */
+/*   can_walk.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/05 16:14:37 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 19:26:34 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/05 18:55:19 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 19:02:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_IS_WALKABLE_H
-# define SL_PRIVATE_IS_WALKABLE_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	get_key_column_offset(keys_t key, keys_t movement_keys[4]);
-t_i32	get_key_row_offset(keys_t key, keys_t movement_keys[4]);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+bool	can_walk(t_i32 column, t_i32 row, t_data *data)
+{
+	return (!sl_out_of_bounds(column, row, data)
+		&& is_tile_walkable((size_t)column, (size_t)row, data)
+		&& !is_entity_in_way((size_t)column, (size_t)row, data));
+}
 
 ////////////////////////////////////////////////////////////////////////////////

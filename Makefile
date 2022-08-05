@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/05 18:24:04 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/05 19:27:24 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,6 +108,7 @@ SOURCES +=\
 	src/iterators/char_grid_width.c\
 	src/iterators/char_grid.c\
 	src/iterators/entities.c\
+	src/iterators/heading.c\
 	src/iterators/keys.c\
 	src/iterators/monsters.c\
 	src/iterators/player_movement_keys.c\
@@ -121,6 +122,10 @@ SOURCES +=\
 	src/monitor/init_monitor_size.c
 
 SOURCES +=\
+	src/monsters/private/instantiate_monsters/instantiate_monster/set_heading/get_heading_column_offset.c\
+	src/monsters/private/instantiate_monsters/instantiate_monster/set_heading/get_heading_row_offset.c\
+	src/monsters/private/instantiate_monsters/instantiate_monster/set_heading.c\
+	src/monsters/private/instantiate_monsters/instantiate_monster.c\
 	src/monsters/private/update_monsters/update_monster.c\
 	src/monsters/instantiate_monsters.c\
 	src/monsters/update_monsters.c
@@ -129,8 +134,6 @@ SOURCES +=\
 	src/players/private/initialize_players/get_player_controls.c\
 	src/players/private/try_move_players/can_player_shift/is_walkable/get_key_column_offset.c\
 	src/players/private/try_move_players/can_player_shift/is_walkable/get_key_row_offset.c\
-	src/players/private/try_move_players/can_player_shift/is_walkable/is_entity_walkable.c\
-	src/players/private/try_move_players/can_player_shift/is_walkable/is_tile_walkable.c\
 	src/players/private/try_move_players/can_player_shift/can_autowalk.c\
 	src/players/private/try_move_players/can_player_shift/is_walkable.c\
 	src/players/private/try_move_players/can_player_shift.c\
@@ -188,8 +191,11 @@ SOURCES +=\
 	src/tile_kinds/instantiate_tile_kinds.c
 
 SOURCES +=\
+	src/tiles/can_walk.c\
 	src/tiles/fill_tile_data.c\
 	src/tiles/instantiate_tile_frames.c\
+	src/tiles/is_entity_in_way.c\
+	src/tiles/is_tile_walkable.c\
 	src/tiles/out_of_bounds.c\
 	src/tiles/shift_tile_pos.c
 
@@ -251,6 +257,9 @@ HEADERS +=\
 	src/monitor/sl_struct_monitor.h
 
 HEADERS +=\
+	src/monsters/private/instantiate_monsters/instantiate_monster/set_heading/sl_private_set_heading.h\
+	src/monsters/private/instantiate_monsters/instantiate_monster/sl_private_instantiate_monster.h\
+	src/monsters/private/instantiate_monsters/sl_private_instantiate_monsters.h\
 	src/monsters/private/update_monsters/sl_private_update_monsters.h\
 	src/monsters/sl_monsters.h\
 	src/monsters/sl_struct_monster.h

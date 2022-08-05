@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_is_walkable.h                           :+:    :+:            */
+/*   sl_private_instantiate_monsters.h                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/05 16:14:37 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 19:26:34 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/05 19:13:34 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 19:25:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_IS_WALKABLE_H
-# define SL_PRIVATE_IS_WALKABLE_H
+#ifndef SL_PRIVATE_INSTANTIATE_MONSTERS_H
+# define SL_PRIVATE_INSTANTIATE_MONSTERS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	get_key_column_offset(keys_t key, keys_t movement_keys[4]);
-t_i32	get_key_row_offset(keys_t key, keys_t movement_keys[4]);
+t_status	instantiate_monster(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

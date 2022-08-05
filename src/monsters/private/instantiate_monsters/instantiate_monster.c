@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_entity_walkable.c                               :+:    :+:            */
+/*   instantiate_monster.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 18:19:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 18:40:24 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/05 18:41:45 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 19:25:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,19 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	is_entity_walkable(size_t column, size_t row, t_data *data)
-{
-	t_entity	*entity;
-	t_u8		character;
+#include "instantiate_monster/sl_private_instantiate_monster.h"
 
-	while (sl_iterate_entities(data) != FINISHED)
-	{
-		entity = data->it.entity;
-		if (entity->tile.column_index != column
-			|| entity->tile.row_index != row)
-			continue ;
-		character = entity->tile.tile_kind->character;
-		if (!ft_chr_in_str(character, WALKABLE_CHARACTERS))
-		{
-			sl_reset_iterate_entities(data);
-			return (false);
-		}
-	}
-	return (true);
+////////////////////////////////////////////////////////////////////////////////
+
+t_status	instantiate_monster(t_data *data)
+{
+	t_monster	monster;
+
+	monster.entity = data->it.entity;
+	set_heading(&monster, data);
+	if (ft_vector_push(&data->monsters, &monster) != OK)
+		return (ERROR);
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 16:00:14 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 19:10:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_it
 	size_t			frame_index;
 	t_player		*player;
 	t_entity		*entity;
+	t_heading		heading;
 	keys_t			key;
 	t_u8			red;
 	t_frame_pixels	frame_pixels;
