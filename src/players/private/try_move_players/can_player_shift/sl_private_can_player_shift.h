@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_initialize_players_utils.h                      :+:    :+:            */
+/*   sl_private_can_player_shift.h                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 20:05:44 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 14:12:32 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/05 16:14:22 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 16:15:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_CAN_PLAYER_SHIFT_H
+# define SL_PRIVATE_CAN_PLAYER_SHIFT_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_controls	get_player_controls(t_u8 character);
+bool	can_autowalk(t_player *player, t_data *data);
+bool	is_walkable(t_player *player, keys_t key, t_data *data);
+
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

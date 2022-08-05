@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 20:05:03 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 14:12:17 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 16:24:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "initialize_players_utils/sl_initialize_players_utils.h"
+#include "private/initialize_players/sl_private_initialize_players.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_key_row_offset.c                               :+:    :+:            */
+/*   sl_private_is_walkable.h                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 17:36:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 18:41:20 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/05 16:14:37 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 16:15:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_IS_WALKABLE_H
+# define SL_PRIVATE_IS_WALKABLE_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "sl_try_move_players_utils.h"
+t_i32	get_key_column_offset(keys_t key, keys_t movement_keys[4]);
+t_i32	get_key_row_offset(keys_t key, keys_t movement_keys[4]);
+bool	is_entity_walkable(size_t column, size_t row, t_data *data);
+bool	is_tile_walkable(size_t column, size_t row, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	get_key_row_offset(keys_t key, keys_t movement_keys[4])
-{
-	if (key == movement_keys[UP_MOVEMENT_KEY_INDEX])
-		return (-1);
-	if (key == movement_keys[DOWN_MOVEMENT_KEY_INDEX])
-		return (1);
-	else
-		return (0);
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

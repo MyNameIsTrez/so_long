@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/05 16:06:40 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/05 16:22:53 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -126,16 +126,16 @@ SOURCES +=\
 	src/monsters/update_monsters.c
 
 SOURCES +=\
-	src/players/initialize_players_utils/get_player_controls.c\
+	src/players/private/initialize_players/get_player_controls.c\
+	src/players/private/try_move_players/can_player_shift/is_walkable/get_key_column_offset.c\
+	src/players/private/try_move_players/can_player_shift/is_walkable/get_key_row_offset.c\
+	src/players/private/try_move_players/can_player_shift/is_walkable/is_entity_walkable.c\
+	src/players/private/try_move_players/can_player_shift/is_walkable/is_tile_walkable.c\
+	src/players/private/try_move_players/can_player_shift/can_autowalk.c\
+	src/players/private/try_move_players/can_player_shift/is_walkable.c\
+	src/players/private/try_move_players/can_player_shift.c\
+	src/players/private/try_move_players/shift_player.c\
 	src/players/initialize_players.c\
-	src/players/try_move_players_utils/can_autowalk.c\
-	src/players/try_move_players_utils/can_player_shift.c\
-	src/players/try_move_players_utils/get_key_column_offset.c\
-	src/players/try_move_players_utils/get_key_row_offset.c\
-	src/players/try_move_players_utils/is_entity_walkable.c\
-	src/players/try_move_players_utils/is_tile_walkable.c\
-	src/players/try_move_players_utils/is_walkable.c\
-	src/players/try_move_players_utils/shift_player.c\
 	src/players/try_move_players.c
 
 SOURCES +=\
@@ -255,8 +255,10 @@ HEADERS +=\
 	src/monsters/sl_struct_monster.h
 
 HEADERS +=\
-	src/players/initialize_players_utils/sl_initialize_players_utils.h\
-	src/players/try_move_players_utils/sl_try_move_players_utils.h\
+	src/players/private/initialize_players/sl_private_initialize_players.h\
+	src/players/private/try_move_players/can_player_shift/is_walkable/sl_private_is_walkable.h\
+	src/players/private/try_move_players/can_player_shift/sl_private_can_player_shift.h\
+	src/players/private/try_move_players/sl_private_try_move_players.h\
 	src/players/sl_players.h\
 	src/players/sl_struct_player.h
 

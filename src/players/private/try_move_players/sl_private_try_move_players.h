@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_walkable.c                                      :+:    :+:            */
+/*   sl_private_try_move_players.h                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 18:13:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 18:41:26 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 18:30:29 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 16:15:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_TRY_MOVE_PLAYERS_H
+# define SL_PRIVATE_TRY_MOVE_PLAYERS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "sl_try_move_players_utils.h"
+# define UP_MOVEMENT_KEY_INDEX 0
+# define DOWN_MOVEMENT_KEY_INDEX 1
+# define LEFT_MOVEMENT_KEY_INDEX 2
+# define RIGHT_MOVEMENT_KEY_INDEX 3
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	is_walkable(t_player *player, keys_t key, t_data *data)
-{
-	t_tile	*tile;
-	keys_t	*movement_keys;
-	t_i32	column;
-	t_i32	row;
+bool	can_player_shift(t_player *player, size_t movement_key_index,
+			t_data *data);
+void	shift_player(t_player *player, t_i32 x, t_i32 y, t_data *data);
 
-	tile = &player->entity->tile;
-	movement_keys = player->controls.movement_keys;
-	column = (t_i32)tile->column_index + get_key_column_offset(key, movement_keys);
-	row = (t_i32)tile->row_index + get_key_row_offset(key, movement_keys);
-	if (sl_out_of_bounds(column, row, data))
-		return (false);
-	return (is_tile_walkable((size_t)column, (size_t)row, data)
-		&& is_entity_walkable((size_t)column, (size_t)row, data));
-}
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

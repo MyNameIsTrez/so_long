@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_key_column_offset.c                            :+:    :+:            */
+/*   get_key_row_offset.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/13 13:28:56 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 18:41:12 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 17:36:08 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 16:21:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "sl_try_move_players_utils.h"
+#include "../../sl_private_try_move_players.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	get_key_column_offset(keys_t key, keys_t movement_keys[4])
+t_i32	get_key_row_offset(keys_t key, keys_t movement_keys[4])
 {
-	if (key == movement_keys[LEFT_MOVEMENT_KEY_INDEX])
+	if (key == movement_keys[UP_MOVEMENT_KEY_INDEX])
 		return (-1);
-	if (key == movement_keys[RIGHT_MOVEMENT_KEY_INDEX])
+	if (key == movement_keys[DOWN_MOVEMENT_KEY_INDEX])
 		return (1);
 	else
 		return (0);
