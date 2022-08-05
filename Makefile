@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/05 15:49:49 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/05 15:56:43 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,14 +73,14 @@ SOURCES +=\
 	src/error/sl_set_error.c
 
 SOURCES +=\
-	src/frames/update_frame_colors_utils/should_step.c\
-	src/frames/update_frame_colors_utils/step_pixel.c\
+	src/frames/private/update_frame_colors/should_step.c\
+	src/frames/private/update_frame_colors/step_pixel.c\
+	src/frames/private/is_opaque.c\
 	src/frames/change_frames.c\
 	src/frames/get_frame.c\
 	src/frames/get_frame_instance.c\
 	src/frames/get_pixel_index.c\
 	src/frames/initialize_tile_kinds_colors.c\
-	src/frames/is_opaque.c\
 	src/frames/update_frame_colors.c
 
 SOURCES +=\
@@ -225,7 +225,8 @@ HEADERS +=\
 	src/error/sl_error.h
 
 HEADERS +=\
-	src/frames/update_frame_colors_utils/sl_update_frame_colors_utils.h\
+	src/frames/private/update_frame_colors/sl_private_update_frame_colors.h\
+	src/frames/private/sl_private_frames.h\
 	src/frames/sl_frames.h
 
 HEADERS +=\

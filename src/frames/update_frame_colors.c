@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 18:04:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 15:58:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "update_frame_colors_utils/sl_update_frame_colors_utils.h"
+#include "private/update_frame_colors/sl_private_update_frame_colors.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+#include "private/sl_private_frames.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

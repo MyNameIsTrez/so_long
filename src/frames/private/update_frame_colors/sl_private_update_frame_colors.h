@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_update_frame_colors_utils.h                     :+:    :+:            */
+/*   sl_private_update_frame_colors.h                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 16:57:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:19:17 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 15:55:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_UPDATE_FRAME_COLORS_UTILS_H
-# define SL_UPDATE_FRAME_COLORS_UTILS_H
+#ifndef SL_PRIVATE_UPDATE_FRAME_COLORS_H
+# define SL_PRIVATE_UPDATE_FRAME_COLORS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
