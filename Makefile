@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/05 17:08:06 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/05 17:14:35 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -166,9 +166,9 @@ SOURCES +=\
 	src/texture/load_texture.c
 
 SOURCES +=\
-	src/tile_grid/instantiate_tile_grid_utils/get_tile_grid_tile_kind.c\
-	src/tile_grid/instantiate_tile_grid_utils/instantiate_tile.c\
-	src/tile_grid/instantiate_tile_grid_utils/malloc_tile_grid_cells.c\
+	src/tile_grid/private/instantiate_tile_grid/instantiate_tile/get_tile_grid_tile_kind.c\
+	src/tile_grid/private/instantiate_tile_grid/instantiate_tile.c\
+	src/tile_grid/private/instantiate_tile_grid/malloc_tile_grid_cells.c\
 	src/tile_grid/get_tile_grid_character.c\
 	src/tile_grid/instantiate_tile_grid.c
 
@@ -304,7 +304,8 @@ HEADERS +=\
 	src/texture/sl_texture.h
 
 HEADERS +=\
-	src/tile_grid/instantiate_tile_grid_utils/sl_instantiate_tile_grid_utils.h\
+	src/tile_grid/private/instantiate_tile_grid/instantiate_tile/sl_private_instantiate_tile.h\
+	src/tile_grid/private/instantiate_tile_grid/sl_private_instantiate_tile_grid.h\
 	src/tile_grid/sl_struct_tile_grid.h\
 	src/tile_grid/sl_tile_grid.h
 
