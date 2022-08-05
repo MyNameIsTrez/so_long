@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/03 14:53:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 16:43:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 18:13:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "sanitize_tile_kind/sl_private_sanitize_tile_kind.h"
+#include "sanitize_thing_tile_kind/sl_private_sanitize_thing_tile_kind.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/05 18:05:30 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/05 18:15:48 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -139,9 +139,9 @@ SOURCES +=\
 	src/players/try_move_players.c
 
 SOURCES +=\
-	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_tile_kind/sanitize_max_color_offset.c\
-	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_tile_kind/sanitize_min_color_offset.c\
-	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_tile_kind/sanitize_tile_kind.c\
+	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_thing_tile_kind/sanitize_tile_kind/sanitize_max_color_offset.c\
+	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_thing_tile_kind/sanitize_tile_kind/sanitize_min_color_offset.c\
+	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_thing_tile_kind/sanitize_tile_kind.c\
 	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_collectible.c\
 	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_empty_space.c\
 	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_map_exit.c\
@@ -264,7 +264,8 @@ HEADERS +=\
 	src/players/sl_struct_player.h
 
 HEADERS +=\
-	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_tile_kind/sl_private_sanitize_tile_kind.h\
+	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_thing_tile_kind/sanitize_tile_kind/sl_private_sanitize_tile_kind.h\
+	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_thing_tile_kind/sl_private_sanitize_thing_tile_kind.h\
 	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sl_private_sanitize_tile_kinds.h\
 	src/sanitize/private/sanitize/sanitize_defines/sl_private_sanitize_defines.h\
 	src/sanitize/private/sanitize/sl_private_sanitize.h\
