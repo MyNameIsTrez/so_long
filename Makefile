@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/05 15:33:35 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/05 15:36:12 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ SOURCES :=\
 	src/background/instantiate_background.c
 
 SOURCES +=\
-	src/char_grid/init_char_grid_utils/char_grid_has_invalid_character.c\
+	src/char_grid/private/init_char_grid/char_grid_has_invalid_character.c\
 	src/char_grid/get_char_grid_character.c\
 	src/char_grid/init_char_grid.c
 
@@ -208,7 +208,7 @@ HEADERS +=\
 	src/background/sl_background.h
 
 HEADERS +=\
-	src/char_grid/init_char_grid_utils/sl_init_char_grid_utils.h\
+	src/char_grid/private/init_char_grid/sl_private_init_char_grid.h\
 	src/char_grid/sl_char_grid.h
 
 HEADERS +=\
