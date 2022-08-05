@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/03 15:22:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:14:34 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 22:17:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sanitize_argv(t_i32 argc, char **argv, t_data *data)
+t_status	sanitize_argv(t_i32 argc, char **argv)
 {
 	char	*scale_string;
 	t_i32	scale;
 
-	(void)data;
 	if (argc >= 3)
 	{
 		scale_string = argv[2];
