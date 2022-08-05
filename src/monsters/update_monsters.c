@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 15:57:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 16:11:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 20:08:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 void	sl_update_monsters(t_data *data)
 {
 	while (sl_iterate_monsters(data) != FINISHED)
-		sl_update_monster(data);
+		sl_update_monster(data->it.monster, data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

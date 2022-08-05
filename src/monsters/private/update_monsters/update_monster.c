@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 14:42:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 16:43:34 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 20:38:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_update_monster(t_data *data)
+void	sl_update_monster(t_monster *monster, t_data *data)
 {
-	if (data->it.monster->entity->tile.column_index > 0)
-		sl_shift_tile_pos(&data->it.monster->entity->tile, -1, 0, data);
+	t_heading	heading;
+	t_tile		*tile;
+	t_i32		column;
+	t_i32		row;
+
+	heading = monster->heading;
+	if (heading == HEADING_NONE)
+		return ;
+	tile = &monster->entity->tile;
+	column = get_heading_column(heading, tile);
+	row = get_heading_row(heading, tile);
+	if (can_walk(column, row, data))
+		sl_set_tile_pos(tile, (size_t)column, (size_t)row, data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
