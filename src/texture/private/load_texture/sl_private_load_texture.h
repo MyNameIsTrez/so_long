@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_load_texture_utils.h                            :+:    :+:            */
+/*   sl_private_load_texture.h                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 18:49:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 18:50:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 16:49:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_LOAD_TEXTURE_UTILS_H
-# define SL_LOAD_TEXTURE_UTILS_H
+#ifndef SL_PRIVATE_LOAD_TEXTURE_H
+# define SL_PRIVATE_LOAD_TEXTURE_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-char	*get_texture_filepath(t_data *data);
-char	*get_texture_scales_path(void);
+char		*get_texture_filepath(t_data *data);
+t_status	sl_init_texture_filename(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

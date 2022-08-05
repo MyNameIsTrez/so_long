@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_texture_filepath.c                             :+:    :+:            */
+/*   sl_private_init_texture_metadata.h                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 18:49:25 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 18:55:28 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 18:47:59 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 16:47:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_INIT_TEXTURE_METADATA_H
+# define SL_PRIVATE_INIT_TEXTURE_METADATA_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "sl_load_texture_utils.h"
+void		set_pixels_per_tile(t_data *data);
+t_status	sl_set_real_scale(t_i32 scale, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-char	*get_texture_filepath(t_data *data)
-{
-	return (ft_strjoin(get_texture_scales_path(), data->texture.filename));
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

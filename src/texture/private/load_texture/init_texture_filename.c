@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   init_texture_metadata.c                            :+:    :+:            */
+/*   init_texture_filename.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 14:29:43 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 16:56:00 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 15:09:03 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 16:55:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/init_texture_metadata/sl_private_init_texture_metadata.h"
+#include "init_texture_filename/sl_private_init_texture_filename.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_init_texture_metadata(t_i32 scale, t_data *data)
+t_status	sl_init_texture_filename(t_data *data)
 {
-	if (sl_set_real_scale(scale, data) != OK)
+	t_texture	*texture;
+	char		*filename_stem;
+
+	texture = &data->texture;
+	if (get_texture_filename_stem(&filename_stem, texture) != OK)
 		return (ERROR);
-	set_pixels_per_tile(data);
+	texture->filename = ft_strjoin(filename_stem, TEXTURE_FILENAME_EXTENSION);
+	if (texture->filename == NULL)
+		return (ERROR);
 	return (OK);
 }
 

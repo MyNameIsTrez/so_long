@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   init_texture_filename.c                            :+:    :+:            */
+/*   sl_private_get_texture_filename_stem.h             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 15:09:03 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/05 16:50:39 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 16:50:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_GET_TEXTURE_FILENAME_STEM_H
+# define SL_PRIVATE_GET_TEXTURE_FILENAME_STEM_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "init_texture_filename_utils/sl_init_texture_filename_utils.h"
+t_status	get_str_pixels_per_tile(char **str_pixels_per_tile, t_i32 scale);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_init_texture_filename(t_data *data)
-{
-	t_texture	*texture;
-	char		*filename_stem;
-
-	texture = &data->texture;
-	if (get_texture_filename_stem(&filename_stem, texture) != OK)
-		return (ERROR);
-	texture->filename = ft_strjoin(filename_stem, TEXTURE_FILENAME_EXTENSION);
-	if (texture->filename == NULL)
-		return (ERROR);
-	return (OK);
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////
