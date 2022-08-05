@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_is_walkable.h                           :+:    :+:            */
+/*   get_heading_column.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/05 16:14:37 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 19:26:34 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/13 13:28:56 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 20:40:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_IS_WALKABLE_H
-# define SL_PRIVATE_IS_WALKABLE_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	get_key_column_offset(keys_t key, keys_t movement_keys[4]);
-t_i32	get_key_row_offset(keys_t key, keys_t movement_keys[4]);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+t_i32	get_heading_column(t_heading heading, t_tile *tile)
+{
+	if (heading == HEADING_LEFT)
+		return ((t_i32)tile->column_index - 1);
+	if (heading == HEADING_RIGHT)
+		return ((t_i32)tile->column_index + 1);
+	else
+		return ((t_i32)tile->column_index);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 18:13:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 19:25:31 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 20:40:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "is_walkable/sl_private_is_walkable.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-bool	is_walkable(t_player *player, keys_t key, t_data *data)
+bool	is_walkable(t_player *player, t_heading heading, t_data *data)
 {
 	t_tile	*tile;
 	keys_t	*movement_keys;
@@ -29,8 +25,8 @@ bool	is_walkable(t_player *player, keys_t key, t_data *data)
 
 	tile = &player->entity->tile;
 	movement_keys = player->controls.movement_keys;
-	column = (t_i32)tile->column_index + get_key_column_offset(key, movement_keys);
-	row = (t_i32)tile->row_index + get_key_row_offset(key, movement_keys);
+	column = get_heading_column(heading, tile);
+	row = get_heading_row(heading, tile);
 	return (can_walk(column, row, data));
 }
 

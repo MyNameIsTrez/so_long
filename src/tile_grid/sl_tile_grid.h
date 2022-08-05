@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:43:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 18:29:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 20:31:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+t_i32		get_heading_column(t_heading heading, t_tile *tile);
+t_i32		get_heading_row(t_heading heading, t_tile *tile);
 t_u8		sl_get_tile_grid_character(t_data *data);
 t_status	sl_instantiate_tile_grid(t_data *data);
 

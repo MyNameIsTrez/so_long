@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_key_row_offset.c                               :+:    :+:            */
+/*   get_heading_row.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 17:36:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 16:21:19 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 20:40:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,14 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../../sl_private_try_move_players.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_i32	get_key_row_offset(keys_t key, keys_t movement_keys[4])
+t_i32	get_heading_row(t_heading heading, t_tile *tile)
 {
-	if (key == movement_keys[UP_MOVEMENT_KEY_INDEX])
-		return (-1);
-	if (key == movement_keys[DOWN_MOVEMENT_KEY_INDEX])
-		return (1);
+	if (heading == HEADING_UP)
+		return ((t_i32)tile->row_index - 1);
+	if (heading == HEADING_DOWN)
+		return ((t_i32)tile->row_index + 1);
 	else
-		return (0);
+		return ((t_i32)tile->row_index);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

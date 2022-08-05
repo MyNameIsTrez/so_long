@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 18:30:29 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 16:15:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 20:36:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define UP_MOVEMENT_KEY_INDEX 0
-# define DOWN_MOVEMENT_KEY_INDEX 1
-# define LEFT_MOVEMENT_KEY_INDEX 2
-# define RIGHT_MOVEMENT_KEY_INDEX 3
-
-////////////////////////////////////////////////////////////////////////////////
-
-bool	can_player_shift(t_player *player, size_t movement_key_index,
-			t_data *data);
+bool	can_player_shift(t_player *player, t_heading heading, t_data *data);
 void	shift_player(t_player *player, t_i32 x, t_i32 y, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
