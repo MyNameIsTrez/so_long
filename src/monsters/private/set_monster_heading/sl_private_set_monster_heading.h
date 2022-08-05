@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_set_heading.h                           :+:    :+:            */
+/*   sl_private_set_monster_heading.h                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/05 19:18:53 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 19:19:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 21:28:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_SET_HEADING_H
-# define SL_PRIVATE_SET_HEADING_H
+#ifndef SL_PRIVATE_SET_MONSTER_HEADING_H
+# define SL_PRIVATE_SET_MONSTER_HEADING_H
 
 ////////////////////////////////////////////////////////////////////////////////
 

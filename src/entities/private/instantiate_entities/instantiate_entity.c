@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 20:02:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 21:16:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 21:33:53 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_status	instantiate_entity(t_data *data)
 	entity.ticks_since_last_frame_change = 0;
 	entity.ticks_between_frame_changes = 30; // TODO: Don't hardcode
 	entity.ticks_since_last_update = 0;
-	entity.ticks_between_updates = 100; // TODO: Don't hardcode
+	entity.ticks_between_updates = 30; // TODO: Don't hardcode
 	if (ft_vector_push(&data->entities, &entity) != OK)
 		return (ERROR);
 	return (OK);

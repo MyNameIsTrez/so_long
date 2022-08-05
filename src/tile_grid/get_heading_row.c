@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 17:36:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 20:40:54 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 21:19:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	get_heading_row(t_heading heading, t_tile *tile)
+t_i32	sl_get_heading_row(t_heading heading, t_tile *tile)
 {
 	if (heading == HEADING_UP)
 		return ((t_i32)tile->row_index - 1);

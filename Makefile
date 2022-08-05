@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/05 20:41:19 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/05 21:30:06 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -122,12 +122,12 @@ SOURCES +=\
 	src/monitor/init_monitor_size.c
 
 SOURCES +=\
-	src/monsters/private/instantiate_monsters/instantiate_monster/set_heading/get_heading_column_offset.c\
-	src/monsters/private/instantiate_monsters/instantiate_monster/set_heading/get_heading_row_offset.c\
-	src/monsters/private/instantiate_monsters/instantiate_monster/set_heading.c\
 	src/monsters/private/instantiate_monsters/instantiate_monster.c\
+	src/monsters/private/set_monster_heading/get_heading_column_offset.c\
+	src/monsters/private/set_monster_heading/get_heading_row_offset.c\
 	src/monsters/private/update_monsters/update_monster.c\
 	src/monsters/instantiate_monsters.c\
+	src/monsters/set_monster_heading.c\
 	src/monsters/update_monsters.c
 
 SOURCES +=\

@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_instantiate_monster.h                   :+:    :+:            */
+/*   get_heading_row_offset.c                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/05 19:13:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 19:13:25 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/05 21:27:09 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 21:27:12 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_INSTANTIATE_MONSTER_H
-# define SL_PRIVATE_INSTANTIATE_MONSTER_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	set_heading(t_monster *monster, t_data *data);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+t_i32	get_heading_row_offset(t_heading heading)
+{
+	if (heading == HEADING_UP)
+		return (-1);
+	if (heading == HEADING_DOWN)
+		return (1);
+	else
+		return (0);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

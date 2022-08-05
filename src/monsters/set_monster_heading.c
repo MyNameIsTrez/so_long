@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   set_heading.c                                      :+:    :+:            */
+/*   set_monster_heading.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/05 18:45:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 19:23:12 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 21:31:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "set_heading/sl_private_set_heading.h"
+#include "private/set_monster_heading/sl_private_set_monster_heading.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	set_heading(t_monster *monster, t_data *data)
+void	sl_set_monster_heading(t_monster *monster, t_data *data)
 {
 	size_t		monster_column;
 	size_t		monster_row;
