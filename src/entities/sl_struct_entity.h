@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:57:30 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 15:05:56 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 20:47:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 typedef struct s_entity
 {
 	t_tile		tile;
-	t_f64		seconds_since_last_draw;
-	t_f64		seconds_between_draws;
+	t_f64		seconds_since_last_frame_change;
+	t_f64		seconds_between_frame_changes;
 	t_u32		frames_since_last_update;
 	t_u32		frames_between_updates;
 }	t_entity;
