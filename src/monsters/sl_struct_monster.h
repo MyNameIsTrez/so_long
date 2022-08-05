@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 14:20:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 16:18:01 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 15:07:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@
 
 typedef enum e_heading
 {
-	UP,
-	RIGHT,
-	DOWN,
-	LEFT,
+	HEADING_UP,
+	HEADING_RIGHT,
+	HEADING_DOWN,
+	HEADING_LEFT,
+	HEADING_NONE,
 }	t_heading;
 
 ////////////////////////////////////////////////////////////////////////////////

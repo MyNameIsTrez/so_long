@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 14:42:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 16:29:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/04 16:43:34 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 void	sl_update_monster(t_data *data)
 {
-	// data->it.monster
-	(void)data;
+	if (data->it.monster->entity->tile.column_index > 0)
+		sl_shift_tile_pos(&data->it.monster->entity->tile, -1, 0, data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
