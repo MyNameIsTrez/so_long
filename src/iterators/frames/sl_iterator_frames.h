@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 13:51:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/28 13:30:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 18:35:01 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 #ifndef SL_ITERATOR_FRAMES_H
 # define SL_ITERATOR_FRAMES_H
+
+////////////////////////////////////////////////////////////////////////////////
+
+typedef struct s_data		t_data;
+typedef struct s_tile_kind	t_tile_kind;
 
 ////////////////////////////////////////////////////////////////////////////////
 
