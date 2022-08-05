@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   parse_argv.c                                       :+:    :+:            */
+/*   sl_private_parse_argv.h                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/22 12:27:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/03 16:21:14 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 15:59:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_PARSE_ARGV_H
+# define SL_PRIVATE_PARSE_ARGV_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "utils/sl_init_utils.h"
+t_i32	get_scale(t_i32 argc, char **argv);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_parse_argv(t_i32 argc, char **argv, t_data *data)
-{
-	char	*map_filename;
-
-	map_filename = argv[1];
-	if (sl_init_char_grid(map_filename, data) != OK)
-		return (ERROR);
-	if (sl_init_texture_metadata(get_scale(argc, argv), data) != OK)
-		return (ERROR);
-	sl_init_window_width_and_height(data);
-	return (OK);
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////
