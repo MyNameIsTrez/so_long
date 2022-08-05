@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 13:28:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 15:03:25 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 19:56:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
 
 void	sl_change_frames(t_data *data)
 {
+	t_iterator	it;
 	t_entity	*entity;
 	t_tile		*tile;
 	t_f64		seconds_elapsed;
 	size_t		frame_count;
 
-	while (sl_iterate_entities(data) != FINISHED)
+	while (sl_iterate_entities(&it, data) != FINISHED)
 	{
 		entity = data->it.entity;
 		seconds_elapsed = data->seconds - entity->seconds_since_last_draw;
