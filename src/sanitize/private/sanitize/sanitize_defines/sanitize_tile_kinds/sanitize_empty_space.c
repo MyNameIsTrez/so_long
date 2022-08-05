@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sanitize_map_exit.c                                :+:    :+:            */
+/*   sanitize_empty_space.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/03 14:53:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/03 14:53:36 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 15:26:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../sl_sanitize_defines.h"
+#include "../sl_private_sanitize_defines.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sanitize_map_exit(t_data *data)
+t_status	sanitize_empty_space(t_data *data)
 {
 	const t_tile_kind_data_color	tile_kind_data_color = {
-		.initial_color = {MAP_EXIT_R, MAP_EXIT_G, MAP_EXIT_B},
-		.min_color_offset = {MAP_EXIT_MIN_R_OFFSET, MAP_EXIT_MIN_G_OFFSET,
-		MAP_EXIT_MIN_B_OFFSET},
-		.max_color_offset = {MAP_EXIT_MAX_R_OFFSET, MAP_EXIT_MAX_G_OFFSET,
-		MAP_EXIT_MAX_B_OFFSET},
-		.wait = {MAP_EXIT_R_WAIT, MAP_EXIT_G_WAIT, MAP_EXIT_B_WAIT},
-		.step = {MAP_EXIT_R_STEP, MAP_EXIT_G_STEP, MAP_EXIT_B_STEP}
+		.initial_color = {EMPTY_SPACE_R, EMPTY_SPACE_G, EMPTY_SPACE_B},
+		.min_color_offset = {EMPTY_SPACE_MIN_R_OFFSET, EMPTY_SPACE_MIN_G_OFFSET,
+		EMPTY_SPACE_MIN_B_OFFSET},
+		.max_color_offset = {EMPTY_SPACE_MAX_R_OFFSET, EMPTY_SPACE_MAX_G_OFFSET,
+		EMPTY_SPACE_MAX_B_OFFSET},
+		.wait = {EMPTY_SPACE_R_WAIT, EMPTY_SPACE_G_WAIT, EMPTY_SPACE_B_WAIT},
+		.step = {EMPTY_SPACE_R_STEP, EMPTY_SPACE_G_STEP, EMPTY_SPACE_B_STEP}
 	};
 
 	if (sanitize_tile_kind(tile_kind_data_color, data) != OK)

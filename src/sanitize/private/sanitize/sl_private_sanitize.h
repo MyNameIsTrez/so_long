@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sanitize_tile_kind.c                               :+:    :+:            */
+/*   sl_private_sanitize.h                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/03 14:54:41 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:27:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/02 17:35:58 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 15:28:38 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_SANITIZE_H
+# define SL_PRIVATE_SANITIZE_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "sanitize_color_offset/sl_sanitize_color_offset.h"
+# include "sanitize_defines/sl_private_sanitize_defines.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sanitize_tile_kind(t_tile_kind_data_color tile_kind_data_color,
-				t_data *data)
-{
-	if (sanitize_min_color_offset(tile_kind_data_color, data) != OK || \
-		sanitize_max_color_offset(tile_kind_data_color, data) != OK)
-		return (ERROR);
-	return (OK);
-}
+t_status	sanitize_argc(t_i32 argc);
+t_status	sanitize_argv(t_i32 argc, char **argv, t_data *data);
+
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

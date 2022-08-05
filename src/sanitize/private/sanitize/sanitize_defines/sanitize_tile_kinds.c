@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_sanitize_tile_kinds.h                           :+:    :+:            */
+/*   sanitize_tile_kinds.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/03 14:59:45 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 16:40:31 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/02 16:47:18 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 15:27:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_SANITIZE_TILE_KINDS_H
-# define SL_SANITIZE_TILE_KINDS_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sanitize_collectible(t_data *data);
-t_status	sanitize_empty_space(t_data *data);
-t_status	sanitize_map_exit(t_data *data);
-t_status	sanitize_player_1(t_data *data);
-t_status	sanitize_player_2(t_data *data);
-t_status	sanitize_wall(t_data *data);
+#include "sanitize_tile_kinds/sl_private_sanitize_tile_kinds.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif
+t_status	sanitize_tile_kinds(t_data *data)
+{
+	if (sanitize_collectible(data) != OK || \
+		sanitize_empty_space(data) != OK || \
+		sanitize_map_exit(data) != OK || \
+		sanitize_player_1(data) != OK || \
+		sanitize_player_2(data) != OK || \
+		sanitize_wall(data) != OK)
+		return (ERROR);
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

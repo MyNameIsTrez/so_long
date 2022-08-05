@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sanitize_defines.c                                 :+:    :+:            */
+/*   sl_private_sanitize_defines.h                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/03 14:47:55 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 14:57:04 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/03 15:15:09 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/05 15:23:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_SANITIZE_DEFINES_H
+# define SL_PRIVATE_SANITIZE_DEFINES_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "sanitize_defines/sl_sanitize_defines.h"
+t_status	sanitize_defines(t_data *data);
+t_status	sanitize_tile_kinds(t_data *data);
+t_status	sanitize_tile_kind(t_tile_kind_data_color tile_kind_data_color,
+				t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sanitize_defines(t_data *data)
-{
-	if (sanitize_tile_kinds(data) != OK)
-		return (ERROR);
-	return (OK);
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////
