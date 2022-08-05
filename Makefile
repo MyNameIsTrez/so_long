@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/05 15:26:02 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/05 15:33:35 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ LIBS := $(GLFW) $(MLX42) $(LIBFT) $(FT_PRINTF)
 ################################################################################
 
 SOURCES :=\
-	src/background/instantiate_background_utils/fill_background.c\
+	src/background/private/instantiate_background/fill_background.c\
 	src/background/instantiate_background.c
 
 SOURCES +=\
@@ -204,7 +204,7 @@ SOURCES +=\
 ################################################################################
 
 HEADERS +=\
-	src/background/instantiate_background_utils/sl_instantiate_background_utils.h\
+	src/background/private/instantiate_background/sl_private_instantiate_background.h\
 	src/background/sl_background.h
 
 HEADERS +=\

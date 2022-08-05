@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_instantiate_background_utils.h                  :+:    :+:            */
+/*   sl_private_instantiate_background.h                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 17:43:38 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:43:55 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 15:32:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_INSTANTIATE_BACKGROUND_UTILS_H
-# define SL_INSTANTIATE_BACKGROUND_UTILS_H
+#ifndef SL_PRIVATE_INSTANTIATE_BACKGROUND_H
+# define SL_PRIVATE_INSTANTIATE_BACKGROUND_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
