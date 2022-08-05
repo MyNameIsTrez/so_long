@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 20:00:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 13:35:59 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 15:41:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "instantiate_entities_utils/sl_instantiate_entities_utils.h"
+#include "private/instantiate_entities/sl_private_instantiate_entities.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/05 15:39:08 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/05 15:42:37 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ SOURCES +=\
 	src/cleanup/cleanup.c
 
 SOURCES +=\
-	src/entities/instantiate_entities_utils/instantiate_entity.c\
+	src/entities/private/instantiate_entities/instantiate_entity.c\
 	src/entities/instantiate_entities.c\
 	src/entities/is_entity.c\
 	src/entities/update_entities.c
@@ -216,7 +216,7 @@ HEADERS +=\
 	src/cleanup/sl_cleanup.h
 
 HEADERS +=\
-	src/entities/instantiate_entities_utils/sl_instantiate_entities_utils.h\
+	src/entities/private/instantiate_entities/sl_private_instantiate_entities.h\
 	src/entities/sl_entities.h\
 	src/entities/sl_struct_entity.h
 
