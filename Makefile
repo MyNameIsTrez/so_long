@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/05 16:22:53 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/05 16:44:06 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -139,15 +139,15 @@ SOURCES +=\
 	src/players/try_move_players.c
 
 SOURCES +=\
-	src/sanitize/private/sanitize/sanitize_defines/sanitize_color_offset/sanitize_max_color_offset.c\
-	src/sanitize/private/sanitize/sanitize_defines/sanitize_color_offset/sanitize_min_color_offset.c\
+	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_tile_kind/sanitize_max_color_offset.c\
+	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_tile_kind/sanitize_min_color_offset.c\
+	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_tile_kind/sanitize_tile_kind.c\
 	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_collectible.c\
 	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_empty_space.c\
 	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_map_exit.c\
 	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_player_1.c\
 	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_player_2.c\
 	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_wall.c\
-	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kind.c\
 	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds.c\
 	src/sanitize/private/sanitize/sanitize_argc.c\
 	src/sanitize/private/sanitize/sanitize_argv.c\
@@ -263,7 +263,7 @@ HEADERS +=\
 	src/players/sl_struct_player.h
 
 HEADERS +=\
-	src/sanitize/private/sanitize/sanitize_defines/sanitize_color_offset/sl_private_sanitize_color_offset.h\
+	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_tile_kind/sl_private_sanitize_tile_kind.h\
 	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sl_private_sanitize_tile_kinds.h\
 	src/sanitize/private/sanitize/sanitize_defines/sl_private_sanitize_defines.h\
 	src/sanitize/private/sanitize/sl_private_sanitize.h\

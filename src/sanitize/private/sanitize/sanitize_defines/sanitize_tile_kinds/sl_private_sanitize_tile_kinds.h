@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/03 14:59:45 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 15:24:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/05 16:42:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 #ifndef SL_PRIVATE_SANITIZE_TILE_KINDS_H
 # define SL_PRIVATE_SANITIZE_TILE_KINDS_H
+
+////////////////////////////////////////////////////////////////////////////////
+
+# include "sanitize_tile_kind/sl_private_sanitize_tile_kind.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
