@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/05 17:03:10 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/05 17:08:06 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -203,127 +203,127 @@ SOURCES +=\
 
 ################################################################################
 
-# HEADERS +=\
-# 	src/background/private/instantiate_background/sl_private_instantiate_background.h\
-# 	src/background/sl_background.h
+HEADERS +=\
+	src/background/private/instantiate_background/sl_private_instantiate_background.h\
+	src/background/sl_background.h
 
-# HEADERS +=\
-# 	src/char_grid/private/init_char_grid/sl_private_init_char_grid.h\
-# 	src/char_grid/sl_char_grid.h
+HEADERS +=\
+	src/char_grid/private/init_char_grid/sl_private_init_char_grid.h\
+	src/char_grid/sl_char_grid.h
 
-# HEADERS +=\
-# 	src/cleanup/private/cleanup/sl_private_cleanup.h\
-# 	src/cleanup/sl_cleanup.h
+HEADERS +=\
+	src/cleanup/private/cleanup/sl_private_cleanup.h\
+	src/cleanup/sl_cleanup.h
 
-# HEADERS +=\
-# 	src/entities/private/instantiate_entities/sl_private_instantiate_entities.h\
-# 	src/entities/sl_entities.h\
-# 	src/entities/sl_struct_entity.h
+HEADERS +=\
+	src/entities/private/instantiate_entities/sl_private_instantiate_entities.h\
+	src/entities/sl_entities.h\
+	src/entities/sl_struct_entity.h
 
-# HEADERS +=\
-# 	src/error/private/sl_private_error.h\
-# 	src/error/sl_error.h
+HEADERS +=\
+	src/error/private/sl_private_error.h\
+	src/error/sl_error.h
 
-# HEADERS +=\
-# 	src/frames/private/update_frame_colors/sl_private_update_frame_colors.h\
-# 	src/frames/private/sl_private_frames.h\
-# 	src/frames/sl_frames.h
+HEADERS +=\
+	src/frames/private/update_frame_colors/sl_private_update_frame_colors.h\
+	src/frames/private/sl_private_frames.h\
+	src/frames/sl_frames.h
 
-# HEADERS +=\
-# 	src/held_keys/sl_held_keys.h
+HEADERS +=\
+	src/held_keys/sl_held_keys.h
 
-# HEADERS +=\
-# 	src/init/private/init/parse_argv/sl_private_parse_argv.h\
-# 	src/init/private/init/sl_private_init.h\
-# 	src/init/sl_init.h
+HEADERS +=\
+	src/init/private/init/parse_argv/sl_private_parse_argv.h\
+	src/init/private/init/sl_private_init.h\
+	src/init/sl_init.h
 
-# HEADERS +=\
-# 	src/iterators/sl_iterators.h\
-# 	src/iterators/frames/sl_iterator_frames.h\
-# 	src/iterators/sl_struct_iterators.h
+HEADERS +=\
+	src/iterators/sl_iterators.h\
+	src/iterators/frames/sl_iterator_frames.h\
+	src/iterators/sl_struct_iterators.h
 
-# HEADERS +=\
-# 	src/loop/sl_loop.h
+HEADERS +=\
+	src/loop/sl_loop.h
 
-# HEADERS +=\
-# 	src/monitor/sl_monitor.h\
-# 	src/monitor/sl_struct_monitor.h
+HEADERS +=\
+	src/monitor/sl_monitor.h\
+	src/monitor/sl_struct_monitor.h
 
-# HEADERS +=\
-# 	src/monsters/private/update_monsters/sl_private_update_monsters.h\
-# 	src/monsters/sl_monsters.h\
-# 	src/monsters/sl_struct_monster.h
+HEADERS +=\
+	src/monsters/private/update_monsters/sl_private_update_monsters.h\
+	src/monsters/sl_monsters.h\
+	src/monsters/sl_struct_monster.h
 
-# HEADERS +=\
-# 	src/players/private/initialize_players/sl_private_initialize_players.h\
-# 	src/players/private/try_move_players/can_player_shift/is_walkable/sl_private_is_walkable.h\
-# 	src/players/private/try_move_players/can_player_shift/sl_private_can_player_shift.h\
-# 	src/players/private/try_move_players/sl_private_try_move_players.h\
-# 	src/players/sl_players.h\
-# 	src/players/sl_struct_player.h
+HEADERS +=\
+	src/players/private/initialize_players/sl_private_initialize_players.h\
+	src/players/private/try_move_players/can_player_shift/is_walkable/sl_private_is_walkable.h\
+	src/players/private/try_move_players/can_player_shift/sl_private_can_player_shift.h\
+	src/players/private/try_move_players/sl_private_try_move_players.h\
+	src/players/sl_players.h\
+	src/players/sl_struct_player.h
 
-# HEADERS +=\
-# 	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_tile_kind/sl_private_sanitize_tile_kind.h\
-# 	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sl_private_sanitize_tile_kinds.h\
-# 	src/sanitize/private/sanitize/sanitize_defines/sl_private_sanitize_defines.h\
-# 	src/sanitize/private/sanitize/sl_private_sanitize.h\
-# 	src/sanitize/sl_sanitize.h
+HEADERS +=\
+	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sanitize_tile_kind/sl_private_sanitize_tile_kind.h\
+	src/sanitize/private/sanitize/sanitize_defines/sanitize_tile_kinds/sl_private_sanitize_tile_kinds.h\
+	src/sanitize/private/sanitize/sanitize_defines/sl_private_sanitize_defines.h\
+	src/sanitize/private/sanitize/sl_private_sanitize.h\
+	src/sanitize/sl_sanitize.h
 
-# HEADERS +=\
-# 	src/settings/tile_kinds/players/sl_player_1.h\
-# 	src/settings/tile_kinds/players/sl_player_2.h\
-# 	src/settings/tile_kinds/sl_collectible.h\
-# 	src/settings/tile_kinds/sl_empty_space.h\
-# 	src/settings/tile_kinds/sl_map_exit.h\
-# 	src/settings/tile_kinds/sl_monster.h\
-# 	src/settings/tile_kinds/sl_settings_tile_kinds.h\
-# 	src/settings/tile_kinds/sl_wall.h
+HEADERS +=\
+	src/settings/tile_kinds/players/sl_player_1.h\
+	src/settings/tile_kinds/players/sl_player_2.h\
+	src/settings/tile_kinds/sl_collectible.h\
+	src/settings/tile_kinds/sl_empty_space.h\
+	src/settings/tile_kinds/sl_map_exit.h\
+	src/settings/tile_kinds/sl_monster.h\
+	src/settings/tile_kinds/sl_settings_tile_kinds.h\
+	src/settings/tile_kinds/sl_wall.h
 
-# HEADERS +=\
-# 	src/settings/sl_settings_background.h\
-# 	src/settings/sl_settings_controls.h\
-# 	src/settings/sl_settings_map_characters.h\
-# 	src/settings/sl_settings_monitor.h\
-# 	src/settings/sl_settings_players.h\
-# 	src/settings/sl_settings_texture.h\
-# 	src/settings/sl_settings_window.h\
-# 	src/settings/sl_settings.h
+HEADERS +=\
+	src/settings/sl_settings_background.h\
+	src/settings/sl_settings_controls.h\
+	src/settings/sl_settings_map_characters.h\
+	src/settings/sl_settings_monitor.h\
+	src/settings/sl_settings_players.h\
+	src/settings/sl_settings_texture.h\
+	src/settings/sl_settings_window.h\
+	src/settings/sl_settings.h
 
-# HEADERS +=\
-# 	src/structs/sl_structs_data.h\
-# 	src/structs/sl_structs_mlx42.h\
-# 	src/structs/sl_structs.h
+HEADERS +=\
+	src/structs/sl_structs_data.h\
+	src/structs/sl_structs_mlx42.h\
+	src/structs/sl_structs.h
 
-# HEADERS +=\
-# 	src/texture/private/init_texture_metadata/sl_private_init_texture_metadata.h\
-# 	src/texture/private/load_texture/get_texture_filepath/sl_private_get_texture_filepath.h\
-# 	src/texture/private/load_texture/init_texture_filename/init_texture_filename_stem/sl_private_init_texture_filename_stem.h\
-# 	src/texture/private/load_texture/init_texture_filename/sl_private_init_texture_filename.h\
-# 	src/texture/private/load_texture/sl_private_load_texture.h\
-# 	src/texture/sl_struct_texture.h\
-# 	src/texture/sl_texture.h
+HEADERS +=\
+	src/texture/private/init_texture_metadata/sl_private_init_texture_metadata.h\
+	src/texture/private/load_texture/get_texture_filepath/sl_private_get_texture_filepath.h\
+	src/texture/private/load_texture/init_texture_filename/get_texture_filename_stem/sl_private_get_texture_filename_stem.h\
+	src/texture/private/load_texture/init_texture_filename/sl_private_init_texture_filename.h\
+	src/texture/private/load_texture/sl_private_load_texture.h\
+	src/texture/sl_struct_texture.h\
+	src/texture/sl_texture.h
 
-# HEADERS +=\
-# 	src/tile_grid/instantiate_tile_grid_utils/sl_instantiate_tile_grid_utils.h\
-# 	src/tile_grid/sl_struct_tile_grid.h\
-# 	src/tile_grid/sl_tile_grid.h
+HEADERS +=\
+	src/tile_grid/instantiate_tile_grid_utils/sl_instantiate_tile_grid_utils.h\
+	src/tile_grid/sl_struct_tile_grid.h\
+	src/tile_grid/sl_tile_grid.h
 
-# HEADERS +=\
-# 	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/sl_instantiate_tile_kinds_utils_add_tile_kind.h\
-# 	src/tile_kinds/instantiate_tile_kinds_utils/sl_instantiate_tile_kinds_utils.h\
-# 	src/tile_kinds/sl_struct_tile_kind.h\
-# 	src/tile_kinds/sl_tile_kinds.h
+HEADERS +=\
+	src/tile_kinds/instantiate_tile_kinds_utils/add_tile_kind/sl_instantiate_tile_kinds_utils_add_tile_kind.h\
+	src/tile_kinds/instantiate_tile_kinds_utils/sl_instantiate_tile_kinds_utils.h\
+	src/tile_kinds/sl_struct_tile_kind.h\
+	src/tile_kinds/sl_tile_kinds.h
 
-# HEADERS +=\
-# 	src/tiles/sl_struct_tiles.h\
-# 	src/tiles/sl_tiles.h
+HEADERS +=\
+	src/tiles/sl_struct_tiles.h\
+	src/tiles/sl_tiles.h
 
-# HEADERS +=\
-# 	src/window/init_window_width_and_height_utils/sl_init_window_width_and_height_utils.h\
-# 	src/window/sl_window.h
+HEADERS +=\
+	src/window/init_window_width_and_height_utils/sl_init_window_width_and_height_utils.h\
+	src/window/sl_window.h
 
-# HEADERS +=\
-# 	src/so_long.h
+HEADERS +=\
+	src/so_long.h
 
 ################################################################################
 
