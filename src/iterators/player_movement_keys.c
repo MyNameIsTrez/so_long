@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/18 12:08:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 21:06:44 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 16:20:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,43 +16,19 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_player_movement_keys(
-								t_player *player, t_data *data, bool reset)
+t_iterator_status	sl_iterate_player_movement_keys(t_iterator *it,
+						t_player *player, t_data *data)
 {
-	static t_iterator	it;
-	keys_t				*movement_keys;
-
-	if (reset)
+	if (!it->initialized)
+		*it = ft_get_array_iterator(player->controls.movement_keys, 4,
+				sizeof(keys_t));
+	while (ft_iterate(it) != FINISHED)
 	{
-		it.initialized = false;
-		data->it.player_movement_key = 0;
-		return (RESET);
-	}
-	if (!it.initialized)
-	{
-		movement_keys = player->controls.movement_keys;
-		it = ft_get_array_iterator(movement_keys, 4, sizeof(keys_t));
-	}
-	while (ft_iterate(&it) != FINISHED)
-	{
-		data->it.player_movement_key = *(keys_t *)it.current;
+		data->it.player_movement_key = *(keys_t *)it->current;
 		return (LOOPED);
 	}
-	sl_reset_iterate_player_movement_keys(data);
+	data->it.player_movement_key = *(keys_t *)it->current;
 	return (FINISHED);
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_iterator_status	sl_iterate_player_movement_keys(t_player *player,
-			t_data *data)
-{
-	return (resettable_iterate_player_movement_keys(player, data, false));
-}
-
-void	sl_reset_iterate_player_movement_keys(t_data *data)
-{
-	resettable_iterate_player_movement_keys(NULL, data, true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

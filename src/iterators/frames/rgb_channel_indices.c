@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 14:31:40 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 16:12:10 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,38 +20,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_rgb_channel_indices(t_data *data,
-								bool reset)
+t_iterator_status	sl_iterate_rgb_channel_indices(t_iterator *it, t_data *data)
 {
-	static t_iterator	it;
-
-	if (reset)
+	if (!it->initialized)
+		*it = ft_get_count_iterator(CHANNEL_COUNT);
+	while (ft_iterate(it) != FINISHED)
 	{
-		it.initialized = false;
-		data->it.rgb_channel_index = 0;
-		return (RESET);
-	}
-	if (!it.initialized)
-		it = ft_get_count_iterator(CHANNEL_COUNT);
-	while (ft_iterate(&it) != FINISHED)
-	{
-		data->it.rgb_channel_index = (size_t)it.current;
+		data->it.rgb_channel_index = (size_t)it->current;
 		return (LOOPED);
 	}
-	sl_reset_iterate_rgb_channel_indices(data);
+	data->it.rgb_channel_index = (size_t)it->current;
 	return (FINISHED);
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_iterator_status	sl_iterate_rgb_channel_indices(t_data *data)
-{
-	return (resettable_iterate_rgb_channel_indices(data, false));
-}
-
-void	sl_reset_iterate_rgb_channel_indices(t_data *data)
-{
-	resettable_iterate_rgb_channel_indices(data, true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

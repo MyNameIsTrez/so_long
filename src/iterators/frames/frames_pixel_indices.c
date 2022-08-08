@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 16:01:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 16:52:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,45 +16,30 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_frames_pixel_indices(
-								t_tile_kind *tile_kind, t_data *data,
-								bool reset)
+t_iterator_status	sl_iterate_frames_pixel_indices(
+						t_it_frames_pixel_indices *it, t_tile_kind *tile_kind,
+						t_data *data)
 {
-	if (reset)
-	{
-		sl_reset_iterate_frames(data);
-		sl_reset_iterate_frame_pixel_indices(data);
-		return (RESET);
-	}
+	if (!it->frames_it.initialized)
+		sl_iterate_frames(&it->frames_it, tile_kind, data);
 	while (true)
 	{
-		if (data->it.frame == NULL)
-			sl_iterate_frames(tile_kind, data);
-		while (true)
-		{
-			if (sl_iterate_frame_pixel_indices(data->it.frame, data) != LOOPED)
-				break ;
+		if (sl_iterate_frame_pixel_indices(&it->frame_pixel_indices_it,
+				data->it.frame, data) != FINISHED)
 			return (LOOPED);
-		}
-		sl_reset_iterate_frame_pixel_indices(data);
-		if (sl_iterate_frames(tile_kind, data) != LOOPED)
+		// if (data->it.frame_pixels.y == 0)
+		// 	sl_iterate_frames(&it->frames_it, tile_kind, data);
+		if (sl_iterate_frames(&it->frames_it, tile_kind, data) == FINISHED)
 			break ;
 	}
-	sl_reset_iterate_frames_pixel_indices(data);
 	return (FINISHED);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_frames_pixel_indices(t_tile_kind *tile_kind,
-						t_data *data)
+void	sl_init_it_frames_pixel_indices(t_it_frames_pixel_indices *it)
 {
-	return (resettable_iterate_frames_pixel_indices(tile_kind, data, false));
-}
-
-void	sl_reset_iterate_frames_pixel_indices(t_data *data)
-{
-	resettable_iterate_frames_pixel_indices(NULL, data, true);
+	ft_bzero(it, sizeof(t_it_frames_pixel_indices));
 }
 
 ////////////////////////////////////////////////////////////////////////////////

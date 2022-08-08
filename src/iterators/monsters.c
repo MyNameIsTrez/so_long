@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/26 16:35:26 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/04 16:08:09 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 16:17:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,38 +16,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_monsters(t_data *data,
-								bool reset)
+t_iterator_status	sl_iterate_monsters(t_iterator *it, t_data *data)
 {
-	static t_iterator	it;
-
-	if (reset)
+	if (!it->initialized)
+		*it = ft_get_vector_iterator(data->monsters);
+	while (ft_iterate(it) != FINISHED)
 	{
-		it.initialized = false;
-		data->it.monster = NULL;
-		return (RESET);
-	}
-	if (!it.initialized)
-		it = ft_get_vector_iterator(data->monsters);
-	while (ft_iterate(&it) != FINISHED)
-	{
-		data->it.monster = (t_monster *)it.current;
+		data->it.monster = (t_monster *)it->current;
 		return (LOOPED);
 	}
-	sl_reset_iterate_monsters(data);
+	data->it.monster = (t_monster *)it->current;
 	return (FINISHED);
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_iterator_status	sl_iterate_monsters(t_data *data)
-{
-	return (resettable_iterate_monsters(data, false));
-}
-
-void	sl_reset_iterate_monsters(t_data *data)
-{
-	resettable_iterate_monsters(data, true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

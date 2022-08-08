@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 11:44:54 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 20:47:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 16:11:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,38 +16,18 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_frames(t_tile_kind *tile_kind,
-								t_data *data, bool reset)
+t_iterator_status	sl_iterate_frames(t_iterator *it, t_tile_kind *tile_kind,
+						t_data *data)
 {
-	static t_iterator	it;
-
-	if (reset)
+	if (!it->initialized)
+		*it = ft_get_vector_iterator(tile_kind->frames);
+	while (ft_iterate(it) != FINISHED)
 	{
-		it.initialized = false;
-		data->it.frame = NULL;
-		return (RESET);
-	}
-	if (!it.initialized)
-		it = ft_get_vector_iterator(tile_kind->frames);
-	while (ft_iterate(&it) != FINISHED)
-	{
-		data->it.frame = *(mlx_image_t **)it.current;
+		data->it.frame = *(mlx_image_t **)it->current;
 		return (LOOPED);
 	}
-	sl_reset_iterate_frames(data);
+	data->it.frame = *(mlx_image_t **)it->current;
 	return (FINISHED);
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_iterator_status	sl_iterate_frames(t_tile_kind *tile_kind, t_data *data)
-{
-	return (resettable_iterate_frames(tile_kind, data, false));
-}
-
-void	sl_reset_iterate_frames(t_data *data)
-{
-	resettable_iterate_frames(NULL, data, true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/03 14:56:15 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 14:56:17 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 16:58:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@
 t_status	sanitize_min_color_offset(
 				t_tile_kind_data_color tile_kind_data_color, t_data *data)
 {
-	size_t	channel;
+	t_iterator	it;
+	size_t		channel;
 
-	while (sl_iterate_rgb_channel_indices(data) != FINISHED)
+	ft_init_it(&it);
+	while (sl_iterate_rgb_channel_indices(&it, data) != FINISHED)
 	{
 		channel = data->it.rgb_channel_index;
 		if (tile_kind_data_color.initial_color[channel] - \

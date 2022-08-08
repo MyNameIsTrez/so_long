@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/26 16:35:26 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 21:07:57 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 16:21:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,38 +16,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_players(t_data *data,
-								bool reset)
+t_iterator_status	sl_iterate_players(t_iterator *it, t_data *data)
 {
-	static t_iterator	it;
-
-	if (reset)
+	if (!it->initialized)
+		*it = ft_get_vector_iterator(data->players);
+	while (ft_iterate(it) != FINISHED)
 	{
-		it.initialized = false;
-		data->it.player = NULL;
-		return (RESET);
-	}
-	if (!it.initialized)
-		it = ft_get_vector_iterator(data->players);
-	while (ft_iterate(&it) != FINISHED)
-	{
-		data->it.player = (t_player *)it.current;
+		data->it.player = (t_player *)it->current;
 		return (LOOPED);
 	}
-	sl_reset_iterate_players(data);
+	data->it.player = (t_player *)it->current;
 	return (FINISHED);
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_iterator_status	sl_iterate_players(t_data *data)
-{
-	return (resettable_iterate_players(data, false));
-}
-
-void	sl_reset_iterate_players(t_data *data)
-{
-	resettable_iterate_players(data, true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

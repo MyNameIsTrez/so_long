@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 15:09:29 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 16:39:28 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,15 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_frame_pixel_indices(
-								mlx_image_t *frame, t_data *data, bool reset)
+t_iterator_status	sl_iterate_frame_pixel_indices(t_it_frame_pixels *it,
+						mlx_image_t *frame, t_data *data)
 {
-	if (reset)
-	{
-		sl_reset_iterate_frame_pixels(data);
-		return (RESET);
-	}
-	while (sl_iterate_frame_pixels(frame, data) != FINISHED)
+	while (sl_iterate_frame_pixels(it, frame, data) != FINISHED)
 	{
 		data->it.pixel_index = sl_get_pixel_index(frame, data);
 		return (LOOPED);
 	}
-	sl_reset_iterate_frame_pixel_indices(data);
 	return (FINISHED);
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_iterator_status	sl_iterate_frame_pixel_indices(mlx_image_t *frame,
-						t_data *data)
-{
-	return (resettable_iterate_frame_pixel_indices(frame, data, false));
-}
-
-void	sl_reset_iterate_frame_pixel_indices(t_data *data)
-{
-	resettable_iterate_frame_pixel_indices(NULL, data, true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

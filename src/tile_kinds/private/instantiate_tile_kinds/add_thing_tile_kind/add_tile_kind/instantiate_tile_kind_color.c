@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/02 15:42:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/02 16:24:47 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 16:58:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@
 t_status	instantiate_tile_kind_color(t_tile_kind_color *color,
 				t_tile_kind_data_color tk_data_color, t_data *data)
 {
-	size_t	index;
+	t_iterator	it;
+	size_t		index;
 
-	while (sl_iterate_rgb_channel_indices(data) != FINISHED)
+	ft_init_it(&it);
+	while (sl_iterate_rgb_channel_indices(&it, data) != FINISHED)
 	{
 		index = data->it.rgb_channel_index;
 		color->initial_color[index] = tk_data_color.initial_color[index];

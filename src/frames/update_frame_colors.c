@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 15:58:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 16:42:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,20 @@
 // If R is 253 and step is 6, R should end up as 253 -> 254 -> 255 -> 254 -> 253 -> 252 -> 251, so 251
 void	sl_update_frame_colors(t_data *data)
 {
-	while (sl_iterate_tile_kinds(data) != FINISHED)
+	t_iterator					tile_kinds_it;
+	t_it_frames_pixel_indices	frames_pixels_indices_it;
+	t_iterator					rgb_channel_indices_it;
+
+	ft_init_it(&tile_kinds_it);
+	sl_init_it_frames_pixel_indices(&frames_pixels_indices_it);
+	ft_init_it(&rgb_channel_indices_it);
+	while (sl_iterate_tile_kinds(&tile_kinds_it, data) != FINISHED)
 	{
-		while (sl_iterate_frames_pixel_indices(data->it.tile_kind, data) != FINISHED)
+		while (sl_iterate_frames_pixel_indices(&frames_pixels_indices_it,
+				data->it.tile_kind, data) != FINISHED)
 		{
-			while (sl_iterate_rgb_channel_indices(data) != FINISHED)
+			while (sl_iterate_rgb_channel_indices(&rgb_channel_indices_it,
+					data) != FINISHED)
 			{
 				if (should_step(data))
 				{

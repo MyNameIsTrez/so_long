@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 20:33:19 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 16:57:46 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@
 
 void	sl_try_move_players(t_data *data)
 {
+	t_iterator	it;
 	t_player	*player;
 
-	while (sl_iterate_players(data) != FINISHED)
+	ft_init_it(&it);
+	while (sl_iterate_players(&it, data) != FINISHED)
 	{
 		player = data->it.player;
 		// TODO: Use lookup table
