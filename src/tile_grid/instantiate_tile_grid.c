@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 18:02:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 17:16:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 12:31:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@
 
 t_status	sl_instantiate_tile_grid(t_data *data)
 {
+	t_it_char_grid	it;
+
 	if (malloc_tile_grid_cells(data) != OK)
 		return (ERROR);
-	while (sl_iterate_char_grid(data) != FINISHED)
+	sl_init_it_char_grid(&it);
+	while (sl_iterate_char_grid(&it, data) != FINISHED)
 		if (instantiate_tile(data) != OK)
 			return (ERROR);
 	return (OK);

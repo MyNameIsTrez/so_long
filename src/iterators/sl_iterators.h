@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/29 13:28:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 19:52:40 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 14:25:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,17 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 # include "frames/sl_iterator_frames.h"
+# include "sl_structs_nested_iterators.h"
 # include "sl_struct_iterators.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_char_grid_height(t_data *data);
-void				sl_reset_iterate_char_grid_height(t_data *data);
+t_iterator_status	sl_iterate_char_grid_height(t_iterator *it, t_data *data);
 
-t_iterator_status	sl_iterate_char_grid_width(t_data *data);
-void				sl_reset_iterate_char_grid_width(t_data *data);
+t_iterator_status	sl_iterate_char_grid_width(t_iterator *it, t_data *data);
 
-t_iterator_status	sl_iterate_char_grid(t_data *data);
-void				sl_reset_iterate_char_grid(t_data *data);
+t_iterator_status	sl_iterate_char_grid(t_it_char_grid *it, t_data *data);
+void				sl_init_it_char_grid(t_it_char_grid *it);
 
 ////////////////////////////////////////////////////////////////////////////////
 

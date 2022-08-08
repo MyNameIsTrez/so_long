@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:55:13 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 17:40:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 14:20:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,43 +16,25 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-STATIC t_iterator_status	resettable_iterate_char_grid(t_data *data,
-								bool reset)
+t_iterator_status	sl_iterate_char_grid(t_it_char_grid *it, t_data *data)
 {
-	if (reset)
-	{
-		sl_reset_iterate_char_grid_height(data);
-		sl_reset_iterate_char_grid_width(data);
-		return (RESET);
-	}
 	while (true)
 	{
-		while (true)
-		{
-			if (sl_iterate_char_grid_width(data) != LOOPED)
-				break ;
+		if (sl_iterate_char_grid_width(&it->width, data) != FINISHED)
 			return (LOOPED);
-		}
-		sl_reset_iterate_char_grid_width(data);
 		if (data->it.row_index == 0)
-			sl_iterate_char_grid_height(data);
-		if (sl_iterate_char_grid_height(data) != LOOPED)
+			sl_iterate_char_grid_height(&it->height, data);
+		if (sl_iterate_char_grid_height(&it->height, data) == FINISHED)
 			break ;
 	}
-	sl_reset_iterate_char_grid(data);
 	return (FINISHED);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_char_grid(t_data *data)
+void	sl_init_it_char_grid(t_it_char_grid *it)
 {
-	return (resettable_iterate_char_grid(data, false));
-}
-
-void	sl_reset_iterate_char_grid(t_data *data)
-{
-	resettable_iterate_char_grid(data, true);
+	ft_bzero(it, sizeof(t_it_char_grid));
 }
 
 ////////////////////////////////////////////////////////////////////////////////

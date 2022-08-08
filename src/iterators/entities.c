@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/07 15:41:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 19:57:30 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 14:14:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ t_iterator_status	sl_iterate_entities(t_iterator *it, t_data *data)
 		data->it.entity = (t_entity *)it->current;
 		return (LOOPED);
 	}
-	it->initialized = false;
-	data->it.entity = NULL;
+	data->it.entity = (t_entity *)it->current;
 	return (FINISHED);
 }
 
