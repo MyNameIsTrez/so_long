@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_can_player_shift.h                      :+:    :+:            */
+/*   shift.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/05 16:14:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 20:34:29 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 18:19:31 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/09 16:05:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_CAN_PLAYER_SHIFT_H
-# define SL_PRIVATE_CAN_PLAYER_SHIFT_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	can_autowalk(t_player *player, t_data *data);
-bool	is_walkable(t_player *player, t_heading heading, t_data *data);
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+void	shift(t_player *player, t_i32 x, t_i32 y, t_data *data)
+{
+	sl_shift_tile_pos(&player->entity->tile, x, y, data);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

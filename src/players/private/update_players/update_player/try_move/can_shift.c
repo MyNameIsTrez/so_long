@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   try_move_player.c                                  :+:    :+:            */
+/*   can_shift.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 16:02:14 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 18:18:21 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/09 16:06:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,26 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "try_move_player/sl_private_try_move_player.h"
+#include "can_shift/sl_private_can_shift.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	try_move_player(t_player *player, t_data *data)
+bool	can_shift(t_player *player, t_heading heading, t_data *data)
 {
-	if (can_player_shift(player, HEADING_UP, data))
-		shift_player(player, 0, -1, data);
-	if (can_player_shift(player, HEADING_DOWN, data))
-		shift_player(player, 0, 1, data);
-	if (can_player_shift(player, HEADING_LEFT, data))
-		shift_player(player, -1, 0, data);
-	if (can_player_shift(player, HEADING_RIGHT, data))
-		shift_player(player, 1, 0, data);
+	keys_t	key;
+	t_i32	frames_held;
+	bool	key_was_held;
+
+	key = player->controls.movement_keys[heading];
+	frames_held = data->held_keys[key];
+	if (frames_held == 0)
+		return (false);
+	key_was_held = frames_held > 1;
+	if (key_was_held && !can_autowalk(player, data))
+		return (false);
+	if (!is_walkable(player, heading, data))
+		return (false);
+	return (true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
