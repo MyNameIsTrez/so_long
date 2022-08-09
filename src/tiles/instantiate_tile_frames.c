@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:37:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 22:11:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/08 17:35:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_status	sl_instantiate_tile_frames(t_tile *tile, t_data *data)
 		ft_vector_push(&tile->frame_instances_indices, &frame_instance_uindex);
 		mlx_set_instance_depth(sl_get_frame_instance(tile, frame_index),
 			tile->tile_kind->depth);
-		if (frame_index != 0)
+		if (frame_index != tile->frame_index)
 			sl_get_frame_instance(tile, frame_index)->enabled = false;
 	}
 	return (OK);
