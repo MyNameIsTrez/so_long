@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   try_move_players.c                                 :+:    :+:            */
+/*   update_player.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 15:34:07 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/09 15:49:53 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/09 16:01:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,14 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/try_move_players/sl_private_try_move_players.h"
+#include "update_player/sl_private_update_player.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_try_move_players(t_data *data)
+void	update_player(t_player *player, t_data *data)
 {
-	t_iterator	it;
-	t_player	*player;
-
-	ft_init_it(&it);
-	while (sl_iterate_players(&it, data) != FINISHED)
-	{
-		player = data->it.player;
-		if (can_player_shift(player, HEADING_UP, data))
-			shift_player(player, 0, -1, data);
-		if (can_player_shift(player, HEADING_DOWN, data))
-			shift_player(player, 0, 1, data);
-		if (can_player_shift(player, HEADING_LEFT, data))
-			shift_player(player, -1, 0, data);
-		if (can_player_shift(player, HEADING_RIGHT, data))
-			shift_player(player, 1, 0, data);
-	}
+	try_move_player(player, data);
+	// player_try_grab_collectible(player, data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

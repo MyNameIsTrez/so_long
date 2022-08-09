@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/08 16:42:59 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/09 15:59:31 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	sl_update_frame_colors(t_data *data)
 			{
 				if (should_step(data))
 				{
-					if (sl_is_opaque(data))
+					if (is_visible(data))
 					{
 						step_pixel(data);
 					}

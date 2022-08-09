@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   loop.c                                             :+:    :+:            */
+/*   try_move_player.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 13:56:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 15:47:17 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/09 16:02:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,20 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_loop(void *param)
-{
-	t_data	*data;
+#include "try_move_player/sl_private_try_move_player.h"
 
-	data = param;
-	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE))
-		mlx_close_window(data->mlx);
-	// sl_update_frame_colors(data);
-	sl_update_held_keys(data);
-	sl_update_entities(data);
-	sl_change_frames(data);
-	data->ticks++;
+////////////////////////////////////////////////////////////////////////////////
+
+void	try_move_player(t_player *player, t_data *data)
+{
+	if (can_player_shift(player, HEADING_UP, data))
+		shift_player(player, 0, -1, data);
+	if (can_player_shift(player, HEADING_DOWN, data))
+		shift_player(player, 0, 1, data);
+	if (can_player_shift(player, HEADING_LEFT, data))
+		shift_player(player, -1, 0, data);
+	if (can_player_shift(player, HEADING_RIGHT, data))
+		shift_player(player, 1, 0, data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   loop.c                                             :+:    :+:            */
+/*   update_players.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 13:56:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 15:47:17 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/09 15:45:32 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/09 15:55:21 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_loop(void *param)
-{
-	t_data	*data;
+#include "private/update_players/sl_private_update_players.h"
 
-	data = param;
-	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE))
-		mlx_close_window(data->mlx);
-	// sl_update_frame_colors(data);
-	sl_update_held_keys(data);
-	sl_update_entities(data);
-	sl_change_frames(data);
-	data->ticks++;
+////////////////////////////////////////////////////////////////////////////////
+
+void	sl_update_players(t_data *data)
+{
+	t_iterator	it;
+	t_player	*player;
+
+	ft_init_it(&it);
+	while (sl_iterate_players(&it, data) != FINISHED)
+	{
+		player = data->it.player;
+		update_player(player, data);
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////
