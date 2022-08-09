@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/08 16:57:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/09 15:34:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	sl_try_move_players(t_data *data)
 	while (sl_iterate_players(&it, data) != FINISHED)
 	{
 		player = data->it.player;
-		// TODO: Use lookup table
 		if (can_player_shift(player, HEADING_UP, data))
 			shift_player(player, 0, -1, data);
 		if (can_player_shift(player, HEADING_DOWN, data))
