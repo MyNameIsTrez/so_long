@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/05 20:13:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 16:17:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/09 17:42:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	sl_set_tile_pos(t_tile *tile, size_t column, size_t row, t_data *data)
 	while (sl_iterate_frame_count(&it, frame_count, data) != FINISHED)
 	{
 		instance = sl_get_frame_instance(tile, data->it.frame_index);
-		instance->x = (t_i32)column * (t_i32)pixels_per_tile;
-		instance->y = (t_i32)row * (t_i32)pixels_per_tile;
+		instance->x = (t_i32)column * (t_i32)pixels_per_tile + WINDOW_LEFT_OFFSET * (t_i32)data->texture.scale;
+		instance->y = (t_i32)row * (t_i32)pixels_per_tile + WINDOW_TOP_OFFSET * (t_i32)data->texture.scale;
 	}
 }
 
