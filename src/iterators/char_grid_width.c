@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:57:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/08 14:14:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/09 16:17:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ t_iterator_status	sl_iterate_char_grid_width(t_iterator *it, t_data *data)
 		*it = ft_get_count_iterator(data->char_grid.width);
 	while (ft_iterate(it) != FINISHED)
 	{
-		data->it.column_index = (size_t)it->current;
+		data->it.column = (size_t)it->current;
 		return (LOOPED);
 	}
-	data->it.column_index = (size_t)it->current;
+	data->it.column = (size_t)it->current;
 	return (FINISHED);
 }
 

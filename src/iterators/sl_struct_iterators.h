@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 19:10:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/09 16:17:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ typedef struct s_frame_pixels
 // This struct is used for temporary ITerator data storage
 typedef struct s_it
 {
-	size_t			column_index;
-	size_t			row_index;
+	size_t			column;
+	size_t			row;
 	size_t			frame_index;
 	t_player		*player;
 	t_entity		*entity;

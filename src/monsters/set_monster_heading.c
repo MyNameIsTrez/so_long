@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/05 18:45:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/08 16:55:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/09 16:17:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	sl_set_monster_heading(t_monster *monster, t_data *data)
 	t_i32		column;
 	t_i32		row;
 
-	monster_column = monster->entity->tile.column_index;
-	monster_row = monster->entity->tile.row_index;
+	monster_column = monster->entity->tile.column;
+	monster_row = monster->entity->tile.row;
 	ft_init_it(&it);
 	while (sl_iterate_heading(&it, data) != FINISHED)
 	{

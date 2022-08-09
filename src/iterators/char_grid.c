@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 15:55:13 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/08 14:55:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/09 16:17:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_iterator_status	sl_iterate_char_grid(t_it_char_grid *it, t_data *data)
 	{
 		if (sl_iterate_char_grid_width(&it->width_it, data) != FINISHED)
 			return (LOOPED);
-		if (data->it.row_index == 0)
+		if (data->it.row == 0)
 			sl_iterate_char_grid_height(&it->height_it, data);
 		if (sl_iterate_char_grid_height(&it->height_it, data) == FINISHED)
 			break ;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_heading_column.c                               :+:    :+:            */
+/*   try_grab_collectible.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/13 13:28:56 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 16:17:02 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/09 16:11:59 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/09 16:17:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	sl_get_heading_column(t_heading heading, t_tile *tile)
-{
-	if (heading == HEADING_LEFT)
-		return ((t_i32)tile->column - 1);
-	if (heading == HEADING_RIGHT)
-		return ((t_i32)tile->column + 1);
-	else
-		return ((t_i32)tile->column);
-}
+// void	try_grab_collectible(t_player *player, t_data *data)
+// {
+// 	t_tile	*tile;
+
+// 	tile = &player->entity->tile;
+// 	if (sl_try_get_entity(tile.column, tile->row))
+// 	if ()
+// }
 
 ////////////////////////////////////////////////////////////////////////////////
