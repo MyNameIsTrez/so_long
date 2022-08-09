@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/09 15:49:53 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 16:16:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/09 16:42:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 void	update_player(t_player *player, t_data *data)
 {
 	try_move(player, data);
-	// try_grab_collectible(player, data);
+	try_grab_collectible(player, data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

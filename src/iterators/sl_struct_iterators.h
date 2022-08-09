@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 16:17:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/09 16:36:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include "../entities/sl_struct_entity.h"
 # include "../tile_kinds/sl_struct_tile_kind.h"
 # include "../monsters/sl_struct_monster.h"
+# include "../collectibles/sl_struct_collectible.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -50,6 +51,7 @@ typedef struct s_it
 	size_t			pixel_index;
 	keys_t			player_movement_key;
 	t_monster		*monster;
+	t_collectible	*collectible;
 }	t_it;
 
 ////////////////////////////////////////////////////////////////////////////////

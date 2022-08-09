@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 20:58:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/09 16:35:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,27 @@
 # include "../entities/sl_struct_entity.h"
 # include "../players/sl_struct_player.h"
 # include "../monsters/sl_struct_monster.h"
+# include "../collectibles/sl_struct_collectible.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
 // This struct is used for so_long DATA storage
 typedef struct s_data
 {
-	t_monitor	monitor;
-	t_it		it;
-	t_i32		held_keys[MLX42_KEY_COUNT];
-	mlx_t		*mlx;
-	t_grid		char_grid;
-	t_window	window;
-	t_texture	texture;
-	t_tile_kind	*tile_kinds;
-	t_tile_grid	tile_grid;
-	t_entity	*entities;
-	t_player	*players;
-	t_monster	*monsters;
-	t_u32		ticks;
+	t_monitor		monitor;
+	t_it			it;
+	t_i32			held_keys[MLX42_KEY_COUNT];
+	mlx_t			*mlx;
+	t_grid			char_grid;
+	t_window		window;
+	t_texture		texture;
+	t_tile_kind		*tile_kinds;
+	t_tile_grid		tile_grid;
+	t_entity		*entities;
+	t_player		*players;
+	t_monster		*monsters;
+	t_collectible	*collectibles;
+	t_u32			ticks;
 }	t_data;
 
 ////////////////////////////////////////////////////////////////////////////////

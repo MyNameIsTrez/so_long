@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_struct_entity.h                                 :+:    :+:            */
+/*   instantiate_collectibles.c                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:57:30 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 17:08:50 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/09 16:34:36 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/09 16:39:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCT_ENTITY_H
-# define SL_STRUCT_ENTITY_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "../tiles/sl_struct_tiles.h"
+#include "private/instantiate_collectibles/sl_private_instantiate_collectibles.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_entity
+t_status	sl_instantiate_collectibles(t_data *data)
 {
-	t_tile	tile;
-	t_u32	ticks_since_last_frame_change;
-	t_u32	ticks_between_frame_changes;
-	t_u32	ticks_since_last_update;
-	t_u32	ticks_between_updates;
-	bool	enabled;
-}	t_entity;
+	t_iterator	it;
+	t_u8		character;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	data->collectibles = ft_vector_new(sizeof(t_collectible));
+	ft_init_it(&it);
+	while (sl_iterate_entities(&it, data) != FINISHED)
+	{
+		character = data->it.entity->tile.tile_kind->character;
+		if (character == COLLECTIBLE_CHARACTER)
+			if (instantiate_collectible(data) != OK)
+				return (ERROR);
+	}
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

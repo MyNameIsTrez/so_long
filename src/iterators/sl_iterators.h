@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/29 13:28:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/08 16:22:54 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/09 16:41:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ t_iterator_status	sl_iterate_char_grid_width(t_iterator *it, t_data *data);
 
 t_iterator_status	sl_iterate_char_grid(t_it_char_grid *it, t_data *data);
 void				sl_init_it_char_grid(t_it_char_grid *it);
+
+t_iterator_status	sl_iterate_collectibles(t_iterator *it, t_data *data);
 
 t_iterator_status	sl_iterate_entities(t_iterator *it, t_data *data);
 

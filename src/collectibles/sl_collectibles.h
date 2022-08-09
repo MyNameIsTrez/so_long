@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_struct_entity.h                                 :+:    :+:            */
+/*   sl_collectibles.h                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:57:30 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 17:08:50 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/09 16:36:48 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/09 16:37:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCT_ENTITY_H
-# define SL_STRUCT_ENTITY_H
+#ifndef SL_COLLECTIBLES_H
+# define SL_COLLECTIBLES_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "../tiles/sl_struct_tiles.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-typedef struct s_entity
-{
-	t_tile	tile;
-	t_u32	ticks_since_last_frame_change;
-	t_u32	ticks_between_frame_changes;
-	t_u32	ticks_since_last_update;
-	t_u32	ticks_between_updates;
-	bool	enabled;
-}	t_entity;
+t_status	sl_instantiate_collectibles(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_struct_entity.h                                 :+:    :+:            */
+/*   instantiate_collectible.c                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:57:30 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 17:08:50 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/09 16:39:10 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/09 16:39:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCT_ENTITY_H
-# define SL_STRUCT_ENTITY_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "../tiles/sl_struct_tiles.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-typedef struct s_entity
+t_status	instantiate_collectible(t_data *data)
 {
-	t_tile	tile;
-	t_u32	ticks_since_last_frame_change;
-	t_u32	ticks_between_frame_changes;
-	t_u32	ticks_since_last_update;
-	t_u32	ticks_between_updates;
-	bool	enabled;
-}	t_entity;
+	t_collectible	collectible;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	collectible.entity = data->it.entity;
+	if (ft_vector_push(&data->collectibles, &collectible) != OK)
+		return (ERROR);
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

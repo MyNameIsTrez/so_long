@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 18:32:59 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/09 16:40:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # include "background/sl_background.h"
 # include "char_grid/sl_char_grid.h"
 # include "cleanup/sl_cleanup.h"
+# include "collectibles/sl_collectibles.h"
 # include "entities/sl_entities.h"
 # include "error/sl_error.h"
 # include "frames/sl_frames.h"

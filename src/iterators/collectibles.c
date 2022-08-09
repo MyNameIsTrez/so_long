@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_struct_entity.h                                 :+:    :+:            */
+/*   collectibles.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/01 17:57:30 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 17:08:50 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/09 16:20:10 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/09 16:32:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCT_ENTITY_H
-# define SL_STRUCT_ENTITY_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "../tiles/sl_struct_tiles.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-typedef struct s_entity
+t_iterator_status	sl_iterate_collectibles(t_iterator *it, t_data *data)
 {
-	t_tile	tile;
-	t_u32	ticks_since_last_frame_change;
-	t_u32	ticks_between_frame_changes;
-	t_u32	ticks_since_last_update;
-	t_u32	ticks_between_updates;
-	bool	enabled;
-}	t_entity;
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	if (!it->initialized)
+		*it = ft_get_vector_iterator(data->collectibles);
+	while (ft_iterate(it) != FINISHED)
+	{
+		data->it.collectible = (t_collectible *)it->current;
+		return (LOOPED);
+	}
+	data->it.collectible = (t_collectible *)it->current;
+	return (FINISHED);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
