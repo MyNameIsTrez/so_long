@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:33:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 15:35:13 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/10 13:51:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	char_grid_has_invalid_character(t_data *data);
+bool	check_invalid_character(t_data *data);
+bool	check_valid_path(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

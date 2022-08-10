@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 14:40:34 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 15:35:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/10 13:51:55 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ t_status	sl_init_char_grid(char *map_filename, t_data *data)
 {
 	if (ft_read_grid_from_file(&data->char_grid, map_filename) != OK)
 		return (ERROR);
-	if (char_grid_has_invalid_character(data) != OK)
+	if (check_invalid_character(data) != OK)
+		return (ERROR);
+	if (check_valid_path(data) != OK)
 		return (ERROR);
 	return (OK);
 }

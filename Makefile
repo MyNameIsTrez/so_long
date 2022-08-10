@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/09 14:15:46 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/10 13:14:12 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ GLFW_FRAMEWORKS :=\
 	-framework Cocoa\
 	-framework OpenGL\
 	-framework IOKit
-
 GLFW := -lglfw3 $(GLFW_FRAMEWORKS)
 
 MLX42_PATH := ./submodules/MLX42
