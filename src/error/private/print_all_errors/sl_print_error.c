@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:20:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/10 12:41:58 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/10 15:22:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	sl_print_error(void)
 		"A #defined color channel max offset was too high,"
 		" causing a color channel to have a value higher than the maximum"
 		" of 255.",
+	[SL_ERROR_NO_PATH] = "No path between the player and the exit was found."
 	};
 
 	ft_print("Error: ");

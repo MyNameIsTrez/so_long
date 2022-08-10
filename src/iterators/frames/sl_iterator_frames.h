@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 13:51:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/08 16:39:26 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/10 16:45:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,35 +17,25 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_data		t_data;
-typedef struct s_tile_kind	t_tile_kind;
+# include "../sl_structs_nested_iterators.h"
+# include "../sl_struct_iterators.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "../sl_structs_nested_iterators.h"
-# include "../sl_struct_iterators.h"
+typedef struct s_data		t_data;
+typedef struct s_tile_kind	t_tile_kind;
 
 ////////////////////////////////////////////////////////////////////////////////
 
 t_iterator_status	sl_iterate_frame_count(t_iterator *it, size_t frame_count,
 						t_data *data);
 
-t_iterator_status	sl_iterate_frame_height(t_iterator *it, mlx_image_t *frame,
-						t_data *data);
-
-t_iterator_status	sl_iterate_frame_pixel_indices(t_it_frame_pixels *it,
+t_iterator_status	sl_iterate_frame_pixel_indices(t_iterator *it,
 						mlx_image_t *frame, t_data *data);
-
-t_iterator_status	sl_iterate_frame_pixels(t_it_frame_pixels *it,
-						mlx_image_t *frame, t_data *data);
-void				sl_init_it_frame_pixels(t_it_frame_pixels *it);
 
 t_iterator_status	sl_iterate_frame_rgb_channel_indices(
 						t_it_frame_rgb_channel_indices *it,
 						mlx_image_t *frame, t_data *data);
-
-t_iterator_status	sl_iterate_frame_width(t_iterator *it, mlx_image_t *frame,
-						t_data *data);
 
 t_iterator_status	sl_iterate_frames_pixel_indices(
 						t_it_frames_pixel_indices *it, t_tile_kind *tile_kind,

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 18:37:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/10 16:23:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_tile		t_tile;
 void			sl_change_frames(t_data *data);
 mlx_image_t		*sl_get_frame(t_tile_kind *tile_kind, size_t frame_index);
 mlx_instance_t	*sl_get_frame_instance(t_tile *tile, size_t frame_index);
-size_t			sl_get_pixel_index(mlx_image_t *frame, t_data *data);
 t_status		sl_initialize_tile_kinds_colors(t_data *data);
 void			sl_update_frame_colors(t_data *data);
 

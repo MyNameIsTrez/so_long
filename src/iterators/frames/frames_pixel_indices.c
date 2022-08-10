@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 16:01:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/08 16:52:13 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/10 16:41:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ t_iterator_status	sl_iterate_frames_pixel_indices(
 		if (sl_iterate_frame_pixel_indices(&it->frame_pixel_indices_it,
 				data->it.frame, data) != FINISHED)
 			return (LOOPED);
-		// if (data->it.frame_pixels.y == 0)
-		// 	sl_iterate_frames(&it->frames_it, tile_kind, data);
 		if (sl_iterate_frames(&it->frames_it, tile_kind, data) == FINISHED)
 			break ;
 	}

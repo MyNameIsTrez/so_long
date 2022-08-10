@@ -23,7 +23,7 @@ bool	is_visible(t_data *data)
 
 	frame = data->it.frame;
 	pixels = frame->pixels;
-	return (pixels[data->it.pixel_index + 3] > 0);
+	return (pixels[data->it.frame_pixel_index + 3] > 0);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 12:12:41 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/08 15:53:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/10 17:09:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ t_iterator_status	sl_iterate_frame_rgb_channel_indices(
 						t_it_frame_rgb_channel_indices *it, mlx_image_t *frame,
 						t_data *data)
 {
+	if (!it->frame_pixel_indices_it.initialized)
+		sl_iterate_frame_pixel_indices(&it->frame_pixel_indices_it, frame, data);
 	while (true)
 	{
 		if (sl_iterate_rgb_channel_indices(&it->rgb_channel_indices_it, data) != FINISHED)
 			return (LOOPED);
-		if (data->it.frame_pixels.x == 0 && data->it.frame_pixels.y == 0)
-			sl_iterate_frame_pixels(&it->frame_pixels_it, frame, data);
-		if (sl_iterate_frame_pixels(&it->frame_pixels_it, frame, data) == FINISHED)
+		if (sl_iterate_frame_pixel_indices(&it->frame_pixel_indices_it, frame, data) == FINISHED)
 			break ;
 	}
 	return (FINISHED);

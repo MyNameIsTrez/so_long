@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 15:09:29 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/08 16:39:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/10 17:07:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_frame_pixel_indices(t_it_frame_pixels *it,
+t_iterator_status	sl_iterate_frame_pixel_indices(t_iterator *it,
 						mlx_image_t *frame, t_data *data)
 {
-	while (sl_iterate_frame_pixels(it, frame, data) != FINISHED)
+	if (!it->initialized)
+		*it = ft_get_iterator(0, frame->width * frame->height * 4, 4);
+	while (ft_iterate(it) != FINISHED)
 	{
-		data->it.pixel_index = sl_get_pixel_index(frame, data);
+		data->it.frame_pixel_index = (size_t)it->current;
 		return (LOOPED);
 	}
+	data->it.frame_pixel_index = (size_t)it->current;
 	return (FINISHED);
 }
 

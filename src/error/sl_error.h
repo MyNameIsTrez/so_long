@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/22 16:15:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/10 12:33:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/10 15:21:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef enum e_sl_error
 	SL_ERROR_MLX42,
 	SL_ERROR_TOO_LOW_MIN_COLOR,
 	SL_ERROR_TOO_HIGH_MAX_COLOR,
+	SL_ERROR_NO_PATH,
 	SL_ERROR_COUNT,
 }	t_sl_error;
 

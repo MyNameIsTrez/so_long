@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 16:57:45 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 14:23:46 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/10 17:05:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	step_pixel(t_data *data)
 
 	pixels = data->it.frame->pixels;
 	rgb_channel_index = data->it.rgb_channel_index;
-	channel = &pixels[data->it.pixel_index + rgb_channel_index];
+	channel = &pixels[data->it.frame_pixel_index + rgb_channel_index];
 	tile_kind = data->it.tile_kind;
 	rgb_step = tile_kind->color.step;
 	step = rgb_step[rgb_channel_index];
