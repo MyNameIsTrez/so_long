@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:37:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 17:42:35 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 18:42:01 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ t_status	sl_instantiate_tile_frames(t_tile *tile, t_data *data)
 		frame_index = data->it.frame_index;
 		frame_instance_index = mlx_image_to_window(data->mlx,
 				sl_get_frame(tile->tile_kind, frame_index),
-				(t_i32)(data->texture.pixels_per_tile * data->it.column) + WINDOW_LEFT_OFFSET * (t_i32)data->texture.scale,
-				(t_i32)(data->texture.pixels_per_tile * data->it.row) + WINDOW_TOP_OFFSET * (t_i32)data->texture.scale);
+				(t_i32)(data->texture.pixels_per_tile * sl_get_column(data->it.char_grid_index, data)) + WINDOW_LEFT_OFFSET * (t_i32)data->texture.scale,
+				(t_i32)(data->texture.pixels_per_tile * sl_get_row(data->it.char_grid_index, data)) + WINDOW_TOP_OFFSET * (t_i32)data->texture.scale);
 		if (frame_instance_index < 0)
 			return (sl_set_error(SL_ERROR_MLX42));
 		frame_instance_uindex = (size_t)frame_instance_index;

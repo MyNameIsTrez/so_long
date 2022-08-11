@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 18:13:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 21:21:17 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 16:49:09 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ bool	is_walkable(t_player *player, t_heading heading, t_data *data)
 
 	tile = &player->entity->tile;
 	movement_keys = player->controls.movement_keys;
-	column = sl_get_heading_column(heading, tile);
-	row = sl_get_heading_row(heading, tile);
+	column = sl_get_heading_column(heading, tile, data);
+	row = sl_get_heading_row(heading, tile, data);
 	return (can_walk(column, row, data));
 }
 

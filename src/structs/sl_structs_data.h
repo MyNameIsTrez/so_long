@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 16:35:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 18:15:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_data
 	t_it			it;
 	t_i32			held_keys[MLX42_KEY_COUNT];
 	mlx_t			*mlx;
-	t_grid			char_grid;
+	t_char_grid		char_grid;
 	t_window		window;
 	t_texture		texture;
 	t_tile_kind		*tile_kinds;

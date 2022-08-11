@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:32:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 16:17:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 17:09:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,7 @@
 
 t_u8	sl_get_char_grid_character(t_data *data)
 {
-	size_t	row;
-	size_t	column;
-
-	row = data->it.row;
-	column = data->it.column;
-	return ((t_u8)data->char_grid.cells[row][column]);
+	return ((t_u8)data->char_grid.cells[data->it.char_grid_index]);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

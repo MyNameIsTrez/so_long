@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 13:28:56 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 16:17:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 16:53:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,16 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	sl_get_heading_column(t_heading heading, t_tile *tile)
+t_i32	sl_get_heading_column(t_heading heading, t_tile *tile, t_data *data)
 {
+	t_i32	column;
+
+	column = (t_i32)sl_get_tile_column(tile, data);
 	if (heading == HEADING_LEFT)
-		return ((t_i32)tile->column - 1);
+		return (column - 1);
 	if (heading == HEADING_RIGHT)
-		return ((t_i32)tile->column + 1);
-	else
-		return ((t_i32)tile->column);
+		return (column + 1);
+	return (column);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

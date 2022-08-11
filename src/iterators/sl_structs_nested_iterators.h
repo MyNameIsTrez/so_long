@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/08 14:21:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/10 16:31:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 17:03:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,6 @@ typedef struct s_it_frame_rgb_channel_indices
 	t_iterator	rgb_channel_indices_it;
 	t_iterator	frame_pixel_indices_it;
 }	t_it_frame_rgb_channel_indices;
-
-typedef struct s_it_char_grid
-{
-	t_iterator	width_it;
-	t_iterator	height_it;
-}	t_it_char_grid;
 
 ////////////////////////////////////////////////////////////////////////////////
 

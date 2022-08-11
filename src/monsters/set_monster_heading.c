@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/05 18:45:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 16:17:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 16:48:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,18 @@
 void	sl_set_monster_heading(t_monster *monster, t_data *data)
 {
 	t_iterator	it;
-	size_t		monster_column;
-	size_t		monster_row;
 	t_heading	heading;
+	t_tile		*monster_tile;
 	t_i32		column;
 	t_i32		row;
 
-	monster_column = monster->entity->tile.column;
-	monster_row = monster->entity->tile.row;
 	ft_init_it(&it);
-	while (sl_iterate_heading(&it, data) != FINISHED)
+	while (sl_iterate_headings(&it, data) != FINISHED)
 	{
 		heading = data->it.heading;
-		column = (t_i32)monster_column + get_heading_column_offset(heading);
-		row = (t_i32)monster_row + get_heading_row_offset(heading);
+		monster_tile = &monster->entity->tile;
+		column = sl_get_heading_column(heading, monster_tile, data);
+		row = sl_get_heading_row(heading, monster_tile, data);
 		if (can_walk(column, row, data))
 		{
 			monster->heading = heading;

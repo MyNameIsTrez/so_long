@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   heading.c                                          :+:    :+:            */
+/*   entities_have_same_position.c                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/06 15:57:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/08 16:15:56 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/11 16:42:46 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/11 16:42:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_heading(t_iterator *it, t_data *data)
+bool	sl_entities_have_same_position(t_entity *entity_1, t_entity *entity_2)
 {
-	if (!it->initialized)
-		*it = ft_get_count_iterator(4);
-	while (ft_iterate(it) != FINISHED)
-	{
-		data->it.heading = (t_heading)it->current;
-		return (LOOPED);
-	}
-	data->it.heading = (t_heading)it->current;
-	return (FINISHED);
+	return (entity_1->tile.index == entity_2->tile.index);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

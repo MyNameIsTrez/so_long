@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/10 17:05:36 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 17:08:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@
 // This struct is used for temporary ITerator data storage
 typedef struct s_it
 {
-	size_t			column;
-	size_t			row;
+	size_t			char_grid_index;
 	size_t			frame_index;
 	t_player		*player;
 	t_entity		*entity;

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/09 16:11:59 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 17:16:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 16:43:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	sl_entities_have_same_position(t_entity *entity_1, t_entity *entity_2)
-{
-	t_tile	*tile_1;
-	t_tile	*tile_2;
+#include "try_grab_collectible/sl_private_try_grab_collectible.h"
 
-	tile_1 = &entity_1->tile;
-	tile_2 = &entity_2->tile;
-	return (tile_1->column == tile_2->column && tile_1->row == tile_2->row);
-}
+////////////////////////////////////////////////////////////////////////////////
 
 void	try_grab_collectible(t_player *player, t_data *data)
 {
