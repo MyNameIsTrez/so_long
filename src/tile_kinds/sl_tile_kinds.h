@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 13:49:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/02 17:45:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/12 11:20:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 typedef struct s_tile_kind_data_color
 {
 	t_u8	initial_color[3];
-	t_u8	min_color_offset[3];
-	t_u8	max_color_offset[3];
+	t_u8	min_color[3];
+	t_u8	max_color[3];
 	t_u32	wait[3];
 	t_i32	step[3];
 }	t_tile_kind_data_color;

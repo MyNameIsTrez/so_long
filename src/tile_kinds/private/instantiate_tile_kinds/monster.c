@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 15:00:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 17:57:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/12 11:26:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@ t_status	add_monster_tile_kind(t_data *data)
 			MONSTER_DEPTH,
 			(t_tile_kind_data_color){
 			{MONSTER_R, MONSTER_G, MONSTER_B},
-			{MONSTER_MIN_R_OFFSET, MONSTER_MIN_G_OFFSET,
-				MONSTER_MIN_B_OFFSET},
-			{MONSTER_MAX_R_OFFSET, MONSTER_MAX_G_OFFSET,
-				MONSTER_MAX_B_OFFSET},
+			{MONSTER_MIN_R, MONSTER_MIN_G, MONSTER_MIN_B},
+			{MONSTER_MAX_R, MONSTER_MAX_G, MONSTER_MAX_B},
 			{MONSTER_R_WAIT, MONSTER_G_WAIT, MONSTER_B_WAIT},
 			{MONSTER_R_STEP, MONSTER_G_STEP, MONSTER_B_STEP}}},
 			data) != OK)

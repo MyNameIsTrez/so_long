@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 14:44:12 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/12 18:11:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,28 +39,32 @@
 // # define COLLECTIBLE_G 184
 // # define COLLECTIBLE_B 173
 
-// # define COLLECTIBLE_MIN_R_OFFSET 0
-// # define COLLECTIBLE_MIN_G_OFFSET 0
-// # define COLLECTIBLE_MIN_B_OFFSET 0
+// # define COLLECTIBLE_MIN_R 0
+// # define COLLECTIBLE_MIN_G 0
+// # define COLLECTIBLE_MIN_B 0
 
-// # define COLLECTIBLE_MAX_R_OFFSET 0
-// # define COLLECTIBLE_MAX_G_OFFSET 0
-// # define COLLECTIBLE_MAX_B_OFFSET 0
+// # define COLLECTIBLE_MAX_R 0
+// # define COLLECTIBLE_MAX_G 0
+// # define COLLECTIBLE_MAX_B 0
 
 ////////////////////////////////////////////////////////////////////////////////
 // Dark theme
 
-# define COLLECTIBLE_R 246
+// # define COLLECTIBLE_R 246
+// # define COLLECTIBLE_G 174
+// # define COLLECTIBLE_B 45
+
+# define COLLECTIBLE_R 236
 # define COLLECTIBLE_G 174
 # define COLLECTIBLE_B 45
 
-# define COLLECTIBLE_MIN_R_OFFSET 0
-# define COLLECTIBLE_MIN_G_OFFSET 0
-# define COLLECTIBLE_MIN_B_OFFSET 0
+# define COLLECTIBLE_MIN_R 226
+# define COLLECTIBLE_MIN_G 164
+# define COLLECTIBLE_MIN_B 35
 
-# define COLLECTIBLE_MAX_R_OFFSET 0
-# define COLLECTIBLE_MAX_G_OFFSET 0
-# define COLLECTIBLE_MAX_B_OFFSET 0
+# define COLLECTIBLE_MAX_R 246
+# define COLLECTIBLE_MAX_G 184
+# define COLLECTIBLE_MAX_B 55
 
 ////////////////////////////////////////////////////////////////////////////////
 

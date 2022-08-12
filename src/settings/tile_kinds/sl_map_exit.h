@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:11 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 14:44:19 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/12 18:11:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,18 @@
 # define MAP_EXIT_B_STEP 1
 
 ////////////////////////////////////////////////////////////////////////////////
-// Light theme
 
 # define MAP_EXIT_R 141
 # define MAP_EXIT_G 99
 # define MAP_EXIT_B 43
 
-# define MAP_EXIT_MIN_R_OFFSET 0
-# define MAP_EXIT_MIN_G_OFFSET 0
-# define MAP_EXIT_MIN_B_OFFSET 0
+# define MAP_EXIT_MIN_R 131
+# define MAP_EXIT_MIN_G 89
+# define MAP_EXIT_MIN_B 33
 
-# define MAP_EXIT_MAX_R_OFFSET 0
-# define MAP_EXIT_MAX_G_OFFSET 0
-# define MAP_EXIT_MAX_B_OFFSET 0
+# define MAP_EXIT_MAX_R 151
+# define MAP_EXIT_MAX_G 109
+# define MAP_EXIT_MAX_B 53
 
 ////////////////////////////////////////////////////////////////////////////////
 

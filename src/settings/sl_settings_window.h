@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 18:16:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 17:45:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/12 10:20:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 
 # define WINDOW_TOP_OFFSET 0
 # define WINDOW_BOTTOM_OFFSET 0
-# define WINDOW_LEFT_OFFSET -5
-# define WINDOW_RIGHT_OFFSET -5
+# define WINDOW_LEFT_OFFSET 0 // -5
+# define WINDOW_RIGHT_OFFSET 0 // -5
 
 ////////////////////////////////////////////////////////////////////////////////
 

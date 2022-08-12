@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 17:52:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/10 17:05:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/12 13:39:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,12 @@ t_status	sl_initialize_tile_kinds_colors(t_data *data)
 	{
 		while (sl_iterate_frames(&frames_it, data->it.tile_kind, data) != FINISHED)
 		{
-			while (sl_iterate_frame_pixel_indices(&frame_pixel_indices_it, data->it.frame, data) != FINISHED)
-			{
-				frame = data->it.frame;
-				pixels = frame->pixels;
-				if (is_visible(data))
-				{
+			frame = data->it.frame;
+			pixels = frame->pixels;
+			while (sl_iterate_frame_pixel_indices(&frame_pixel_indices_it, frame, data) != FINISHED)
+				if (is_visible(frame, data))
 					while (sl_iterate_rgb_channel_indices(&rgb_channel_indices_it, data) != FINISHED)
-					{
 						pixels[data->it.frame_pixel_index + data->it.rgb_channel_index] = data->it.tile_kind->color.initial_color[data->it.rgb_channel_index] * pixels[data->it.frame_pixel_index + data->it.rgb_channel_index] / 255;
-					}
-				}
-			}
 		}
 	}
 	return (OK);

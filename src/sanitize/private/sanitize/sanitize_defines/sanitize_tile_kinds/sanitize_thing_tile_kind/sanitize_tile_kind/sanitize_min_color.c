@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sanitize_max_color_offset.c                        :+:    :+:            */
+/*   sanitize_min_color.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/03 14:55:56 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/08 17:00:22 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/03 14:56:15 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/12 11:31:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sanitize_max_color_offset(
+t_status	sanitize_min_color(
 				t_tile_kind_data_color tile_kind_data_color, t_data *data)
 {
 	t_iterator	it;
@@ -26,9 +26,9 @@ t_status	sanitize_max_color_offset(
 	while (sl_iterate_rgb_channel_indices(&it, data) != FINISHED)
 	{
 		channel = data->it.rgb_channel_index;
-		if (tile_kind_data_color.initial_color[channel] + \
-			tile_kind_data_color.max_color_offset[channel] > 255)
-			return (sl_set_error(SL_ERROR_TOO_HIGH_MAX_COLOR));
+		if (tile_kind_data_color.min_color[channel] > \
+			tile_kind_data_color.initial_color[channel])
+			return (sl_set_error(SL_ERROR_TOO_HIGH_MIN_COLOR));
 	}
 	return (OK);
 }

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/18 12:08:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/08 16:20:19 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/11 19:06:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_iterator_status	sl_iterate_player_movement_keys(t_iterator *it,
 	if (!it->initialized)
 		*it = ft_get_array_iterator(player->controls.movement_keys, 4,
 				sizeof(keys_t));
-	while (ft_iterate(it) != FINISHED)
+	if (ft_iterate(it) != FINISHED)
 	{
 		data->it.player_movement_key = *(keys_t *)it->current;
 		return (LOOPED);

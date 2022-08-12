@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:56:55 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/08 17:31:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/12 18:15:17 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,18 @@
 # define WALL_B_STEP 1
 
 ////////////////////////////////////////////////////////////////////////////////
-// Light theme
 
 # define WALL_R 133
 # define WALL_G 100
 # define WALL_B 43
 
-# define WALL_MIN_R_OFFSET 0
-# define WALL_MIN_G_OFFSET 0
-# define WALL_MIN_B_OFFSET 0
+# define WALL_MIN_R 123
+# define WALL_MIN_G 90
+# define WALL_MIN_B 33
 
-# define WALL_MAX_R_OFFSET 0
-# define WALL_MAX_G_OFFSET 0
-# define WALL_MAX_B_OFFSET 0
+# define WALL_MAX_R 143
+# define WALL_MAX_G 110
+# define WALL_MAX_B 53
 
 ////////////////////////////////////////////////////////////////////////////////
 

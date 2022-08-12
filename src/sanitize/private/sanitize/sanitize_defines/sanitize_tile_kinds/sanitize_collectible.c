@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/03 14:53:57 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 18:13:01 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/12 11:27:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ t_status	sanitize_collectible(t_data *data)
 {
 	const t_tile_kind_data_color	tile_kind_data_color = {
 		.initial_color = {COLLECTIBLE_R, COLLECTIBLE_G, COLLECTIBLE_B},
-		.min_color_offset = {COLLECTIBLE_MIN_R_OFFSET, COLLECTIBLE_MIN_G_OFFSET,
-		COLLECTIBLE_MIN_B_OFFSET},
-		.max_color_offset = {COLLECTIBLE_MAX_R_OFFSET, COLLECTIBLE_MAX_G_OFFSET,
-		COLLECTIBLE_MAX_B_OFFSET},
+		.min_color = {COLLECTIBLE_MIN_R, COLLECTIBLE_MIN_G, COLLECTIBLE_MIN_B},
+		.max_color = {COLLECTIBLE_MAX_R, COLLECTIBLE_MAX_G, COLLECTIBLE_MAX_B},
 		.wait = {COLLECTIBLE_R_WAIT, COLLECTIBLE_G_WAIT, COLLECTIBLE_B_WAIT},
 		.step = {COLLECTIBLE_R_STEP, COLLECTIBLE_G_STEP, COLLECTIBLE_B_STEP}
 	};

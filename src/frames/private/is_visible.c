@@ -16,12 +16,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	is_visible(t_data *data)
+bool	is_visible(mlx_image_t *frame, t_data *data)
 {
-	mlx_image_t	*frame;
 	t_u8		*pixels;
 
-	frame = data->it.frame;
 	pixels = frame->pixels;
 	return (pixels[data->it.frame_pixel_index + 3] > 0);
 }
