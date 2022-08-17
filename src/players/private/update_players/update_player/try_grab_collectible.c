@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/09 16:11:59 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 16:43:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/17 17:50:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@
 
 void	try_grab_collectible(t_player *player, t_data *data)
 {
-	t_iterator	it;
+	t_iterator	collectible_it;
+	t_iterator	char_grid_indices_it;
 
-	ft_init_it(&it);
-	while (sl_iterate_collectibles(&it, data) != FINISHED)
+	ft_init_it(&collectible_it);
+	ft_init_it(&char_grid_indices_it);
+	while (sl_iterate_collectibles(&collectible_it, data) != FINISHED)
 	{
 		if (sl_entities_have_same_position(player->entity, data->it.collectible->entity))
 		{
@@ -34,6 +36,11 @@ void	try_grab_collectible(t_player *player, t_data *data)
 				data->it.collectible->collected = true;
 				sl_get_frame_instance(&data->it.collectible->entity->tile, data->it.collectible->entity->tile.frame_index)->enabled = false;
 				data->it.collectible->entity->enabled = false;
+				data->collected_count++;
+				if (data->collected_count == ft_vector_get_size(data->collectibles))
+					while (sl_iterate_char_grid_indices(&char_grid_indices_it, data) != FINISHED)
+						if (sl_get_char_grid_character(data) == MAP_EXIT_CHARACTER)
+							sl_change_frame(&data->tile_grid.cells[data->it.char_grid_index], 1);
 			}
 		}
 	}
