@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:33:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/10 15:01:56 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/17 16:01:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	check_invalid_character(t_data *data);
-bool	check_valid_path(t_data *data);
+t_status	check_duplicate_start_or_exit_character(t_data *data);
+t_status	check_invalid_character(t_data *data);
+t_status	check_valid_path(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

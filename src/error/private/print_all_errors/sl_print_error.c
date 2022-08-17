@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:20:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 11:33:09 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/17 16:42:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	sl_print_error(void)
 	char*const	sl_error_messages[] = {
 	[SL_ERROR_FILE_HAS_INVALID_CHAR] = \
 		"The input map has an invalid character.",
+	[SL_ERROR_FILE_HAS_DUPLICATE_CHAR] = \
+		"The input map has a duplicate character.",
 	[SL_ERROR_INVALID_SCALE] = \
 		"The scale argument that was provided to the program was invalid.",
 	[SL_ERROR_MLX42] = \

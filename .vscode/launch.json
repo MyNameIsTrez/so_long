@@ -16,7 +16,8 @@
 		"request": "launch",
 		"program": "${workspaceFolder}/so_long",
 		"args": [
-			"maps/monsters.ber",
+			"maps/two_players.ber",
+			// "maps/monsters.ber",
 			// "4" // TODO: Why does monsters.ber at a size of 5 make MLX42 crash?
 
 			// TODO: Make sure this nonexistent file prints a proper error!

@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/10 13:14:12 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/17 15:58:22 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,7 @@ CFLAGS += -fsanitize=address
 endif
 
 ifdef BONUS
-CFLAGS += -DBONUS=
+CFLAGS += -DBONUS=1
 endif
 
 ################################################################################
@@ -126,6 +126,9 @@ fclean: clean
 	$(MAKE) -C $(LIBFT_PATH) fclean
 	$(MAKE) -C $(FT_PRINTF_PATH) fclean
 
+fclean_mlx42:
+	$(MAKE) -C $(MLX42_PATH) fclean
+
 re: fclean all
 
 bonus:
@@ -133,6 +136,6 @@ bonus:
 
 ################################################################################
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean fclean_mlx42 re bonus
 
 ################################################################################

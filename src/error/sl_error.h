@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/22 16:15:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 11:31:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/17 16:42:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef enum e_sl_error
 {
 	SL_OK,
 	SL_ERROR_FILE_HAS_INVALID_CHAR,
+	SL_ERROR_FILE_HAS_DUPLICATE_CHAR,
 	SL_ERROR_INVALID_SCALE,
 	SL_ERROR_MLX42,
 	SL_ERROR_TOO_HIGH_MIN_COLOR,

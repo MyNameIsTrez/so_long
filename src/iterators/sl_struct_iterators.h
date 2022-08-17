@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 17:08:37 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/17 16:28:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_it
 	keys_t			player_movement_key;
 	t_monster		*monster;
 	t_collectible	*collectible;
+	t_u8			char_grid_character;
 }	t_it;
 
 ////////////////////////////////////////////////////////////////////////////////
