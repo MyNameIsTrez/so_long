@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/15 13:38:25 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/15 15:55:36 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/17 14:40:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	sl_draw_fps(t_data *data)
 		sl_print_all_errors();
 		return ;
 	}
-	fps_string_full = ft_strjoin(fps_string, "/60 FPS"); // TODO: Should ft_itoa() be checked for any error?
+	fps_string_full = ft_strjoin(fps_string, " FPS");
 	ft_free(&fps_string);
 	if (fps_string_full == NULL)
 	{
