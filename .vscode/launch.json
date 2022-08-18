@@ -16,7 +16,7 @@
 		"request": "launch",
 		"program": "${workspaceFolder}/so_long",
 		"args": [
-			"maps/two_players.ber",
+			// "maps/two_players.ber",
 			// "maps/monsters.ber",
 			// "4" // TODO: Why does monsters.ber at a size of 5 make MLX42 crash?
 
@@ -24,8 +24,8 @@
 			// "foo.ber",
 
 			// TODO: Profile why the game doesn't load anymore with this size
-			// "maps/100_kB.ber",
-			// "1",
+			"maps/100_kB.ber",
+			"1",
 
 			// "maps/1_MB.ber",
 			// "1",

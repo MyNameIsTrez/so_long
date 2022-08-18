@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/17 15:58:22 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/18 15:24:42 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,13 @@ CFLAGS := -Wall -Wextra -Werror
 
 ################################################################################
 
+ifeq ($(shell uname), Darwin)
 GLFW_FRAMEWORKS :=\
 	-framework Cocoa\
 	-framework OpenGL\
 	-framework IOKit
+endif
+
 GLFW := -lglfw3 $(GLFW_FRAMEWORKS)
 
 MLX42_PATH := ./submodules/MLX42
@@ -71,6 +74,8 @@ endif
 
 ifdef BONUS
 CFLAGS += -DBONUS=1
+else
+CFLAGS += -DBONUS=0
 endif
 
 ################################################################################
@@ -92,7 +97,7 @@ INCLUDES := $(sort $(addprefix -I, $(MLX42_PATH)/include $(LIBFT_PATH) $(FT_PRIN
 
 ################################################################################
 
-all: $(PRE_RULES) $(MLX42_LIB_PATH) $(LIBFT_LIB_PATH) $(FT_PRINTF_LIB_PATH) $(NAME)
+all: $(PRE_RULES) $(NAME)
 
 ################################################################################
 
@@ -107,8 +112,8 @@ $(FT_PRINTF_LIB_PATH):
 
 ################################################################################
 
-$(NAME): $(OBJECT_PATHS)
-	$(CC) $(CFLAGS) $(LIBS) $(OBJECT_PATHS) -o $(NAME)
+$(NAME): $(MLX42_LIB_PATH) $(LIBFT_LIB_PATH) $(FT_PRINTF_LIB_PATH) $(OBJECT_PATHS)
+	$(CC) $(CFLAGS) $(OBJECT_PATHS) $(LIBS) -o $(NAME)
 	@echo "$(MAKE_DATA)" > $(DATA_FILE)
 
 $(OBJ_DIR)/%.o: %.c $(HEADERS)

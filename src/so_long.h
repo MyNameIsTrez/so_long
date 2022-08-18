@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/17 16:43:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/18 15:25:53 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
-
-////////////////////////////////////////////////////////////////////////////////
-
-# ifndef BONUS
-#  define BONUS 0
-# endif
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -37,6 +31,7 @@
 # include "collectibles/sl_collectibles.h"
 # include "entities/sl_entities.h"
 # include "error/sl_error.h"
+# include "exits/sl_exits.h"
 # include "frames/sl_frames.h"
 # include "held_keys/sl_held_keys.h"
 # include "init/sl_init.h"

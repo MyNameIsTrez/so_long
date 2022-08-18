@@ -6,17 +6,23 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/09 16:00:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 16:43:17 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/17 17:57:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_UPDATE_PLAYER_H
+# define SL_PRIVATE_UPDATE_PLAYER_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
 void	try_grab_collectible(t_player *player, t_data *data);
 void	try_move(t_player *player, t_data *data);
+void	try_walk_into_exit(t_player *player, t_data *data);
+
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

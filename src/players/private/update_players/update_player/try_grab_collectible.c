@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/09 16:11:59 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/17 17:50:02 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/18 15:19:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@
 void	try_grab_collectible(t_player *player, t_data *data)
 {
 	t_iterator	collectible_it;
-	t_iterator	char_grid_indices_it;
 
 	ft_init_it(&collectible_it);
-	ft_init_it(&char_grid_indices_it);
 	while (sl_iterate_collectibles(&collectible_it, data) != FINISHED)
 	{
 		if (sl_entities_have_same_position(player->entity, data->it.collectible->entity))
@@ -38,9 +36,10 @@ void	try_grab_collectible(t_player *player, t_data *data)
 				data->it.collectible->entity->enabled = false;
 				data->collected_count++;
 				if (data->collected_count == ft_vector_get_size(data->collectibles))
-					while (sl_iterate_char_grid_indices(&char_grid_indices_it, data) != FINISHED)
-						if (sl_get_char_grid_character(data) == MAP_EXIT_CHARACTER)
-							sl_change_frame(&data->tile_grid.cells[data->it.char_grid_index], 1);
+				{
+					data->can_exit = true;
+					sl_open_exits(data);
+				}
 			}
 		}
 	}
