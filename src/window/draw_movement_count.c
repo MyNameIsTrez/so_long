@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/15 13:38:25 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/22 13:55:43 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/22 17:32:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	sl_draw_movement_count(t_data *data)
 		return ;
 	}
 	mlx_put_string2(data->mlx, movement_count_string_full, movement_count_image); // TODO: Should this be checked for any error?
-	ft_printf("%s\n", movement_count_string_full);
 	ft_free(&movement_count_string_full);
 }
 

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/15 13:38:25 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/22 13:51:10 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/22 17:31:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	sl_draw_fps(t_data *data)
 		return ;
 	}
 	mlx_put_string2(data->mlx, fps_string_full, fps_image); // TODO: Should this be checked for any error?
-	ft_printf("%s\n", fps_string_full);
 	ft_free(&fps_string_full);
 }
 
