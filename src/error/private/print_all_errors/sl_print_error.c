@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:20:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/17 16:42:40 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/22 17:04:34 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	sl_print_error(void)
 		"A #defined minimum color channel was too high.",
 	[SL_ERROR_TOO_LOW_MAX_COLOR] = \
 		"A #defined maximum color channel was too low.",
-	[SL_ERROR_NO_PATH] = "No path between the player and the exit was found."
+	[SL_ERROR_NO_PATH] = "No path from the player to an exit was found."
 	};
 
 	ft_print("Error: ");

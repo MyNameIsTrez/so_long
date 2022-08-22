@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 11:26:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 19:43:30 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/22 16:08:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+t_status	sl_check_valid_path(t_data *data);
 t_u8		sl_get_char_grid_character(t_data *data);
 t_status	sl_init_char_grid(char *map_filename, t_data *data);
 
