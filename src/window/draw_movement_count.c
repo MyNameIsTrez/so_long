@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   draw_allocation_count.c                            :+:    :+:            */
+/*   draw_movement_count.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/15 15:29:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/18 17:57:09 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/15 13:38:25 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/22 13:55:43 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,41 +20,42 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_draw_allocation_count(t_data *data)
+void	sl_draw_movement_count(t_data *data)
 {
-	static mlx_image_t	*allocation_count_image;
-	char				*allocation_count_string;
-	char				*allocation_count_string_full;
+	static mlx_image_t	*movement_count_image;
+	char				*movement_count_string;
+	char				*movement_count_string_full;
 
-	if (allocation_count_image == NULL)
+	if (movement_count_image == NULL)
 	{
-		allocation_count_image = mlx_new_image(data->mlx, 1000, FONT_HEIGHT); // TODO: DONT HARDCODE THE STRING WIDTH TO 1000
-		if (allocation_count_image == NULL)
+		movement_count_image = mlx_new_image(data->mlx, 1000, FONT_HEIGHT); // TODO: DONT HARDCODE THE STRING WIDTH TO 1000
+		if (movement_count_image == NULL)
 			return ;
-		if (mlx_image_to_window(data->mlx, allocation_count_image, 0, FONT_HEIGHT) == -1)
+		if (mlx_image_to_window(data->mlx, movement_count_image, 0, 2 * FONT_HEIGHT) == -1)
 		{
 			sl_cleanup(data);
 			sl_print_all_errors();
 			return ;
 		}
 	}
-	allocation_count_string = ft_itoa((t_i32)ft_get_allocation_count());
-	if (allocation_count_string == NULL)
+	movement_count_string = ft_itoa((t_i32)data->movement_count);
+	if (movement_count_string == NULL)
 	{
 		sl_cleanup(data);
 		sl_print_all_errors();
 		return ;
 	}
-	allocation_count_string_full = ft_strjoin("Allocation count: ", allocation_count_string);
-	ft_free(&allocation_count_string);
-	if (allocation_count_string_full == NULL)
+	movement_count_string_full = ft_strjoin("Movement count: ", movement_count_string);
+	ft_free(&movement_count_string);
+	if (movement_count_string_full == NULL)
 	{
 		sl_cleanup(data);
 		sl_print_all_errors();
 		return ;
 	}
-	mlx_put_string2(data->mlx, allocation_count_string_full, allocation_count_image); // TODO: Should this be checked for any error?
-	ft_free(&allocation_count_string_full);
+	mlx_put_string2(data->mlx, movement_count_string_full, movement_count_image); // TODO: Should this be checked for any error?
+	ft_printf("%s\n", movement_count_string_full);
+	ft_free(&movement_count_string_full);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

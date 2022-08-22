@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 13:56:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/18 15:22:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/22 13:51:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	sl_loop(void *param)
 	sl_change_frames(data);
 	sl_draw_fps(data);
 	sl_draw_allocation_count(data);
+	sl_draw_movement_count(data);
 	data->ticks++;
 }
 

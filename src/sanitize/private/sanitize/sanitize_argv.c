@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/03 15:22:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 11:02:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/22 13:45:45 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_status	sanitize_argv(t_i32 argc, char **argv)
 		scale_string = argv[2];
 		// TODO: Check if ft_atoi_safe is robust enough
 		if (ft_atoi_safe(scale_string, &scale) != OK || \
-			(scale < 1 || scale > 5))
+			(scale < 1 || scale > 4))
 			return (sl_set_error(SL_ERROR_INVALID_SCALE));
 	}
 	return (OK);

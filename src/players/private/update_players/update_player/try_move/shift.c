@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 18:19:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 16:05:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/22 13:50:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 void	shift(t_player *player, t_i32 x, t_i32 y, t_data *data)
 {
 	sl_shift_tile_pos(&player->entity->tile, x, y, data);
+	data->movement_count++;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

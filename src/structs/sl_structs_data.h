@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/18 15:19:16 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/22 13:49:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct s_data
 	t_u32			ticks;
 	bool			can_exit;
 	bool			finished_level;
+	t_u32			movement_count;
 }	t_data;
 
 ////////////////////////////////////////////////////////////////////////////////

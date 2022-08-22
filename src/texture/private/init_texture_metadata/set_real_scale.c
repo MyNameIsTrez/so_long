@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 14:35:10 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 11:02:15 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/22 13:45:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_status	sl_set_real_scale(t_i32 scale, t_data *data)
 	[2] = 5,
 	[3] = 10,
 	[4] = 20,
-	[5] = 40,
 	};
 	t_texture			*texture;
 

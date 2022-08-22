@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/18 15:24:42 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/18 16:24:05 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC := cc
 
 OBJ_DIR := obj
 
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror -Wconversion -Werror-pointer-arith
 
 ################################################################################
 
@@ -65,7 +65,6 @@ endif
 
 ifdef DEBUG
 CFLAGS += -g3
-CFLAGS += -Wconversion
 endif
 
 ifdef SAN
