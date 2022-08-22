@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:56:43 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 12:11:30 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/22 14:08:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,28 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define EMPTY_SPACE_R_WAIT 10
-# define EMPTY_SPACE_G_WAIT 10
-# define EMPTY_SPACE_B_WAIT 10
+# define EMPTY_SPACE_R_WAIT 7
+# define EMPTY_SPACE_G_WAIT 7
+# define EMPTY_SPACE_B_WAIT 7
 
 # define EMPTY_SPACE_R_STEP 1
 # define EMPTY_SPACE_G_STEP 1
 # define EMPTY_SPACE_B_STEP 1
+
+////////////////////////////////////////////////////////////////////////////////
+// Dark theme
+
+# define EMPTY_SPACE_MIN_R 63
+# define EMPTY_SPACE_MIN_G 62
+# define EMPTY_SPACE_MIN_B 70
+
+# define EMPTY_SPACE_R 73
+# define EMPTY_SPACE_G 72
+# define EMPTY_SPACE_B 80
+
+# define EMPTY_SPACE_MAX_R 83
+# define EMPTY_SPACE_MAX_G 82
+# define EMPTY_SPACE_MAX_B 90
 
 ////////////////////////////////////////////////////////////////////////////////
 // Light theme
@@ -46,21 +61,6 @@
 // # define EMPTY_SPACE_MAX_R 0
 // # define EMPTY_SPACE_MAX_G 0
 // # define EMPTY_SPACE_MAX_B 0
-
-////////////////////////////////////////////////////////////////////////////////
-// Dark theme
-
-# define EMPTY_SPACE_R 73
-# define EMPTY_SPACE_G 72
-# define EMPTY_SPACE_B 80
-
-# define EMPTY_SPACE_MIN_R 63
-# define EMPTY_SPACE_MIN_G 62
-# define EMPTY_SPACE_MIN_B 70
-
-# define EMPTY_SPACE_MAX_R 83
-# define EMPTY_SPACE_MAX_G 82
-# define EMPTY_SPACE_MAX_B 90
 
 ////////////////////////////////////////////////////////////////////////////////
 
