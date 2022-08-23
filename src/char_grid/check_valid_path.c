@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/10 13:48:44 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/22 17:01:16 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/23 12:47:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,13 @@ t_status	try_add_neighbor(t_heading heading, t_tile *tile, t_tile ***visit_stack
 	t_tile	*neighbor_tile;
 	t_u8	neighbor_tile_character;
 
+	// TODO: Make a function that returns t_status and fills a pointer to index?
 	column = sl_get_heading_column(heading, tile, data);
 	row = sl_get_heading_row(heading, tile, data);
 	if (sl_out_of_bounds(column, row, data))
 		return (OK);
 	index = sl_get_index((size_t)column, (size_t)row, data);
+
 	if (visited[index])
 		return (OK);
 	neighbor_tile = &data->tile_grid.cells[index];

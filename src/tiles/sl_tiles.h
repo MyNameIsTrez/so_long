@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 13:22:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 12:14:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/23 12:43:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool		can_walk(t_i32 column, t_i32 row, t_data *data);
+bool		can_walk(t_heading heading, t_tile *tile, t_data *data);
 t_status	sl_fill_tile_data(t_tile *tile, t_tile_kind *tile_kind,
 				t_data *data);
 size_t		sl_get_column(size_t index, t_data *data);

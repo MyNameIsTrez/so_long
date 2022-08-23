@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 14:42:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 12:13:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/23 12:45:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,16 @@
 void	sl_update_monster(t_monster *monster, t_data *data)
 {
 	t_tile		*tile;
-	t_i32		column;
-	t_i32		row;
 
 	if (monster->heading == HEADING_NONE)
 		sl_set_monster_heading(monster, data);
 	if (monster->heading != HEADING_NONE)
 	{
 		tile = &monster->entity->tile;
-		column = sl_get_heading_column(monster->heading, tile, data);
-		row = sl_get_heading_row(monster->heading, tile, data);
-		if (!can_walk(column, row, data))
+		if (!can_walk(monster->heading, tile, data))
 			sl_set_monster_heading(monster, data);
 		if (monster->heading != HEADING_NONE)
-		{
-			// TODO: Use shift_tile_pos_to_heading()
-			column = sl_get_heading_column(monster->heading, tile, data);
-			row = sl_get_heading_row(monster->heading, tile, data);
-			sl_set_tile_pos(tile, sl_get_index((size_t)column, (size_t)row, data), data);
-		}
+			shift_tile_pos_to_heading(tile, monster->heading, data);
 	}
 }
 

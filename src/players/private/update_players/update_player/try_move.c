@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 12:24:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/23 12:44:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	try_move(t_player *player, t_data *data)
 		heading = data->it.heading;
 		if (trying_to_move(player, heading, data))
 		{
-			if (is_walkable(player, heading, data))
+			if (can_walk(heading, &player->entity->tile, data))
 			{
 				shift_tile_pos_to_heading(&player->entity->tile, heading, data);
 				data->movement_count++;
