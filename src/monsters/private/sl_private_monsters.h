@@ -1,45 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   try_move.c                                         :+:    :+:            */
+/*   sl_private_monsters.h                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 16:42:17 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/23 16:29:03 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/23 17:47:33 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_MONSTERS_H
+# define SL_PRIVATE_MONSTERS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "try_move/sl_private_try_move.h"
+bool	is_player_in_way(t_heading heading, t_tile *monster_tile, t_data *data);
+void	kill_player(t_heading heading, t_tile *monster_tile, t_data *data);
+void	set_monster_heading(t_monster *monster, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	try_move(t_player *player, t_data *data)
-{
-	t_iterator	it;
-	t_heading	heading;
-
-	while (sl_iterate_headings(&it, data) != FINISHED)
-	{
-		heading = data->it.heading;
-		if (trying_to_move(player, heading, data))
-		{
-			if (sl_can_walk(heading, &player->entity->tile, data))
-			{
-				sl_shift_tile_pos_to_heading(&player->entity->tile, heading, data);
-				data->movement_count++;
-				ft_printf("Movement count: %u\n", data->movement_count);
-			}
-			else if (BONUS)
-				update_death_state(player, heading, data);
-		}
-	}
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

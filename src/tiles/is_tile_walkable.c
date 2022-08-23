@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 18:14:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 17:14:55 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/23 16:41:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	is_tile_walkable(size_t index, t_data *data)
+bool	sl_is_tile_walkable(size_t index, t_data *data)
 {
 	t_u8	tile_character;
 

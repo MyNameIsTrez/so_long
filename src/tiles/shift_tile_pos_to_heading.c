@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:37:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 12:17:41 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/23 16:42:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	shift_tile_pos_to_heading(t_tile *tile, t_heading heading, t_data *data)
+void	sl_shift_tile_pos_to_heading(t_tile *tile, t_heading heading,
+			t_data *data)
 {
 	size_t	column;
 	size_t	row;

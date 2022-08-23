@@ -16,10 +16,10 @@
 		"request": "launch",
 		"program": "${workspaceFolder}/so_long",
 		"args": [
-			"maps/corridor.ber"
+			// "maps/corridor.ber"
 			// "maps/example_1.ber"
 			// "maps/two_players.ber",
-			// "maps/monster.ber",
+			"maps/monster_hallway.ber",
 			// "maps/no_walls.ber",
 			// "maps/not_enclosed_by_walls.ber",
 			// "4"

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   try_move.c                                         :+:    :+:            */
+/*   kill_player.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 16:42:17 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/23 16:42:47 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/23 17:05:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,26 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "try_move/sl_private_try_move.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-void	try_move(t_player *player, t_data *data)
+void	kill_player(t_heading heading, t_tile *monster_tile, t_data *data)
 {
-	t_iterator	it;
-	t_heading	heading;
+	size_t	index;
 
-	while (sl_iterate_headings(&it, data) != FINISHED)
+	index = sl_get_index(
+		(size_t)sl_get_heading_column(heading, monster_tile, data),
+		(size_t)sl_get_heading_row(heading, monster_tile, data), data);
+
+
+	t_iterator	it;
+	t_player	*player;
+
+	ft_init_it(&it);
+	while (sl_iterate_players(&it, data) != FINISHED)
 	{
-		heading = data->it.heading;
-		if (trying_to_move(player, heading, data))
+		player = data->it.player;
+		if (player->entity->tile.index == index)
 		{
-			if (sl_can_walk(heading, &player->entity->tile, data))
-			{
-				sl_shift_tile_pos_to_heading(&player->entity->tile, heading, data);
-				data->movement_count++;
-				ft_printf("Movement count: %u\n", data->movement_count);
-			}
-			else if (BONUS)
-				update_death_state(player, heading, data);
+			player->dead = true;
+			return ;
 		}
 	}
 }
