@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   update_monster.c                                   :+:    :+:            */
+/*   sl_private_monster.h                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/04 14:42:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 16:29:57 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/23 16:29:03 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/23 16:29:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_MONSTER_H
+# define SL_PRIVATE_MONSTER_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../sl_private_monster.h"
+void	set_monster_heading(t_monster *monster, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_update_monster(t_monster *monster, t_data *data)
-{
-	t_tile		*tile;
-
-	if (monster->heading == HEADING_NONE)
-		set_monster_heading(monster, data);
-	if (monster->heading != HEADING_NONE)
-	{
-		tile = &monster->entity->tile;
-		if (!can_walk(monster->heading, tile, data))
-			set_monster_heading(monster, data);
-		if (monster->heading != HEADING_NONE)
-			shift_tile_pos_to_heading(tile, monster->heading, data);
-	}
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

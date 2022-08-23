@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/05 18:45:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 13:05:00 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/23 16:29:14 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_set_monster_heading(t_monster *monster, t_data *data)
+void	set_monster_heading(t_monster *monster, t_data *data)
 {
 	t_tile		*monster_tile;
 	t_iterator	it;
