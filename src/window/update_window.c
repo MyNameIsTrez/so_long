@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   loop.c                                             :+:    :+:            */
+/*   update_window.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 13:56:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 15:09:57 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/23 15:09:28 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/23 15:30:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_loop(void *param)
-{
-	t_data				*data;
+#include "private/update_window/sl_private_update_window.h"
 
-	data = param;
-	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE))
-		mlx_close_window(data->mlx);
-	if (!data->finished_level)
-	{
-		sl_update_held_keys(data);
-		sl_update_entities(data);
-	}
-	sl_update_frame_colors(data);
-	sl_change_frames(data);
-	sl_update_window(data);
-	data->ticks++;
+////////////////////////////////////////////////////////////////////////////////
+
+void	sl_update_window(t_data *data)
+{
+	if (data->held_keys[TOGGLE_DEBUG_DRAWING_KEY] == 1)
+		data->window.draw_debug = !data->window.draw_debug;
+	draw_fps(data);
+	draw_allocation_count(data);
+	draw_movement_count(data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

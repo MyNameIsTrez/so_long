@@ -16,11 +16,12 @@
 		"request": "launch",
 		"program": "${workspaceFolder}/so_long",
 		"args": [
+			"maps/corridor.ber"
 			// "maps/example_1.ber"
 			// "maps/two_players.ber",
 			// "maps/monster.ber",
 			// "maps/no_walls.ber",
-			"maps/not_enclosed_by_walls.ber",
+			// "maps/not_enclosed_by_walls.ber",
 			// "4"
 
 			// TODO: Make sure this nonexistent file prints a proper error!

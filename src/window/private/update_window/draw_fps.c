@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   draw_movement_count.c                              :+:    :+:            */
+/*   draw_fps.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/15 13:38:25 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/22 17:32:23 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/23 16:11:23 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,41 +20,34 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_draw_movement_count(t_data *data)
+void	draw_fps(t_data *data)
 {
-	static mlx_image_t	*movement_count_image;
-	char				*movement_count_string;
-	char				*movement_count_string_full;
+	static mlx_image_t	*image;
+	char				*string;
+	char				*string_full;
 
-	if (movement_count_image == NULL)
-	{
-		movement_count_image = mlx_new_image(data->mlx, 1000, FONT_HEIGHT); // TODO: DONT HARDCODE THE STRING WIDTH TO 1000
-		if (movement_count_image == NULL)
-			return ;
-		if (mlx_image_to_window(data->mlx, movement_count_image, 0, 2 * FONT_HEIGHT) == -1)
-		{
-			sl_cleanup(data);
-			sl_print_all_errors();
-			return ;
-		}
-	}
-	movement_count_string = ft_itoa((t_i32)data->movement_count);
-	if (movement_count_string == NULL)
+	if (image != NULL)
+		mlx_delete_image(data->mlx, image);
+	if (!data->window.draw_debug)
+		return ;
+	string = ft_itoa((t_i32)(1 / data->mlx->delta_time));
+	if (string == NULL)
 	{
 		sl_cleanup(data);
 		sl_print_all_errors();
 		return ;
 	}
-	movement_count_string_full = ft_strjoin("Movement count: ", movement_count_string);
-	ft_free(&movement_count_string);
-	if (movement_count_string_full == NULL)
+	string_full = ft_strjoin(string, " FPS");
+	ft_free(&string);
+	if (string_full == NULL)
 	{
 		sl_cleanup(data);
 		sl_print_all_errors();
 		return ;
 	}
-	mlx_put_string2(data->mlx, movement_count_string_full, movement_count_image); // TODO: Should this be checked for any error?
-	ft_free(&movement_count_string_full);
+	image = mlx_put_string(data->mlx, string_full, 0, 0); // TODO: Should this be checked for any error?
+	mlx_set_instance_depth(&image->instances[0], DEBUG_DRAWING_DEPTH);
+	ft_free(&string_full);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

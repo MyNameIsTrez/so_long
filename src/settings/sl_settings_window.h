@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 18:16:09 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/17 14:30:34 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/23 16:11:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@
 # define WINDOW_BOTTOM_OFFSET 0
 # define WINDOW_LEFT_OFFSET -5
 # define WINDOW_RIGHT_OFFSET -5
+
+# define TOGGLE_DEBUG_DRAWING_KEY MLX_KEY_G
+
+# define DEBUG_DRAWING_DEPTH 4
 
 ////////////////////////////////////////////////////////////////////////////////
 

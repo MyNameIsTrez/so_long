@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:58:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/03 17:29:16 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/23 15:29:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_window
 {
 	size_t	width;
 	size_t	height;
+	bool	draw_debug;
 }	t_window;
 
 ////////////////////////////////////////////////////////////////////////////////
