@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   set_monster_heading.c                              :+:    :+:            */
+/*   map_is_not_enclosed.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/05 18:45:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 13:05:00 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/23 13:34:52 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/23 15:03:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,26 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_set_monster_heading(t_monster *monster, t_data *data)
-{
-	t_tile		*monster_tile;
-	t_iterator	it;
-	t_heading	heading;
+#include "map_is_not_enclosed/sl_private_map_is_not_enclosed.h"
 
-	if (monster->heading == HEADING_NONE)
-		monster->heading = HEADING_UP;
-	monster_tile = &monster->entity->tile;
-	ft_init_it(&it);
-	while (sl_iterate_headings(&it, data) != FINISHED)
+////////////////////////////////////////////////////////////////////////////////
+
+bool	map_is_not_enclosed(t_data *data)
+{
+	size_t	i;
+
+	if (row_is_not_enclosed(0, data) || \
+		row_is_not_enclosed(data->char_grid.height - 1, data))
+		return (true);
+	i = 1;
+	while (i < data->char_grid.height - 1)
 	{
-		heading = (monster->heading + data->it.heading) % 4;
-		if (can_walk(heading, monster_tile, data))
-		{
-			monster->heading = heading;
-			return ;
-		}
+		if (cell_is_not_wall(0, i, data) || \
+			cell_is_not_wall(data->char_grid.width - 1, i, data))
+			return (true);
+		i++;
 	}
-	monster->heading = HEADING_NONE;
+	return (false);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

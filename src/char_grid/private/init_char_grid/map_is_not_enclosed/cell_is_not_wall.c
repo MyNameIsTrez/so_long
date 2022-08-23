@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   set_monster_heading.c                              :+:    :+:            */
+/*   cell_is_not_enclosed.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/05 18:45:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 13:05:00 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/23 14:26:33 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/23 15:02:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_set_monster_heading(t_monster *monster, t_data *data)
+bool	cell_is_not_wall(size_t column, size_t row, t_data *data)
 {
-	t_tile		*monster_tile;
-	t_iterator	it;
-	t_heading	heading;
-
-	if (monster->heading == HEADING_NONE)
-		monster->heading = HEADING_UP;
-	monster_tile = &monster->entity->tile;
-	ft_init_it(&it);
-	while (sl_iterate_headings(&it, data) != FINISHED)
-	{
-		heading = (monster->heading + data->it.heading) % 4;
-		if (can_walk(heading, monster_tile, data))
-		{
-			monster->heading = heading;
-			return ;
-		}
-	}
-	monster->heading = HEADING_NONE;
+	if (data->char_grid.cells[sl_get_index(column, row, data)] != '1')
+		return (true);
+	return (false);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

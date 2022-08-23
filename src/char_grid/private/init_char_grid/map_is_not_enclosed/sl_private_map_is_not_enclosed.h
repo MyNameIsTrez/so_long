@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   set_monster_heading.c                              :+:    :+:            */
+/*   sl_private_map_is_not_enclosed.h                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/05 18:45:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 13:05:00 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/23 14:23:42 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/23 15:03:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_MAP_IS_NOT_ENCLOSED_H
+# define SL_PRIVATE_MAP_IS_NOT_ENCLOSED_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_set_monster_heading(t_monster *monster, t_data *data)
-{
-	t_tile		*monster_tile;
-	t_iterator	it;
-	t_heading	heading;
+bool	cell_is_not_wall(size_t column, size_t row, t_data *data);
+bool	row_is_not_enclosed(size_t row, t_data *data);
 
-	if (monster->heading == HEADING_NONE)
-		monster->heading = HEADING_UP;
-	monster_tile = &monster->entity->tile;
-	ft_init_it(&it);
-	while (sl_iterate_headings(&it, data) != FINISHED)
-	{
-		heading = (monster->heading + data->it.heading) % 4;
-		if (can_walk(heading, monster_tile, data))
-		{
-			monster->heading = heading;
-			return ;
-		}
-	}
-	monster->heading = HEADING_NONE;
-}
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////
