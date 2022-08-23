@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 18:02:55 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/17 16:50:44 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/22 17:43:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #  define MAP_CHARACTERS "01CEMPp"
 #  define ENTITY_CHARACTERS "CMPp"
 #  define PLAYER_CHARACTERS "Pp"
+#  define MONSTER_CHARACTER 'M'
 # else
 #  define MAP_CHARACTERS "01CEP"
 #  define ENTITY_CHARACTERS "CP"

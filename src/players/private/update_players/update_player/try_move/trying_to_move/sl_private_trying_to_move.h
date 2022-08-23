@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_heading_column_offset.c                        :+:    :+:            */
+/*   sl_private_trying_to_move.h                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/05 19:16:45 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 19:18:06 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/05 16:14:22 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/23 11:48:34 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_TRYING_TO_MOVE_H
+# define SL_PRIVATE_TRYING_TO_MOVE_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_i32	get_heading_column_offset(t_heading heading)
-{
-	if (heading == HEADING_LEFT)
-		return (-1);
-	if (heading == HEADING_RIGHT)
-		return (1);
-	else
-		return (0);
-}
+bool	can_autowalk(t_player *player, t_data *data);
+
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

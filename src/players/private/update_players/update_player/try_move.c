@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 16:10:38 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/23 12:24:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,24 @@
 
 void	try_move(t_player *player, t_data *data)
 {
-	if (can_shift(player, HEADING_UP, data))
-		shift(player, 0, -1, data);
-	if (can_shift(player, HEADING_DOWN, data))
-		shift(player, 0, 1, data);
-	if (can_shift(player, HEADING_LEFT, data))
-		shift(player, -1, 0, data);
-	if (can_shift(player, HEADING_RIGHT, data))
-		shift(player, 1, 0, data);
+	t_iterator	it;
+	t_heading	heading;
+
+	while (sl_iterate_headings(&it, data) != FINISHED)
+	{
+		heading = data->it.heading;
+		if (trying_to_move(player, heading, data))
+		{
+			if (is_walkable(player, heading, data))
+			{
+				shift_tile_pos_to_heading(&player->entity->tile, heading, data);
+				data->movement_count++;
+				ft_printf("Movement count: %u\n", data->movement_count);
+			}
+			else if (BONUS)
+				update_death_state(player, heading, data);
+		}
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////

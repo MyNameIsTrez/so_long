@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   shift.c                                            :+:    :+:            */
+/*   shift_tile_pos_to_heading.c                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 18:19:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/22 17:33:04 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/29 19:37:27 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/23 12:17:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	shift(t_player *player, t_i32 x, t_i32 y, t_data *data)
+void	shift_tile_pos_to_heading(t_tile *tile, t_heading heading, t_data *data)
 {
-	sl_shift_tile_pos(&player->entity->tile, x, y, data);
-	data->movement_count++;
-	ft_printf("Movement count: %u\n", data->movement_count);
+	size_t	column;
+	size_t	row;
+
+	column = (size_t)sl_get_heading_column(heading, tile, data);
+	row = (size_t)sl_get_heading_row(heading, tile, data);
+	sl_set_tile_pos(tile, sl_get_index(column, row, data), data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

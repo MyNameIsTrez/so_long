@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/09 15:45:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 15:55:21 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/22 17:55:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	sl_update_players(t_data *data)
 	while (sl_iterate_players(&it, data) != FINISHED)
 	{
 		player = data->it.player;
-		update_player(player, data);
+		if (!player->dead)
+			update_player(player, data);
 	}
 }
 

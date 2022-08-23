@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/13 13:22:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/11 18:43:53 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/23 12:14:20 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ bool		is_entity_in_way(size_t index, t_data *data);
 bool		is_tile_walkable(size_t index, t_data *data);
 bool		sl_out_of_bounds(t_i32 column, t_i32 row, t_data *data);
 void		sl_set_tile_pos(t_tile *tile, size_t index, t_data *data);
-void		sl_shift_tile_pos(t_tile *tile, t_i32 columns, t_i32 rows,
+void		shift_tile_pos_to_heading(t_tile *tile, t_heading heading,
 				t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
