@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 15:13:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 12:56:49 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 16:35:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	sl_update_entities(t_data *data)
 {
 	sl_update_monsters(data);
 	sl_update_players(data);
-	sl_update_exit_locks(data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 17:32:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 15:22:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 17:29:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@
 t_tile_kind	*sl_get_tile_kind(t_u8 character, t_data *data)
 {
 	t_iterator	it;
+	t_tile_kind	*tile_kind;
 
 	ft_init_it(&it);
 	while (sl_iterate_tile_kinds(&it, data) != FINISHED)
 	{
-		if (data->it.tile_kind->character == character)
-			return (data->it.tile_kind);
+		tile_kind = data->it.tile_kind;
+		if (tile_kind->character == character && !tile_kind->is_entity)
+			return (tile_kind);
 	}
 	return (NULL);
 }

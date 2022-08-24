@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_update_exit_locks.h                     :+:    :+:            */
+/*   open_exit_locks.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/24 12:06:57 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 12:53:54 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/24 12:07:03 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/24 16:41:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_UPDATE_EXIT_LOCKS_H
-# define SL_PRIVATE_UPDATE_EXIT_LOCKS_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_update_exit_lock(t_exit_lock *exit_lock, t_data *data);
+void	sl_open_exit_locks(t_data *data)
+{
+	t_iterator	it;
+	t_exit_lock	*exit_lock;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	ft_init_it(&it);
+	while (sl_iterate_exit_locks(&it, data) != FINISHED)
+	{
+		exit_lock = data->it.exit_lock;
+		sl_hide_and_disable_entity(exit_lock->entity);
+	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/24 15:58:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 16:12:19 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 17:20:57 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ t_status	sl_instantiate_tile_kinds(t_data *data)
 		return (ERROR);
 	if (add_collectible_tile_kind(data) != OK)
 		return (ERROR);
-	// if (add_exit_lock_tile_kind(data) != OK)
-	// 	return (ERROR);
+	if (add_exit_lock_tile_kind(data) != OK)
+		return (ERROR);
 	if (add_map_exit_tile_kind(data) != OK)
 		return (ERROR);
 	if (add_monster_tile_kind(data) != OK)

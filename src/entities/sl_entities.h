@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/14 11:13:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 18:27:32 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 16:43:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+typedef struct s_entity	t_entity;
+
+////////////////////////////////////////////////////////////////////////////////
+
+void		sl_hide_and_disable_entity(t_entity *entity);
 t_status	sl_instantiate_entities(t_data *data);
 bool		sl_is_entity(t_data *data);
 void		sl_update_entities(t_data *data);

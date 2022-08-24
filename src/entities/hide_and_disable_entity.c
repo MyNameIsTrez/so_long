@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   update_exit_locks.c                                :+:    :+:            */
+/*   hide_and_disable_entity.c                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/24 12:07:45 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 12:52:41 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/24 16:41:50 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/24 16:43:22 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/update_exit_locks/sl_private_update_exit_locks.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-void	sl_update_exit_locks(t_data *data)
+void	sl_hide_and_disable_entity(t_entity *entity)
 {
-	t_iterator	it;
-	t_exit_lock	*exit_lock;
-	t_entity	*entity;
-
-	ft_init_it(&it);
-	while (sl_iterate_exit_locks(&it, data) != FINISHED)
-	{
-		exit_lock = data->it.exit_lock;
-		entity = exit_lock->entity;
-		if (entity->ticks_since_last_update > \
-			entity->ticks_between_updates)
-		{
-			sl_update_exit_lock(exit_lock, data);
-			entity->ticks_since_last_update = 0;
-		}
-		else
-			entity->ticks_since_last_update++;
-	}
+	sl_get_frame_instance(&entity->tile, entity->tile.frame_index)->enabled = false;
+	entity->enabled = false;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
