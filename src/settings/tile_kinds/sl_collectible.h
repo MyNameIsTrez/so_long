@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/22 14:06:48 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 14:42:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define COLLECTIBLE_TEXTURE_ROW 46
 # define COLLECTIBLE_CHARACTER 'C'
 # define COLLECTIBLE_DEPTH 2
+# define COLLECTIBLE_IS_ENTITY 1
 
 ////////////////////////////////////////////////////////////////////////////////
 

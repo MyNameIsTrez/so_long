@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:00:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 13:57:17 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 14:33:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_status	add_tile_kind(t_tile_kind_data tk_data, t_data *data)
 	t_tile_kind	tile_kind;
 
 	tile_kind.character = tk_data.character;
+	tile_kind.is_entity = tk_data.is_entity;
 	tile_kind.frame_count = tk_data.frame_count;
 	tile_kind.frames = ft_vector_new(sizeof(mlx_image_t *));
 	if (tile_kind.frames == NULL)

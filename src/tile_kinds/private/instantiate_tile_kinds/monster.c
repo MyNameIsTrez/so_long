@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 15:00:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 11:26:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 14:43:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_status	add_monster_tile_kind(t_data *data)
 			MONSTER_TEXTURE_FRAME_COUNT,
 			MONSTER_TEXTURE_ROW,
 			MONSTER_CHARACTER,
+			MONSTER_IS_ENTITY,
 			MONSTER_DEPTH,
 			(t_tile_kind_data_color){
 			{MONSTER_R, MONSTER_G, MONSTER_B},

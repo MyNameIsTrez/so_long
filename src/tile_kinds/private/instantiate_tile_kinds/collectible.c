@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:05:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 11:26:57 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 14:42:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_status	add_collectible_tile_kind(t_data *data)
 			COLLECTIBLE_TEXTURE_FRAME_COUNT,
 			COLLECTIBLE_TEXTURE_ROW,
 			COLLECTIBLE_CHARACTER,
+			COLLECTIBLE_IS_ENTITY,
 			COLLECTIBLE_DEPTH,
 			(t_tile_kind_data_color){
 			{COLLECTIBLE_R, COLLECTIBLE_G, COLLECTIBLE_B},

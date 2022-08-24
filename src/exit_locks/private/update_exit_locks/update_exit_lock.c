@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/24 12:07:03 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 12:54:24 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 15:59:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 
 void	sl_update_exit_lock(t_exit_lock *exit_lock, t_data *data)
 {
-	exit_lock->entity->enabled = !data->can_exit;
+	(void)exit_lock;
+	(void)data;
+	// exit_lock->entity->enabled = !data->can_exit;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

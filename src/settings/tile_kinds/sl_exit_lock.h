@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:11 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 13:02:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 15:27:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define EXIT_LOCK_TEXTURE_ROW 19
 # define EXIT_LOCK_CHARACTER 'E'
 # define EXIT_LOCK_DEPTH 2
+# define EXIT_LOCK_IS_ENTITY 1
 
 ////////////////////////////////////////////////////////////////////////////////
 

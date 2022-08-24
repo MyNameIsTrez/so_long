@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 13:49:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 11:20:33 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 14:32:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,15 @@ typedef struct s_tile_kind_data
 	size_t					frame_count;
 	size_t					texture_row;
 	t_u8					character;
+	bool					is_entity;
 	t_i32					depth;
 	t_tile_kind_data_color	color;
 }	t_tile_kind_data;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_tile_kind	*sl_get_character_tile_kind(t_data *data);
-t_tile_kind	*sl_get_tile_kind(t_u8 character, t_data *data);
+t_tile_kind	*sl_get_entity_tile_kind(t_data *data);
+t_tile_kind	*sl_get_tile_grid_tile_kind(t_data *data);
 t_status	sl_instantiate_tile_kinds(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////

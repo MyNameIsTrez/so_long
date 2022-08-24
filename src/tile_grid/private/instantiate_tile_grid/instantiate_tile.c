@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:50:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 14:14:16 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 14:25:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_status	instantiate_tile(t_data *data)
 	t_tile_kind	*tile_kind;
 	t_tile		tile;
 
-	tile_kind = get_tile_grid_tile_kind(data);
+	tile_kind = sl_get_tile_grid_tile_kind(data);
 	if (sl_fill_tile_data(&tile, tile_kind, data) != OK)
 		return (ERROR);
 	if (tile_kind->character == WALL_CHARACTER)

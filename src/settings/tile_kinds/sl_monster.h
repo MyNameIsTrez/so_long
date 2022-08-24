@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 14:47:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/22 14:12:32 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 14:42:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define MONSTER_TEXTURE_ROW 32
 # define MONSTER_CHARACTER 'M'
 # define MONSTER_DEPTH 3
+# define MONSTER_IS_ENTITY 1
 
 ////////////////////////////////////////////////////////////////////////////////
 

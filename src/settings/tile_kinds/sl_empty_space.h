@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:56:43 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/22 14:08:05 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 14:42:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define EMPTY_SPACE_TEXTURE_ROW 0
 # define EMPTY_SPACE_CHARACTER '0'
 # define EMPTY_SPACE_DEPTH 1
+# define EMPTY_SPACE_IS_ENTITY 0
 
 ////////////////////////////////////////////////////////////////////////////////
 
