@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 17:32:08 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 17:29:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 17:35:26 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ t_tile_kind	*sl_get_tile_grid_tile_kind(t_data *data)
 			if (!tile_kind->is_entity)
 				return (tile_kind);
 			else if (character == MAP_EXIT_CHARACTER)
-				return (sl_get_tile_kind(MAP_EXIT_CHARACTER, data)); // TODO: Don't hardcode the empty background tile somehow
+				return (sl_get_tile_kind(MAP_EXIT_CHARACTER, data));
 			else
-				return (sl_get_tile_kind(EMPTY_SPACE_CHARACTER, data)); // TODO: Don't hardcode the empty background tile somehow
+				return (sl_get_tile_kind(EMPTY_SPACE_CHARACTER, data));
 		}
 	}
 	return (NULL);

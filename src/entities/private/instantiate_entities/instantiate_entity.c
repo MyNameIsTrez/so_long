@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 20:02:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 17:30:57 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 17:31:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ t_status	instantiate_entity(t_data *data)
 	t_entity	entity;
 
 	tile_kind = sl_get_entity_tile_kind(data);
-	if (tile_kind == NULL || tile_kind->character == 'E')
-		return (OK);
 	if (sl_fill_tile_data(&entity.tile, tile_kind, data) != OK)
 		return (ERROR);
 	if (sl_instantiate_tile_frames(&entity.tile, data) != OK)
