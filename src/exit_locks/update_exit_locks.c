@@ -1,26 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_exits.h                                         :+:    :+:            */
+/*   update_exit_locks.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/18 15:13:30 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/18 15:13:35 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/24 12:07:45 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/24 12:52:41 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_EXITS_H
-# define SL_EXITS_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_open_exits(t_data *data);
+#include "private/update_exit_locks/sl_private_update_exit_locks.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif
+void	sl_update_exit_locks(t_data *data)
+{
+	t_iterator	it;
+	t_exit_lock	*exit_lock;
+	t_entity	*entity;
+
+	ft_init_it(&it);
+	while (sl_iterate_exit_locks(&it, data) != FINISHED)
+	{
+		exit_lock = data->it.exit_lock;
+		entity = exit_lock->entity;
+		if (entity->ticks_since_last_update > \
+			entity->ticks_between_updates)
+		{
+			sl_update_exit_lock(exit_lock, data);
+			entity->ticks_since_last_update = 0;
+		}
+		else
+			entity->ticks_since_last_update++;
+	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////

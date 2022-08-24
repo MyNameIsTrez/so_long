@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/22 13:49:13 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 12:56:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// TODO: Reorder to the VS Code file explorer order
 # include "../monitor/sl_struct_monitor.h"
 # include "../iterators/sl_struct_iterators.h"
 # include "sl_structs_mlx42.h"
@@ -28,6 +29,7 @@
 # include "../players/sl_struct_player.h"
 # include "../monsters/sl_struct_monster.h"
 # include "../collectibles/sl_struct_collectible.h"
+# include "../exit_locks/sl_struct_exit_lock.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -52,6 +54,7 @@ typedef struct s_data
 	bool			can_exit;
 	bool			finished_level;
 	t_u32			movement_count;
+	t_exit_lock		*exit_locks;
 }	t_data;
 
 ////////////////////////////////////////////////////////////////////////////////

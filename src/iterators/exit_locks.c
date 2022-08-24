@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_struct_collectible.h                            :+:    :+:            */
+/*   exit_locks.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/09 16:33:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 12:27:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/09 16:20:10 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/24 12:55:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCT_COLLECTIBLE_H
-# define SL_STRUCT_COLLECTIBLE_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "../entities/sl_struct_entity.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-typedef struct s_collectible
+t_iterator_status	sl_iterate_exit_locks(t_iterator *it, t_data *data)
 {
-	t_entity	*entity;
-	bool		collected;
-}	t_collectible;
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	if (!it->initialized)
+		*it = ft_get_vector_iterator(data->exit_locks);
+	if (ft_iterate(it) != FINISHED)
+	{
+		data->it.exit_lock = (t_exit_lock *)it->current;
+		return (LOOPED);
+	}
+	data->it.exit_lock = (t_exit_lock *)it->current;
+	return (FINISHED);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

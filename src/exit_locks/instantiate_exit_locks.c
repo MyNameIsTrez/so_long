@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_struct_collectible.h                            :+:    :+:            */
+/*   instantiate_exit_locks.c                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/09 16:33:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 12:27:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/24 11:58:05 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/24 13:04:52 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCT_COLLECTIBLE_H
-# define SL_STRUCT_COLLECTIBLE_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "../entities/sl_struct_entity.h"
+#include "private/instantiate_exit_locks/sl_private_instantiate_exit_locks.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct s_collectible
+t_status	sl_instantiate_exit_locks(t_data *data)
 {
-	t_entity	*entity;
-	bool		collected;
-}	t_collectible;
+	t_iterator	it;
+	t_u8		character;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	data->exit_locks = ft_vector_new(sizeof(t_exit_lock));
+	ft_init_it(&it);
+	while (sl_iterate_entities(&it, data) != FINISHED)
+	{
+		character = data->it.entity->tile.tile_kind->character;
+		if (character == EXIT_LOCK_CHARACTER)
+			if (instantiate_exit_lock(data) != OK)
+				return (ERROR);
+	}
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

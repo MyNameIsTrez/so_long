@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_struct_collectible.h                            :+:    :+:            */
+/*   collect_collectible.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/09 16:33:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 12:27:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/24 12:16:52 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/24 12:35:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCT_COLLECTIBLE_H
-# define SL_STRUCT_COLLECTIBLE_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "../entities/sl_struct_entity.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-typedef struct s_collectible
+void	sl_collect_collectible(t_collectible *collectible, t_data *data)
 {
-	t_entity	*entity;
-	bool		collected;
-}	t_collectible;
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	collectible->collected = true;
+	sl_get_frame_instance(&collectible->entity->tile, collectible->entity->tile.frame_index)->enabled = false;
+	collectible->entity->enabled = false;
+	data->collected_count++;
+	if (data->collected_count == ft_vector_get_size(data->collectibles))
+		data->can_exit = true;
+}
 
 ////////////////////////////////////////////////////////////////////////////////

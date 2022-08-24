@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_struct_collectible.h                            :+:    :+:            */
+/*   instantiate_exit_lock.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/09 16:33:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 12:27:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/24 11:57:54 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/24 12:56:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCT_COLLECTIBLE_H
-# define SL_STRUCT_COLLECTIBLE_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "../entities/sl_struct_entity.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-typedef struct s_collectible
+t_status	instantiate_exit_lock(t_data *data)
 {
-	t_entity	*entity;
-	bool		collected;
-}	t_collectible;
+	t_exit_lock	exit_lock;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	exit_lock.entity = data->it.entity;
+	if (ft_vector_push(&data->exit_locks, &exit_lock) != OK)
+		return (ERROR);
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

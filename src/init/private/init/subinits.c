@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 13:51:51 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/22 16:08:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 12:57:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 t_status	sl_subinits(t_data *data)
 {
+	// TODO: Put in VS Code file explorer order
 	static const t_subinit	subinit_table[] = {
 		sl_instantiate_background,
 		sl_load_texture,
@@ -29,6 +30,7 @@ t_status	sl_subinits(t_data *data)
 		sl_instantiate_monsters,
 		sl_instantiate_collectibles,
 		sl_check_valid_path,
+		sl_instantiate_exit_locks,
 	};
 	size_t					subinit_count;
 	static t_iterator		it;

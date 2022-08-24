@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/04 13:45:31 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/17 16:28:32 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 12:56:13 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "../tile_kinds/sl_struct_tile_kind.h"
 # include "../monsters/sl_struct_monster.h"
 # include "../collectibles/sl_struct_collectible.h"
+# include "../exit_locks/sl_struct_exit_lock.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -43,6 +44,7 @@ typedef struct s_it
 	t_monster		*monster;
 	t_collectible	*collectible;
 	t_u8			char_grid_character;
+	t_exit_lock		*exit_lock;
 }	t_it;
 
 ////////////////////////////////////////////////////////////////////////////////

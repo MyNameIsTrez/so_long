@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_struct_collectible.h                            :+:    :+:            */
+/*   sl_private_update_exit_locks.h                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/09 16:33:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 12:27:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/24 12:06:57 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/24 12:53:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCT_COLLECTIBLE_H
-# define SL_STRUCT_COLLECTIBLE_H
+#ifndef SL_PRIVATE_UPDATE_EXIT_LOCKS_H
+# define SL_PRIVATE_UPDATE_EXIT_LOCKS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "../entities/sl_struct_entity.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-typedef struct s_collectible
-{
-	t_entity	*entity;
-	bool		collected;
-}	t_collectible;
+void	sl_update_exit_lock(t_exit_lock *exit_lock, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

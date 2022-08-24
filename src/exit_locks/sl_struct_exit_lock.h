@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   open_exits.c                                       :+:    :+:            */
+/*   sl_struct_exit_lock.h                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/18 15:13:01 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/18 15:16:13 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/24 11:52:46 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/24 12:51:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_STRUCT_EXIT_LOCK_H
+# define SL_STRUCT_EXIT_LOCK_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_open_exits(t_data *data)
-{
-	t_iterator	char_grid_indices_it;
+# include "../entities/sl_struct_entity.h"
 
-	ft_init_it(&char_grid_indices_it);
-	while (sl_iterate_char_grid_indices(&char_grid_indices_it, data) != FINISHED)
-		if (sl_get_char_grid_character(data) == MAP_EXIT_CHARACTER)
-			sl_change_frame(&data->tile_grid.cells[data->it.char_grid_index], 1);
-}
+////////////////////////////////////////////////////////////////////////////////
+
+typedef struct s_exit_lock
+{
+	t_entity	*entity;
+}	t_exit_lock;
+
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

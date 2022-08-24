@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_struct_collectible.h                            :+:    :+:            */
+/*   sl_private_try_collect_collectible.h               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/09 16:33:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 12:27:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/11 16:42:30 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/24 12:20:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCT_COLLECTIBLE_H
-# define SL_STRUCT_COLLECTIBLE_H
+#ifndef SL_PRIVATE_TRY_COLLECT_COLLECTIBLE_H
+# define SL_PRIVATE_TRY_COLLECT_COLLECTIBLE_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "../entities/sl_struct_entity.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-typedef struct s_collectible
-{
-	t_entity	*entity;
-	bool		collected;
-}	t_collectible;
+bool	sl_entities_have_same_position(t_entity *entity_1, t_entity *entity_2);
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_struct_collectible.h                            :+:    :+:            */
+/*   update_exit_lock.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/09 16:33:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 12:27:59 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/24 12:07:03 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/24 12:54:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_STRUCT_COLLECTIBLE_H
-# define SL_STRUCT_COLLECTIBLE_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# include "../entities/sl_struct_entity.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-typedef struct s_collectible
+void	sl_update_exit_lock(t_exit_lock *exit_lock, t_data *data)
 {
-	t_entity	*entity;
-	bool		collected;
-}	t_collectible;
-
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	exit_lock->entity->enabled = !data->can_exit;
+}
 
 ////////////////////////////////////////////////////////////////////////////////

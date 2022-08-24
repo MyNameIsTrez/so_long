@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 18:59:44 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 17:55:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 13:07:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 t_status	add_collectible_tile_kind(t_data *data);
 t_status	add_empty_space_tile_kind(t_data *data);
+t_status	add_exit_lock_tile_kind(t_data *data);
 t_status	add_map_exit_tile_kind(t_data *data);
 t_status	add_monster_tile_kind(t_data *data);
 t_status	add_player_1_tile_kind(t_data *data);
