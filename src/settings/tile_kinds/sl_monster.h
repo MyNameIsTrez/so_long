@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/04 14:47:22 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 13:00:01 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 18:36:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define MONSTER_TEXTURE_FRAME_COUNT 2
 # define MONSTER_TEXTURE_ROW 32
 # define MONSTER_CHARACTER 'M'
-# define MONSTER_DEPTH 3
+# define MONSTER_DEPTH 4
 # define MONSTER_IS_ENTITY 1
 # define MONSTER_TICKS_BETWEEN_FRAME_CHANGES 25
 # define MONSTER_TICKS_BETWEEN_UPDATES 30

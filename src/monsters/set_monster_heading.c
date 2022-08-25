@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/05 18:45:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 16:47:58 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 18:33:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ void	sl_set_monster_heading(t_monster *monster, t_data *data)
 	while (sl_iterate_headings(&it, data) != FINISHED)
 	{
 		heading = (monster->heading + data->it.heading) % 4;
+		if (is_player_in_way(heading, monster_tile, data))
+			kill_player(heading, monster_tile, data);
 		if (sl_can_walk(heading, monster_tile, data))
 		{
 			monster->heading = heading;
 			return ;
 		}
-		else if (is_player_in_way(heading, monster_tile, data))
-			kill_player(heading, monster_tile, data);
 	}
 	monster->heading = HEADING_NONE;
 }

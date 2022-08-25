@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/23 16:42:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 14:21:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 18:35:37 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	kill_player(t_heading heading, t_tile *monster_tile, t_data *data)
 		player = data->it.player;
 		if (player->entity->tile.index == index)
 		{
+			player->entity->tile.index = 0;
 			player->dying = true;
 			return ;
 		}
