@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/09 15:45:32 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 17:16:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 18:25:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	sl_update_players(t_data *data)
 		}
 		else if (player->dead)
 		{
-			player->entity->tile.index = 0;
+			sl_set_tile_pos(&player->entity->tile, 0, data);
 			player->entity->animated = false;
 		}
 		else if (!player->dead)
