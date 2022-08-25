@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 14:42:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 12:59:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # define COLLECTIBLE_CHARACTER 'C'
 # define COLLECTIBLE_DEPTH 2
 # define COLLECTIBLE_IS_ENTITY 1
+# define COLLECTIBLE_TICKS_BETWEEN_FRAME_CHANGES 25
+# define COLLECTIBLE_TICKS_BETWEEN_UPDATES 30
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/05 17:54:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 17:56:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 18:01:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 #ifndef SL_PRIVATE_ADD_THING_TILE_KIND_H
 # define SL_PRIVATE_ADD_THING_TILE_KIND_H
+
+////////////////////////////////////////////////////////////////////////////////
+
+typedef struct s_tile_kind_data	t_tile_kind_data;
 
 ////////////////////////////////////////////////////////////////////////////////
 

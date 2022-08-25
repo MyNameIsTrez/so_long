@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:05:25 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 16:29:18 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 18:04:09 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "add_thing_tile_kind/sl_private_add_thing_tile_kind.h"
+#include "add_thing_tile_kind/add_tile_kind/sl_private_tile_kind_data.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -28,6 +29,8 @@ t_status	add_exit_lock_tile_kind(t_data *data)
 			EXIT_LOCK_CHARACTER,
 			EXIT_LOCK_IS_ENTITY,
 			EXIT_LOCK_DEPTH,
+			EXIT_LOCK_TICKS_BETWEEN_FRAME_CHANGES,
+			EXIT_LOCK_TICKS_BETWEEN_UPDATES,
 			(t_tile_kind_data_color){
 			{EXIT_LOCK_R, EXIT_LOCK_G, EXIT_LOCK_B},
 			{EXIT_LOCK_MIN_R, EXIT_LOCK_MIN_G, EXIT_LOCK_MIN_B},

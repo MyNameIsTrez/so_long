@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:18 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 14:38:52 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 12:59:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # define PLAYER_1_CHARACTER 'P'
 # define PLAYER_1_DEPTH 3
 # define PLAYER_1_IS_ENTITY 1
+# define PLAYER_1_TICKS_BETWEEN_FRAME_CHANGES 25
+# define PLAYER_1_TICKS_BETWEEN_UPDATES 30
 
 ////////////////////////////////////////////////////////////////////////////////
 

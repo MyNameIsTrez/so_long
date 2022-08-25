@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:11 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 14:42:44 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 12:59:54 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # define MAP_EXIT_CHARACTER 'E'
 # define MAP_EXIT_DEPTH 1
 # define MAP_EXIT_IS_ENTITY 0
+# define MAP_EXIT_TICKS_BETWEEN_FRAME_CHANGES 25
+# define MAP_EXIT_TICKS_BETWEEN_UPDATES 30
 
 ////////////////////////////////////////////////////////////////////////////////
 

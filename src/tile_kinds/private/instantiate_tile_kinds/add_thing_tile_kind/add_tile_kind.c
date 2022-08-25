@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:00:02 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 14:33:08 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/24 18:05:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "add_tile_kind/sl_private_add_tile_kind.h"
+#include "add_tile_kind/sl_private_tile_kind_data.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -37,6 +38,8 @@ t_status	add_tile_kind(t_tile_kind_data tk_data, t_data *data)
 			tk_data.texture_row, data) != OK)
 		return (ERROR);
 	tile_kind.depth = tk_data.depth;
+	tile_kind.ticks_between_frame_changes = tk_data.ticks_between_frame_changes;
+	tile_kind.ticks_between_updates = tk_data.ticks_between_updates;
 	if (instantiate_tile_kind_color(&tile_kind.color, &tk_data.color, data) != OK)
 		return (ERROR);
 	if (ft_vector_push(&data->tile_kinds, &tile_kind) != OK)
