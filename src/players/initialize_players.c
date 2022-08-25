@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 20:05:03 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 14:13:56 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 18:06:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ t_status	sl_initialize_players(t_data *data)
 		{
 			player.entity = data->it.entity;
 			player.controls = get_player_controls(character);
+			player.dead = false;
+			player.dying = false;
 			if (ft_vector_push(&data->players, &player) != OK)
 				return (ERROR);
 		}
