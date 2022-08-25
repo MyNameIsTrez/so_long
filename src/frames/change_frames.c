@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 13:28:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/17 17:51:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 15:59:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	sl_change_frames(t_data *data)
 	while (sl_iterate_entities(&it, data) != FINISHED)
 	{
 		entity = data->it.entity;
-		if (!entity->enabled)
+		if (!entity->animated)
 			continue ;
 		if (entity->ticks_since_last_frame_change > \
 			entity->ticks_between_frame_changes)

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/24 16:41:50 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 16:43:22 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 15:58:48 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 void	sl_hide_and_disable_entity(t_entity *entity)
 {
 	sl_get_frame_instance(&entity->tile, entity->tile.frame_index)->enabled = false;
-	entity->enabled = false;
+	entity->animated = false;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

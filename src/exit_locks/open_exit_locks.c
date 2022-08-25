@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/24 12:07:03 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 13:24:32 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 15:59:19 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,10 @@
 void	sl_open_exit_locks(t_data *data)
 {
 	t_iterator	it;
-	t_exit_lock	*exit_lock;
 
 	ft_init_it(&it);
 	while (sl_iterate_exit_locks(&it, data) != FINISHED)
-	{
-		exit_lock = data->it.exit_lock;
-		exit_lock->entity->enabled = true;
-	}
+		data->it.exit_lock->entity->animated = true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

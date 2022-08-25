@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:57:30 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 17:08:50 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 15:58:40 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_entity
 	t_u32	ticks_between_frame_changes;
 	t_u32	ticks_since_last_update;
 	t_u32	ticks_between_updates;
-	bool	enabled;
+	bool	animated;
 }	t_entity;
 
 ////////////////////////////////////////////////////////////////////////////////
