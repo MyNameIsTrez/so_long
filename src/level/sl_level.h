@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   kill_player.c                                      :+:    :+:            */
+/*   sl_level.h                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/23 16:42:47 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 14:21:06 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/25 14:01:34 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/25 14:02:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_LEVEL_H
+# define SL_LEVEL_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	kill_player(t_heading heading, t_tile *monster_tile, t_data *data)
-{
-	size_t	index;
+void	sl_reset_level(t_data *data);
 
-	index = sl_get_index(
-		(size_t)sl_get_heading_column(heading, monster_tile, data),
-		(size_t)sl_get_heading_row(heading, monster_tile, data), data);
+////////////////////////////////////////////////////////////////////////////////
 
-
-	t_iterator	it;
-	t_player	*player;
-
-	ft_init_it(&it);
-	while (sl_iterate_players(&it, data) != FINISHED)
-	{
-		player = data->it.player;
-		if (player->entity->tile.index == index)
-		{
-			player->dying = true;
-			return ;
-		}
-	}
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 13:56:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 13:51:29 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 15:52:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	sl_loop(void *param)
 	sl_update_held_keys(data);
 	if (!data->finished_level)
 	{
-		sl_update_entities(data);
 		sl_change_frames(data);
+		sl_update_entities(data);
 	}
 	sl_update_frame_colors(data);
 	sl_update_window(data);

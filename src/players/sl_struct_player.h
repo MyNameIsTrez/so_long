@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:55:06 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/22 17:24:28 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 14:20:56 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_player
 {
 	t_entity	*entity;
 	t_controls	controls;
+	bool		dying;
 	bool		dead;
 }	t_player;
 

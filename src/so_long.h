@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/15 16:21:23 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 12:55:58 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 14:01:22 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 # include "held_keys/sl_held_keys.h"
 # include "init/sl_init.h"
 # include "iterators/sl_iterators.h"
+# include "level/sl_level.h"
 # include "loop/sl_loop.h"
 # include "monitor/sl_monitor.h"
 # include "monsters/sl_monsters.h"

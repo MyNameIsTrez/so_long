@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 18:19:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 16:41:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 14:21:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	update_death_state(t_player *player, t_heading heading, t_data *data)
 	if (!sl_is_tile_walkable(index, data))
 		return ;
 	if (monster_in_way(index, data))
-		player->dead = true;
+		player->dying = true;
 }
 
 #endif
