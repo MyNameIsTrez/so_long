@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/18 15:13:30 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 16:37:42 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 13:25:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 t_status	sl_instantiate_exit_locks(t_data *data);
 void		sl_open_exit_locks(t_data *data);
+void		sl_update_exit_locks(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

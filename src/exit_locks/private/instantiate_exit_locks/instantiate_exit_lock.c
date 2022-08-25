@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/24 11:57:54 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 12:56:04 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 13:15:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_status	instantiate_exit_lock(t_data *data)
 	t_exit_lock	exit_lock;
 
 	exit_lock.entity = data->it.entity;
+	exit_lock.entity->enabled = false;
 	if (ft_vector_push(&data->exit_locks, &exit_lock) != OK)
 		return (ERROR);
 	return (OK);

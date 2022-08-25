@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   loop.c                                             :+:    :+:            */
+/*   update_exit_locks.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 13:56:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 13:27:12 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/25 13:19:26 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/25 13:21:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,30 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_loop(void *param)
-{
-	t_data				*data;
+#include "private/update_exit_locks/sl_private_update_exit_locks.h"
 
-	data = param;
-	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE))
-		mlx_close_window(data->mlx);
-	if (!data->finished_level)
+////////////////////////////////////////////////////////////////////////////////
+
+void	sl_update_exit_locks(t_data *data)
+{
+	t_iterator	it;
+	t_exit_lock	*exit_lock;
+	t_entity	*entity;
+
+	ft_init_it(&it);
+	while (sl_iterate_exit_locks(&it, data) != FINISHED)
 	{
-		sl_update_held_keys(data);
-		sl_update_entities(data);
-		sl_change_frames(data);
+		exit_lock = data->it.exit_lock;
+		entity = exit_lock->entity;
+		if (entity->ticks_since_last_update > \
+			entity->ticks_between_updates)
+		{
+			sl_update_exit_lock(exit_lock, data);
+			entity->ticks_since_last_update = 0;
+		}
+		else
+			entity->ticks_since_last_update++;
 	}
-	sl_update_frame_colors(data);
-	sl_update_window(data);
-	data->ticks++;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

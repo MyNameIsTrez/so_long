@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/24 12:07:03 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 16:41:40 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 13:24:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	sl_open_exit_locks(t_data *data)
 	while (sl_iterate_exit_locks(&it, data) != FINISHED)
 	{
 		exit_lock = data->it.exit_lock;
-		sl_hide_and_disable_entity(exit_lock->entity);
+		exit_lock->entity->enabled = true;
 	}
 }
 

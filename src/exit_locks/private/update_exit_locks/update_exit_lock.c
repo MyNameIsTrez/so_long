@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   loop.c                                             :+:    :+:            */
+/*   update_exit_lock.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 13:56:49 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 13:27:12 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/25 13:22:44 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/25 13:30:03 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,15 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_loop(void *param)
+void	sl_update_exit_lock(t_exit_lock *exit_lock, t_data *data)
 {
-	t_data				*data;
-
-	data = param;
-	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE))
-		mlx_close_window(data->mlx);
-	if (!data->finished_level)
+	(void)data;
+	if (exit_lock->entity->tile.frame_index == exit_lock->entity->tile.tile_kind->frame_count - 1)
 	{
-		sl_update_held_keys(data);
-		sl_update_entities(data);
-		sl_change_frames(data);
+		exit_lock->entity->enabled = false; // Rename enabled here to animated
+		exit_lock->entity->tile.frame_index = 0;
+		sl_hide_and_disable_entity(exit_lock->entity);
 	}
-	sl_update_frame_colors(data);
-	sl_update_window(data);
-	data->ticks++;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

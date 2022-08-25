@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/15 17:57:11 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 12:59:39 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 13:21:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # define EXIT_LOCK_CHARACTER 'E'
 # define EXIT_LOCK_DEPTH 2
 # define EXIT_LOCK_IS_ENTITY 1
-# define EXIT_LOCK_TICKS_BETWEEN_FRAME_CHANGES 25
-# define EXIT_LOCK_TICKS_BETWEEN_UPDATES 30
+# define EXIT_LOCK_TICKS_BETWEEN_FRAME_CHANGES 1
+# define EXIT_LOCK_TICKS_BETWEEN_UPDATES 1
 
 ////////////////////////////////////////////////////////////////////////////////
 
