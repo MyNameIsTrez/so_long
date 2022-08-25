@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_player_in_way.c                                 :+:    :+:            */
+/*   sl_try_get_index.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/23 16:45:33 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 19:03:42 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/25 19:00:43 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/25 19:01:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,18 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	is_player_in_way(t_heading heading, t_tile *monster_tile, t_data *data)
+bool	sl_try_get_index(size_t *index, t_heading heading, t_tile *tile,
+			t_data *data)
 {
-	size_t		index;
-	t_iterator	it;
-	t_player	*player;
+	t_i32	column;
+	t_i32	row;
 
-	if (!sl_try_get_index(&index, heading, monster_tile, data))
+	column = sl_get_heading_column(heading, tile, data);
+	row = sl_get_heading_row(heading, tile, data);
+	if (sl_out_of_bounds(column, row, data))
 		return (false);
-	ft_init_it(&it);
-	while (sl_iterate_players(&it, data) != FINISHED)
-	{
-		player = data->it.player;
-		if (player->entity->tile.index == index)
-			return (true);
-	}
-	return (false);
+	*index = sl_get_index((size_t)column, (size_t)row, data);
+	return (true);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
