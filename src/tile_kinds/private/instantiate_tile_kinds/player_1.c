@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:03:46 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 18:04:34 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 16:25:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ t_status	add_player_1_tile_kind(t_data *data)
 			PLAYER_1_CHARACTER,
 			PLAYER_1_IS_ENTITY,
 			PLAYER_1_DEPTH,
-			PLAYER_1_TICKS_BETWEEN_FRAME_CHANGES,
-			PLAYER_1_TICKS_BETWEEN_UPDATES,
+			PLAYER_TICKS_BETWEEN_FRAME_CHANGES,
+			PLAYER_TICKS_BETWEEN_UPDATES,
 			(t_tile_kind_data_color){
 			{PLAYER_1_R, PLAYER_1_G, PLAYER_1_B},
 			{PLAYER_1_MIN_R, PLAYER_1_MIN_G, PLAYER_1_MIN_B},

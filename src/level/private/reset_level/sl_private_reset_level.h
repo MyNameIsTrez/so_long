@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   reset_level.c                                      :+:    :+:            */
+/*   sl_private_reset_level.h                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/25 14:01:43 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 16:20:06 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/25 16:08:27 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/25 16:09:08 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_RESET_LEVEL_H
+# define SL_PRIVATE_RESET_LEVEL_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/reset_level/sl_private_reset_level.h"
+void	reset_players(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_reset_level(t_data *data)
-{
-	reset_players(data);
-	data->movement_count = 0;
-	// TODO: Check whether there's anything else in data that needs to be reset
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////
