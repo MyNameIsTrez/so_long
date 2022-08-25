@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 18:19:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 14:21:44 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 17:14:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	update_death_state(t_player *player, t_heading heading, t_data *data)
 	size_t		index;
 
 	tile = &player->entity->tile;
-
 	column = sl_get_heading_column(heading, tile, data);
 	row = sl_get_heading_row(heading, tile, data);
 	if (sl_out_of_bounds(column, row, data))

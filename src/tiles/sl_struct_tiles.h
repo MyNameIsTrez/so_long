@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/01 17:58:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 16:39:58 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 17:00:06 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 
 typedef struct s_initial_tile
 {
-	size_t	frame_index;
 	size_t	index;
 }	t_initial_tile;
 

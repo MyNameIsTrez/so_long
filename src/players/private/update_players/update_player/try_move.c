@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 10:37:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 16:42:17 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 17:55:58 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	try_move(t_player *player, t_data *data)
 	t_iterator	it;
 	t_heading	heading;
 
+	ft_init_it(&it);
 	while (sl_iterate_headings(&it, data) != FINISHED)
 	{
 		heading = data->it.heading;

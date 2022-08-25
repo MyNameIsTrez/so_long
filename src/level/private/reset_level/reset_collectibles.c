@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   reset_players.c                                    :+:    :+:            */
+/*   reset_collectibles.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/25 16:08:35 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 16:59:07 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/25 16:56:22 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/25 17:07:47 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,18 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	reset_players(t_data *data)
+void	reset_collectibles(t_data *data)
 {
-	t_iterator	it;
-	t_player	*player;
+	t_iterator		it;
+	t_collectible	*collectible;
 
 	ft_init_it(&it);
-	while (sl_iterate_players(&it, data) != FINISHED)
+	while (sl_iterate_collectibles(&it, data) != FINISHED)
 	{
-		player = data->it.player;
-		sl_change_frame(&player->entity->tile, 0);
-		sl_set_tile_pos(&player->entity->tile, player->entity->tile.initial.index, data);
-		player->entity->ticks_between_frame_changes = PLAYER_TICKS_BETWEEN_FRAME_CHANGES;
-		player->entity->ticks_between_updates = PLAYER_TICKS_BETWEEN_UPDATES;
-		player->dead = false;
-		player->dying = false;
-		player->entity->animated = true;
+		collectible = data->it.collectible;
+		collectible->collected = false;
+		sl_change_frame(&collectible->entity->tile, 0);
+		collectible->entity->animated = true;
 	}
 }
 
