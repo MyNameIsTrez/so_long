@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/25 14:01:43 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 16:20:06 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 16:41:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 void	sl_reset_level(t_data *data)
 {
 	reset_players(data);
+	reset_monsters(data);
 	data->movement_count = 0;
 	// TODO: Check whether there's anything else in data that needs to be reset
 }

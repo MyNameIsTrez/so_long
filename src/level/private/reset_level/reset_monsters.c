@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   set_monster_heading.c                              :+:    :+:            */
+/*   reset_monsters.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/05 18:45:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 17:46:56 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/25 16:41:37 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/25 16:50:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "sl_private_monsters.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-void	set_monster_heading(t_monster *monster, t_data *data)
+void	reset_monsters(t_data *data)
 {
-	t_tile		*monster_tile;
 	t_iterator	it;
-	t_heading	heading;
+	t_monster	*monster;
 
-	if (monster->heading == HEADING_NONE)
-		monster->heading = HEADING_UP;
-	monster_tile = &monster->entity->tile;
 	ft_init_it(&it);
-	while (sl_iterate_headings(&it, data) != FINISHED)
+	while (sl_iterate_monsters(&it, data) != FINISHED)
 	{
-		heading = (monster->heading + data->it.heading) % 4;
-		if (sl_can_walk(heading, monster_tile, data))
-		{
-			monster->heading = heading;
-			return ;
-		}
-		else if (is_player_in_way(heading, monster_tile, data))
-			kill_player(heading, monster_tile, data);
+		monster = data->it.monster;
+		sl_change_frame(&monster->entity->tile, monster->entity->tile.initial.frame_index);
+		sl_set_tile_pos(&monster->entity->tile, monster->entity->tile.initial.index, data);
+		monster->entity->animated = true;
+		monster->heading = HEADING_NONE;
+		sl_set_monster_heading(monster, data);
 	}
-	monster->heading = HEADING_NONE;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
