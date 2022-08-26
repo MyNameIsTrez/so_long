@@ -19,9 +19,11 @@
 void	try_walk_into_exit(t_player *player, t_data *data)
 {
 	size_t		player_index;
+	t_u8		character;
 
 	player_index = player->entity->tile.index;
-	if (data->can_exit && data->char_grid.cells[player_index] == MAP_EXIT_CHARACTER)
+	character = data->char_grid.cells[player_index];
+	if (data->can_exit && character == MAP_EXIT_CHARACTER)
 		data->finished_level = true;
 }
 

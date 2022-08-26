@@ -33,7 +33,8 @@ void	try_move(t_player *player, t_data *data)
 		{
 			if (sl_can_walk(heading, &player->entity->tile, data))
 			{
-				sl_shift_tile_pos_to_heading(&player->entity->tile, heading, data);
+				sl_shift_tile_pos_to_heading(&player->entity->tile, heading,
+					data);
 				data->movement_count++;
 				ft_printf("Movement count: %u\n", data->movement_count);
 			}

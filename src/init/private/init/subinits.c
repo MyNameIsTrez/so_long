@@ -18,7 +18,6 @@
 
 t_status	sl_subinits(t_data *data)
 {
-	// TODO: Put in VS Code file explorer order
 	static const t_subinit	subinit_table[] = {
 		sl_instantiate_background,
 		sl_load_texture,

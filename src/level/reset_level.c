@@ -26,10 +26,10 @@ void	sl_reset_level(t_data *data)
 	reset_exit_locks(data);
 	reset_monsters(data);
 	reset_players(data);
-	data->movement_count = 0;
-	data->collected_count = 0;
 	data->can_exit = false;
-	// TODO: Check whether there's anything else in data that needs to be reset
+	data->collected_count = 0;
+	data->finished_level = false;
+	data->movement_count = 0;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -26,11 +26,10 @@ void	try_collect_collectible(t_player *player, t_data *data)
 
 	ft_init_it(&collectible_it);
 	while (sl_iterate_collectibles(&collectible_it, data) != FINISHED)
-	{
-		if (sl_entities_have_same_position(player->entity, data->it.collectible->entity))
+		if (sl_entities_have_same_position(player->entity,
+				data->it.collectible->entity))
 			if (!data->it.collectible->collected)
 				sl_collect_collectible(data->it.collectible, data);
-	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////

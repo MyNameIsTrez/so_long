@@ -20,14 +20,16 @@ void	reset_monsters(t_data *data)
 {
 	t_iterator	it;
 	t_monster	*monster;
+	t_entity	*entity;
 
 	ft_init_it(&it);
 	while (sl_iterate_monsters(&it, data) != FINISHED)
 	{
 		monster = data->it.monster;
-		sl_change_frame(&monster->entity->tile, 0);
-		sl_set_tile_pos(&monster->entity->tile, monster->entity->tile.initial.index, data);
-		monster->entity->animated = true;
+		entity = monster->entity;
+		sl_change_frame(&entity->tile, 0);
+		sl_set_tile_pos(&entity->tile, entity->tile.initial.index, data);
+		entity->animated = true;
 		monster->heading = HEADING_NONE;
 		sl_set_monster_heading(monster, data);
 	}
