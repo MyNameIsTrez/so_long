@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_update_frame_colors.h                   :+:    :+:            */
+/*   get_max_channel.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 16:57:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/26 18:12:34 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 17:56:37 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 18:11:51 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_UPDATE_FRAME_COLORS_H
-# define SL_PRIVATE_UPDATE_FRAME_COLORS_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	should_step(t_data *data);
-void	step_channel(size_t rgb_channel_index, mlx_image_t *frame,
-			t_data *data);
+t_u8	get_max_channel(size_t rgb_channel_index, t_u8 original_channel,
+			t_data *data)
+{
+	t_tile_kind	*tile_kind;
+	t_u8		max_channel;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	tile_kind = data->it.tile_kind;
+	max_channel = tile_kind->color.max_color[rgb_channel_index];
+	return (max_channel * original_channel / 255);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

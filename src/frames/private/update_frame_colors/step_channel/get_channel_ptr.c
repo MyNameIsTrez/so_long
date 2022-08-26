@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_update_frame_colors.h                   :+:    :+:            */
+/*   get_channel_ptr.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 16:57:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/26 18:12:34 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 17:40:09 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 18:14:02 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_UPDATE_FRAME_COLORS_H
-# define SL_PRIVATE_UPDATE_FRAME_COLORS_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	should_step(t_data *data);
-void	step_channel(size_t rgb_channel_index, mlx_image_t *frame,
-			t_data *data);
+t_u8	*get_channel_ptr(size_t rgb_channel_index, mlx_image_t *frame,
+			t_data *data)
+{
+	t_u8	*pixels;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	pixels = frame->pixels;
+	return (&pixels[data->it.frame_pixel_index + rgb_channel_index]);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

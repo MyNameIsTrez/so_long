@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_update_frame_colors.h                   :+:    :+:            */
+/*   get_channel_step_ptr.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 16:57:04 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/26 18:12:34 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 17:51:26 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 18:15:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_UPDATE_FRAME_COLORS_H
-# define SL_PRIVATE_UPDATE_FRAME_COLORS_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	should_step(t_data *data);
-void	step_channel(size_t rgb_channel_index, mlx_image_t *frame,
-			t_data *data);
+t_i32	*get_channel_step_ptr(size_t rgb_channel_index, t_data *data)
+{
+	t_tile_kind	*tile_kind;
+	t_i32		*rgb_step;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	tile_kind = data->it.tile_kind;
+	rgb_step = tile_kind->color.step;
+	return (&rgb_step[rgb_channel_index]);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

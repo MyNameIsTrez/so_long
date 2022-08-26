@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/12 11:00:12 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 14:04:49 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 18:12:15 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	sl_update_frame_colors(t_data *data)
 				while (sl_iterate_rgb_channel_indices(&rgb_channel_indices_it,
 						data) != FINISHED)
 					if (should_step(data) && is_visible(frame, data))
-						step_pixel(frame, data);
+						step_channel(data->it.rgb_channel_index, frame, data);
 		}
 }
 
