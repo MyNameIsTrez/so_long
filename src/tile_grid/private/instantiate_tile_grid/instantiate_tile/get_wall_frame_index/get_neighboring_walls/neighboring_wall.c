@@ -35,10 +35,9 @@ bool	neighboring_wall(t_i32 column_offset, t_i32 row_offset, t_tile *tile,
 		return (true);
 	if (row_offset == 1 && tile_row >= data->char_grid.height - 1)
 		return (true);
-	// TODO: Refactor this (column; row) -> index mess
 	column = (size_t)((t_i32)tile_column + column_offset);
 	row = (size_t)((t_i32)tile_row + row_offset);
-	index = column + row * data->char_grid.width;
+	index = sl_get_index(column, row, data);
 	return (data->char_grid.cells[index] == WALL_CHARACTER);
 }
 

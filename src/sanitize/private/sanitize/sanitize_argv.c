@@ -24,7 +24,6 @@ t_status	sanitize_argv(t_i32 argc, char **argv)
 	if (argc >= 3)
 	{
 		scale_string = argv[2];
-		// TODO: Check if ft_atoi_safe is robust enough
 		if (ft_atoi_safe(scale_string, &scale) != OK || \
 			(scale < 1 || scale > 4))
 			return (sl_set_error(SL_ERROR_INVALID_SCALE));

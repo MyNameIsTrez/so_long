@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   set_pixels_per_tile.c                              :+:    :+:            */
+/*   sl_private_add_unvisited_neighbors.h               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 18:48:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 18:48:22 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 20:40:11 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 20:40:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_ADD_UNVISITED_NEIGHBORS_H
+# define SL_PRIVATE_ADD_UNVISITED_NEIGHBORS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	set_pixels_per_tile(t_data *data)
-{
-	data->texture.pixels_per_tile = data->texture.scale * \
-		PIXELS_PER_TILE_UNSCALED;
-}
+t_status	try_add_neighbor(t_heading heading, t_tile *tile,
+				t_tile ***visit_stack, bool *visited, t_data *data);
+
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

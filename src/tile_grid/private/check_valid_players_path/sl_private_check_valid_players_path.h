@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   set_pixels_per_tile.c                              :+:    :+:            */
+/*   sl_private_check_valid_players_path.h              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 18:48:19 by sbos          #+#    #+#                 */
-/*   Updated: 2022/07/29 18:48:22 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 20:53:36 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 20:53:36 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_CHECK_VALID_PLAYERS_PATH_H
+# define SL_PRIVATE_CHECK_VALID_PLAYERS_PATH_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	set_pixels_per_tile(t_data *data)
-{
-	data->texture.pixels_per_tile = data->texture.scale * \
-		PIXELS_PER_TILE_UNSCALED;
-}
+t_status	check_valid_player_path(t_player *player, t_data *data);
+
+////////////////////////////////////////////////////////////////////////////////
+
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

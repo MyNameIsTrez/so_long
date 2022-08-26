@@ -28,7 +28,7 @@ t_status	sl_subinits(t_data *data)
 		sl_initialize_players,
 		sl_instantiate_monsters,
 		sl_instantiate_collectibles,
-		sl_check_valid_path,
+		sl_check_valid_players_path,
 		sl_instantiate_exit_locks,
 	};
 	size_t					subinit_count;

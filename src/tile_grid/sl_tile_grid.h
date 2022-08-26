@@ -17,7 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_check_valid_path(t_data *data);
+t_status	sl_check_valid_players_path(t_data *data);
 t_i32		sl_get_heading_column(t_heading heading, t_tile *tile,
 				t_data *data);
 size_t		sl_get_heading_index(t_heading heading, t_tile *tile, t_data *data);
