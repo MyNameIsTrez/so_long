@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_update_players.h                        :+:    :+:            */
+/*   sl_private_update_alive_player.h                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/09 15:49:37 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/17 17:58:11 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/09 16:00:52 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/24 12:20:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_UPDATE_PLAYERS_H
-# define SL_PRIVATE_UPDATE_PLAYERS_H
+#ifndef SL_PRIVATE_UPDATE_ALIVE_PLAYER_H
+# define SL_PRIVATE_UPDATE_ALIVE_PLAYER_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	update_player(t_player *player, t_entity *entity, t_tile *tile,
-			t_data *data);
+void	try_collect_collectible(t_player *player, t_data *data);
+void	try_move(t_player *player, t_data *data);
+void	try_walk_into_exit(t_player *player, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -20,11 +20,30 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	update_player(t_player *player, t_data *data)
+bool	update_player(t_player *player, t_entity *entity, t_tile *tile,
+			t_data *data)
 {
-	try_move(player, data);
-	try_collect_collectible(player, data);
-	try_walk_into_exit(player, data);
+	bool	player_alive;
+
+	player_alive = false;
+	if (player->dying && !player->dead)
+	{
+		player_alive = true;
+		dying(entity, tile, player);
+	}
+	else if (player->dead)
+	{
+		sl_set_tile_pos(tile, 0, data);
+		entity->animated = false;
+	}
+	else if (!player->dead)
+	{
+		player_alive = true;
+		if (tile->frame_index == 4)
+			sl_change_frame(tile, 0);
+		update_alive_player(player, data);
+	}
+	return (player_alive);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

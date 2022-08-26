@@ -35,28 +35,8 @@ void	sl_update_players(t_data *data)
 		player = data->it.player;
 		entity = player->entity;
 		tile = &entity->tile;
-		if (player->dying && !player->dead)
-		{
+		if (update_player(player, entity, tile, data))
 			all_players_dead = false;
-			if (entity->ticks_between_updates != 1)
-				sl_change_frame(tile, 4);
-			entity->ticks_between_frame_changes = 1;
-			entity->ticks_between_updates = 1;
-			if (tile->frame_index == tile->tile_kind->frame_count - 1)
-				player->dead = true;
-		}
-		else if (player->dead)
-		{
-			sl_set_tile_pos(tile, 0, data);
-			entity->animated = false;
-		}
-		else if (!player->dead)
-		{
-			all_players_dead = false;
-			if (tile->frame_index == 4)
-				sl_change_frame(tile, 0);
-			update_player(player, data);
-		}
 	}
 	if (all_players_dead)
 		sl_reset_level(data);

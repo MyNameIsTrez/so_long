@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/09 16:00:52 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/24 12:20:49 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 20:24:18 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 20:24:18 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	try_collect_collectible(t_player *player, t_data *data);
-void	try_move(t_player *player, t_data *data);
-void	try_walk_into_exit(t_player *player, t_data *data);
+void	dying(t_entity *entity, t_tile *tile, t_player *player);
+void	update_alive_player(t_player *player, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
