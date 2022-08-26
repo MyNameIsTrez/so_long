@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/09 16:34:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 16:39:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 17:29:00 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/instantiate_collectibles/sl_private_instantiate_collectibles.h"
+#include "private/instantiate_collectibles/\
+sl_private_instantiate_collectibles.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

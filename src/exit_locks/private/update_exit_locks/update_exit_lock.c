@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/25 13:22:44 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 16:55:16 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 17:34:50 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@
 
 void	sl_update_exit_lock(t_exit_lock *exit_lock, t_data *data)
 {
+	t_tile	*tile;
+
 	(void)data;
-	if (exit_lock->entity->tile.frame_index == exit_lock->entity->tile.tile_kind->frame_count - 1)
+	tile = &exit_lock->entity->tile;
+	if (tile->frame_index == tile->tile_kind->frame_count - 1)
 		sl_hide_and_disable_entity(exit_lock->entity);
 }
 

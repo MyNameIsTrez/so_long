@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:20:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 13:52:51 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 17:32:27 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 
 void	sl_print_error(void)
 {
-	// TODO: Make sure all error enums have an error message
 	char*const	sl_error_messages[] = {
 	[SL_ERROR_MAP_NOT_ENCLOSED] = "The map is not enclosed by walls.",
 	[SL_ERROR_FILE_HAS_INVALID_CHAR] = \

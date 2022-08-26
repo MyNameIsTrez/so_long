@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 14:12:24 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/05 18:07:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 17:33:44 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	sl_print_all_errors(void)
 {
 	if (ft_get_error() != FT_OK)
 		ft_print_error();
-	// TODO: Have a newline after ft_print_error()
 	if (sl_get_error() != SL_OK)
 		sl_print_error();
 }
