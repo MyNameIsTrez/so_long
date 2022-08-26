@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 19:43:36 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 19:02:20 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/25 19:16:24 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+t_status	sl_check_valid_path(t_data *data);
 t_i32		sl_get_heading_column(t_heading heading, t_tile *tile,
 				t_data *data);
 size_t		sl_get_heading_index(t_heading heading, t_tile *tile, t_data *data);
