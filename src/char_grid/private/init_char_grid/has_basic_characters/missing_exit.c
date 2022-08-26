@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_init_char_grid.h                        :+:    :+:            */
+/*   missing_exit.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:33:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 13:54:53 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 21:13:05 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 21:13:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_INIT_CHAR_GRID_H
-# define SL_PRIVATE_INIT_CHAR_GRID_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	check_duplicate_start_or_exit_character(t_data *data);
-t_status	check_invalid_character(t_data *data);
-t_status	has_basic_characters(t_data *data);
-bool		map_is_not_enclosed(t_data *data);
+bool	missing_exit(t_data *data)
+{
+	t_iterator	it;
 
-////////////////////////////////////////////////////////////////////////////////
-
-#endif
+	ft_init_it(&it);
+	while (sl_iterate_char_grid_characters(&it, data) != FINISHED)
+		if (data->it.char_grid_character == MAP_EXIT_CHARACTER)
+			return (false);
+	return (true);
+}
 
 ////////////////////////////////////////////////////////////////////////////////

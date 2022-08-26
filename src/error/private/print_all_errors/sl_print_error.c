@@ -36,7 +36,11 @@ void	sl_print_error(void)
 		"A #defined minimum color channel was too high.",
 	[SL_ERROR_TOO_LOW_MAX_COLOR] = \
 		"A #defined maximum color channel was too low.",
-	[SL_ERROR_NO_PATH] = "No path from the player to an exit was found."
+	[SL_ERROR_NO_PATH] = "No path from the player to an exit was found.",
+	[SL_ERROR_MISSING_START] = "The map misses the start character 'P'.",
+	[SL_ERROR_MISSING_COLLECTIBLE] = \
+		"The map misses the collectible character 'C'.",
+	[SL_ERROR_MISSING_EXIT] = "The map misses the exit character 'E'.",
 	};
 
 	ft_print("Error: ");

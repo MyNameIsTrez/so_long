@@ -28,6 +28,8 @@ t_status	sl_init_char_grid(char *map_filename, t_data *data)
 		return (sl_set_error(SL_ERROR_MAP_NOT_ENCLOSED));
 	if (check_invalid_character(data) != OK)
 		return (ERROR);
+	if (has_basic_characters(data) != OK)
+		return (ERROR);
 	if (!BONUS && check_duplicate_start_or_exit_character(data) != OK)
 		return (ERROR);
 	return (OK);

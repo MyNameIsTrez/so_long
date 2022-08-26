@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_init_char_grid.h                        :+:    :+:            */
+/*   sl_private_has_basic_characters.h                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:33:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 13:54:53 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 21:12:39 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 21:12:39 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_INIT_CHAR_GRID_H
-# define SL_PRIVATE_INIT_CHAR_GRID_H
+#ifndef SL_PRIVATE_HAS_BASIC_CHARACTERS_H
+# define SL_PRIVATE_HAS_BASIC_CHARACTERS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	check_duplicate_start_or_exit_character(t_data *data);
-t_status	check_invalid_character(t_data *data);
-t_status	has_basic_characters(t_data *data);
-bool		map_is_not_enclosed(t_data *data);
+bool	missing_collectible(t_data *data);
+bool	missing_exit(t_data *data);
+bool	missing_start(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

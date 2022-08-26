@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_private_init_char_grid.h                        :+:    :+:            */
+/*   has_basic_characters.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:33:14 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 13:54:53 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 21:11:11 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 21:11:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_PRIVATE_INIT_CHAR_GRID_H
-# define SL_PRIVATE_INIT_CHAR_GRID_H
+#include "so_long.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	check_duplicate_start_or_exit_character(t_data *data);
-t_status	check_invalid_character(t_data *data);
-t_status	has_basic_characters(t_data *data);
-bool		map_is_not_enclosed(t_data *data);
+#include "has_basic_characters/sl_private_has_basic_characters.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif
+t_status	has_basic_characters(t_data *data)
+{
+	if (missing_start(data))
+		return (sl_set_error(SL_ERROR_MISSING_START));
+	if (missing_collectible(data))
+		return (sl_set_error(SL_ERROR_MISSING_COLLECTIBLE));
+	if (missing_exit(data))
+		return (sl_set_error(SL_ERROR_MISSING_EXIT));
+	return (OK);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
