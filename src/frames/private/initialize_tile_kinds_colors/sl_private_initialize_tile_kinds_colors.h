@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   initialize_tile_kinds_colors.c                     :+:    :+:            */
+/*   sl_private_initialize_tile_kinds_colors.h          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/14 17:52:16 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/26 19:27:04 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 19:10:57 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 19:20:16 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_INITIALIZE_TILE_KINDS_COLORS_H
+# define SL_PRIVATE_INITIALIZE_TILE_KINDS_COLORS_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/initialize_tile_kinds_colors/\
-sl_private_initialize_tile_kinds_colors.h"
+void	initialize_visible_frames(mlx_image_t *frame, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_initialize_tile_kinds_colors(t_data *data)
-{
-	t_iterator	tile_kind_it;
-	t_iterator	frames_it;
-
-	ft_init_it(&tile_kind_it);
-	ft_init_it(&frames_it);
-	while (sl_iterate_tile_kinds(&tile_kind_it, data) != FINISHED)
-		while (sl_iterate_frames(&frames_it, data->it.tile_kind,
-				data) != FINISHED)
-			initialize_visible_frames(data->it.frame, data);
-	return (OK);
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

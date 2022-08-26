@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 13:28:21 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 15:59:44 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 18:27:30 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ void	sl_change_frames(t_data *data)
 		}
 		else
 			entity->ticks_since_last_frame_change++;
-		// TODO: Do something fun with varying frame rates during gameplay
-		// entity->ticks_between_frame_changes -= 0.001;
 	}
 }
 

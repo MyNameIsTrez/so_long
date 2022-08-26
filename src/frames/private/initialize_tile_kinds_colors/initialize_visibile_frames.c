@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   frame_rgb_channel_indices.c                        :+:    :+:            */
+/*   initialize_visibile_frames.c                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/13 12:12:41 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/10 17:09:24 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 19:09:27 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 19:27:25 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,22 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_iterator_status	sl_iterate_frame_rgb_channel_indices(
-						t_it_frame_rgb_channel_indices *it, mlx_image_t *frame,
-						t_data *data)
-{
-	if (!it->frame_pixel_indices_it.initialized)
-		sl_iterate_frame_pixel_indices(&it->frame_pixel_indices_it, frame, data);
-	while (true)
-	{
-		if (sl_iterate_rgb_channel_indices(&it->rgb_channel_indices_it, data) != FINISHED)
-			return (LOOPED);
-		if (sl_iterate_frame_pixel_indices(&it->frame_pixel_indices_it, frame, data) == FINISHED)
-			break ;
-	}
-	return (FINISHED);
-}
+#include "../sl_private_frames.h"
+#include "initialize_visible_frames/sl_private_initialize_visible_frames.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_init_it_frame_rgb_channel_indices(t_it_frame_rgb_channel_indices *it)
+void	initialize_visible_frames(mlx_image_t *frame, t_data *data)
 {
-	ft_bzero(it, sizeof(t_it_frame_rgb_channel_indices));
+	t_iterator	frame_pixel_indices_it;
+	t_u8		*pixels;
+
+	ft_init_it(&frame_pixel_indices_it);
+	pixels = frame->pixels;
+	while (sl_iterate_frame_pixel_indices(&frame_pixel_indices_it, frame,
+			data) != FINISHED)
+		if (is_visible(frame, data))
+			initialize_channels(pixels, data);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
