@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   is_visible.c                                        :+:    :+:            */
+/*   is_visible.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 16:14:48 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/09 15:58:24 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/26 19:28:43 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/26 19:32:09 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 
 bool	is_visible(mlx_image_t *frame, t_data *data)
 {
-	t_u8		*pixels;
+	t_u8	*pixels;
+	t_u8	alpha;
 
 	pixels = frame->pixels;
-	return (pixels[data->it.frame_pixel_index + 3] > 0);
+	alpha = pixels[data->it.frame_pixel_index + 3];
+	return (alpha > 0);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

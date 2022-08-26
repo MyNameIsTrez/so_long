@@ -28,6 +28,7 @@ t_status	sl_initialize_tile_kinds_colors(t_data *data)
 
 	ft_init_it(&tile_kind_it);
 	ft_init_it(&frames_it);
+	// TODO: Create and use sl_iterate_tile_kinds_frames() here and in the other sl_iterate_frames() spot
 	while (sl_iterate_tile_kinds(&tile_kind_it, data) != FINISHED)
 		while (sl_iterate_frames(&frames_it, data->it.tile_kind,
 				data) != FINISHED)

@@ -24,7 +24,7 @@ t_i32	get_scale(t_i32 argc, char **argv)
 	if (argc >= 3)
 	{
 		scale_string = argv[2];
-		ft_atoi_safe(scale_string, &scale); // TODO: Replace with not safe variant?
+		ft_atoi_safe(scale_string, &scale);
 	}
 	else
 		scale = DEFAULT_SCALE;
