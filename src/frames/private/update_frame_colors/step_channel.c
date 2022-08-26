@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/29 16:57:45 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/26 18:16:36 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/26 18:23:49 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,9 @@ void	step_channel(size_t rgb_channel_index, mlx_image_t *frame, t_data *data)
 	min_channel = get_min_channel(rgb_channel_index, original_channel, data);
 	max_channel = get_max_channel(rgb_channel_index, original_channel, data);
 	if (*channel + *step_ptr < min_channel)
-	{
-		*step_ptr += *channel - min_channel;
-		if (min_channel - *step_ptr <= max_channel)
-			*channel = (t_u8)(min_channel - *step_ptr);
-		*step_ptr *= -1;
-	}
+		bounce_low(step_ptr, channel, min_channel, max_channel);
 	else if (*channel + *step_ptr > max_channel)
-	{
-		*step_ptr -= max_channel - *channel;
-		if (max_channel - *step_ptr >= min_channel)
-			*channel = (t_u8)(max_channel - *step_ptr);
-		*step_ptr *= -1;
-	}
+		bounce_high(step_ptr, channel, min_channel, max_channel);
 	else
 		*channel += *step_ptr;
 }
