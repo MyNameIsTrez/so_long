@@ -22,6 +22,8 @@ t_status	sl_fill_tile_data(t_tile *tile, t_tile_kind *tile_kind,
 				t_data *data);
 size_t		sl_get_column(size_t index, t_data *data);
 size_t		sl_get_index(size_t column, size_t row, t_data *data);
+t_i32		sl_get_instance_x(size_t index, t_data *data);
+t_i32		sl_get_instance_y(size_t index, t_data *data);
 size_t		sl_get_row(size_t index, t_data *data);
 size_t		sl_get_tile_column(t_tile *tile, t_data *data);
 size_t		sl_get_tile_row(t_tile *tile, t_data *data);

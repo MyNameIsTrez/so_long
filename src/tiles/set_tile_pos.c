@@ -30,8 +30,8 @@ void	sl_set_tile_pos(t_tile *tile, size_t index, t_data *data)
 	while (sl_iterate_frame_count(&it, frame_count, data) != FINISHED)
 	{
 		instance = sl_get_frame_instance(tile, data->it.frame_index);
-		instance->x = (t_i32)sl_get_column(index, data) * (t_i32)pixels_per_tile + WINDOW_LEFT_OFFSET * (t_i32)data->texture.scale;
-		instance->y = (t_i32)sl_get_row(index, data) * (t_i32)pixels_per_tile + WINDOW_TOP_OFFSET * (t_i32)data->texture.scale;
+		instance->x = sl_get_instance_x(index, data);
+		instance->y = sl_get_instance_y(index, data);
 	}
 }
 

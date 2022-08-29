@@ -16,10 +16,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "instantiate_tile_frame/sl_private_instantiate_tile_frame.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
 t_status	sl_instantiate_tile_frame(t_tile *tile, size_t frame_index,
 				t_data *data)
 {
@@ -30,8 +26,8 @@ t_status	sl_instantiate_tile_frame(t_tile *tile, size_t frame_index,
 	size_t		frame_instance_uindex;
 
 	frame = sl_get_frame(tile->tile_kind, frame_index);
-	x = get_x(data);
-	y = get_y(data);
+	x = sl_get_instance_x(data->it.char_grid_index, data);
+	y = sl_get_instance_y(data->it.char_grid_index, data);
 	frame_instance_index = mlx_image_to_window(data->mlx, frame, x, y);
 	if (frame_instance_index < 0)
 		return (sl_set_error(SL_ERROR_MLX42));
