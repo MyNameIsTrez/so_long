@@ -17,9 +17,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	draw_allocation_count(t_data *data);
-void	draw_fps(t_data *data);
-void	draw_movement_count(t_data *data);
+t_status	draw_allocation_count(t_data *data);
+t_status	draw_fps(t_data *data);
+t_status	draw_movement_count(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

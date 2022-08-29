@@ -22,7 +22,10 @@ void	sl_loop(void *param)
 
 	data = param;
 	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE))
+	{
 		mlx_close_window(data->mlx);
+		return ;
+	}
 	sl_update_held_keys(data);
 	if (!data->finished_level)
 	{
@@ -30,7 +33,8 @@ void	sl_loop(void *param)
 		sl_update_entities(data);
 	}
 	sl_update_frame_colors(data);
-	sl_update_window(data);
+	if (sl_update_window(data) != OK)
+		mlx_close_window(data->mlx);
 	data->ticks++;
 }
 

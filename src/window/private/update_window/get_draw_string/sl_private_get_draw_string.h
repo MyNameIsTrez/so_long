@@ -1,44 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   draw_fps.c                                         :+:    :+:            */
+/*   sl_private_get_draw_string.h                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/15 13:38:25 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 16:11:23 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/29 11:18:11 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/29 11:18:11 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_GET_DRAW_STRING_H
+# define SL_PRIVATE_GET_DRAW_STRING_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../../submodules/MLX42/src/font/font.h"
-#include "get_draw_string/sl_private_get_draw_string.h"
+char	*get_allocation_count_string(void);
+char	*get_fps_string(t_data *data);
+char	*get_movement_count_string(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	draw_fps(t_data *data)
-{
-	static mlx_image_t	*image;
-	char				*string;
-
-	if (image != NULL)
-		mlx_delete_image(data->mlx, image);
-	if (!data->window.draw_debug)
-		return (OK);
-	string = get_fps_string(data);
-	if (string == NULL)
-		return (ERROR);
-	image = mlx_put_string(data->mlx, string, 0, 0);
-	ft_free(&string);
-	if (image == NULL)
-		return (sl_set_error(SL_ERROR_MLX42));
-	mlx_set_instance_depth(&image->instances[0], DEBUG_DRAWING_DEPTH);
-	return (OK);
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

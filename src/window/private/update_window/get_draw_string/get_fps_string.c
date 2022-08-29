@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   draw_fps.c                                         :+:    :+:            */
+/*   get_fps_string.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/15 13:38:25 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 16:11:23 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/29 11:18:35 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/29 11:18:35 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "../../submodules/MLX42/src/font/font.h"
-#include "get_draw_string/sl_private_get_draw_string.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_status	draw_fps(t_data *data)
+char	*get_fps_string(t_data *data)
 {
-	static mlx_image_t	*image;
-	char				*string;
+	char	*string;
+	char	*string_full;
 
-	if (image != NULL)
-		mlx_delete_image(data->mlx, image);
-	if (!data->window.draw_debug)
-		return (OK);
-	string = get_fps_string(data);
+	string = ft_itoa((t_i32)(1 / data->mlx->delta_time));
 	if (string == NULL)
-		return (ERROR);
-	image = mlx_put_string(data->mlx, string, 0, 0);
+		return (NULL);
+	string_full = ft_strjoin(string, " FPS");
 	ft_free(&string);
-	if (image == NULL)
-		return (sl_set_error(SL_ERROR_MLX42));
-	mlx_set_instance_depth(&image->instances[0], DEBUG_DRAWING_DEPTH);
-	return (OK);
+	return (string_full);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

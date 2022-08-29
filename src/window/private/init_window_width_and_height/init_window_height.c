@@ -24,7 +24,6 @@ void	init_window_height(size_t pixels_per_tile, t_data *data)
 	grid_height = data->char_grid.height * pixels_per_tile;
 	window_offset = (WINDOW_TOP_OFFSET + WINDOW_BOTTOM_OFFSET) * \
 		(t_i32)data->texture.scale;
-	// TODO: Sanitize WINDOW_OFFSETS
 	data->window.height = (size_t)((t_i32)grid_height + window_offset);
 	if (data->window.height > data->monitor.height)
 		data->window.height = data->monitor.height;

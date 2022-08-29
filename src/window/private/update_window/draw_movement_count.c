@@ -17,37 +17,28 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "../../submodules/MLX42/src/font/font.h"
+#include "get_draw_string/sl_private_get_draw_string.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	draw_movement_count(t_data *data)
+t_status	draw_movement_count(t_data *data)
 {
 	static mlx_image_t	*image;
 	char				*string;
-	char				*string_full;
 
 	if (image != NULL)
 		mlx_delete_image(data->mlx, image);
 	if (!data->window.draw_debug)
-		return ;
-	string = ft_itoa((t_i32)data->movement_count);
+		return (OK);
+	string = get_movement_count_string(data);
 	if (string == NULL)
-	{
-		sl_cleanup(data);
-		sl_print_all_errors();
-		return ;
-	}
-	string_full = ft_strjoin("Movement count: ", string);
+		return (ERROR);
+	image = mlx_put_string(data->mlx, string, 0, 2 * FONT_HEIGHT);
 	ft_free(&string);
-	if (string_full == NULL)
-	{
-		sl_cleanup(data);
-		sl_print_all_errors();
-		return ;
-	}
-	image = mlx_put_string(data->mlx, string_full, 0, 2 * FONT_HEIGHT); // TODO: Should this be checked for any error?
+	if (image == NULL)
+		return (sl_set_error(SL_ERROR_MLX42));
 	mlx_set_instance_depth(&image->instances[0], DEBUG_DRAWING_DEPTH);
-	ft_free(&string_full);
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -20,13 +20,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void	sl_update_window(t_data *data)
+t_status	sl_update_window(t_data *data)
 {
 	if (data->held_keys[TOGGLE_DEBUG_DRAWING_KEY] == 1)
 		data->window.draw_debug = !data->window.draw_debug;
-	draw_fps(data);
-	draw_allocation_count(data);
-	draw_movement_count(data);
+	if (draw_fps(data) != OK)
+		return (ERROR);
+	if (draw_allocation_count(data) != OK)
+		return (ERROR);
+	if (draw_movement_count(data) != OK)
+		return (ERROR);
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
