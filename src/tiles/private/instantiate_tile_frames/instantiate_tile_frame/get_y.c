@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   instantiate_tile_frames.c                          :+:    :+:            */
+/*   get_y.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:37:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 14:14:50 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/29 11:02:42 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/29 11:02:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,16 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/instantiate_tile_frames/sl_private_instantiate_tile_frames.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_status	sl_instantiate_tile_frames(t_tile *tile, t_data *data)
+t_i32	get_y(t_data *data)
 {
-	t_iterator	it;
+	size_t	row;
+	t_i32	row_pixels;
+	t_i32	window_left_pixel_offset;
 
-	ft_init_it(&it);
-	while (sl_iterate_frame_count(&it, tile->tile_kind->frame_count,
-			data) != FINISHED)
-		if (sl_instantiate_tile_frame(tile, data->it.frame_index, data) != OK)
-			return (ERROR);
-	return (OK);
+	row = sl_get_row(data->it.char_grid_index, data);
+	row_pixels = (t_i32)(data->texture.pixels_per_tile * row);
+	window_left_pixel_offset = WINDOW_TOP_OFFSET * (t_i32)data->texture.scale;
+	return (row_pixels + window_left_pixel_offset);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

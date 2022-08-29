@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   instantiate_tile_frames.c                          :+:    :+:            */
+/*   sl_private_instantiate_tile_frame.h                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:37:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 14:14:50 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/29 11:02:07 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/29 11:02:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "so_long.h"
+#ifndef SL_PRIVATE_INSTANTIATE_TILE_FRAME_H
+# define SL_PRIVATE_INSTANTIATE_TILE_FRAME_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/instantiate_tile_frames/sl_private_instantiate_tile_frames.h"
+t_i32	get_x(t_data *data);
+t_i32	get_y(t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sl_instantiate_tile_frames(t_tile *tile, t_data *data)
-{
-	t_iterator	it;
-
-	ft_init_it(&it);
-	while (sl_iterate_frame_count(&it, tile->tile_kind->frame_count,
-			data) != FINISHED)
-		if (sl_instantiate_tile_frame(tile, data->it.frame_index, data) != OK)
-			return (ERROR);
-	return (OK);
-}
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////

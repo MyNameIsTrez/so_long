@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   instantiate_tile_frames.c                          :+:    :+:            */
+/*   get_x.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/29 19:37:17 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/12 14:14:50 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/29 11:02:32 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/29 11:02:32 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,16 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "private/instantiate_tile_frames/sl_private_instantiate_tile_frames.h"
-
-////////////////////////////////////////////////////////////////////////////////
-
-t_status	sl_instantiate_tile_frames(t_tile *tile, t_data *data)
+t_i32	get_x(t_data *data)
 {
-	t_iterator	it;
+	size_t	column;
+	t_i32	column_pixels;
+	t_i32	window_left_pixel_offset;
 
-	ft_init_it(&it);
-	while (sl_iterate_frame_count(&it, tile->tile_kind->frame_count,
-			data) != FINISHED)
-		if (sl_instantiate_tile_frame(tile, data->it.frame_index, data) != OK)
-			return (ERROR);
-	return (OK);
+	column = sl_get_column(data->it.char_grid_index, data);
+	column_pixels = (t_i32)(data->texture.pixels_per_tile * column);
+	window_left_pixel_offset = WINDOW_LEFT_OFFSET * (t_i32)data->texture.scale;
+	return (column_pixels + window_left_pixel_offset);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
