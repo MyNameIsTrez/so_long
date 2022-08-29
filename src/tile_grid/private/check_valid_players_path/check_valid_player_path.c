@@ -20,18 +20,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	check_valid_player_path(t_player *player, t_data *data)
+t_status	check_valid_player_path(t_player *player, bool *visited,
+				t_data *data)
 {
-	size_t	char_grid_size;
-	bool	*visited;
 	t_tile	**visit_stack;
 	t_tile	*current;
 
-	char_grid_size = data->char_grid.width * data->char_grid.height;
-	visited = ft_vector_new_reserved(sizeof(bool), char_grid_size);
-	if (visited == NULL)
-		return (ERROR);
-	ft_bzero(visited, char_grid_size * sizeof(bool));
+	ft_bzero(visited, ft_vector_get_capacity(visited) * sizeof(bool));
 	visit_stack = ft_vector_new(sizeof(t_tile *));
 	if (visit_stack == NULL)
 		return (ERROR);
