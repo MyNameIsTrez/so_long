@@ -19,14 +19,14 @@
 
 typedef struct s_tile_kind_data
 {
-	size_t					frame_count;
-	size_t					texture_row;
-	t_u8					character;
-	bool					is_entity;
-	t_i32					depth;
-	t_u32					ticks_between_frame_changes;
-	t_u32					ticks_between_updates;
-	t_tile_kind_data_color	color;
+	size_t				frame_count;
+	size_t				texture_row;
+	t_u8				character;
+	bool				is_entity;
+	t_i32				depth;
+	t_u32				ticks_between_frame_changes;
+	t_u32				ticks_between_updates;
+	t_tile_kind_color	color;
 }	t_tile_kind_data;
 
 ////////////////////////////////////////////////////////////////////////////////

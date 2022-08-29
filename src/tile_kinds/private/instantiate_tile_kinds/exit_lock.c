@@ -31,7 +31,7 @@ t_status	add_exit_lock_tile_kind(t_data *data)
 			EXIT_LOCK_DEPTH,
 			EXIT_LOCK_TICKS_BETWEEN_FRAME_CHANGES,
 			EXIT_LOCK_TICKS_BETWEEN_UPDATES,
-			(t_tile_kind_data_color){
+			(t_tile_kind_color){
 			{EXIT_LOCK_R, EXIT_LOCK_G, EXIT_LOCK_B},
 			{EXIT_LOCK_MIN_R, EXIT_LOCK_MIN_G, EXIT_LOCK_MIN_B},
 			{EXIT_LOCK_MAX_R, EXIT_LOCK_MAX_G, EXIT_LOCK_MAX_B},

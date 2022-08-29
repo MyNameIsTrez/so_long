@@ -31,7 +31,7 @@ t_status	add_wall_tile_kind(t_data *data)
 			WALL_DEPTH,
 			WALL_TICKS_BETWEEN_FRAME_CHANGES,
 			WALL_TICKS_BETWEEN_UPDATES,
-			(t_tile_kind_data_color){
+			(t_tile_kind_color){
 			{WALL_R, WALL_G, WALL_B},
 			{WALL_MIN_R, WALL_MIN_G, WALL_MIN_B},
 			{WALL_MAX_R, WALL_MAX_G, WALL_MAX_B},

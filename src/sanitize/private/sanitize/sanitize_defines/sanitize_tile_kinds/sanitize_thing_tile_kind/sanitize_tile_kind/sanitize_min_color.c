@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 t_status	sanitize_min_color(
-				t_tile_kind_data_color tile_kind_data_color, t_data *data)
+				t_tile_kind_color tile_kind_data_color, t_data *data)
 {
 	t_iterator	it;
 	size_t		channel;

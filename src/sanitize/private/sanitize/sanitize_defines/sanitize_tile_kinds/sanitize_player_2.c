@@ -22,7 +22,7 @@
 
 t_status	sanitize_player_2(t_data *data)
 {
-	const t_tile_kind_data_color	tile_kind_data_color = {
+	const t_tile_kind_color	tile_kind_data_color = {
 		.initial_color = {PLAYER_2_R, PLAYER_2_G, PLAYER_2_B},
 		.min_color = {PLAYER_2_MIN_R, PLAYER_2_MIN_G, PLAYER_2_MIN_B},
 		.max_color = {PLAYER_2_MAX_R, PLAYER_2_MAX_G, PLAYER_2_MAX_B},

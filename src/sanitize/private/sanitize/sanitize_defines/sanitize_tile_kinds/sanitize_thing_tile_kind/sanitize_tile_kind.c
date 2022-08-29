@@ -20,7 +20,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	sanitize_tile_kind(t_tile_kind_data_color tile_kind_data_color,
+t_status	sanitize_tile_kind(t_tile_kind_color tile_kind_data_color,
 				t_data *data)
 {
 	if (sanitize_min_color(tile_kind_data_color, data) != OK || \

@@ -31,7 +31,7 @@ t_status	add_empty_space_tile_kind(t_data *data)
 			EMPTY_SPACE_DEPTH,
 			EMPTY_SPACE_TICKS_BETWEEN_FRAME_CHANGES,
 			EMPTY_SPACE_TICKS_BETWEEN_UPDATES,
-			(t_tile_kind_data_color){
+			(t_tile_kind_color){
 			{EMPTY_SPACE_R, EMPTY_SPACE_G, EMPTY_SPACE_B},
 			{EMPTY_SPACE_MIN_R, EMPTY_SPACE_MIN_G, EMPTY_SPACE_MIN_B},
 			{EMPTY_SPACE_MAX_R, EMPTY_SPACE_MAX_G, EMPTY_SPACE_MAX_B},

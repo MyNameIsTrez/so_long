@@ -31,7 +31,7 @@ t_status	add_player_1_tile_kind(t_data *data)
 			PLAYER_1_DEPTH,
 			PLAYER_TICKS_BETWEEN_FRAME_CHANGES,
 			PLAYER_TICKS_BETWEEN_UPDATES,
-			(t_tile_kind_data_color){
+			(t_tile_kind_color){
 			{PLAYER_1_R, PLAYER_1_G, PLAYER_1_B},
 			{PLAYER_1_MIN_R, PLAYER_1_MIN_G, PLAYER_1_MIN_B},
 			{PLAYER_1_MAX_R, PLAYER_1_MAX_G, PLAYER_1_MAX_B},

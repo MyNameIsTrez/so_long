@@ -31,7 +31,7 @@ t_status	add_monster_tile_kind(t_data *data)
 			MONSTER_DEPTH,
 			MONSTER_TICKS_BETWEEN_FRAME_CHANGES,
 			MONSTER_TICKS_BETWEEN_UPDATES,
-			(t_tile_kind_data_color){
+			(t_tile_kind_color){
 			{MONSTER_R, MONSTER_G, MONSTER_B},
 			{MONSTER_MIN_R, MONSTER_MIN_G, MONSTER_MIN_B},
 			{MONSTER_MAX_R, MONSTER_MAX_G, MONSTER_MAX_B},

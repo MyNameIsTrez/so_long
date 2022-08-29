@@ -40,8 +40,7 @@ t_status	add_tile_kind(t_tile_kind_data tk_data, t_data *data)
 	tile_kind.depth = tk_data.depth;
 	tile_kind.ticks_between_frame_changes = tk_data.ticks_between_frame_changes;
 	tile_kind.ticks_between_updates = tk_data.ticks_between_updates;
-	if (instantiate_tile_kind_color(&tile_kind.color, &tk_data.color, data) != OK)
-		return (ERROR);
+	tile_kind.color = tk_data.color;
 	if (ft_vector_push(&data->tile_kinds, &tile_kind) != OK)
 		return (ERROR);
 	return (OK);

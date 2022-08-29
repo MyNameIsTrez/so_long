@@ -22,7 +22,7 @@
 
 t_status	sanitize_empty_space(t_data *data)
 {
-	const t_tile_kind_data_color	tile_kind_data_color = {
+	const t_tile_kind_color	tile_kind_data_color = {
 		.initial_color = {EMPTY_SPACE_R, EMPTY_SPACE_G, EMPTY_SPACE_B},
 		.min_color = {EMPTY_SPACE_MIN_R, EMPTY_SPACE_MIN_G, EMPTY_SPACE_MIN_B},
 		.max_color = {EMPTY_SPACE_MAX_R, EMPTY_SPACE_MAX_G, EMPTY_SPACE_MAX_B},
