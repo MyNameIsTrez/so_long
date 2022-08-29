@@ -23,21 +23,22 @@
 
 t_status	add_wall_tile_kind(t_data *data)
 {
-	if (add_tile_kind((t_tile_kind_data){
-			WALL_TEXTURE_FRAME_COUNT,
-			WALL_TEXTURE_ROW,
-			WALL_CHARACTER,
-			WALL_IS_ENTITY,
-			WALL_DEPTH,
-			WALL_TICKS_BETWEEN_FRAME_CHANGES,
-			WALL_TICKS_BETWEEN_UPDATES,
-			(t_tile_kind_color){
-			{WALL_R, WALL_G, WALL_B},
-			{WALL_MIN_R, WALL_MIN_G, WALL_MIN_B},
-			{WALL_MAX_R, WALL_MAX_G, WALL_MAX_B},
-			{WALL_R_WAIT, WALL_G_WAIT, WALL_B_WAIT},
-			{WALL_R_STEP, WALL_G_STEP, WALL_B_STEP}}},
-			data) != OK)
+	const t_tile_kind_data	tk_data = {
+		.character = WALL_CHARACTER,
+		.is_entity = WALL_IS_ENTITY,
+		.frame_count = WALL_TEXTURE_FRAME_COUNT,
+		.texture_row = WALL_TEXTURE_ROW,
+		.depth = WALL_DEPTH,
+		.ticks_between_frame_changes = WALL_TICKS_BETWEEN_FRAME_CHANGES,
+		.ticks_between_updates = WALL_TICKS_BETWEEN_UPDATES,
+		(t_tile_kind_color){
+	{WALL_R, WALL_G, WALL_B},
+	{WALL_MIN_R, WALL_MIN_G, WALL_MIN_B},
+	{WALL_MAX_R, WALL_MAX_G, WALL_MAX_B},
+	{WALL_R_WAIT, WALL_G_WAIT, WALL_B_WAIT},
+	{WALL_R_STEP, WALL_G_STEP, WALL_B_STEP}}};
+
+	if (add_tile_kind(tk_data, data) != OK)
 		return (ERROR);
 	return (OK);
 }

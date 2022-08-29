@@ -23,21 +23,22 @@
 
 t_status	add_monster_tile_kind(t_data *data)
 {
-	if (add_tile_kind((t_tile_kind_data){
-			MONSTER_TEXTURE_FRAME_COUNT,
-			MONSTER_TEXTURE_ROW,
-			MONSTER_CHARACTER,
-			MONSTER_IS_ENTITY,
-			MONSTER_DEPTH,
-			MONSTER_TICKS_BETWEEN_FRAME_CHANGES,
-			MONSTER_TICKS_BETWEEN_UPDATES,
-			(t_tile_kind_color){
-			{MONSTER_R, MONSTER_G, MONSTER_B},
-			{MONSTER_MIN_R, MONSTER_MIN_G, MONSTER_MIN_B},
-			{MONSTER_MAX_R, MONSTER_MAX_G, MONSTER_MAX_B},
-			{MONSTER_R_WAIT, MONSTER_G_WAIT, MONSTER_B_WAIT},
-			{MONSTER_R_STEP, MONSTER_G_STEP, MONSTER_B_STEP}}},
-			data) != OK)
+	const t_tile_kind_data	tk_data = {
+		.character = MONSTER_CHARACTER,
+		.is_entity = MONSTER_IS_ENTITY,
+		.frame_count = MONSTER_TEXTURE_FRAME_COUNT,
+		.texture_row = MONSTER_TEXTURE_ROW,
+		.depth = MONSTER_DEPTH,
+		.ticks_between_frame_changes = MONSTER_TICKS_BETWEEN_FRAME_CHANGES,
+		.ticks_between_updates = MONSTER_TICKS_BETWEEN_UPDATES,
+		(t_tile_kind_color){
+	{MONSTER_R, MONSTER_G, MONSTER_B},
+	{MONSTER_MIN_R, MONSTER_MIN_G, MONSTER_MIN_B},
+	{MONSTER_MAX_R, MONSTER_MAX_G, MONSTER_MAX_B},
+	{MONSTER_R_WAIT, MONSTER_G_WAIT, MONSTER_B_WAIT},
+	{MONSTER_R_STEP, MONSTER_G_STEP, MONSTER_B_STEP}}};
+
+	if (add_tile_kind(tk_data, data) != OK)
 		return (ERROR);
 	return (OK);
 }
