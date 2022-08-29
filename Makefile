@@ -18,7 +18,9 @@ CC := cc
 
 OBJ_DIR := obj
 
-CFLAGS := -Wall -Wextra -Werror -Wconversion -Werror-pointer-arith
+CFLAGS := -Wall -Wextra -Werror -Wconversion -Wpedantic -Wfatal-errors
+CFLAGS += -Wno-gnu-binary-literal # so_long autotiling
+CFLAGS += -Wno-overlength-strings # MLX42
 
 ################################################################################
 

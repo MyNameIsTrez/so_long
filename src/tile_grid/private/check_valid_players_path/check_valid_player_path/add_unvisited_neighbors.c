@@ -27,8 +27,7 @@ t_status	add_unvisited_neighbors(t_tile *tile, t_tile ***visit_stack,
 
 	ft_init_it(&it);
 	while (sl_iterate_headings(&it, data) != FINISHED)
-		if (try_add_neighbor(data->it.heading, tile, visit_stack, visited,
-				data) != OK)
+		if (try_add_neighbor(tile, visit_stack, visited, data) != OK)
 			return (ERROR);
 	return (OK);
 }

@@ -17,8 +17,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	try_add_neighbor(t_heading heading, t_tile *tile,
-				t_tile ***visit_stack, bool *visited, t_data *data);
+t_status	try_add_neighbor(t_tile *tile, t_tile ***visit_stack, bool *visited,
+				t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -16,14 +16,14 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	try_add_neighbor(t_heading heading, t_tile *tile,
-				t_tile ***visit_stack, bool *visited, t_data *data)
+t_status	try_add_neighbor(t_tile *tile, t_tile ***visit_stack, bool *visited,
+				t_data *data)
 {
 	size_t	index;
 	t_tile	*neighbor_tile;
 	t_u8	neighbor_tile_character;
 
-	if (!sl_try_get_index(&index, heading, tile, data))
+	if (!sl_try_get_index(&index, data->it.heading, tile, data))
 		return (OK);
 	if (visited[index])
 		return (OK);

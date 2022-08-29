@@ -20,13 +20,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	trying_to_move(t_player *player, t_heading heading, t_data *data)
+bool	trying_to_move(t_player *player, t_data *data)
 {
 	keys_t	key;
 	t_i32	frames_held;
 	bool	key_was_held;
 
-	key = player->controls.movement_keys[heading];
+	key = player->controls.movement_keys[data->it.heading];
 	frames_held = data->held_keys[key];
 	if (frames_held == 0)
 		return (false);

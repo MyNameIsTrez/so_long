@@ -17,8 +17,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-bool	trying_to_move(t_player *player, t_heading heading, t_data *data);
-void	update_death_state(t_player *player, t_heading heading, t_data *data);
+bool	trying_to_move(t_player *player, t_data *data);
+void	update_death_state(t_player *player, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 
