@@ -16,9 +16,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// TODO: remove
-// __attribute__((deconstructor))
-// __attribute__((destructor))
 void	check_leaks(void)
 {
 	ft_putendl("");
@@ -31,7 +28,6 @@ t_i32	main(t_i32 argc, char **argv)
 {
 	t_data	data;
 
-	atexit(check_leaks); // TODO: Remove!
 	if (sl_init(argc, argv, &data) != OK)
 	{
 		sl_cleanup(&data);
