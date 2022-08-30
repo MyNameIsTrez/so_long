@@ -17,7 +17,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// TODO: Reorder to the VS Code file explorer order
 # include "../monitor/sl_struct_monitor.h"
 # include "../iterators/sl_struct_iterators.h"
 # include "sl_structs_mlx42.h"

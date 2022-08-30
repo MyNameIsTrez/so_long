@@ -39,7 +39,6 @@
 # define PLAYER_1_B_STEP 1
 
 ////////////////////////////////////////////////////////////////////////////////
-// Dark theme
 
 # define PLAYER_1_MIN_R 0
 # define PLAYER_1_MIN_G 100
@@ -52,21 +51,6 @@
 # define PLAYER_1_MAX_R 50
 # define PLAYER_1_MAX_G 170
 # define PLAYER_1_MAX_B 190
-
-////////////////////////////////////////////////////////////////////////////////
-// Light theme
-
-// # define PLAYER_1_MIN_R 0
-// # define PLAYER_1_MIN_G 0
-// # define PLAYER_1_MIN_B 0
-
-// # define PLAYER_1_R 63
-// # define PLAYER_1_G 64
-// # define PLAYER_1_B 63
-
-// # define PLAYER_1_MAX_R 100
-// # define PLAYER_1_MAX_G 100
-// # define PLAYER_1_MAX_B 100
 
 ////////////////////////////////////////////////////////////////////////////////
 

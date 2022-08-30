@@ -17,14 +17,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// TODO: Rename all of these headers to be like tile_kinds_players.h
-# include "sl_collectible.h"
-# include "sl_empty_space.h"
-# include "sl_exit_lock.h"
-# include "sl_map_exit.h"
-# include "sl_monster.h"
+# include "sl_tile_kind_collectible.h"
+# include "sl_tile_kind_empty_space.h"
+# include "sl_tile_kind_exit_lock.h"
+# include "sl_tile_kind_map_exit.h"
+# include "sl_tile_kind_monster.h"
 # include "sl_tile_kinds_players.h"
-# include "sl_wall.h"
+# include "sl_tile_kind_wall.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -1,53 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_map_exit.h                                      :+:    :+:            */
+/*   sl_tile_kind_collectible.h                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/15 17:57:11 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 12:59:54 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/15 17:57:04 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/25 12:59:07 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_MAP_EXIT_H
-# define SL_MAP_EXIT_H
+#ifndef SL_TILE_KIND_COLLECTIBLE_H
+# define SL_TILE_KIND_COLLECTIBLE_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define MAP_EXIT_TEXTURE_FRAME_COUNT 2
-# define MAP_EXIT_TEXTURE_ROW 18
-# define MAP_EXIT_CHARACTER 'E'
-# define MAP_EXIT_DEPTH 1
-# define MAP_EXIT_IS_ENTITY 0
-# define MAP_EXIT_TICKS_BETWEEN_FRAME_CHANGES 25
-# define MAP_EXIT_TICKS_BETWEEN_UPDATES 30
+# define COLLECTIBLE_TEXTURE_FRAME_COUNT 4
+# define COLLECTIBLE_TEXTURE_ROW 46
+# define COLLECTIBLE_CHARACTER 'C'
+# define COLLECTIBLE_DEPTH 2
+# define COLLECTIBLE_IS_ENTITY 1
+# define COLLECTIBLE_TICKS_BETWEEN_FRAME_CHANGES 25
+# define COLLECTIBLE_TICKS_BETWEEN_UPDATES 30
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define MAP_EXIT_R_WAIT 6
-# define MAP_EXIT_G_WAIT 6
-# define MAP_EXIT_B_WAIT 6
+# define COLLECTIBLE_R_WAIT 3
+# define COLLECTIBLE_G_WAIT 3
+# define COLLECTIBLE_B_WAIT 3
 
-# define MAP_EXIT_R_STEP 1
-# define MAP_EXIT_G_STEP 1
-# define MAP_EXIT_B_STEP 1
+# define COLLECTIBLE_R_STEP 1
+# define COLLECTIBLE_G_STEP 1
+# define COLLECTIBLE_B_STEP 1
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define MAP_EXIT_MIN_R 201
-# define MAP_EXIT_MIN_G 176
-# define MAP_EXIT_MIN_B 125
+# define COLLECTIBLE_MIN_R 226
+# define COLLECTIBLE_MIN_G 164
+# define COLLECTIBLE_MIN_B 35
 
-# define MAP_EXIT_R 241
-# define MAP_EXIT_G 199
-# define MAP_EXIT_B 143
+# define COLLECTIBLE_R 236
+# define COLLECTIBLE_G 174
+# define COLLECTIBLE_B 45
 
-# define MAP_EXIT_MAX_R 251
-# define MAP_EXIT_MAX_G 217
-# define MAP_EXIT_MAX_B 161
+# define COLLECTIBLE_MAX_R 246
+# define COLLECTIBLE_MAX_G 184
+# define COLLECTIBLE_MAX_B 55
 
 ////////////////////////////////////////////////////////////////////////////////
 

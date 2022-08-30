@@ -1,54 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sl_exit_lock.h                                     :+:    :+:            */
+/*   sl_tile_kind_wall.h                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/15 17:57:11 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/25 13:21:30 by sbos          ########   odam.nl         */
+/*   Created: 2022/07/15 17:56:55 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/25 13:03:04 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef SL_EXIT_LOCK_H
-# define SL_EXIT_LOCK_H
+#ifndef SL_TILE_KIND_WALL_H
+# define SL_TILE_KIND_WALL_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define EXIT_LOCK_TEXTURE_FRAME_COUNT 13
-# define EXIT_LOCK_TEXTURE_ROW 19
-# define EXIT_LOCK_CHARACTER 'E'
-# define EXIT_LOCK_DEPTH 2
-# define EXIT_LOCK_IS_ENTITY 1
-# define EXIT_LOCK_TICKS_BETWEEN_FRAME_CHANGES 1
-# define EXIT_LOCK_TICKS_BETWEEN_UPDATES 1
+# define WALL_TEXTURE_FRAME_COUNT 16
+# define WALL_TEXTURE_ROW 3
+# define WALL_CHARACTER '1'
+# define WALL_DEPTH 1
+# define WALL_IS_ENTITY 0
+# define WALL_TICKS_BETWEEN_FRAME_CHANGES 25
+# define WALL_TICKS_BETWEEN_UPDATES 30
 
 ////////////////////////////////////////////////////////////////////////////////
 
-# define EXIT_LOCK_R_WAIT 3
-# define EXIT_LOCK_G_WAIT 3
-# define EXIT_LOCK_B_WAIT 3
+# define WALL_R_WAIT 5
+# define WALL_G_WAIT 5
+# define WALL_B_WAIT 5
 
-# define EXIT_LOCK_R_STEP 1
-# define EXIT_LOCK_G_STEP 1
-# define EXIT_LOCK_B_STEP 1
+# define WALL_R_STEP 1
+# define WALL_G_STEP 1
+# define WALL_B_STEP 1
 
 ////////////////////////////////////////////////////////////////////////////////
-// Dark theme
 
-# define EXIT_LOCK_MIN_R 226
-# define EXIT_LOCK_MIN_G 164
-# define EXIT_LOCK_MIN_B 35
+# define WALL_MIN_R 113
+# define WALL_MIN_G 85
+# define WALL_MIN_B 30
 
-# define EXIT_LOCK_R 236
-# define EXIT_LOCK_G 174
-# define EXIT_LOCK_B 45
+# define WALL_R 133
+# define WALL_G 100
+# define WALL_B 43
 
-# define EXIT_LOCK_MAX_R 246
-# define EXIT_LOCK_MAX_G 184
-# define EXIT_LOCK_MAX_B 55
+# define WALL_MAX_R 150
+# define WALL_MAX_G 117
+# define WALL_MAX_B 63
 
 ////////////////////////////////////////////////////////////////////////////////
 
