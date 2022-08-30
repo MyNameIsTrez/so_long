@@ -25,41 +25,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * @brief Predicts what the color will be after a step
- * and uses that to change the rgb_step correctly:
- * So if R is 2 and step is -3, R should end up as 2 -> 1 -> 0 -> 1, so 1
+ * @brief Updates the frame colors while preventing wraparound:
+ * If R is 2 and step is -3, R should end up as
+ * 2 -> 1 -> 0 -> 1, so 1
  * If R is 253 and step is 6, R should end up as
  * 253 -> 254 -> 255 -> 254 -> 253 -> 252 -> 251, so 251
  * @param data
  */
-// void	sl_update_frame_colors(t_data *data)
-// {
-// 	t_iterator	tile_kinds_it;
-// 	t_iterator	frames_it;
-// 	mlx_image_t	*frame;
-// 	t_iterator	frame_pixel_indices_it;
-// 	t_iterator	rgb_channel_indices_it;
-
-// 	ft_init_it(&tile_kinds_it);
-// 	ft_init_it(&frames_it);
-// 	ft_init_it(&frame_pixel_indices_it);
-// 	ft_init_it(&rgb_channel_indices_it);
-// 	while (sl_iterate_tile_kinds(&tile_kinds_it, data) != FINISHED)
-// 	{
-// 		while (sl_iterate_frames(&frames_it, data->it.tile_kind,
-// 				data) != FINISHED)
-// 		{
-// 			frame = data->it.frame;
-// 			while (sl_iterate_frame_pixel_indices(&frame_pixel_indices_it,
-// 					frame, data) != FINISHED)
-// 				while (sl_iterate_rgb_channel_indices(&rgb_channel_indices_it,
-// 						data) != FINISHED)
-// 					if (should_step(data) && is_visible(frame, data))
-// 						step_channel(data->it.rgb_channel_index, frame, data);
-// 		}
-// 	}
-// }
-
 void	sl_update_frame_colors(t_data *data)
 {
 	t_iterator	tile_kinds_it;
@@ -74,11 +46,12 @@ void	sl_update_frame_colors(t_data *data)
 	ft_init_it(&rgb_channel_indices_it);
 	while (sl_iterate_tile_kinds(&tile_kinds_it, data) != FINISHED)
 	{
-		// TODO: Why tf does the commented out code above cause visual artifacts? It should be identical to this function
-		while (sl_iterate_frame_count(&frame_count_it, data->it.tile_kind->frame_count, data) != FINISHED)
+		while (sl_iterate_frame_count(&frame_count_it,
+				data->it.tile_kind->frame_count, data) != FINISHED)
 		{
 			frame = data->it.tile_kind->frames[data->it.frame_index];
-			while (sl_iterate_frame_pixel_indices(&frame_pixel_indices_it, frame, data) != FINISHED)
+			while (sl_iterate_frame_pixel_indices(&frame_pixel_indices_it,
+					frame, data) != FINISHED)
 				while (sl_iterate_rgb_channel_indices(&rgb_channel_indices_it,
 						data) != FINISHED)
 					if (should_step(data) && is_visible(frame, data))

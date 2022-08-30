@@ -38,7 +38,6 @@ t_i32	main(t_i32 argc, char **argv)
 		sl_print_all_errors();
 		return (EXIT_FAILURE);
 	}
-	// exit(EXIT_FAILURE);
 	mlx_loop(data.mlx);
 	if (sl_any_error() != OK)
 		sl_print_all_errors();

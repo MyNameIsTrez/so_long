@@ -24,16 +24,11 @@ bool	trying_to_move(t_player *player, t_data *data)
 {
 	keys_t	key;
 	t_i32	frames_held;
-	bool	key_was_held;
 
 	key = player->controls.movement_keys[data->it.heading];
 	frames_held = data->held_keys[key];
-	if (frames_held == 0)
-		return (false);
-	key_was_held = frames_held > 1;
-	if (key_was_held && !can_autowalk(player, data))
-		return (false);
-	return (true);
+	return (frames_held == 1
+		|| (frames_held > 1 && can_autowalk(player, data)));
 }
 
 ////////////////////////////////////////////////////////////////////////////////
