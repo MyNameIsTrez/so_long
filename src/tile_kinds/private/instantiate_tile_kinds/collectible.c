@@ -23,7 +23,7 @@
 
 t_status	add_collectible_tile_kind(t_data *data)
 {
-	const t_tile_kind_data	tk_data = {
+	t_tile_kind_data const	tk_data = {
 		.character = COLLECTIBLE_CHARACTER,
 		.is_entity = COLLECTIBLE_IS_ENTITY,
 		.frame_count = COLLECTIBLE_TEXTURE_FRAME_COUNT,

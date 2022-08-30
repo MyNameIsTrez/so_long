@@ -23,7 +23,7 @@
 
 t_status	add_exit_lock_tile_kind(t_data *data)
 {
-	const t_tile_kind_data	tk_data = {
+	t_tile_kind_data const	tk_data = {
 		.character = EXIT_LOCK_CHARACTER,
 		.is_entity = EXIT_LOCK_IS_ENTITY,
 		.frame_count = EXIT_LOCK_TEXTURE_FRAME_COUNT,

@@ -23,7 +23,7 @@
 
 t_status	add_monster_tile_kind(t_data *data)
 {
-	const t_tile_kind_data	tk_data = {
+	t_tile_kind_data const	tk_data = {
 		.character = MONSTER_CHARACTER,
 		.is_entity = MONSTER_IS_ENTITY,
 		.frame_count = MONSTER_TEXTURE_FRAME_COUNT,

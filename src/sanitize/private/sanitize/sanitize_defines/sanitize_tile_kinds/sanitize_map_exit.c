@@ -22,7 +22,7 @@
 
 t_status	sanitize_map_exit(t_data *data)
 {
-	const t_tile_kind_color	tile_kind_data_color = {
+	t_tile_kind_color const	tile_kind_data_color = {
 		.initial_color = {MAP_EXIT_R, MAP_EXIT_G, MAP_EXIT_B},
 		.min_color = {MAP_EXIT_MIN_R, MAP_EXIT_MIN_G, MAP_EXIT_MIN_B},
 		.max_color = {MAP_EXIT_MAX_R, MAP_EXIT_MAX_G, MAP_EXIT_MAX_B},

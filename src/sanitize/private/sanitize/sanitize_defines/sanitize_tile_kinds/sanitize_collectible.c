@@ -22,7 +22,7 @@
 
 t_status	sanitize_collectible(t_data *data)
 {
-	const t_tile_kind_color	tile_kind_data_color = {
+	t_tile_kind_color const	tile_kind_data_color = {
 		.initial_color = {COLLECTIBLE_R, COLLECTIBLE_G, COLLECTIBLE_B},
 		.min_color = {COLLECTIBLE_MIN_R, COLLECTIBLE_MIN_G, COLLECTIBLE_MIN_B},
 		.max_color = {COLLECTIBLE_MAX_R, COLLECTIBLE_MAX_G, COLLECTIBLE_MAX_B},

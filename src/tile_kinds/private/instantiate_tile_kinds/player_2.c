@@ -23,7 +23,7 @@
 
 t_status	add_player_2_tile_kind(t_data *data)
 {
-	const t_tile_kind_data	tk_data = {
+	t_tile_kind_data const	tk_data = {
 		.character = PLAYER_2_CHARACTER,
 		.is_entity = PLAYER_2_IS_ENTITY,
 		.frame_count = PLAYER_2_TEXTURE_FRAME_COUNT,

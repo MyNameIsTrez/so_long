@@ -22,7 +22,7 @@
 
 t_status	sanitize_wall(t_data *data)
 {
-	const t_tile_kind_color	tile_kind_data_color = {
+	t_tile_kind_color const	tile_kind_data_color = {
 		.initial_color = {WALL_R, WALL_G, WALL_B},
 		.min_color = {WALL_MIN_R, WALL_MIN_G, WALL_MIN_B},
 		.max_color = {WALL_MAX_R, WALL_MAX_G, WALL_MAX_B},

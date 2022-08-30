@@ -23,7 +23,7 @@
 
 t_status	add_map_exit_tile_kind(t_data *data)
 {
-	const t_tile_kind_data	tk_data = {
+	t_tile_kind_data const	tk_data = {
 		.character = MAP_EXIT_CHARACTER,
 		.is_entity = MAP_EXIT_IS_ENTITY,
 		.frame_count = MAP_EXIT_TEXTURE_FRAME_COUNT,

@@ -23,7 +23,7 @@
 
 t_status	add_empty_space_tile_kind(t_data *data)
 {
-	const t_tile_kind_data	tk_data = {
+	t_tile_kind_data const	tk_data = {
 		.character = EMPTY_SPACE_CHARACTER,
 		.is_entity = EMPTY_SPACE_IS_ENTITY,
 		.frame_count = EMPTY_SPACE_TEXTURE_FRAME_COUNT,
