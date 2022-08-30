@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/08/10 13:49:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/10 15:15:29 by sbos          ########   odam.nl         */
+/*   Created: 2022/08/30 16:12:42 by sbos          #+#    #+#                 */
+/*   Updated: 2022/08/30 16:12:42 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	add_unvisited_neighbors(t_tile *tile, t_tile ***visit_stack,
-				bool *visited, t_data *data);
+typedef struct s_path	t_path;
+
+////////////////////////////////////////////////////////////////////////////////
+
+t_status	add_unvisited_neighbors(t_path *path, bool *visited, t_data *data);
+t_status	floodfill(t_path *path, bool *visited, t_data *data);
 
 ////////////////////////////////////////////////////////////////////////////////
 

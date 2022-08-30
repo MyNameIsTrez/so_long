@@ -17,33 +17,32 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "check_valid_player_path/sl_private_check_valid_player_path.h"
+#include "sl_private_path_struct.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
 t_status	check_valid_player_path(t_player *player, bool *visited,
 				t_data *data)
 {
-	t_tile	**visit_stack;
-	t_tile	*current;
+	t_path	path;
 
 	ft_bzero(visited, ft_vector_get_capacity(visited) * sizeof(bool));
-	visit_stack = ft_vector_new(sizeof(t_tile *));
-	if (visit_stack == NULL)
+	path.visit_stack = ft_vector_new(sizeof(t_tile *));
+	if (path.visit_stack == NULL)
 		return (ERROR);
-	current = &player->entity->tile;
-	visited[current->index] = true;
-	if (add_unvisited_neighbors(current, &visit_stack, visited, data) != OK)
+	path.exit_seen = false;
+	path.collectibles_seen = 0;
+	path.current = &player->entity->tile;
+	visited[path.current->index] = true;
+	if (add_unvisited_neighbors(&path, visited, data) != OK)
 		return (ERROR);
-	while (ft_vector_get_size(visit_stack) > 0)
-	{
-		current = *(t_tile **)ft_vector_back(visit_stack);
-		ft_vector_pop_back(&visit_stack);
-		if (current->tile_kind->character == MAP_EXIT_CHARACTER)
-			return (OK);
-		if (add_unvisited_neighbors(current, &visit_stack, visited, data) != OK)
-			return (ERROR);
-	}
-	return (sl_set_error(SL_ERROR_NO_PATH));
+	if (floodfill(&path, visited, data) != OK)
+		return (ERROR);
+	if (!path.exit_seen)
+		return (sl_set_error(SL_ERROR_NO_PATH));
+	if (path.collectibles_seen != ft_vector_get_size(data->collectibles))
+		return (sl_set_error(SL_ERROR_UNREACHABLE_COLLECTIBLE));
+	return (OK);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

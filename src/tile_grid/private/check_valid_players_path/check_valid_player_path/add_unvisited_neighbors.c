@@ -17,17 +17,17 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "add_unvisited_neighbors/sl_private_add_unvisited_neighbors.h"
+#include "../sl_private_path_struct.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-t_status	add_unvisited_neighbors(t_tile *tile, t_tile ***visit_stack,
-				bool *visited, t_data *data)
+t_status	add_unvisited_neighbors(t_path *path, bool *visited, t_data *data)
 {
 	t_iterator	it;
 
 	ft_init_it(&it);
 	while (sl_iterate_headings(&it, data) != FINISHED)
-		if (try_add_neighbor(tile, visit_stack, visited, data) != OK)
+		if (try_add_neighbor(path, visited, data) != OK)
 			return (ERROR);
 	return (OK);
 }
