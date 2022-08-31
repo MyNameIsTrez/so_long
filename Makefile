@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/31 14:52:10 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/31 14:56:34 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -432,15 +432,11 @@ clean:
 	rm -rf $(OBJ_DIR)/
 
 .PHONY: fclean
-fclean: clean
+fclean: clean GIT
 	rm -f $(FCLEANED_FILES)
 	$(MAKE) -C $(MLX42_PATH) fclean
 	$(MAKE) -C $(LIBFT_PATH) fclean
 	$(MAKE) -C $(FT_PRINTF_PATH) fclean
-
-.PHONY: fclean_mlx42
-fclean_mlx42:
-	$(MAKE) -C $(MLX42_PATH) fclean
 
 .PHONY: re
 re: fclean all
