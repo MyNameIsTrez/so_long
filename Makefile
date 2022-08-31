@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/31 15:19:20 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/31 15:59:18 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -428,7 +428,8 @@ clean:
 	rm -rf $(OBJ_DIR)/
 
 .PHONY: fclean
-fclean: clean GIT
+fclean: clean
+	git submodule update --init --recursive
 	rm -f $(FCLEANED_FILES)
 	$(MAKE) -C $(MLX42_PATH) fclean
 	$(MAKE) -C $(LIBFT_PATH) fclean
