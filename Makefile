@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/31 14:56:34 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/31 15:02:17 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -393,7 +393,13 @@ INCLUDES := $(sort $(addprefix -I, $(MLX42_PATH)/include $(LIBFT_PATH) $(FT_PRIN
 ################################################################################
 
 .PHONY: all
-all: GIT $(PRE_RULES) $(NAME)
+all: $(PRE_RULES) $(NAME)
+
+################################################################################
+
+$(NAME): GIT $(MLX42_LIB_PATH) $(LIBFT_LIB_PATH) $(FT_PRINTF_LIB_PATH) $(OBJECT_PATHS)
+	$(CC) $(CFLAGS) $(OBJECT_PATHS) $(LIBS) -o $(NAME)
+	@echo "$(MAKE_DATA)" > $(DATA_FILE)
 
 ################################################################################
 
@@ -416,10 +422,6 @@ $(FT_PRINTF_LIB_PATH):
 	$(MAKE) -C $(FT_PRINTF_PATH)
 
 ################################################################################
-
-$(NAME): $(MLX42_LIB_PATH) $(LIBFT_LIB_PATH) $(FT_PRINTF_LIB_PATH) $(OBJECT_PATHS)
-	$(CC) $(CFLAGS) $(OBJECT_PATHS) $(LIBS) -o $(NAME)
-	@echo "$(MAKE_DATA)" > $(DATA_FILE)
 
 $(OBJ_DIR)/%.o: %.c $(HEADERS)
 	@mkdir -p $(@D)
