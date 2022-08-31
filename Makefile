@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/31 14:40:26 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/31 14:52:10 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -392,21 +392,26 @@ INCLUDES := $(sort $(addprefix -I, $(MLX42_PATH)/include $(LIBFT_PATH) $(FT_PRIN
 
 ################################################################################
 
-all: $(GIT) $(PRE_RULES) $(NAME)
+.PHONY: all
+all: GIT $(PRE_RULES) $(NAME)
 
 ################################################################################
 
-$(GIT):
+.PHONY: GIT
+GIT:
 	git submodule update --init --recursive
 
 ################################################################################
 
+.PHONY: $(MLX42_LIB_PATH)
 $(MLX42_LIB_PATH):
 	$(MAKE) -C $(MLX42_PATH)
 
+.PHONY: $(LIBFT_LIB_PATH)
 $(LIBFT_LIB_PATH):
 	$(MAKE) -C $(LIBFT_PATH)
 
+.PHONY: $(FT_PRINTF_LIB_PATH)
 $(FT_PRINTF_LIB_PATH):
 	$(MAKE) -C $(FT_PRINTF_PATH)
 
@@ -422,25 +427,26 @@ $(OBJ_DIR)/%.o: %.c $(HEADERS)
 
 ################################################################################
 
+.PHONY: clean
 clean:
 	rm -rf $(OBJ_DIR)/
 
+.PHONY: fclean
 fclean: clean
 	rm -f $(FCLEANED_FILES)
 	$(MAKE) -C $(MLX42_PATH) fclean
 	$(MAKE) -C $(LIBFT_PATH) fclean
 	$(MAKE) -C $(FT_PRINTF_PATH) fclean
 
+.PHONY: fclean_mlx42
 fclean_mlx42:
 	$(MAKE) -C $(MLX42_PATH) fclean
 
+.PHONY: re
 re: fclean all
 
+.PHONY: bonus
 bonus:
 	@$(MAKE) BONUS=1 all
-
-################################################################################
-
-.PHONY: all clean fclean fclean_mlx42 re bonus
 
 ################################################################################
