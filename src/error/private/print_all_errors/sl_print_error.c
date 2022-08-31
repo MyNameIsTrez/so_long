@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/07/06 13:20:27 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/26 17:32:27 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/31 16:21:59 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	sl_print_error(void)
 	[SL_ERROR_MISSING_EXIT] = "The map misses the exit character 'E'.",
 	};
 
-	ft_print("Error: ");
+	ft_print("Error\n");
 	ft_putendl(sl_error_messages[sl_get_error()]);
 }
 
