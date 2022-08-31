@@ -6,7 +6,7 @@
 /*   By: sbos <sbos@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/08/23 14:24:00 by sbos          #+#    #+#                 */
-/*   Updated: 2022/08/23 15:04:40 by sbos          ########   odam.nl         */
+/*   Updated: 2022/08/31 16:15:05 by sbos          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ bool	row_is_not_enclosed(size_t row, t_data *data)
 	size_t	column;
 
 	column = 0;
-	while (column < data->char_grid.width - 1)
+	while (column < data->char_grid.width)
 	{
 		if (cell_is_not_wall(column, row, data))
 			return (true);
