@@ -6,7 +6,7 @@
 #    By: sbos <sbos@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/17 18:04:48 by sbos          #+#    #+#                  #
-#    Updated: 2022/08/31 15:02:17 by sbos          ########   odam.nl          #
+#    Updated: 2022/08/31 15:19:20 by sbos          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -397,28 +397,22 @@ all: $(PRE_RULES) $(NAME)
 
 ################################################################################
 
-$(NAME): GIT $(MLX42_LIB_PATH) $(LIBFT_LIB_PATH) $(FT_PRINTF_LIB_PATH) $(OBJECT_PATHS)
+$(NAME): $(MLX42_LIB_PATH) $(LIBFT_LIB_PATH) $(FT_PRINTF_LIB_PATH) $(OBJECT_PATHS)
 	$(CC) $(CFLAGS) $(OBJECT_PATHS) $(LIBS) -o $(NAME)
 	@echo "$(MAKE_DATA)" > $(DATA_FILE)
 
 ################################################################################
 
-.PHONY: GIT
-GIT:
-	git submodule update --init --recursive
-
-################################################################################
-
-.PHONY: $(MLX42_LIB_PATH)
 $(MLX42_LIB_PATH):
+	git submodule update --init --recursive
 	$(MAKE) -C $(MLX42_PATH)
 
-.PHONY: $(LIBFT_LIB_PATH)
 $(LIBFT_LIB_PATH):
+	git submodule update --init --recursive
 	$(MAKE) -C $(LIBFT_PATH)
 
-.PHONY: $(FT_PRINTF_LIB_PATH)
 $(FT_PRINTF_LIB_PATH):
+	git submodule update --init --recursive
 	$(MAKE) -C $(FT_PRINTF_PATH)
 
 ################################################################################
